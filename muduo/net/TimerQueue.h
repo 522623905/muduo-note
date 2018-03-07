@@ -33,11 +33,12 @@ class TimerId;
 ///
 /// A best efforts timer queue.
 /// No guarantee that the callback will be on time.
-///
+///虽然TimerQueue中有Queue，但是其实现时基于Set的，而不是Queue。
+///这样可以高效地插入、删除定时器，且找到当前已经超时的定时器。TimerQueue的public接口只有两个，添加和删除。
 class TimerQueue : boost::noncopyable
 {
  public:
-  explicit TimerQueue(EventLoop* loop);
+  TimerQueue(EventLoop* loop);
   ~TimerQueue();
 
   ///
@@ -45,6 +46,7 @@ class TimerQueue : boost::noncopyable
   /// repeats if @c interval > 0.0.
   ///
   /// Must be thread safe. Usually be called from other threads.
+  ///  添加定时器，线程安全
   TimerId addTimer(const TimerCallback& cb,
                    Timestamp when,
                    double interval);
@@ -54,36 +56,39 @@ class TimerQueue : boost::noncopyable
                    double interval);
 #endif
 
+  //取消定时器，线程安全
   void cancel(TimerId timerId);
 
  private:
 
   // FIXME: use unique_ptr<Timer> instead of raw pointers.
-  typedef std::pair<Timestamp, Timer*> Entry;
-  typedef std::set<Entry> TimerList;
-  typedef std::pair<Timer*, int64_t> ActiveTimer;
-  typedef std::set<ActiveTimer> ActiveTimerSet;
+  typedef std::pair<Timestamp, Timer*> Entry;  //std::pair支持比较运算,存储超时时间戳和Timer*指针
+  typedef std::set<Entry> TimerList;  //元素为超时时间和指向超时的定时器,会按照时间戳来排序
+  typedef std::pair<Timer*, int64_t> ActiveTimer; //Timer*指针和定时器序列号
+  typedef std::set<ActiveTimer> ActiveTimerSet; //元素为定时器和其序列号,按照Timer* 地址大小来排序
 
+  //以下成员函数只可能在其所属IO线程中调用，因而不必加锁
   void addTimerInLoop(Timer* timer);
   void cancelInLoop(TimerId timerId);
+
   // called when timerfd alarms
   void handleRead();
   // move out all expired timers
-  std::vector<Entry> getExpired(Timestamp now);
+  std::vector<Entry> getExpired(Timestamp now); //返回超时的定时器列表
   void reset(const std::vector<Entry>& expired, Timestamp now);
 
-  bool insert(Timer* timer);
+  bool insert(Timer* timer);// 插入定时器
 
-  EventLoop* loop_;
+  EventLoop* loop_;// 所属的EventLoop
   const int timerfd_;
-  Channel timerfdChannel_;
+  Channel timerfdChannel_;  //用于观察timerfd_的readable事件（超时则可读）
   // Timer list sorted by expiration
-  TimerList timers_;
+  TimerList timers_;    //定时器集合，按到期时间排序
 
   // for cancel()
-  ActiveTimerSet activeTimers_;
-  bool callingExpiredTimers_; /* atomic */
-  ActiveTimerSet cancelingTimers_;
+  ActiveTimerSet activeTimers_;//按照Timer* 地址大小来排序
+  bool callingExpiredTimers_; /* atomic */  //是否正在处理超时定时事件
+  ActiveTimerSet cancelingTimers_;  //保存取消了的定时器的集合
 };
 
 }

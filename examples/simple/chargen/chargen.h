@@ -3,6 +3,7 @@
 
 #include <muduo/net/TcpServer.h>
 
+//CHARGEN是在TCP连接建立后，服务器不断传送任意的字符到客户端，直到客户端关闭连接
 // RFC 864
 class ChargenServer
 {

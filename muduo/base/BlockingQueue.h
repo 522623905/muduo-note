@@ -15,7 +15,7 @@
 
 namespace muduo
 {
-
+// 异步队列，底层使用std::deque来实现，没有大小限制
 template<typename T>
 class BlockingQueue : boost::noncopyable
 {
@@ -27,11 +27,12 @@ class BlockingQueue : boost::noncopyable
   {
   }
 
+  //生产产品
   void put(const T& x)
   {
     MutexLockGuard lock(mutex_);
     queue_.push_back(x);
-    notEmpty_.notify(); // wait morphing saves us
+    notEmpty_.notify(); // wait morphing saves us 有产品，则通知消费者线程去消费
     // http://www.domaigne.com/blog/computing/condvars-signal-with-mutex-locked-or-not/
   }
 
@@ -45,13 +46,14 @@ class BlockingQueue : boost::noncopyable
   // FIXME: emplace()
 #endif
 
+  //消费产品
   T take()
   {
     MutexLockGuard lock(mutex_);
     // always use a while-loop, due to spurious wakeup
     while (queue_.empty())
     {
-      notEmpty_.wait();
+      notEmpty_.wait(); //队列为空则阻塞，等待队列有产品可消费
     }
     assert(!queue_.empty());
 #ifdef __GXX_EXPERIMENTAL_CXX0X__
@@ -59,7 +61,7 @@ class BlockingQueue : boost::noncopyable
 #else
     T front(queue_.front());
 #endif
-    queue_.pop_front();
+    queue_.pop_front();//消费产品
     return front;
   }
 
@@ -70,9 +72,9 @@ class BlockingQueue : boost::noncopyable
   }
 
  private:
-  mutable MutexLock mutex_;
-  Condition         notEmpty_;
-  std::deque<T>     queue_;
+  mutable MutexLock mutex_;  //互斥量
+  Condition         notEmpty_;//非空条件变量与互斥量使用
+  std::deque<T>     queue_; //队列容器
 };
 
 }

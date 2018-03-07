@@ -3,7 +3,6 @@
 #include <muduo/net/TcpServer.h>
 
 #include <stdio.h>
-#include <unistd.h>
 
 using namespace muduo;
 using namespace muduo::net;
@@ -20,13 +19,13 @@ string readFile(const char* filename)
     // inefficient!!!
     const int kBufSize = 1024*1024;
     char iobuf[kBufSize];
-    ::setbuffer(fp, iobuf, sizeof iobuf);
+    ::setbuffer(fp, iobuf, sizeof iobuf); //在打开文件流后, 读取内容之前, 调用setbuffer()可用来设置文件流的缓冲区
 
     char buf[kBufSize];
     size_t nread = 0;
     while ( (nread = ::fread(buf, 1, sizeof buf, fp)) > 0)
     {
-      content.append(buf, nread);
+      content.append(buf, nread); //此处用的是while循环读取来添加至string。如果连接数过大，则内存消耗很高！故有了download2.cc
     }
     ::fclose(fp);
   }
@@ -61,7 +60,7 @@ int main(int argc, char* argv[])
   if (argc > 1)
   {
     g_file = argv[1];
-
+    
     EventLoop loop;
     InetAddress listenAddr(2021);
     TcpServer server(&loop, listenAddr, "FileServer");

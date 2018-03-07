@@ -24,6 +24,11 @@ namespace net
 
 class EventLoop;
 
+/*
+任何一个线程，只要创建并运行了EventLoop，就是一个IO线程。
+EventLoopThread类就是一个封装了的IO线程
+*/
+
 class EventLoopThread : boost::noncopyable
 {
  public:
@@ -32,17 +37,17 @@ class EventLoopThread : boost::noncopyable
   EventLoopThread(const ThreadInitCallback& cb = ThreadInitCallback(),
                   const string& name = string());
   ~EventLoopThread();
-  EventLoop* startLoop();
+  EventLoop* startLoop(); //启动线程，该线程就成为了IO线程 ，返回本线程中的EventLoop
 
  private:
-  void threadFunc();
+  void threadFunc();  //线程函数
 
-  EventLoop* loop_;
-  bool exiting_;
-  Thread thread_;
-  MutexLock mutex_;
-  Condition cond_;
-  ThreadInitCallback callback_;
+  EventLoop* loop_; //本线程持有的EventLoop对象指针
+  bool exiting_;  //是否已经退出
+  Thread thread_; //本线程
+  MutexLock mutex_; //互斥锁
+  Condition cond_;  //条件变量
+  ThreadInitCallback callback_; // 回调函数在EventLoop::loop事件循环之前被调用
 };
 
 }

@@ -10,16 +10,17 @@ using namespace muduo;
 CountDownLatch::CountDownLatch(int count)
   : mutex_(),
     condition_(mutex_),
-    count_(count)
+    count_(count) //传递的计数器
 {
 }
 
+//实际是条件变量的使用
 void CountDownLatch::wait()
 {
   MutexLockGuard lock(mutex_);
   while (count_ > 0)
   {
-    condition_.wait();
+    condition_.wait(); //count_>0，则一直阻塞，直到count_=0后的condition_.notifyAll()执行
   }
 }
 
@@ -29,7 +30,7 @@ void CountDownLatch::countDown()
   --count_;
   if (count_ == 0)
   {
-    condition_.notifyAll();
+    condition_.notifyAll(); //当count_为零时，才会通知阻塞在调用wait()的线程
   }
 }
 

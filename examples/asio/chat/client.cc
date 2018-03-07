@@ -10,7 +10,6 @@
 
 #include <iostream>
 #include <stdio.h>
-#include <unistd.h>
 
 using namespace muduo;
 using namespace muduo::net;

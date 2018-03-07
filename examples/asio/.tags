@@ -1,0 +1,130 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ChatClient	chat/client.cc	/^  ChatClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:ChatClient
+ChatClient	chat/client.cc	/^class ChatClient : boost::noncopyable$/;"	c	file:
+ChatClient	chat/loadtest.cc	/^  ChatClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:ChatClient
+ChatClient	chat/loadtest.cc	/^class ChatClient : boost::noncopyable$/;"	c	file:
+ChatServer	chat/server.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	chat/server.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	chat/server_threaded.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	chat/server_threaded.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	chat/server_threaded_efficient.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	chat/server_threaded_efficient.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	chat/server_threaded_highperformance.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	chat/server_threaded_highperformance.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ConnectionList	chat/server.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	chat/server_threaded.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	chat/server_threaded_efficient.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	chat/server_threaded_highperformance.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionListPtr	chat/server_threaded_efficient.cc	/^  typedef boost::shared_ptr<ConnectionList> ConnectionListPtr;$/;"	t	class:ChatServer	file:
+LengthHeaderCodec	chat/codec.h	/^  explicit LengthHeaderCodec(const StringMessageCallback& cb)   \/\/构造函数则是设置messageCallback_回调函数$/;"	f	class:LengthHeaderCodec
+LengthHeaderCodec	chat/codec.h	/^class LengthHeaderCodec : boost::noncopyable$/;"	c
+LocalConnections	chat/server_threaded_highperformance.cc	/^  typedef ThreadLocalSingleton<ConnectionList> LocalConnections;$/;"	t	class:ChatServer	file:
+MUDUO_EXAMPLES_ASIO_CHAT_CODEC_H	chat/codec.h	2;"	d
+Printer	tutorial/timer4/timer.cc	/^  Printer(muduo::net::EventLoop* loop)$/;"	f	class:Printer
+Printer	tutorial/timer4/timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+Printer	tutorial/timer5/timer.cc	/^  Printer(muduo::net::EventLoop* loop1, muduo::net::EventLoop* loop2)$/;"	f	class:Printer
+Printer	tutorial/timer5/timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+Printer	tutorial/timer6/timer.cc	/^  Printer(muduo::net::EventLoop* loop1, muduo::net::EventLoop* loop2)$/;"	f	class:Printer
+Printer	tutorial/timer6/timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+StringMessageCallback	chat/codec.h	/^                                muduo::Timestamp)> StringMessageCallback;$/;"	t	class:LengthHeaderCodec
+client_	chat/client.cc	/^  TcpClient client_;$/;"	m	class:ChatClient	file:
+client_	chat/loadtest.cc	/^  TcpClient client_;$/;"	m	class:ChatClient	file:
+codec_	chat/client.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatClient	file:
+codec_	chat/loadtest.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatClient	file:
+codec_	chat/server.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	chat/server_threaded.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	chat/server_threaded_efficient.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	chat/server_threaded_highperformance.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+connect	chat/client.cc	/^  void connect()$/;"	f	class:ChatClient
+connect	chat/loadtest.cc	/^  void connect()$/;"	f	class:ChatClient
+connection_	chat/client.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:ChatClient	file:
+connection_	chat/loadtest.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:ChatClient	file:
+connections_	chat/server.cc	/^  ConnectionList connections_;$/;"	m	class:ChatServer	file:
+connections_	chat/server_threaded.cc	/^  ConnectionList connections_;$/;"	m	class:ChatServer	file:
+connections_	chat/server_threaded_efficient.cc	/^  ConnectionListPtr connections_;$/;"	m	class:ChatServer	file:
+count_	tutorial/timer4/timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+count_	tutorial/timer5/timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+count_	tutorial/timer6/timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+disconnect	chat/client.cc	/^  void disconnect()$/;"	f	class:ChatClient
+disconnect	chat/loadtest.cc	/^  void disconnect()$/;"	f	class:ChatClient
+distributeMessage	chat/server_threaded_highperformance.cc	/^  void distributeMessage(const string& message)$/;"	f	class:ChatServer	file:
+g_aliveConnections	chat/loadtest.cc	/^AtomicInt32 g_aliveConnections;$/;"	v
+g_connections	chat/loadtest.cc	/^int g_connections = 0;$/;"	v
+g_loop	chat/loadtest.cc	/^EventLoop* g_loop;$/;"	v
+g_messagesReceived	chat/loadtest.cc	/^AtomicInt32 g_messagesReceived;$/;"	v
+g_receiveTime	chat/loadtest.cc	/^std::vector<Timestamp> g_receiveTime;$/;"	v
+g_startTime	chat/loadtest.cc	/^Timestamp g_startTime;$/;"	v
+g_statistic	chat/loadtest.cc	/^boost::function<void()> g_statistic;$/;"	v
+getConnectionList	chat/server_threaded_efficient.cc	/^  ConnectionListPtr getConnectionList()$/;"	f	class:ChatServer	file:
+kHeaderLen	chat/codec.h	/^  const static size_t kHeaderLen = sizeof(int32_t);$/;"	m	class:LengthHeaderCodec
+loop1_	tutorial/timer5/timer.cc	/^  muduo::net::EventLoop* loop1_;$/;"	m	class:Printer	file:
+loop1_	tutorial/timer6/timer.cc	/^  muduo::net::EventLoop* loop1_;$/;"	m	class:Printer	file:
+loop2_	tutorial/timer5/timer.cc	/^  muduo::net::EventLoop* loop2_;$/;"	m	class:Printer	file:
+loop2_	tutorial/timer6/timer.cc	/^  muduo::net::EventLoop* loop2_;$/;"	m	class:Printer	file:
+loop_	chat/loadtest.cc	/^  EventLoop* loop_;$/;"	m	class:ChatClient	file:
+loop_	tutorial/timer4/timer.cc	/^  muduo::net::EventLoop* loop_;$/;"	m	class:Printer	file:
+loops_	chat/server_threaded_highperformance.cc	/^  std::set<EventLoop*> loops_;$/;"	m	class:ChatServer	file:
+main	chat/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	chat/loadtest.cc	/^int main(int argc, char* argv[])$/;"	f
+main	chat/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	chat/server_threaded.cc	/^int main(int argc, char* argv[])$/;"	f
+main	chat/server_threaded_efficient.cc	/^int main(int argc, char* argv[])$/;"	f
+main	chat/server_threaded_highperformance.cc	/^int main(int argc, char* argv[])$/;"	f
+main	tutorial/timer2/timer.cc	/^int main()$/;"	f
+main	tutorial/timer3/timer.cc	/^int main()$/;"	f
+main	tutorial/timer4/timer.cc	/^int main()$/;"	f
+main	tutorial/timer5/timer.cc	/^int main()$/;"	f
+main	tutorial/timer6/timer.cc	/^int main()$/;"	f
+messageCallback_	chat/codec.h	/^  StringMessageCallback messageCallback_;$/;"	m	class:LengthHeaderCodec
+mutex_	chat/client.cc	/^  MutexLock mutex_;$/;"	m	class:ChatClient	file:
+mutex_	chat/server_threaded.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	chat/server_threaded_efficient.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	chat/server_threaded_highperformance.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	tutorial/timer5/timer.cc	/^  muduo::MutexLock mutex_;$/;"	m	class:Printer	file:
+mutex_	tutorial/timer6/timer.cc	/^  muduo::MutexLock mutex_;$/;"	m	class:Printer	file:
+onConnection	chat/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatClient	file:
+onConnection	chat/loadtest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatClient	file:
+onConnection	chat/server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	chat/server_threaded.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	chat/server_threaded_efficient.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	chat/server_threaded_highperformance.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onMessage	chat/codec.h	/^  void onMessage(const muduo::net::TcpConnectionPtr& conn,      $/;"	f	class:LengthHeaderCodec
+onStringMessage	chat/client.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatClient	file:
+onStringMessage	chat/loadtest.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatClient	file:
+onStringMessage	chat/server.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	chat/server_threaded.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	chat/server_threaded_efficient.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	chat/server_threaded_highperformance.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+print	tutorial/timer2/timer.cc	/^void print()$/;"	f
+print	tutorial/timer3/timer.cc	/^void print(muduo::net::EventLoop* loop, int* count)$/;"	f
+print	tutorial/timer4/timer.cc	/^  void print()$/;"	f	class:Printer
+print1	tutorial/timer5/timer.cc	/^  void print1()$/;"	f	class:Printer
+print1	tutorial/timer6/timer.cc	/^  void print1()$/;"	f	class:Printer
+print2	tutorial/timer5/timer.cc	/^  void print2()$/;"	f	class:Printer
+print2	tutorial/timer6/timer.cc	/^  void print2()$/;"	f	class:Printer
+receiveTime	chat/loadtest.cc	/^  Timestamp receiveTime() const { return receiveTime_; }$/;"	f	class:ChatClient
+receiveTime_	chat/loadtest.cc	/^  Timestamp receiveTime_;$/;"	m	class:ChatClient	file:
+send	chat/codec.h	/^  void send(muduo::net::TcpConnection* conn,      \/\/打包把muduo::string转换成muduo::Buffer的发送函数$/;"	f	class:LengthHeaderCodec
+send	chat/loadtest.cc	/^  void send()$/;"	f	class:ChatClient	file:
+server_	chat/server.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	chat/server_threaded.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	chat/server_threaded_efficient.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	chat/server_threaded_highperformance.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+setThreadNum	chat/server_threaded.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	chat/server_threaded_efficient.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	chat/server_threaded_highperformance.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+start	chat/server.cc	/^  void start()$/;"	f	class:ChatServer
+start	chat/server_threaded.cc	/^  void start()$/;"	f	class:ChatServer
+start	chat/server_threaded_efficient.cc	/^  void start()$/;"	f	class:ChatServer
+start	chat/server_threaded_highperformance.cc	/^  void start()$/;"	f	class:ChatServer
+statistic	chat/loadtest.cc	/^void statistic(const boost::ptr_vector<ChatClient>& clients)$/;"	f
+threadInit	chat/server_threaded_highperformance.cc	/^  void threadInit(EventLoop* loop)$/;"	f	class:ChatServer	file:
+write	chat/client.cc	/^  void write(const StringPiece& message)$/;"	f	class:ChatClient
+~Printer	tutorial/timer4/timer.cc	/^  ~Printer()$/;"	f	class:Printer
+~Printer	tutorial/timer5/timer.cc	/^  ~Printer()$/;"	f	class:Printer
+~Printer	tutorial/timer6/timer.cc	/^  ~Printer()$/;"	f	class:Printer

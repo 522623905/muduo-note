@@ -19,14 +19,13 @@
 
 #include <signal.h>
 #include <sys/eventfd.h>
-#include <unistd.h>
 
 using namespace muduo;
 using namespace muduo::net;
 
 namespace
 {
-__thread EventLoop* t_loopInThisThread = 0;
+__thread EventLoop* t_loopInThisThread = 0; //每个线程存储当前线程的EventLoop对象指针。__thread表示线程局部变量，否则则由于线程性质，则是共享的！
 
 const int kPollTimeMs = 10000;
 
@@ -47,7 +46,7 @@ class IgnoreSigPipe
  public:
   IgnoreSigPipe()
   {
-    ::signal(SIGPIPE, SIG_IGN);
+    ::signal(SIGPIPE, SIG_IGN); //忽略SIGPIPE信号，防止对方断开连接时继续写入造成服务进程意外退出
     // LOG_TRACE << "Ignore SIGPIPE";
   }
 };
@@ -56,33 +55,33 @@ class IgnoreSigPipe
 IgnoreSigPipe initObj;
 }
 
-EventLoop* EventLoop::getEventLoopOfCurrentThread()
+EventLoop* EventLoop::getEventLoopOfCurrentThread() //返回该线程的EventLoop对象（one loop per thread）
 {
   return t_loopInThisThread;
 }
 
-EventLoop::EventLoop()
-  : looping_(false),
+EventLoop::EventLoop()    //不能跨线程调用，只能在创建EventLoop的线程使用！
+  : looping_(false),  //表示还未循环
     quit_(false),
     eventHandling_(false),
     callingPendingFunctors_(false),
     iteration_(0),
-    threadId_(CurrentThread::tid()),
-    poller_(Poller::newDefaultPoller(this)),
+    threadId_(CurrentThread::tid()),      //存储创建该对象的本线程的ID
+    poller_(Poller::newDefaultPoller(this)),  //构造了一个实际的poller对象
     timerQueue_(new TimerQueue(this)),
-    wakeupFd_(createEventfd()),
-    wakeupChannel_(new Channel(this, wakeupFd_)),
+    wakeupFd_(createEventfd()),    //创建wakeupFd_，用于唤醒线程用(跨线程激活,使用eventfd线程之间的通知机制)
+    wakeupChannel_(new Channel(this, wakeupFd_)), //与wakeupFd_绑定
     currentActiveChannel_(NULL)
 {
   LOG_DEBUG << "EventLoop created " << this << " in thread " << threadId_;
-  if (t_loopInThisThread)
+  if (t_loopInThisThread)       //检查当前线程是否创建了EventLoop对象（one loop per thread）
   {
     LOG_FATAL << "Another EventLoop " << t_loopInThisThread
-              << " exists in this thread " << threadId_;
+              << " exists in this thread " << threadId_;  //如果当前线程，已经有了一个EventLoop对象，则LOG_FATAL终止程序。(遵循one loop per thread)
   }
   else
   {
-    t_loopInThisThread = this;
+    t_loopInThisThread = this;    //保存当前EventLoop对象到t_loopInThisThread
   }
   wakeupChannel_->setReadCallback(
       boost::bind(&EventLoop::handleRead, this));
@@ -100,40 +99,47 @@ EventLoop::~EventLoop()
   t_loopInThisThread = NULL;
 }
 
+//loop()函数中当poll()返回时，会遍历活跃通道表activeChannels，
+//并且执行它们每一个提前注册大的handleEvent()函数，处理完了会继续循环
 void EventLoop::loop()
 {
-  assert(!looping_);
-  assertInLoopThread();
+  assert(!looping_);  //断言不处于事件循环
+  assertInLoopThread(); //断言在创建EventLoop对象的线程调用loop，因为loop函数不能跨线程调用
   looping_ = true;
   quit_ = false;  // FIXME: what if someone calls quit() before loop() ?
   LOG_TRACE << "EventLoop " << this << " start looping";
 
   while (!quit_)
   {
-    activeChannels_.clear();
-    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_);
+    activeChannels_.clear(); //活动列表首先清除
+    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_); //使用epoll_wait等待事件到来，并把到来的事件填充至activeChannels
     ++iteration_;
     if (Logger::logLevel() <= Logger::TRACE)
     {
-      printActiveChannels();
+      printActiveChannels();  //日志登记，日志打印
     }
     // TODO sort channel by priority
     eventHandling_ = true;
+    //逐一取出活动的事件列表，并执行相关回调函数
     for (ChannelList::iterator it = activeChannels_.begin();
         it != activeChannels_.end(); ++it)
     {
       currentActiveChannel_ = *it;
       currentActiveChannel_->handleEvent(pollReturnTime_);
     }
-    currentActiveChannel_ = NULL;
+    currentActiveChannel_ = NULL;  //处理完了赋空
     eventHandling_ = false;
-    doPendingFunctors();
+
+    // 执行pending Functors_中的任务回调
+    // 这种设计使得IO线程也能执行一些计算任务，避免了IO线程在不忙时长期阻塞在IO multiplexing调用中
+    doPendingFunctors(); 
   }
 
   LOG_TRACE << "EventLoop " << this << " stop looping";
   looping_ = false;
 }
 
+//结束循环.可跨线程调用
 void EventLoop::quit()
 {
   quit_ = true;
@@ -142,32 +148,42 @@ void EventLoop::quit()
   // Can be fixed using mutex_ in both places.
   if (!isInLoopThread())
   {
-    wakeup();
+    wakeup();  //如果不是IO线程调用，则需要唤醒IO线程。因为此时IO线程可能正在阻塞或者正在处理事件
   }
 }
 
+//在它的IO线程内执行某个用户任务回调,避免线程不安全的问题，保证不会被多个线程同时访问。
 void EventLoop::runInLoop(const Functor& cb)
 {
-  if (isInLoopThread())
+  if (isInLoopThread()) //若是在当前IO线程，则直接调用回调
   {
     cb();
   }
-  else
+  else    //不是当前IO线程，则加入队列，等待IO线程被唤醒再调用
   {
     queueInLoop(cb);
   }
 }
 
-void EventLoop::queueInLoop(const Functor& cb)
+void EventLoop::queueInLoop(const Functor& cb)  
 {
+  // 把任务加入到队列可能同时被多个线程调用，需要加锁
   {
   MutexLockGuard lock(mutex_);
-  pendingFunctors_.push_back(cb);
+  pendingFunctors_.push_back(cb); //把回调函数加入到队列当中
   }
 
-  if (!isInLoopThread() || callingPendingFunctors_)
+  // 将cb放入队列后，我们还需要在必要的时候唤醒IO线程来处理
+  // 必要的时候有两种情况：
+  // 1.如果调用queueInLoop()的不是IO线程，需要唤醒,才能及时执行doPendingFunctors()
+  // 2.如果在IO线程调用queueInLoop()，且此时正在调用pending functor(原因：
+  //    防止doPendingFunctors()调用的Functors再次调用queueInLoop，
+  //    循环回去到poll的时候需要被唤醒进而继续执行doPendingFunctors()，否则新增的cb可能不能及时被调用),
+  // 即只有在IO线程的事件回调中调用queueInLoop()才无需唤醒(即在handleEvent()中调用queueInLoop ()不需要唤醒
+  //    ，因为接下来马上就会执行doPendingFunctors())
+  if (!isInLoopThread() || callingPendingFunctors_) 
   {
-    wakeup();
+    wakeup(); //写一个字节来唤醒poll阻塞，触发wakeupFd可读事件
   }
 }
 
@@ -277,6 +293,7 @@ void EventLoop::abortNotInLoopThread()
             << ", current thread id = " <<  CurrentThread::tid();
 }
 
+//写一个字节给socket，唤醒可读事件。否则EventLoop::loop()的poll会阻塞
 void EventLoop::wakeup()
 {
   uint64_t one = 1;
@@ -290,23 +307,23 @@ void EventLoop::wakeup()
 void EventLoop::handleRead()
 {
   uint64_t one = 1;
-  ssize_t n = sockets::read(wakeupFd_, &one, sizeof one);
+  ssize_t n = sockets::read(wakeupFd_, &one, sizeof one); //将这个wakeupFd_ 上面数据读出来，不然的话下一次又会被通知到
   if (n != sizeof one)
   {
     LOG_ERROR << "EventLoop::handleRead() reads " << n << " bytes instead of 8";
   }
 }
 
-void EventLoop::doPendingFunctors()
+void EventLoop::doPendingFunctors() //调用Functor
 {
   std::vector<Functor> functors;
   callingPendingFunctors_ = true;
 
   {
   MutexLockGuard lock(mutex_);
-  functors.swap(pendingFunctors_);
-  }
-
+  functors.swap(pendingFunctors_);  //好！swap到局部变量中，再下面回调！
+  }                                 //好处：１．缩减临界区长度,意味这不会阻塞其他线程调用queueInLoop　　
+                                    //     2.避免死锁(因为Functor可能再调用queueInLoop)
   for (size_t i = 0; i < functors.size(); ++i)
   {
     functors[i]();

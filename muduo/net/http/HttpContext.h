@@ -22,48 +22,51 @@ namespace net
 
 class Buffer;
 
-class HttpContext : public muduo::copyable
+//这个类主要用于接收客户请求（这里为Http请求），并解析请求
+class HttpContext : public muduo::copyable    
 {
  public:
-  enum HttpRequestParseState
+  enum HttpRequestParseState  //解析请求状态的枚举常量
   {
-    kExpectRequestLine,
-    kExpectHeaders,
-    kExpectBody,
-    kGotAll,
+    kExpectRequestLine,  //当前正处于  解析请求行的状态
+    kExpectHeaders,  //当前正处于  解析请求头部的状态
+    kExpectBody,  //当前正处于  解析请求实体的状态
+    kGotAll,   //解析完毕
   };
 
   HttpContext()
-    : state_(kExpectRequestLine)
+    : state_(kExpectRequestLine)   //初始状态，期望收到一个请求行
   {
   }
 
   // default copy-ctor, dtor and assignment are fine
 
   // return false if any error
-  bool parseRequest(Buffer* buf, Timestamp receiveTime);
+  bool parseRequest(Buffer* buf, Timestamp receiveTime);  //处理请求
 
+  //是否解析完毕
   bool gotAll() const
   { return state_ == kGotAll; }
 
+  //重置HttpContext状态
   void reset()
   {
     state_ = kExpectRequestLine;
-    HttpRequest dummy;
-    request_.swap(dummy);
+    HttpRequest dummy;  //构造一个临时空HttpRequest对象，
+    request_.swap(dummy);//和当前的成员HttpRequest对象交换置空，然后临时对象析构
   }
 
-  const HttpRequest& request() const
+  const HttpRequest& request() const  //返回request
   { return request_; }
 
   HttpRequest& request()
   { return request_; }
 
  private:
-  bool processRequestLine(const char* begin, const char* end);
+  bool processRequestLine(const char* begin, const char* end);  //解析请求行
 
-  HttpRequestParseState state_;
-  HttpRequest request_;
+  HttpRequestParseState state_;  // 请求解析状态
+  HttpRequest request_;  // http请求
 };
 
 }

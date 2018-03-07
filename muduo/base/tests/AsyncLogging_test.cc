@@ -4,7 +4,6 @@
 
 #include <stdio.h>
 #include <sys/resource.h>
-#include <unistd.h>
 
 int kRollSize = 500*1000*1000;
 
@@ -17,7 +16,7 @@ void asyncOutput(const char* msg, int len)
 
 void bench(bool longLog)
 {
-  muduo::Logger::setOutput(asyncOutput);
+  muduo::Logger::setOutput(asyncOutput);//设置Logger的输出方式
 
   int cnt = 0;
   const int kBatch = 1000;

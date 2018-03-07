@@ -5,7 +5,6 @@
 
 #include <boost/bind.hpp>
 #include <stdio.h>
-#include <unistd.h>
 
 bool g_tcpNoDelay = false;
 

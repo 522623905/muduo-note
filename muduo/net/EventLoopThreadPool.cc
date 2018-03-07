@@ -33,7 +33,7 @@ EventLoopThreadPool::~EventLoopThreadPool()
   // Don't delete loop, it's stack variable
 }
 
-void EventLoopThreadPool::start(const ThreadInitCallback& cb)
+void EventLoopThreadPool::start(const ThreadInitCallback& cb) 
 {
   assert(!started_);
   baseLoop_->assertInLoopThread();
@@ -46,11 +46,11 @@ void EventLoopThreadPool::start(const ThreadInitCallback& cb)
     snprintf(buf, sizeof buf, "%s%d", name_.c_str(), i);
     EventLoopThread* t = new EventLoopThread(cb, buf);
     threads_.push_back(t);
-    loops_.push_back(t->startLoop());
+    loops_.push_back(t->startLoop()); // 启动EventLoopThread线程，在进入事件循环之前，会调用cb
   }
   if (numThreads_ == 0 && cb)
   {
-    cb(baseLoop_);
+    cb(baseLoop_);  // 只有一个EventLoop，在这个EventLoop进入事件循环之前，调用cb
   }
 }
 
@@ -62,7 +62,8 @@ EventLoop* EventLoopThreadPool::getNextLoop()
 
   if (!loops_.empty())
   {
-    // round-robin
+     // 如果loops_为空，则loop指向baseLoop_
+     // 如果不为空，按照round-robin（RR，轮叫）的调度方式选择一个EventLoop
     loop = loops_[next_];
     ++next_;
     if (implicit_cast<size_t>(next_) >= loops_.size())
@@ -78,9 +79,10 @@ EventLoop* EventLoopThreadPool::getLoopForHash(size_t hashCode)
   baseLoop_->assertInLoopThread();
   EventLoop* loop = baseLoop_;
 
+
   if (!loops_.empty())
   {
-    loop = loops_[hashCode % loops_.size()];
+    loop = loops_[hashCode % loops_.size()];  //根据hashCode分配
   }
   return loop;
 }

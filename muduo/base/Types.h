@@ -18,7 +18,7 @@
 ///
 namespace muduo
 {
-
+//基本类型的声明
 #ifdef MUDUO_STD_STRING
 using std::string;
 #else  // !MUDUO_STD_STRING

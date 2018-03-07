@@ -15,7 +15,7 @@ EventLoop* g_loop;
 void callback()
 {
   printf("callback(): pid = %d, tid = %d\n", getpid(), CurrentThread::tid());
-  EventLoop anotherLoop;
+  EventLoop anotherLoop;//这里是故意出错，一个线程只能有一个EventLoop
 }
 
 void threadFunc()

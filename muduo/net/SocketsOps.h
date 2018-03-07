@@ -19,7 +19,7 @@ namespace net
 {
 namespace sockets
 {
-
+//封装了socket相关系统调用
 ///
 /// Creates a non-blocking socket file descriptor,
 /// abort if any error.

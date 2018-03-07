@@ -25,6 +25,7 @@ using namespace muduo::net;
 namespace
 {
 
+//通用地址：sockaddr  网际地址：sockaddr_in
 typedef struct sockaddr SA;
 
 
@@ -112,7 +113,8 @@ void sockets::listenOrDie(int sockfd)
   }
 }
 
-int sockets::accept(int sockfd, struct sockaddr_in6* addr)
+//accept连接并设置非阻塞
+int sockets::accept(int sockfd, struct sockaddr_in6* addr)  
 {
   socklen_t addrlen = static_cast<socklen_t>(sizeof *addr);
 #if VALGRIND || defined (NO_ACCEPT4)
@@ -166,6 +168,7 @@ ssize_t sockets::read(int sockfd, void *buf, size_t count)
   return ::read(sockfd, buf, count);
 }
 
+//readv与read不同之处在于，接受的数据可以填充到多个缓冲区中
 ssize_t sockets::readv(int sockfd, const struct iovec *iov, int iovcnt)
 {
   return ::readv(sockfd, iov, iovcnt);
@@ -184,6 +187,7 @@ void sockets::close(int sockfd)
   }
 }
 
+//只关闭写端
 void sockets::shutdownWrite(int sockfd)
 {
   if (::shutdown(sockfd, SHUT_WR) < 0)
@@ -192,6 +196,7 @@ void sockets::shutdownWrite(int sockfd)
   }
 }
 
+//将sockaddr地址转换成ip+port的字符串保存到buf
 void sockets::toIpPort(char* buf, size_t size,
                        const struct sockaddr* addr)
 {
@@ -203,6 +208,7 @@ void sockets::toIpPort(char* buf, size_t size,
   snprintf(buf+end, size-end, ":%u", port);
 }
 
+//从sockaddr获取点分十进制IP地址
 void sockets::toIp(char* buf, size_t size,
                    const struct sockaddr* addr)
 {
@@ -210,7 +216,7 @@ void sockets::toIp(char* buf, size_t size,
   {
     assert(size >= INET_ADDRSTRLEN);
     const struct sockaddr_in* addr4 = sockaddr_in_cast(addr);
-    ::inet_ntop(AF_INET, &addr4->sin_addr, buf, static_cast<socklen_t>(size));
+    ::inet_ntop(AF_INET, &addr4->sin_addr, buf, static_cast<socklen_t>(size));//将IP地址转换成点分十进制地址到buf中
   }
   else if (addr->sa_family == AF_INET6)
   {
@@ -220,6 +226,7 @@ void sockets::toIp(char* buf, size_t size,
   }
 }
 
+//将点分十进制的ip地址转化为用于网络传输的数值格式
 void sockets::fromIpPort(const char* ip, uint16_t port,
                          struct sockaddr_in* addr)
 {
@@ -242,6 +249,7 @@ void sockets::fromIpPort(const char* ip, uint16_t port,
   }
 }
 
+//返回socket错误码
 int sockets::getSocketError(int sockfd)
 {
   int optval;
@@ -257,6 +265,7 @@ int sockets::getSocketError(int sockfd)
   }
 }
 
+//由sockfd获取本地地址
 struct sockaddr_in6 sockets::getLocalAddr(int sockfd)
 {
   struct sockaddr_in6 localaddr;
@@ -269,6 +278,7 @@ struct sockaddr_in6 sockets::getLocalAddr(int sockfd)
   return localaddr;
 }
 
+//由对端sockfd获取对端地址
 struct sockaddr_in6 sockets::getPeerAddr(int sockfd)
 {
   struct sockaddr_in6 peeraddr;
@@ -284,6 +294,7 @@ struct sockaddr_in6 sockets::getPeerAddr(int sockfd)
 #if !(__GNUC_PREREQ (4,6))
 #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif
+ //判断是否发生了自连接,即源端IP/PORT=目的端IP/PORT
 bool sockets::isSelfConnect(int sockfd)
 {
   struct sockaddr_in6 localaddr = getLocalAddr(sockfd);

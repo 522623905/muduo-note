@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Printer	timer.cc	/^  Printer(muduo::net::EventLoop* loop1, muduo::net::EventLoop* loop2)$/;"	f	class:Printer
+Printer	timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+count_	timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+loop1_	timer.cc	/^  muduo::net::EventLoop* loop1_;$/;"	m	class:Printer	file:
+loop2_	timer.cc	/^  muduo::net::EventLoop* loop2_;$/;"	m	class:Printer	file:
+main	timer.cc	/^int main()$/;"	f
+mutex_	timer.cc	/^  muduo::MutexLock mutex_;$/;"	m	class:Printer	file:
+print1	timer.cc	/^  void print1()$/;"	f	class:Printer
+print2	timer.cc	/^  void print2()$/;"	f	class:Printer
+~Printer	timer.cc	/^  ~Printer()$/;"	f	class:Printer

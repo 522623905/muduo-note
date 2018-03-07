@@ -13,7 +13,7 @@
 namespace muduo
 {
 
-// TimeZone for 1970~2030
+// TimeZone for 1970~2030 时区与夏令时
 class TimeZone : public muduo::copyable
 {
  public:

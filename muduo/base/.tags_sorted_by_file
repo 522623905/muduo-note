@@ -1,0 +1,807 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AsyncLogging	AsyncLogging.cc	/^AsyncLogging::AsyncLogging(const string& basename,$/;"	f	class:AsyncLogging
+append	AsyncLogging.cc	/^void AsyncLogging::append(const char* logline, int len)$/;"	f	class:AsyncLogging
+threadFunc	AsyncLogging.cc	/^void AsyncLogging::threadFunc()$/;"	f	class:AsyncLogging
+AsyncLogging	AsyncLogging.h	/^class AsyncLogging : boost::noncopyable$/;"	c	namespace:muduo
+Buffer	AsyncLogging.h	/^  typedef muduo::detail::FixedBuffer<muduo::detail::kLargeBuffer> Buffer;$/;"	t	class:muduo::AsyncLogging
+BufferPtr	AsyncLogging.h	/^  typedef BufferVector::auto_type BufferPtr;$/;"	t	class:muduo::AsyncLogging
+BufferVector	AsyncLogging.h	/^  typedef boost::ptr_vector<Buffer> BufferVector;$/;"	t	class:muduo::AsyncLogging
+MUDUO_BASE_ASYNCLOGGING_H	AsyncLogging.h	2;"	d
+basename_	AsyncLogging.h	/^  string basename_;$/;"	m	class:muduo::AsyncLogging
+buffers_	AsyncLogging.h	/^  BufferVector buffers_;$/;"	m	class:muduo::AsyncLogging
+cond_	AsyncLogging.h	/^  muduo::Condition cond_;$/;"	m	class:muduo::AsyncLogging
+currentBuffer_	AsyncLogging.h	/^  BufferPtr currentBuffer_;$/;"	m	class:muduo::AsyncLogging
+flushInterval_	AsyncLogging.h	/^  const int flushInterval_;$/;"	m	class:muduo::AsyncLogging
+latch_	AsyncLogging.h	/^  muduo::CountDownLatch latch_;$/;"	m	class:muduo::AsyncLogging
+muduo	AsyncLogging.h	/^namespace muduo$/;"	n
+mutex_	AsyncLogging.h	/^  muduo::MutexLock mutex_;$/;"	m	class:muduo::AsyncLogging
+nextBuffer_	AsyncLogging.h	/^  BufferPtr nextBuffer_;$/;"	m	class:muduo::AsyncLogging
+rollSize_	AsyncLogging.h	/^  size_t rollSize_;$/;"	m	class:muduo::AsyncLogging
+running_	AsyncLogging.h	/^  bool running_;$/;"	m	class:muduo::AsyncLogging
+start	AsyncLogging.h	/^  void start()$/;"	f	class:muduo::AsyncLogging
+stop	AsyncLogging.h	/^  void stop()$/;"	f	class:muduo::AsyncLogging
+thread_	AsyncLogging.h	/^  muduo::Thread thread_;$/;"	m	class:muduo::AsyncLogging
+~AsyncLogging	AsyncLogging.h	/^  ~AsyncLogging()$/;"	f	class:muduo::AsyncLogging
+AtomicInt32	Atomic.h	/^typedef detail::AtomicIntegerT<int32_t> AtomicInt32;$/;"	t	namespace:muduo
+AtomicInt64	Atomic.h	/^typedef detail::AtomicIntegerT<int64_t> AtomicInt64;$/;"	t	namespace:muduo
+AtomicIntegerT	Atomic.h	/^  AtomicIntegerT()$/;"	f	class:muduo::detail::AtomicIntegerT
+AtomicIntegerT	Atomic.h	/^class AtomicIntegerT : boost::noncopyable$/;"	c	namespace:muduo::detail
+MUDUO_BASE_ATOMIC_H	Atomic.h	7;"	d
+add	Atomic.h	/^  void add(T x)$/;"	f	class:muduo::detail::AtomicIntegerT
+addAndGet	Atomic.h	/^  T addAndGet(T x)$/;"	f	class:muduo::detail::AtomicIntegerT
+decrement	Atomic.h	/^  void decrement()$/;"	f	class:muduo::detail::AtomicIntegerT
+decrementAndGet	Atomic.h	/^  T decrementAndGet()$/;"	f	class:muduo::detail::AtomicIntegerT
+detail	Atomic.h	/^namespace detail$/;"	n	namespace:muduo
+get	Atomic.h	/^  T get()$/;"	f	class:muduo::detail::AtomicIntegerT
+getAndAdd	Atomic.h	/^  T getAndAdd(T x)$/;"	f	class:muduo::detail::AtomicIntegerT
+getAndSet	Atomic.h	/^  T getAndSet(T newValue)$/;"	f	class:muduo::detail::AtomicIntegerT
+increment	Atomic.h	/^  void increment()$/;"	f	class:muduo::detail::AtomicIntegerT
+incrementAndGet	Atomic.h	/^  T incrementAndGet()$/;"	f	class:muduo::detail::AtomicIntegerT
+muduo	Atomic.h	/^namespace muduo$/;"	n
+value_	Atomic.h	/^  volatile T value_;$/;"	m	class:muduo::detail::AtomicIntegerT
+BlockingQueue	BlockingQueue.h	/^  BlockingQueue()$/;"	f	class:muduo::BlockingQueue
+BlockingQueue	BlockingQueue.h	/^class BlockingQueue : boost::noncopyable$/;"	c	namespace:muduo
+MUDUO_BASE_BLOCKINGQUEUE_H	BlockingQueue.h	7;"	d
+muduo	BlockingQueue.h	/^namespace muduo$/;"	n
+mutex_	BlockingQueue.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::BlockingQueue
+notEmpty_	BlockingQueue.h	/^  Condition         notEmpty_;$/;"	m	class:muduo::BlockingQueue
+put	BlockingQueue.h	/^  void put(T&& x)$/;"	f	class:muduo::BlockingQueue
+put	BlockingQueue.h	/^  void put(const T& x)$/;"	f	class:muduo::BlockingQueue
+queue_	BlockingQueue.h	/^  std::deque<T>     queue_;$/;"	m	class:muduo::BlockingQueue
+size	BlockingQueue.h	/^  size_t size() const$/;"	f	class:muduo::BlockingQueue
+take	BlockingQueue.h	/^  T take()$/;"	f	class:muduo::BlockingQueue
+BoundedBlockingQueue	BoundedBlockingQueue.h	/^  explicit BoundedBlockingQueue(int maxSize)$/;"	f	class:muduo::BoundedBlockingQueue
+BoundedBlockingQueue	BoundedBlockingQueue.h	/^class BoundedBlockingQueue : boost::noncopyable$/;"	c	namespace:muduo
+MUDUO_BASE_BOUNDEDBLOCKINGQUEUE_H	BoundedBlockingQueue.h	7;"	d
+capacity	BoundedBlockingQueue.h	/^  size_t capacity() const$/;"	f	class:muduo::BoundedBlockingQueue
+empty	BoundedBlockingQueue.h	/^  bool empty() const$/;"	f	class:muduo::BoundedBlockingQueue
+full	BoundedBlockingQueue.h	/^  bool full() const$/;"	f	class:muduo::BoundedBlockingQueue
+muduo	BoundedBlockingQueue.h	/^namespace muduo$/;"	n
+mutex_	BoundedBlockingQueue.h	/^  mutable MutexLock          mutex_;$/;"	m	class:muduo::BoundedBlockingQueue
+notEmpty_	BoundedBlockingQueue.h	/^  Condition                  notEmpty_;$/;"	m	class:muduo::BoundedBlockingQueue
+notFull_	BoundedBlockingQueue.h	/^  Condition                  notFull_;$/;"	m	class:muduo::BoundedBlockingQueue
+put	BoundedBlockingQueue.h	/^  void put(const T& x)$/;"	f	class:muduo::BoundedBlockingQueue
+queue_	BoundedBlockingQueue.h	/^  boost::circular_buffer<T>  queue_;$/;"	m	class:muduo::BoundedBlockingQueue
+size	BoundedBlockingQueue.h	/^  size_t size() const$/;"	f	class:muduo::BoundedBlockingQueue
+take	BoundedBlockingQueue.h	/^  T take()$/;"	f	class:muduo::BoundedBlockingQueue
+waitForSeconds	Condition.cc	/^bool muduo::Condition::waitForSeconds(double seconds)$/;"	f	class:muduo::Condition
+Condition	Condition.h	/^  explicit Condition(MutexLock& mutex)$/;"	f	class:muduo::Condition
+Condition	Condition.h	/^class Condition : boost::noncopyable$/;"	c	namespace:muduo
+MUDUO_BASE_CONDITION_H	Condition.h	7;"	d
+muduo	Condition.h	/^namespace muduo$/;"	n
+mutex_	Condition.h	/^  MutexLock& mutex_;$/;"	m	class:muduo::Condition
+notify	Condition.h	/^  void notify()$/;"	f	class:muduo::Condition
+notifyAll	Condition.h	/^  void notifyAll()$/;"	f	class:muduo::Condition
+pcond_	Condition.h	/^  pthread_cond_t pcond_;$/;"	m	class:muduo::Condition
+wait	Condition.h	/^  void wait()$/;"	f	class:muduo::Condition
+~Condition	Condition.h	/^  ~Condition()$/;"	f	class:muduo::Condition
+CountDownLatch	CountDownLatch.cc	/^CountDownLatch::CountDownLatch(int count)$/;"	f	class:CountDownLatch
+countDown	CountDownLatch.cc	/^void CountDownLatch::countDown()$/;"	f	class:CountDownLatch
+getCount	CountDownLatch.cc	/^int CountDownLatch::getCount() const$/;"	f	class:CountDownLatch
+wait	CountDownLatch.cc	/^void CountDownLatch::wait()$/;"	f	class:CountDownLatch
+CountDownLatch	CountDownLatch.h	/^class CountDownLatch : boost::noncopyable$/;"	c	namespace:muduo
+MUDUO_BASE_COUNTDOWNLATCH_H	CountDownLatch.h	7;"	d
+condition_	CountDownLatch.h	/^  Condition condition_;$/;"	m	class:muduo::CountDownLatch
+count_	CountDownLatch.h	/^  int count_;$/;"	m	class:muduo::CountDownLatch
+muduo	CountDownLatch.h	/^namespace muduo$/;"	n
+mutex_	CountDownLatch.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::CountDownLatch
+CurrentThread	CurrentThread.h	/^namespace CurrentThread$/;"	n	namespace:muduo
+MUDUO_BASE_CURRENTTHREAD_H	CurrentThread.h	7;"	d
+muduo	CurrentThread.h	/^namespace muduo$/;"	n
+name	CurrentThread.h	/^  inline const char* name()$/;"	f	namespace:muduo::CurrentThread
+tid	CurrentThread.h	/^  inline int tid()$/;"	f	namespace:muduo::CurrentThread
+tidString	CurrentThread.h	/^  inline const char* tidString() \/\/ for logging$/;"	f	namespace:muduo::CurrentThread
+tidStringLength	CurrentThread.h	/^  inline int tidStringLength() \/\/ for logging$/;"	f	namespace:muduo::CurrentThread
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+Date	Date.cc	/^Date::Date(const struct tm& t)$/;"	f	class:Date
+Date	Date.cc	/^Date::Date(int y, int m, int d)$/;"	f	class:Date
+detail	Date.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+getJulianDayNumber	Date.cc	/^int getJulianDayNumber(int year, int month, int day)$/;"	f	namespace:muduo::detail
+getYearMonthDay	Date.cc	/^struct Date::YearMonthDay getYearMonthDay(int julianDayNumber)$/;"	f	namespace:muduo::detail
+kJulianDayOf1970_01_01	Date.cc	/^const int Date::kJulianDayOf1970_01_01 = detail::getJulianDayNumber(1970, 1, 1);$/;"	m	class:muduo::Date	file:
+muduo	Date.cc	/^namespace muduo$/;"	n	file:
+require_32_bit_integer_at_least	Date.cc	/^char require_32_bit_integer_at_least[sizeof(int) >= sizeof(int32_t) ? 1 : -1];$/;"	m	namespace:muduo::detail	file:
+toIsoString	Date.cc	/^string Date::toIsoString() const$/;"	f	class:Date
+yearMonthDay	Date.cc	/^Date::YearMonthDay Date::yearMonthDay() const$/;"	f	class:Date
+Date	Date.h	/^  Date()$/;"	f	class:muduo::Date
+Date	Date.h	/^  explicit Date(int julianDayNum)$/;"	f	class:muduo::Date
+Date	Date.h	/^class Date : public muduo::copyable$/;"	c	namespace:muduo
+MUDUO_BASE_DATE_H	Date.h	7;"	d
+YearMonthDay	Date.h	/^  struct YearMonthDay$/;"	s	class:muduo::Date
+day	Date.h	/^    int day;  \/\/ [1..31]$/;"	m	struct:muduo::Date::YearMonthDay
+day	Date.h	/^  int day() const$/;"	f	class:muduo::Date
+julianDayNumber	Date.h	/^  int julianDayNumber() const { return julianDayNumber_; }$/;"	f	class:muduo::Date
+julianDayNumber_	Date.h	/^  int julianDayNumber_;$/;"	m	class:muduo::Date
+kDaysPerWeek	Date.h	/^  static const int kDaysPerWeek = 7;$/;"	m	class:muduo::Date
+kJulianDayOf1970_01_01	Date.h	/^  static const int kJulianDayOf1970_01_01;$/;"	m	class:muduo::Date
+month	Date.h	/^    int month;  \/\/ [1..12]$/;"	m	struct:muduo::Date::YearMonthDay
+month	Date.h	/^  int month() const$/;"	f	class:muduo::Date
+muduo	Date.h	/^namespace muduo$/;"	n
+operator <	Date.h	/^inline bool operator<(Date x, Date y)$/;"	f	namespace:muduo
+operator ==	Date.h	/^inline bool operator==(Date x, Date y)$/;"	f	namespace:muduo
+swap	Date.h	/^  void swap(Date& that)$/;"	f	class:muduo::Date
+valid	Date.h	/^  bool valid() const { return julianDayNumber_ > 0; }$/;"	f	class:muduo::Date
+weekDay	Date.h	/^  int weekDay() const$/;"	f	class:muduo::Date
+year	Date.h	/^    int year; \/\/ [1900..2500]$/;"	m	struct:muduo::Date::YearMonthDay
+year	Date.h	/^  int year() const$/;"	f	class:muduo::Date
+Exception	Exception.cc	/^Exception::Exception(const char* msg)$/;"	f	class:Exception
+Exception	Exception.cc	/^Exception::Exception(const string& msg)$/;"	f	class:Exception
+fillStackTrace	Exception.cc	/^void Exception::fillStackTrace()$/;"	f	class:Exception
+stackTrace	Exception.cc	/^const char* Exception::stackTrace() const throw()$/;"	f	class:Exception
+what	Exception.cc	/^const char* Exception::what() const throw()$/;"	f	class:Exception
+~Exception	Exception.cc	/^Exception::~Exception() throw ()$/;"	f	class:Exception
+Exception	Exception.h	/^class Exception : public std::exception$/;"	c	namespace:muduo
+MUDUO_BASE_EXCEPTION_H	Exception.h	7;"	d
+message_	Exception.h	/^  string message_;$/;"	m	class:muduo::Exception
+muduo	Exception.h	/^namespace muduo$/;"	n
+stack_	Exception.h	/^  string stack_;$/;"	m	class:muduo::Exception
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+AppendFile	FileUtil.cc	/^FileUtil::AppendFile::AppendFile(StringArg filename)$/;"	f	class:FileUtil::AppendFile
+ReadSmallFile	FileUtil.cc	/^FileUtil::ReadSmallFile::ReadSmallFile(StringArg filename)$/;"	f	class:FileUtil::ReadSmallFile
+append	FileUtil.cc	/^void FileUtil::AppendFile::append(const char* logline, const size_t len)$/;"	f	class:FileUtil::AppendFile
+flush	FileUtil.cc	/^void FileUtil::AppendFile::flush()$/;"	f	class:FileUtil::AppendFile
+readToBuffer	FileUtil.cc	/^int FileUtil::ReadSmallFile::readToBuffer(int* size)$/;"	f	class:FileUtil::ReadSmallFile
+readToString	FileUtil.cc	/^int FileUtil::ReadSmallFile::readToString(int maxSize,$/;"	f	class:FileUtil::ReadSmallFile
+write	FileUtil.cc	/^size_t FileUtil::AppendFile::write(const char* logline, size_t len)$/;"	f	class:FileUtil::AppendFile
+~AppendFile	FileUtil.cc	/^FileUtil::AppendFile::~AppendFile()$/;"	f	class:FileUtil::AppendFile
+~ReadSmallFile	FileUtil.cc	/^FileUtil::ReadSmallFile::~ReadSmallFile()$/;"	f	class:FileUtil::ReadSmallFile
+AppendFile	FileUtil.h	/^class AppendFile : boost::noncopyable$/;"	c	namespace:muduo::FileUtil
+FileUtil	FileUtil.h	/^namespace FileUtil$/;"	n	namespace:muduo
+MUDUO_BASE_FILEUTIL_H	FileUtil.h	12;"	d
+ReadSmallFile	FileUtil.h	/^class ReadSmallFile : boost::noncopyable$/;"	c	namespace:muduo::FileUtil
+buf_	FileUtil.h	/^  char buf_[kBufferSize];$/;"	m	class:muduo::FileUtil::ReadSmallFile
+buffer	FileUtil.h	/^  const char* buffer() const { return buf_; }$/;"	f	class:muduo::FileUtil::ReadSmallFile
+buffer_	FileUtil.h	/^  char buffer_[64*1024];$/;"	m	class:muduo::FileUtil::AppendFile
+err_	FileUtil.h	/^  int err_;$/;"	m	class:muduo::FileUtil::ReadSmallFile
+fd_	FileUtil.h	/^  int fd_;$/;"	m	class:muduo::FileUtil::ReadSmallFile
+fp_	FileUtil.h	/^  FILE* fp_;$/;"	m	class:muduo::FileUtil::AppendFile
+kBufferSize	FileUtil.h	/^  static const int kBufferSize = 64*1024;$/;"	m	class:muduo::FileUtil::ReadSmallFile
+muduo	FileUtil.h	/^namespace muduo$/;"	n
+readFile	FileUtil.h	/^int readFile(StringArg filename,$/;"	f	namespace:muduo::FileUtil
+writtenBytes	FileUtil.h	/^  size_t writtenBytes() const { return writtenBytes_; }$/;"	f	class:muduo::FileUtil::AppendFile
+writtenBytes_	FileUtil.h	/^  size_t writtenBytes_;$/;"	m	class:muduo::FileUtil::AppendFile
+GzipFile	GzipFile.h	/^  GzipFile(GzipFile&& rhs)$/;"	f	class:muduo::GzipFile
+GzipFile	GzipFile.h	/^  explicit GzipFile(gzFile file)$/;"	f	class:muduo::GzipFile
+GzipFile	GzipFile.h	/^class GzipFile : boost::noncopyable$/;"	c	namespace:muduo
+file_	GzipFile.h	/^  gzFile file_;$/;"	m	class:muduo::GzipFile
+muduo	GzipFile.h	/^namespace muduo$/;"	n
+offset	GzipFile.h	/^  off_t offset() const { return ::gzoffset(file_); }$/;"	f	class:muduo::GzipFile
+openForAppend	GzipFile.h	/^  static GzipFile openForAppend(StringArg filename)$/;"	f	class:muduo::GzipFile
+openForRead	GzipFile.h	/^  static GzipFile openForRead(StringArg filename)$/;"	f	class:muduo::GzipFile
+openForWriteExclusive	GzipFile.h	/^  static GzipFile openForWriteExclusive(StringArg filename)$/;"	f	class:muduo::GzipFile
+openForWriteTruncate	GzipFile.h	/^  static GzipFile openForWriteTruncate(StringArg filename)$/;"	f	class:muduo::GzipFile
+operator =	GzipFile.h	/^  GzipFile& operator=(GzipFile&& rhs)$/;"	f	class:muduo::GzipFile
+read	GzipFile.h	/^  int read(void* buf, int len) { return ::gzread(file_, buf, len); }$/;"	f	class:muduo::GzipFile
+setBuffer	GzipFile.h	/^  bool setBuffer(int size) { return ::gzbuffer(file_, size) == 0; }$/;"	f	class:muduo::GzipFile
+swap	GzipFile.h	/^  void swap(GzipFile& rhs) { std::swap(file_, rhs.file_); }$/;"	f	class:muduo::GzipFile
+tell	GzipFile.h	/^  off_t tell() const { return ::gztell(file_); }$/;"	f	class:muduo::GzipFile
+valid	GzipFile.h	/^  bool valid() const { return file_ != NULL; }$/;"	f	class:muduo::GzipFile
+write	GzipFile.h	/^  int write(StringPiece buf) { return ::gzwrite(file_, buf.data(), buf.size()); }$/;"	f	class:muduo::GzipFile
+~GzipFile	GzipFile.h	/^  ~GzipFile()$/;"	f	class:muduo::GzipFile
+LogFile	LogFile.cc	/^LogFile::LogFile(const string& basename,$/;"	f	class:LogFile
+append	LogFile.cc	/^void LogFile::append(const char* logline, int len)$/;"	f	class:LogFile
+append_unlocked	LogFile.cc	/^void LogFile::append_unlocked(const char* logline, int len)$/;"	f	class:LogFile
+flush	LogFile.cc	/^void LogFile::flush()$/;"	f	class:LogFile
+getLogFileName	LogFile.cc	/^string LogFile::getLogFileName(const string& basename, time_t* now)$/;"	f	class:LogFile
+rollFile	LogFile.cc	/^bool LogFile::rollFile()$/;"	f	class:LogFile
+~LogFile	LogFile.cc	/^LogFile::~LogFile()$/;"	f	class:LogFile
+FileUtil	LogFile.h	/^namespace FileUtil$/;"	n	namespace:muduo
+LogFile	LogFile.h	/^class LogFile : boost::noncopyable$/;"	c	namespace:muduo
+MUDUO_BASE_LOGFILE_H	LogFile.h	2;"	d
+basename_	LogFile.h	/^  const string basename_;$/;"	m	class:muduo::LogFile
+checkEveryN_	LogFile.h	/^  const int checkEveryN_;$/;"	m	class:muduo::LogFile
+count_	LogFile.h	/^  int count_;$/;"	m	class:muduo::LogFile
+file_	LogFile.h	/^  boost::scoped_ptr<FileUtil::AppendFile> file_;$/;"	m	class:muduo::LogFile
+flushInterval_	LogFile.h	/^  const int flushInterval_;$/;"	m	class:muduo::LogFile
+kRollPerSeconds_	LogFile.h	/^  const static int kRollPerSeconds_ = 60*60*24;$/;"	m	class:muduo::LogFile
+lastFlush_	LogFile.h	/^  time_t lastFlush_;$/;"	m	class:muduo::LogFile
+lastRoll_	LogFile.h	/^  time_t lastRoll_;$/;"	m	class:muduo::LogFile
+muduo	LogFile.h	/^namespace muduo$/;"	n
+mutex_	LogFile.h	/^  boost::scoped_ptr<MutexLock> mutex_;$/;"	m	class:muduo::LogFile
+rollSize_	LogFile.h	/^  const size_t rollSize_;$/;"	m	class:muduo::LogFile
+startOfPeriod_	LogFile.h	/^  time_t startOfPeriod_;$/;"	m	class:muduo::LogFile
+Fmt	LogStream.cc	/^Fmt::Fmt(const char* fmt, T val)$/;"	f	class:Fmt
+convert	LogStream.cc	/^size_t convert(char buf[], T value)$/;"	f	namespace:muduo::detail
+convertHex	LogStream.cc	/^size_t convertHex(char buf[], uintptr_t value)$/;"	f	namespace:muduo::detail
+cookieEnd	LogStream.cc	/^void FixedBuffer<SIZE>::cookieEnd()$/;"	f	class:FixedBuffer
+cookieStart	LogStream.cc	/^void FixedBuffer<SIZE>::cookieStart()$/;"	f	class:FixedBuffer
+debugString	LogStream.cc	/^const char* FixedBuffer<SIZE>::debugString()$/;"	f	class:FixedBuffer
+detail	LogStream.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+digits	LogStream.cc	/^const char digits[] = "9876543210123456789";$/;"	m	namespace:muduo::detail	file:
+digitsHex	LogStream.cc	/^const char digitsHex[] = "0123456789ABCDEF";$/;"	m	namespace:muduo::detail	file:
+formatInteger	LogStream.cc	/^void LogStream::formatInteger(T v)$/;"	f	class:LogStream
+muduo	LogStream.cc	/^namespace muduo$/;"	n	file:
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(const void* p)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(double v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(int v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(long long v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(long v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(short v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(unsigned int v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(unsigned long long v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(unsigned long v)$/;"	f	class:LogStream
+operator <<	LogStream.cc	/^LogStream& LogStream::operator<<(unsigned short v)$/;"	f	class:LogStream
+staticCheck	LogStream.cc	/^void LogStream::staticCheck()$/;"	f	class:LogStream
+zero	LogStream.cc	/^const char* zero = digits + 9;$/;"	m	namespace:muduo::detail	file:
+Buffer	LogStream.h	/^  typedef detail::FixedBuffer<detail::kSmallBuffer> Buffer;$/;"	t	class:muduo::LogStream
+FixedBuffer	LogStream.h	/^  FixedBuffer()$/;"	f	class:muduo::detail::FixedBuffer
+FixedBuffer	LogStream.h	/^class FixedBuffer : boost::noncopyable$/;"	c	namespace:muduo::detail
+Fmt	LogStream.h	/^class Fmt \/\/ : boost::noncopyable$/;"	c	namespace:muduo
+LogStream	LogStream.h	/^class LogStream : boost::noncopyable$/;"	c	namespace:muduo
+MUDUO_BASE_LOGSTREAM_H	LogStream.h	2;"	d
+add	LogStream.h	/^  void add(size_t len) { cur_ += len; }$/;"	f	class:muduo::detail::FixedBuffer
+append	LogStream.h	/^  void append(const char* \/*restrict*\/ buf, size_t len)$/;"	f	class:muduo::detail::FixedBuffer
+append	LogStream.h	/^  void append(const char* data, int len) { buffer_.append(data, len); }$/;"	f	class:muduo::LogStream
+avail	LogStream.h	/^  int avail() const { return static_cast<int>(end() - cur_); }$/;"	f	class:muduo::detail::FixedBuffer
+buf_	LogStream.h	/^  char buf_[32];$/;"	m	class:muduo::Fmt
+buffer	LogStream.h	/^  const Buffer& buffer() const { return buffer_; }$/;"	f	class:muduo::LogStream
+buffer_	LogStream.h	/^  Buffer buffer_;$/;"	m	class:muduo::LogStream
+bzero	LogStream.h	/^  void bzero() { ::bzero(data_, sizeof data_); }$/;"	f	class:muduo::detail::FixedBuffer
+cookie_	LogStream.h	/^  void (*cookie_)();$/;"	m	class:muduo::detail::FixedBuffer
+cur_	LogStream.h	/^  char* cur_;$/;"	m	class:muduo::detail::FixedBuffer
+current	LogStream.h	/^  char* current() { return cur_; }$/;"	f	class:muduo::detail::FixedBuffer
+data	LogStream.h	/^  const char* data() const { return buf_; }$/;"	f	class:muduo::Fmt
+data	LogStream.h	/^  const char* data() const { return data_; }$/;"	f	class:muduo::detail::FixedBuffer
+data_	LogStream.h	/^  char data_[SIZE];$/;"	m	class:muduo::detail::FixedBuffer
+detail	LogStream.h	/^namespace detail$/;"	n	namespace:muduo
+end	LogStream.h	/^  const char* end() const { return data_ + sizeof data_; }$/;"	f	class:muduo::detail::FixedBuffer
+kLargeBuffer	LogStream.h	/^const int kLargeBuffer = 4000*1000;$/;"	m	namespace:muduo::detail
+kMaxNumericSize	LogStream.h	/^  static const int kMaxNumericSize = 32;$/;"	m	class:muduo::LogStream
+kSmallBuffer	LogStream.h	/^const int kSmallBuffer = 4000;$/;"	m	namespace:muduo::detail
+length	LogStream.h	/^  int length() const { return length_; }$/;"	f	class:muduo::Fmt
+length	LogStream.h	/^  int length() const { return static_cast<int>(cur_ - data_); }$/;"	f	class:muduo::detail::FixedBuffer
+length_	LogStream.h	/^  int length_;$/;"	m	class:muduo::Fmt
+muduo	LogStream.h	/^namespace muduo$/;"	n
+operator <<	LogStream.h	/^  self& operator<<(bool v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(char v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(const Buffer& v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(const StringPiece& v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(const char* str)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(const std::string& v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(const string& v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(const unsigned char* str)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^  self& operator<<(float v)$/;"	f	class:muduo::LogStream
+operator <<	LogStream.h	/^inline LogStream& operator<<(LogStream& s, const Fmt& fmt)$/;"	f	namespace:muduo
+reset	LogStream.h	/^  void reset() { cur_ = data_; }$/;"	f	class:muduo::detail::FixedBuffer
+resetBuffer	LogStream.h	/^  void resetBuffer() { buffer_.reset(); }$/;"	f	class:muduo::LogStream
+self	LogStream.h	/^  typedef LogStream self;$/;"	t	class:muduo::LogStream
+setCookie	LogStream.h	/^  void setCookie(void (*cookie)()) { cookie_ = cookie; }$/;"	f	class:muduo::detail::FixedBuffer
+toString	LogStream.h	/^  string toString() const { return string(data_, length()); }$/;"	f	class:muduo::detail::FixedBuffer
+toStringPiece	LogStream.h	/^  StringPiece toStringPiece() const { return StringPiece(data_, length()); }$/;"	f	class:muduo::detail::FixedBuffer
+~FixedBuffer	LogStream.h	/^  ~FixedBuffer()$/;"	f	class:muduo::detail::FixedBuffer
+Impl	Logging.cc	/^Logger::Impl::Impl(LogLevel level, int savedErrno, const SourceFile& file, int line)$/;"	f	class:Logger::Impl
+LogLevelName	Logging.cc	/^const char* LogLevelName[Logger::NUM_LOG_LEVELS] =$/;"	m	namespace:muduo	file:
+Logger	Logging.cc	/^Logger::Logger(SourceFile file, int line)$/;"	f	class:Logger
+Logger	Logging.cc	/^Logger::Logger(SourceFile file, int line, LogLevel level)$/;"	f	class:Logger
+Logger	Logging.cc	/^Logger::Logger(SourceFile file, int line, LogLevel level, const char* func)$/;"	f	class:Logger
+Logger	Logging.cc	/^Logger::Logger(SourceFile file, int line, bool toAbort)$/;"	f	class:Logger
+T	Logging.cc	/^  T(const char* str, unsigned len)$/;"	f	class:muduo::T
+T	Logging.cc	/^class T$/;"	c	namespace:muduo	file:
+defaultFlush	Logging.cc	/^void defaultFlush()$/;"	f	namespace:muduo
+defaultOutput	Logging.cc	/^void defaultOutput(const char* msg, int len)$/;"	f	namespace:muduo
+finish	Logging.cc	/^void Logger::Impl::finish()$/;"	f	class:Logger::Impl
+formatTime	Logging.cc	/^void Logger::Impl::formatTime()$/;"	f	class:Logger::Impl
+g_flush	Logging.cc	/^Logger::FlushFunc g_flush = defaultFlush;$/;"	m	namespace:muduo	file:
+g_logLevel	Logging.cc	/^Logger::LogLevel g_logLevel = initLogLevel();$/;"	m	namespace:muduo	file:
+g_logTimeZone	Logging.cc	/^TimeZone g_logTimeZone;$/;"	m	namespace:muduo	file:
+g_output	Logging.cc	/^Logger::OutputFunc g_output = defaultOutput;$/;"	m	namespace:muduo	file:
+initLogLevel	Logging.cc	/^Logger::LogLevel initLogLevel()$/;"	f	namespace:muduo
+len_	Logging.cc	/^  const unsigned len_;$/;"	m	class:muduo::T	file:
+muduo	Logging.cc	/^namespace muduo$/;"	n	file:
+operator <<	Logging.cc	/^inline LogStream& operator<<(LogStream& s, T v)$/;"	f	namespace:muduo
+operator <<	Logging.cc	/^inline LogStream& operator<<(LogStream& s, const Logger::SourceFile& v)$/;"	f	namespace:muduo
+setFlush	Logging.cc	/^void Logger::setFlush(FlushFunc flush)$/;"	f	class:Logger
+setLogLevel	Logging.cc	/^void Logger::setLogLevel(Logger::LogLevel level)$/;"	f	class:Logger
+setOutput	Logging.cc	/^void Logger::setOutput(OutputFunc out)$/;"	f	class:Logger
+setTimeZone	Logging.cc	/^void Logger::setTimeZone(const TimeZone& tz)$/;"	f	class:Logger
+str_	Logging.cc	/^  const char* str_;$/;"	m	class:muduo::T	file:
+strerror_tl	Logging.cc	/^const char* strerror_tl(int savedErrno)$/;"	f	namespace:muduo
+t_errnobuf	Logging.cc	/^__thread char t_errnobuf[512];$/;"	m	namespace:muduo	file:
+t_lastSecond	Logging.cc	/^__thread time_t t_lastSecond;$/;"	m	namespace:muduo	file:
+t_time	Logging.cc	/^__thread char t_time[32];$/;"	m	namespace:muduo	file:
+~Logger	Logging.cc	/^Logger::~Logger()$/;"	f	class:Logger
+CHECK_NOTNULL	Logging.h	138;"	d
+CheckNotNull	Logging.h	/^T* CheckNotNull(Logger::SourceFile file, int line, const char *names, T* ptr)$/;"	f	namespace:muduo
+DEBUG	Logging.h	/^    DEBUG,$/;"	e	enum:muduo::Logger::LogLevel
+ERROR	Logging.h	/^    ERROR,$/;"	e	enum:muduo::Logger::LogLevel
+FATAL	Logging.h	/^    FATAL,$/;"	e	enum:muduo::Logger::LogLevel
+FlushFunc	Logging.h	/^  typedef void (*FlushFunc)();$/;"	t	class:muduo::Logger
+INFO	Logging.h	/^    INFO,$/;"	e	enum:muduo::Logger::LogLevel
+Impl	Logging.h	/^class Impl$/;"	c	class:muduo::Logger
+LOG_DEBUG	Logging.h	121;"	d
+LOG_ERROR	Logging.h	126;"	d
+LOG_FATAL	Logging.h	127;"	d
+LOG_INFO	Logging.h	123;"	d
+LOG_SYSERR	Logging.h	128;"	d
+LOG_SYSFATAL	Logging.h	129;"	d
+LOG_TRACE	Logging.h	119;"	d
+LOG_WARN	Logging.h	125;"	d
+LogLevel	Logging.h	/^  enum LogLevel$/;"	g	class:muduo::Logger
+LogLevel	Logging.h	/^  typedef Logger::LogLevel LogLevel;$/;"	t	class:muduo::Logger::Impl
+Logger	Logging.h	/^class Logger$/;"	c	namespace:muduo
+MUDUO_BASE_LOGGING_H	Logging.h	2;"	d
+NUM_LOG_LEVELS	Logging.h	/^    NUM_LOG_LEVELS,$/;"	e	enum:muduo::Logger::LogLevel
+OutputFunc	Logging.h	/^  typedef void (*OutputFunc)(const char* msg, int len);$/;"	t	class:muduo::Logger
+SourceFile	Logging.h	/^    explicit SourceFile(const char* filename)$/;"	f	class:muduo::Logger::SourceFile
+SourceFile	Logging.h	/^    inline SourceFile(const char (&arr)[N])$/;"	f	class:muduo::Logger::SourceFile
+SourceFile	Logging.h	/^  class SourceFile$/;"	c	class:muduo::Logger
+TRACE	Logging.h	/^    TRACE,$/;"	e	enum:muduo::Logger::LogLevel
+WARN	Logging.h	/^    WARN,$/;"	e	enum:muduo::Logger::LogLevel
+basename_	Logging.h	/^  SourceFile basename_;$/;"	m	class:muduo::Logger::Impl
+data_	Logging.h	/^    const char* data_;$/;"	m	class:muduo::Logger::SourceFile
+impl_	Logging.h	/^  Impl impl_;$/;"	m	class:muduo::Logger
+level_	Logging.h	/^  LogLevel level_;$/;"	m	class:muduo::Logger::Impl
+line_	Logging.h	/^  int line_;$/;"	m	class:muduo::Logger::Impl
+logLevel	Logging.h	/^inline Logger::LogLevel Logger::logLevel()$/;"	f	class:muduo::Logger
+muduo	Logging.h	/^namespace muduo$/;"	n
+size_	Logging.h	/^    int size_;$/;"	m	class:muduo::Logger::SourceFile
+stream	Logging.h	/^  LogStream& stream() { return impl_.stream_; }$/;"	f	class:muduo::Logger
+stream_	Logging.h	/^  LogStream stream_;$/;"	m	class:muduo::Logger::Impl
+time_	Logging.h	/^  Timestamp time_;$/;"	m	class:muduo::Logger::Impl
+MCHECK	Mutex.h	26;"	d
+MUDUO_BASE_MUTEX_H	Mutex.h	7;"	d
+MutexLock	Mutex.h	/^  MutexLock()$/;"	f	class:muduo::MutexLock
+MutexLock	Mutex.h	/^class MutexLock : boost::noncopyable$/;"	c	namespace:muduo
+MutexLockGuard	Mutex.h	/^  explicit MutexLockGuard(MutexLock& mutex)$/;"	f	class:muduo::MutexLockGuard
+MutexLockGuard	Mutex.h	/^class MutexLockGuard : boost::noncopyable$/;"	c	namespace:muduo
+MutexLockGuard	Mutex.h	162;"	d
+UnassignGuard	Mutex.h	/^    UnassignGuard(MutexLock& owner)$/;"	f	class:muduo::MutexLock::UnassignGuard
+UnassignGuard	Mutex.h	/^  class UnassignGuard : boost::noncopyable$/;"	c	class:muduo::MutexLock
+assertLocked	Mutex.h	/^  void assertLocked() const$/;"	f	class:muduo::MutexLock
+assignHolder	Mutex.h	/^  void assignHolder()     \/\/上锁时给holder_赋值(在上锁后调用)$/;"	f	class:muduo::MutexLock
+getPthreadMutex	Mutex.h	/^  pthread_mutex_t* getPthreadMutex() \/* non-const *\/ $/;"	f	class:muduo::MutexLock
+holder_	Mutex.h	/^  pid_t holder_;  \/\/用来表示给互斥量上锁线程的tid$/;"	m	class:muduo::MutexLock
+isLockedByThisThread	Mutex.h	/^  bool isLockedByThisThread() const     \/\/用来检查是否是当前线程给这个MutexLock对象加锁的$/;"	f	class:muduo::MutexLock
+lock	Mutex.h	/^  void lock()$/;"	f	class:muduo::MutexLock
+muduo	Mutex.h	/^namespace muduo$/;"	n
+mutex_	Mutex.h	/^  MutexLock& mutex_;    \/\/变量的引用$/;"	m	class:muduo::MutexLockGuard
+mutex_	Mutex.h	/^  pthread_mutex_t mutex_;   $/;"	m	class:muduo::MutexLock
+owner_	Mutex.h	/^    MutexLock& owner_;$/;"	m	class:muduo::MutexLock::UnassignGuard
+unassignHolder	Mutex.h	/^  void unassignHolder()   \/\/解锁时给holder_置零(在解锁前调用)$/;"	f	class:muduo::MutexLock
+unlock	Mutex.h	/^  void unlock()$/;"	f	class:muduo::MutexLock
+~MutexLock	Mutex.h	/^  ~MutexLock()$/;"	f	class:muduo::MutexLock
+~MutexLockGuard	Mutex.h	/^  ~MutexLockGuard()$/;"	f	class:muduo::MutexLockGuard
+~UnassignGuard	Mutex.h	/^    ~UnassignGuard()$/;"	f	class:muduo::MutexLock::UnassignGuard
+clockTicksPerSecond	ProcessInfo.cc	/^int ProcessInfo::clockTicksPerSecond()$/;"	f	class:ProcessInfo
+cpuTime	ProcessInfo.cc	/^ProcessInfo::CpuTime ProcessInfo::cpuTime()$/;"	f	class:ProcessInfo
+detail	ProcessInfo.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+euid	ProcessInfo.cc	/^uid_t ProcessInfo::euid()$/;"	f	class:ProcessInfo
+exePath	ProcessInfo.cc	/^string ProcessInfo::exePath()$/;"	f	class:ProcessInfo
+fdDirFilter	ProcessInfo.cc	/^int fdDirFilter(const struct dirent* d)$/;"	f	namespace:muduo::detail
+g_clockTicks	ProcessInfo.cc	/^int g_clockTicks = static_cast<int>(::sysconf(_SC_CLK_TCK));$/;"	m	namespace:muduo::detail	file:
+g_pageSize	ProcessInfo.cc	/^int g_pageSize = static_cast<int>(::sysconf(_SC_PAGE_SIZE));$/;"	m	namespace:muduo::detail	file:
+g_startTime	ProcessInfo.cc	/^Timestamp g_startTime = Timestamp::now();$/;"	m	namespace:muduo::detail	file:
+hostname	ProcessInfo.cc	/^string ProcessInfo::hostname()$/;"	f	class:ProcessInfo
+isDebugBuild	ProcessInfo.cc	/^bool ProcessInfo::isDebugBuild()$/;"	f	class:ProcessInfo
+maxOpenFiles	ProcessInfo.cc	/^int ProcessInfo::maxOpenFiles()$/;"	f	class:ProcessInfo
+muduo	ProcessInfo.cc	/^namespace muduo$/;"	n	file:
+numThreads	ProcessInfo.cc	/^int ProcessInfo::numThreads()$/;"	f	class:ProcessInfo
+openedFiles	ProcessInfo.cc	/^int ProcessInfo::openedFiles()$/;"	f	class:ProcessInfo
+pageSize	ProcessInfo.cc	/^int ProcessInfo::pageSize()$/;"	f	class:ProcessInfo
+pid	ProcessInfo.cc	/^pid_t ProcessInfo::pid()$/;"	f	class:ProcessInfo
+pidString	ProcessInfo.cc	/^string ProcessInfo::pidString()$/;"	f	class:ProcessInfo
+procStat	ProcessInfo.cc	/^string ProcessInfo::procStat()$/;"	f	class:ProcessInfo
+procStatus	ProcessInfo.cc	/^string ProcessInfo::procStatus()$/;"	f	class:ProcessInfo
+procname	ProcessInfo.cc	/^StringPiece ProcessInfo::procname(const string& stat)$/;"	f	class:ProcessInfo
+procname	ProcessInfo.cc	/^string ProcessInfo::procname()$/;"	f	class:ProcessInfo
+scanDir	ProcessInfo.cc	/^int scanDir(const char *dirpath, int (*filter)(const struct dirent *))$/;"	f	namespace:muduo::detail
+startTime	ProcessInfo.cc	/^Timestamp ProcessInfo::startTime()$/;"	f	class:ProcessInfo
+t_numOpenedFiles	ProcessInfo.cc	/^__thread int t_numOpenedFiles = 0;$/;"	m	namespace:muduo::detail	file:
+t_pids	ProcessInfo.cc	/^__thread std::vector<pid_t>* t_pids = NULL;$/;"	m	namespace:muduo::detail	file:
+taskDirFilter	ProcessInfo.cc	/^int taskDirFilter(const struct dirent* d)$/;"	f	namespace:muduo::detail
+threadStat	ProcessInfo.cc	/^string ProcessInfo::threadStat()$/;"	f	class:ProcessInfo
+threads	ProcessInfo.cc	/^std::vector<pid_t> ProcessInfo::threads()$/;"	f	class:ProcessInfo
+uid	ProcessInfo.cc	/^uid_t ProcessInfo::uid()$/;"	f	class:ProcessInfo
+username	ProcessInfo.cc	/^string ProcessInfo::username()$/;"	f	class:ProcessInfo
+CpuTime	ProcessInfo.h	/^    CpuTime() : userSeconds(0.0), systemSeconds(0.0) { }$/;"	f	struct:muduo::ProcessInfo::CpuTime
+CpuTime	ProcessInfo.h	/^  struct CpuTime$/;"	s	namespace:muduo::ProcessInfo
+MUDUO_BASE_PROCESSINFO_H	ProcessInfo.h	12;"	d
+ProcessInfo	ProcessInfo.h	/^namespace ProcessInfo$/;"	n	namespace:muduo
+muduo	ProcessInfo.h	/^namespace muduo$/;"	n
+systemSeconds	ProcessInfo.h	/^    double systemSeconds;$/;"	m	struct:muduo::ProcessInfo::CpuTime
+userSeconds	ProcessInfo.h	/^    double userSeconds;$/;"	m	struct:muduo::ProcessInfo::CpuTime
+MUDUO_BASE_SINGLETON_H	Singleton.h	7;"	d
+Singleton	Singleton.h	/^class Singleton : boost::noncopyable$/;"	c	namespace:muduo
+decltype	Singleton.h	/^  template <typename C> static char test(decltype(&C::no_destroy));$/;"	m	struct:muduo::detail::has_no_destroy
+destroy	Singleton.h	/^  static void destroy()$/;"	f	class:muduo::Singleton
+detail	Singleton.h	/^namespace detail$/;"	n	namespace:muduo
+has_no_destroy	Singleton.h	/^struct has_no_destroy$/;"	s	namespace:muduo::detail
+init	Singleton.h	/^  static void init()  $/;"	f	class:muduo::Singleton
+instance	Singleton.h	/^  static T& instance()  \/\/返回static的唯一实例的引用$/;"	f	class:muduo::Singleton
+muduo	Singleton.h	/^namespace muduo$/;"	n
+ponce_	Singleton.h	/^  static pthread_once_t ponce_; $/;"	m	class:muduo::Singleton
+ponce_	Singleton.h	/^pthread_once_t Singleton<T>::ponce_ = PTHREAD_ONCE_INIT;$/;"	m	class:muduo::Singleton
+value	Singleton.h	/^  const static bool value = sizeof(test<T>(0)) == 1;$/;"	m	struct:muduo::detail::has_no_destroy
+value_	Singleton.h	/^  static T*             value_;$/;"	m	class:muduo::Singleton
+value_	Singleton.h	/^T* Singleton<T>::value_ = NULL;$/;"	m	class:muduo::Singleton
+CopyToStdString	StringPiece.h	/^  void CopyToStdString(std::string* target) const {$/;"	f	class:muduo::StringPiece
+CopyToString	StringPiece.h	/^  void CopyToString(string* target) const {$/;"	f	class:muduo::StringPiece
+MUDUO_BASE_STRINGPIECE_H	StringPiece.h	41;"	d
+STRINGPIECE_BINARY_PREDICATE	StringPiece.h	144;"	d
+STRINGPIECE_BINARY_PREDICATE	StringPiece.h	153;"	d
+StringArg	StringPiece.h	/^  StringArg(const char* str)$/;"	f	class:muduo::StringArg
+StringArg	StringPiece.h	/^  StringArg(const std::string& str)$/;"	f	class:muduo::StringArg
+StringArg	StringPiece.h	/^  StringArg(const string& str)$/;"	f	class:muduo::StringArg
+StringArg	StringPiece.h	/^class StringArg \/\/ copyable$/;"	c	namespace:muduo
+StringPiece	StringPiece.h	/^  StringPiece()$/;"	f	class:muduo::StringPiece
+StringPiece	StringPiece.h	/^  StringPiece(const char* offset, int len)$/;"	f	class:muduo::StringPiece
+StringPiece	StringPiece.h	/^  StringPiece(const char* str)$/;"	f	class:muduo::StringPiece
+StringPiece	StringPiece.h	/^  StringPiece(const std::string& str)$/;"	f	class:muduo::StringPiece
+StringPiece	StringPiece.h	/^  StringPiece(const string& str)$/;"	f	class:muduo::StringPiece
+StringPiece	StringPiece.h	/^  StringPiece(const unsigned char* str)$/;"	f	class:muduo::StringPiece
+StringPiece	StringPiece.h	/^class StringPiece {$/;"	c	namespace:muduo
+__type_traits	StringPiece.h	/^template<> struct __type_traits<muduo::StringPiece> {$/;"	s
+as_string	StringPiece.h	/^  string as_string() const {$/;"	f	class:muduo::StringPiece
+begin	StringPiece.h	/^  const char* begin() const { return ptr_; }$/;"	f	class:muduo::StringPiece
+c_str	StringPiece.h	/^  const char* c_str() const { return str_; }$/;"	f	class:muduo::StringArg
+clear	StringPiece.h	/^  void clear() { ptr_ = NULL; length_ = 0; }$/;"	f	class:muduo::StringPiece
+compare	StringPiece.h	/^  int compare(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+data	StringPiece.h	/^  const char* data() const { return ptr_; }$/;"	f	class:muduo::StringPiece
+empty	StringPiece.h	/^  bool empty() const { return length_ == 0; }$/;"	f	class:muduo::StringPiece
+end	StringPiece.h	/^  const char* end() const { return ptr_ + length_; }$/;"	f	class:muduo::StringPiece
+has_trivial_assignment_operator	StringPiece.h	/^  typedef __true_type    has_trivial_assignment_operator;$/;"	t	struct:__type_traits
+has_trivial_copy_constructor	StringPiece.h	/^  typedef __true_type    has_trivial_copy_constructor;$/;"	t	struct:__type_traits
+has_trivial_default_constructor	StringPiece.h	/^  typedef __true_type    has_trivial_default_constructor;$/;"	t	struct:__type_traits
+has_trivial_destructor	StringPiece.h	/^  typedef __true_type    has_trivial_destructor;$/;"	t	struct:__type_traits
+is_POD_type	StringPiece.h	/^  typedef __true_type    is_POD_type;$/;"	t	struct:__type_traits
+length_	StringPiece.h	/^  int           length_;$/;"	m	class:muduo::StringPiece
+muduo	StringPiece.h	/^namespace muduo {$/;"	n
+operator !=	StringPiece.h	/^  bool operator!=(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+operator ==	StringPiece.h	/^  bool operator==(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+operator []	StringPiece.h	/^  char operator[](int i) const { return ptr_[i]; }$/;"	f	class:muduo::StringPiece
+ptr_	StringPiece.h	/^  const char*   ptr_;$/;"	m	class:muduo::StringPiece
+remove_prefix	StringPiece.h	/^  void remove_prefix(int n) {$/;"	f	class:muduo::StringPiece
+remove_suffix	StringPiece.h	/^  void remove_suffix(int n) {$/;"	f	class:muduo::StringPiece
+set	StringPiece.h	/^  void set(const char* buffer, int len) { ptr_ = buffer; length_ = len; }$/;"	f	class:muduo::StringPiece
+set	StringPiece.h	/^  void set(const char* str) {$/;"	f	class:muduo::StringPiece
+set	StringPiece.h	/^  void set(const void* buffer, int len) {$/;"	f	class:muduo::StringPiece
+size	StringPiece.h	/^  int size() const { return length_; }$/;"	f	class:muduo::StringPiece
+starts_with	StringPiece.h	/^  bool starts_with(const StringPiece& x) const {$/;"	f	class:muduo::StringPiece
+str_	StringPiece.h	/^  const char* str_;$/;"	m	class:muduo::StringArg
+CurrentThread	Thread.cc	/^namespace CurrentThread$/;"	n	namespace:muduo	file:
+Thread	Thread.cc	/^Thread::Thread(ThreadFunc&& func, const string& n)$/;"	f	class:Thread
+Thread	Thread.cc	/^Thread::Thread(const ThreadFunc& func, const string& n)$/;"	f	class:Thread
+ThreadData	Thread.cc	/^  ThreadData(const ThreadFunc& func,$/;"	f	struct:muduo::detail::ThreadData
+ThreadData	Thread.cc	/^struct ThreadData$/;"	s	namespace:muduo::detail	file:
+ThreadFunc	Thread.cc	/^  typedef muduo::Thread::ThreadFunc ThreadFunc;$/;"	t	struct:muduo::detail::ThreadData	file:
+ThreadNameInitializer	Thread.cc	/^  ThreadNameInitializer()$/;"	f	class:muduo::detail::ThreadNameInitializer
+ThreadNameInitializer	Thread.cc	/^class ThreadNameInitializer$/;"	c	namespace:muduo::detail	file:
+afterFork	Thread.cc	/^void afterFork()$/;"	f	namespace:muduo::detail
+cacheTid	Thread.cc	/^void CurrentThread::cacheTid()$/;"	f	class:CurrentThread
+detail	Thread.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+func_	Thread.cc	/^  ThreadFunc func_;$/;"	m	struct:muduo::detail::ThreadData	file:
+gettid	Thread.cc	/^pid_t gettid()$/;"	f	namespace:muduo::detail
+init	Thread.cc	/^ThreadNameInitializer init;$/;"	m	namespace:muduo::detail	file:
+isMainThread	Thread.cc	/^bool CurrentThread::isMainThread()$/;"	f	class:CurrentThread
+join	Thread.cc	/^int Thread::join()$/;"	f	class:Thread
+muduo	Thread.cc	/^namespace muduo$/;"	n	file:
+name_	Thread.cc	/^  string name_;$/;"	m	struct:muduo::detail::ThreadData	file:
+numCreated_	Thread.cc	/^AtomicInt32 Thread::numCreated_;$/;"	m	class:Thread	file:
+runInThread	Thread.cc	/^  void runInThread()$/;"	f	struct:muduo::detail::ThreadData
+sameType	Thread.cc	/^  const bool sameType = boost::is_same<int, pid_t>::value;$/;"	m	namespace:muduo::CurrentThread	file:
+setDefaultName	Thread.cc	/^void Thread::setDefaultName()$/;"	f	class:Thread
+sleepUsec	Thread.cc	/^void CurrentThread::sleepUsec(int64_t usec)$/;"	f	class:CurrentThread
+start	Thread.cc	/^void Thread::start()$/;"	f	class:Thread
+startThread	Thread.cc	/^void* startThread(void* obj)$/;"	f	namespace:muduo::detail
+t_cachedTid	Thread.cc	/^  __thread int t_cachedTid = 0;$/;"	m	namespace:muduo::CurrentThread	file:
+t_threadName	Thread.cc	/^  __thread const char* t_threadName = "unknown";$/;"	m	namespace:muduo::CurrentThread	file:
+t_tidString	Thread.cc	/^  __thread char t_tidString[32];$/;"	m	namespace:muduo::CurrentThread	file:
+t_tidStringLength	Thread.cc	/^  __thread int t_tidStringLength = 6;$/;"	m	namespace:muduo::CurrentThread	file:
+wkTid_	Thread.cc	/^  boost::weak_ptr<pid_t> wkTid_;$/;"	m	struct:muduo::detail::ThreadData	file:
+~Thread	Thread.cc	/^Thread::~Thread()$/;"	f	class:Thread
+MUDUO_BASE_THREAD_H	Thread.h	7;"	d
+Thread	Thread.h	/^class Thread : boost::noncopyable$/;"	c	namespace:muduo
+ThreadFunc	Thread.h	/^  typedef boost::function<void ()> ThreadFunc;$/;"	t	class:muduo::Thread
+func_	Thread.h	/^  ThreadFunc func_;$/;"	m	class:muduo::Thread
+joined_	Thread.h	/^  bool       joined_;$/;"	m	class:muduo::Thread
+muduo	Thread.h	/^namespace muduo$/;"	n
+name	Thread.h	/^  const string& name() const { return name_; }$/;"	f	class:muduo::Thread
+name_	Thread.h	/^  string     name_;$/;"	m	class:muduo::Thread
+numCreated	Thread.h	/^  static int numCreated() { return numCreated_.get(); }$/;"	f	class:muduo::Thread
+numCreated_	Thread.h	/^  static AtomicInt32 numCreated_;$/;"	m	class:muduo::Thread
+pthreadId_	Thread.h	/^  pthread_t  pthreadId_;$/;"	m	class:muduo::Thread
+started	Thread.h	/^  bool started() const { return started_; }$/;"	f	class:muduo::Thread
+started_	Thread.h	/^  bool       started_;$/;"	m	class:muduo::Thread
+tid	Thread.h	/^  pid_t tid() const { return *tid_; }$/;"	f	class:muduo::Thread
+tid_	Thread.h	/^  boost::shared_ptr<pid_t> tid_;$/;"	m	class:muduo::Thread
+MUDUO_BASE_THREADLOCAL_H	ThreadLocal.h	7;"	d
+ThreadLocal	ThreadLocal.h	/^  ThreadLocal()$/;"	f	class:muduo::ThreadLocal
+ThreadLocal	ThreadLocal.h	/^class ThreadLocal : boost::noncopyable$/;"	c	namespace:muduo
+destructor	ThreadLocal.h	/^  static void destructor(void *x)$/;"	f	class:muduo::ThreadLocal
+muduo	ThreadLocal.h	/^namespace muduo$/;"	n
+pkey_	ThreadLocal.h	/^  pthread_key_t pkey_;$/;"	m	class:muduo::ThreadLocal
+value	ThreadLocal.h	/^  T& value()$/;"	f	class:muduo::ThreadLocal
+~ThreadLocal	ThreadLocal.h	/^  ~ThreadLocal()$/;"	f	class:muduo::ThreadLocal
+Deleter	ThreadLocalSingleton.h	/^    Deleter()$/;"	f	class:muduo::ThreadLocalSingleton::Deleter
+Deleter	ThreadLocalSingleton.h	/^  class Deleter$/;"	c	class:muduo::ThreadLocalSingleton
+MUDUO_BASE_THREADLOCALSINGLETON_H	ThreadLocalSingleton.h	7;"	d
+ThreadLocalSingleton	ThreadLocalSingleton.h	/^class ThreadLocalSingleton : boost::noncopyable$/;"	c	namespace:muduo
+deleter_	ThreadLocalSingleton.h	/^  static Deleter deleter_;$/;"	m	class:muduo::ThreadLocalSingleton
+deleter_	ThreadLocalSingleton.h	/^typename ThreadLocalSingleton<T>::Deleter ThreadLocalSingleton<T>::deleter_;$/;"	m	class:muduo::ThreadLocalSingleton
+destructor	ThreadLocalSingleton.h	/^  static void destructor(void* obj)$/;"	f	class:muduo::ThreadLocalSingleton
+instance	ThreadLocalSingleton.h	/^  static T& instance()$/;"	f	class:muduo::ThreadLocalSingleton
+muduo	ThreadLocalSingleton.h	/^namespace muduo$/;"	n
+pkey_	ThreadLocalSingleton.h	/^    pthread_key_t pkey_;$/;"	m	class:muduo::ThreadLocalSingleton::Deleter
+pointer	ThreadLocalSingleton.h	/^  static T* pointer()$/;"	f	class:muduo::ThreadLocalSingleton
+set	ThreadLocalSingleton.h	/^    void set(T* newObj)$/;"	f	class:muduo::ThreadLocalSingleton::Deleter
+t_value_	ThreadLocalSingleton.h	/^  static __thread T* t_value_;$/;"	m	class:muduo::ThreadLocalSingleton
+t_value_	ThreadLocalSingleton.h	/^__thread T* ThreadLocalSingleton<T>::t_value_ = 0;$/;"	m	class:muduo::ThreadLocalSingleton
+~Deleter	ThreadLocalSingleton.h	/^    ~Deleter()$/;"	f	class:muduo::ThreadLocalSingleton::Deleter
+ThreadPool	ThreadPool.cc	/^ThreadPool::ThreadPool(const string& nameArg)$/;"	f	class:ThreadPool
+isFull	ThreadPool.cc	/^bool ThreadPool::isFull() const$/;"	f	class:ThreadPool
+queueSize	ThreadPool.cc	/^size_t ThreadPool::queueSize() const$/;"	f	class:ThreadPool
+run	ThreadPool.cc	/^void ThreadPool::run(Task&& task)$/;"	f	class:ThreadPool
+run	ThreadPool.cc	/^void ThreadPool::run(const Task& task)$/;"	f	class:ThreadPool
+runInThread	ThreadPool.cc	/^void ThreadPool::runInThread()$/;"	f	class:ThreadPool
+start	ThreadPool.cc	/^void ThreadPool::start(int numThreads)$/;"	f	class:ThreadPool
+stop	ThreadPool.cc	/^void ThreadPool::stop()$/;"	f	class:ThreadPool
+take	ThreadPool.cc	/^ThreadPool::Task ThreadPool::take()$/;"	f	class:ThreadPool
+~ThreadPool	ThreadPool.cc	/^ThreadPool::~ThreadPool()$/;"	f	class:ThreadPool
+MUDUO_BASE_THREADPOOL_H	ThreadPool.h	7;"	d
+Task	ThreadPool.h	/^  typedef boost::function<void ()> Task;$/;"	t	class:muduo::ThreadPool
+ThreadPool	ThreadPool.h	/^class ThreadPool : boost::noncopyable$/;"	c	namespace:muduo
+maxQueueSize_	ThreadPool.h	/^  size_t maxQueueSize_;$/;"	m	class:muduo::ThreadPool
+muduo	ThreadPool.h	/^namespace muduo$/;"	n
+mutex_	ThreadPool.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::ThreadPool
+name	ThreadPool.h	/^  const string& name() const$/;"	f	class:muduo::ThreadPool
+name_	ThreadPool.h	/^  string name_;$/;"	m	class:muduo::ThreadPool
+notEmpty_	ThreadPool.h	/^  Condition notEmpty_;$/;"	m	class:muduo::ThreadPool
+notFull_	ThreadPool.h	/^  Condition notFull_;$/;"	m	class:muduo::ThreadPool
+queue_	ThreadPool.h	/^  std::deque<Task> queue_;$/;"	m	class:muduo::ThreadPool
+running_	ThreadPool.h	/^  bool running_;$/;"	m	class:muduo::ThreadPool
+setMaxQueueSize	ThreadPool.h	/^  void setMaxQueueSize(int maxSize) { maxQueueSize_ = maxSize; }$/;"	f	class:muduo::ThreadPool
+setThreadInitCallback	ThreadPool.h	/^  void setThreadInitCallback(const Task& cb)$/;"	f	class:muduo::ThreadPool
+threadInitCallback_	ThreadPool.h	/^  Task threadInitCallback_;$/;"	m	class:muduo::ThreadPool
+threads_	ThreadPool.h	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:muduo::ThreadPool
+Comp	TimeZone.cc	/^  Comp(bool gmt)$/;"	f	struct:muduo::detail::Comp
+Comp	TimeZone.cc	/^struct Comp$/;"	s	namespace:muduo::detail	file:
+Data	TimeZone.cc	/^struct TimeZone::Data$/;"	s	class:TimeZone	file:
+File	TimeZone.cc	/^  File(const char* file)$/;"	f	class:muduo::detail::File
+File	TimeZone.cc	/^class File : boost::noncopyable$/;"	c	namespace:muduo::detail	file:
+Localtime	TimeZone.cc	/^  Localtime(time_t offset, bool dst, int arrb)$/;"	f	struct:muduo::detail::Localtime
+Localtime	TimeZone.cc	/^struct Localtime$/;"	s	namespace:muduo::detail	file:
+TimeZone	TimeZone.cc	/^TimeZone::TimeZone(const char* zonefile)$/;"	f	class:TimeZone
+TimeZone	TimeZone.cc	/^TimeZone::TimeZone(int eastOfUtc, const char* name)$/;"	f	class:TimeZone
+Transition	TimeZone.cc	/^  Transition(time_t t, time_t l, int localIdx)$/;"	f	struct:muduo::detail::Transition
+Transition	TimeZone.cc	/^struct Transition$/;"	s	namespace:muduo::detail	file:
+abbreviation	TimeZone.cc	/^  string abbreviation;$/;"	m	struct:TimeZone::Data	file:
+arrbIdx	TimeZone.cc	/^  int arrbIdx;$/;"	m	struct:muduo::detail::Localtime	file:
+compareGmt	TimeZone.cc	/^  bool compareGmt;$/;"	m	struct:muduo::detail::Comp	file:
+detail	TimeZone.cc	/^namespace detail$/;"	n	namespace:muduo	file:
+equal	TimeZone.cc	/^  bool equal(const Transition& lhs, const Transition& rhs) const$/;"	f	struct:muduo::detail::Comp
+fillHMS	TimeZone.cc	/^inline void fillHMS(unsigned seconds, struct tm* utc)$/;"	f	namespace:muduo::detail
+findLocaltime	TimeZone.cc	/^const Localtime* findLocaltime(const TimeZone::Data& data, Transition sentry, Comp comp)$/;"	f	namespace:muduo::detail
+fp_	TimeZone.cc	/^  FILE* fp_;$/;"	m	class:muduo::detail::File	file:
+fromLocalTime	TimeZone.cc	/^time_t TimeZone::fromLocalTime(const struct tm& localTm) const$/;"	f	class:TimeZone
+fromUtcTime	TimeZone.cc	/^time_t TimeZone::fromUtcTime(const struct tm& utc)$/;"	f	class:TimeZone
+fromUtcTime	TimeZone.cc	/^time_t TimeZone::fromUtcTime(int year, int month, int day,$/;"	f	class:TimeZone
+gmtOffset	TimeZone.cc	/^  time_t gmtOffset;$/;"	m	struct:muduo::detail::Localtime	file:
+gmttime	TimeZone.cc	/^  time_t gmttime;$/;"	m	struct:muduo::detail::Transition	file:
+isDst	TimeZone.cc	/^  bool isDst;$/;"	m	struct:muduo::detail::Localtime	file:
+kSecondsPerDay	TimeZone.cc	/^const int kSecondsPerDay = 24*60*60;$/;"	m	namespace:muduo	file:
+localtime	TimeZone.cc	/^  time_t localtime;$/;"	m	struct:muduo::detail::Transition	file:
+localtimeIdx	TimeZone.cc	/^  int localtimeIdx;$/;"	m	struct:muduo::detail::Transition	file:
+localtimes	TimeZone.cc	/^  vector<detail::Localtime> localtimes;$/;"	m	struct:TimeZone::Data	file:
+muduo	TimeZone.cc	/^namespace muduo$/;"	n	file:
+names	TimeZone.cc	/^  vector<string> names;$/;"	m	struct:TimeZone::Data	file:
+operator ()	TimeZone.cc	/^  bool operator()(const Transition& lhs, const Transition& rhs) const$/;"	f	struct:muduo::detail::Comp
+readBytes	TimeZone.cc	/^  string readBytes(int n)$/;"	f	class:muduo::detail::File
+readInt32	TimeZone.cc	/^  int32_t readInt32()$/;"	f	class:muduo::detail::File
+readTimeZoneFile	TimeZone.cc	/^bool readTimeZoneFile(const char* zonefile, struct TimeZone::Data* data)$/;"	f	namespace:muduo::detail
+readUInt8	TimeZone.cc	/^  uint8_t readUInt8()$/;"	f	class:muduo::detail::File
+toLocalTime	TimeZone.cc	/^struct tm TimeZone::toLocalTime(time_t seconds) const$/;"	f	class:TimeZone
+toUtcTime	TimeZone.cc	/^struct tm TimeZone::toUtcTime(time_t secondsSinceEpoch, bool yday)$/;"	f	class:TimeZone
+transitions	TimeZone.cc	/^  vector<detail::Transition> transitions;$/;"	m	struct:TimeZone::Data	file:
+valid	TimeZone.cc	/^  bool valid() const { return fp_; }$/;"	f	class:muduo::detail::File
+~File	TimeZone.cc	/^  ~File()$/;"	f	class:muduo::detail::File
+MUDUO_BASE_TIMEZONE_H	TimeZone.h	7;"	d
+TimeZone	TimeZone.h	/^  TimeZone() {}  \/\/ an invalid timezone$/;"	f	class:muduo::TimeZone
+TimeZone	TimeZone.h	/^class TimeZone : public muduo::copyable$/;"	c	namespace:muduo
+data_	TimeZone.h	/^  boost::shared_ptr<Data> data_;$/;"	m	class:muduo::TimeZone
+muduo	TimeZone.h	/^namespace muduo$/;"	n
+valid	TimeZone.h	/^  bool valid() const$/;"	f	class:muduo::TimeZone
+__STDC_FORMAT_MACROS	Timestamp.cc	7;"	d	file:
+now	Timestamp.cc	/^Timestamp Timestamp::now()$/;"	f	class:Timestamp
+toFormattedString	Timestamp.cc	/^string Timestamp::toFormattedString(bool showMicroseconds) const$/;"	f	class:Timestamp
+toString	Timestamp.cc	/^string Timestamp::toString() const$/;"	f	class:Timestamp
+MUDUO_BASE_TIMESTAMP_H	Timestamp.h	2;"	d
+Timestamp	Timestamp.h	/^  Timestamp()$/;"	f	class:muduo::Timestamp
+Timestamp	Timestamp.h	/^  explicit Timestamp(int64_t microSecondsSinceEpochArg)$/;"	f	class:muduo::Timestamp
+Timestamp	Timestamp.h	/^class Timestamp : public muduo::copyable,$/;"	c	namespace:muduo
+addTime	Timestamp.h	/^inline Timestamp addTime(Timestamp timestamp, double seconds)$/;"	f	namespace:muduo
+fromUnixTime	Timestamp.h	/^  static Timestamp fromUnixTime(time_t t)$/;"	f	class:muduo::Timestamp
+fromUnixTime	Timestamp.h	/^  static Timestamp fromUnixTime(time_t t, int microseconds)$/;"	f	class:muduo::Timestamp
+invalid	Timestamp.h	/^  static Timestamp invalid()$/;"	f	class:muduo::Timestamp
+kMicroSecondsPerSecond	Timestamp.h	/^  static const int kMicroSecondsPerSecond = 1000 * 1000;$/;"	m	class:muduo::Timestamp
+microSecondsSinceEpoch	Timestamp.h	/^  int64_t microSecondsSinceEpoch() const { return microSecondsSinceEpoch_; }$/;"	f	class:muduo::Timestamp
+microSecondsSinceEpoch_	Timestamp.h	/^  int64_t microSecondsSinceEpoch_;$/;"	m	class:muduo::Timestamp
+muduo	Timestamp.h	/^namespace muduo$/;"	n
+operator <	Timestamp.h	/^inline bool operator<(Timestamp lhs, Timestamp rhs)$/;"	f	namespace:muduo
+operator ==	Timestamp.h	/^inline bool operator==(Timestamp lhs, Timestamp rhs)$/;"	f	namespace:muduo
+secondsSinceEpoch	Timestamp.h	/^  time_t secondsSinceEpoch() const$/;"	f	class:muduo::Timestamp
+swap	Timestamp.h	/^  void swap(Timestamp& that)$/;"	f	class:muduo::Timestamp
+timeDifference	Timestamp.h	/^inline double timeDifference(Timestamp high, Timestamp low)$/;"	f	namespace:muduo
+valid	Timestamp.h	/^  bool valid() const { return microSecondsSinceEpoch_ > 0; }$/;"	f	class:muduo::Timestamp
+MUDUO_BASE_TYPES_H	Types.h	2;"	d
+down_cast	Types.h	/^inline To down_cast(From* f)                     \/\/ so we only accept pointers$/;"	f	namespace:muduo
+implicit_cast	Types.h	/^inline To implicit_cast(From const &f)$/;"	f	namespace:muduo
+muduo	Types.h	/^namespace muduo$/;"	n
+MUDUO_BASE_WEAKCALLBACK_H	WeakCallback.h	10;"	d
+WeakCallback	WeakCallback.h	/^  WeakCallback(const boost::weak_ptr<CLASS>& object,$/;"	f	class:muduo::WeakCallback
+WeakCallback	WeakCallback.h	/^class WeakCallback$/;"	c	namespace:muduo
+function_	WeakCallback.h	/^  std::function<void (CLASS*, ARGS...)> function_;$/;"	m	class:muduo::WeakCallback
+makeWeakCallback	WeakCallback.h	/^WeakCallback<CLASS, ARGS...> makeWeakCallback(const boost::shared_ptr<CLASS>& object,$/;"	f	namespace:muduo
+muduo	WeakCallback.h	/^namespace muduo$/;"	n
+object_	WeakCallback.h	/^  boost::weak_ptr<CLASS> object_;$/;"	m	class:muduo::WeakCallback
+operator ()	WeakCallback.h	/^  void operator()(ARGS&&... args) const$/;"	f	class:muduo::WeakCallback
+MUDUO_BASE_COPYABLE_H	copyable.h	2;"	d
+copyable	copyable.h	/^class copyable$/;"	c	namespace:muduo
+muduo	copyable.h	/^namespace muduo$/;"	n
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+asyncOutput	tests/AsyncLogging_test.cc	/^void asyncOutput(const char* msg, int len)$/;"	f
+bench	tests/AsyncLogging_test.cc	/^void bench(bool longLog)$/;"	f
+g_asyncLog	tests/AsyncLogging_test.cc	/^muduo::AsyncLogging* g_asyncLog = NULL;$/;"	v
+kRollSize	tests/AsyncLogging_test.cc	/^int kRollSize = 500*1000*1000;$/;"	v
+main	tests/AsyncLogging_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	tests/Atomic_unittest.cc	/^int main()$/;"	f
+Bench	tests/BlockingQueue_bench.cc	/^  Bench(int numThreads)$/;"	f	class:Bench
+Bench	tests/BlockingQueue_bench.cc	/^class Bench$/;"	c	file:
+joinAll	tests/BlockingQueue_bench.cc	/^  void joinAll()$/;"	f	class:Bench
+latch_	tests/BlockingQueue_bench.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Bench	file:
+main	tests/BlockingQueue_bench.cc	/^int main(int argc, char* argv[])$/;"	f
+queue_	tests/BlockingQueue_bench.cc	/^  muduo::BlockingQueue<muduo::Timestamp> queue_;$/;"	m	class:Bench	file:
+run	tests/BlockingQueue_bench.cc	/^  void run(int times)$/;"	f	class:Bench
+threadFunc	tests/BlockingQueue_bench.cc	/^  void threadFunc()$/;"	f	class:Bench	file:
+threads_	tests/BlockingQueue_bench.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Bench	file:
+Test	tests/BlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
+Test	tests/BlockingQueue_test.cc	/^class Test$/;"	c	file:
+joinAll	tests/BlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
+latch_	tests/BlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
+main	tests/BlockingQueue_test.cc	/^int main()$/;"	f
+queue_	tests/BlockingQueue_test.cc	/^  muduo::BlockingQueue<std::string> queue_;$/;"	m	class:Test	file:
+run	tests/BlockingQueue_test.cc	/^  void run(int times)$/;"	f	class:Test
+testMove	tests/BlockingQueue_test.cc	/^void testMove()$/;"	f
+threadFunc	tests/BlockingQueue_test.cc	/^  void threadFunc()$/;"	f	class:Test	file:
+threads_	tests/BlockingQueue_test.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Test	file:
+Test	tests/BoundedBlockingQueue_test.cc	/^  Test(int numThreads)$/;"	f	class:Test
+Test	tests/BoundedBlockingQueue_test.cc	/^class Test$/;"	c	file:
+joinAll	tests/BoundedBlockingQueue_test.cc	/^  void joinAll()$/;"	f	class:Test
+latch_	tests/BoundedBlockingQueue_test.cc	/^  muduo::CountDownLatch latch_;$/;"	m	class:Test	file:
+main	tests/BoundedBlockingQueue_test.cc	/^int main()$/;"	f
+queue_	tests/BoundedBlockingQueue_test.cc	/^  muduo::BoundedBlockingQueue<std::string> queue_;$/;"	m	class:Test	file:
+run	tests/BoundedBlockingQueue_test.cc	/^  void run(int times)$/;"	f	class:Test
+threadFunc	tests/BoundedBlockingQueue_test.cc	/^  void threadFunc()$/;"	f	class:Test	file:
+threads_	tests/BoundedBlockingQueue_test.cc	/^  boost::ptr_vector<muduo::Thread> threads_;$/;"	m	class:Test	file:
+daysOfMonth	tests/Date_unittest.cc	/^int daysOfMonth(int year, int month)$/;"	f
+isLeapYear	tests/Date_unittest.cc	/^int isLeapYear(int year)$/;"	f
+kMonthsOfYear	tests/Date_unittest.cc	/^const int kMonthsOfYear = 12;$/;"	v
+main	tests/Date_unittest.cc	/^int main()$/;"	f
+passByConstReference	tests/Date_unittest.cc	/^void passByConstReference(const Date& x)$/;"	f
+passByValue	tests/Date_unittest.cc	/^void passByValue(Date x)$/;"	f
+Bar	tests/Exception_test.cc	/^class Bar$/;"	c	file:
+foo	tests/Exception_test.cc	/^void foo()$/;"	f
+main	tests/Exception_test.cc	/^int main()$/;"	f
+test	tests/Exception_test.cc	/^  void test()$/;"	f	class:Bar
+__STDC_FORMAT_MACROS	tests/FileUtil_test.cc	4;"	d	file:
+main	tests/FileUtil_test.cc	/^int main()$/;"	f
+main	tests/Fork_test.cc	/^int main()$/;"	f
+print	tests/Fork_test.cc	/^void print()$/;"	f
+x	tests/Fork_test.cc	/^__thread int x = 0;$/;"	m	namespace:__anon1	file:
+main	tests/GzipFile_test.cc	/^int main()$/;"	f
+flushFunc	tests/LogFile_test.cc	/^void flushFunc()$/;"	f
+g_logFile	tests/LogFile_test.cc	/^boost::scoped_ptr<muduo::LogFile> g_logFile;$/;"	v
+main	tests/LogFile_test.cc	/^int main(int argc, char* argv[])$/;"	f
+outputFunc	tests/LogFile_test.cc	/^void outputFunc(const char* msg, int len)$/;"	f
+N	tests/LogStream_bench.cc	/^const size_t N = 1000000;$/;"	v
+__STDC_FORMAT_MACROS	tests/LogStream_bench.cc	6;"	d	file:
+benchLogStream	tests/LogStream_bench.cc	/^void benchLogStream()$/;"	f
+benchPrintf	tests/LogStream_bench.cc	/^void benchPrintf(const char* fmt)$/;"	f
+benchStringStream	tests/LogStream_bench.cc	/^void benchStringStream()$/;"	f
+main	tests/LogStream_bench.cc	/^int main()$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamBooleans)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamFloats)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamFmts)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamIntegerLimits)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamIntegers)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamLong)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamStrings)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/LogStream_test.cc	/^BOOST_AUTO_TEST_CASE(testLogStreamVoid)$/;"	f
+BOOST_TEST_DYN_LINK	tests/LogStream_test.cc	8;"	d	file:
+BOOST_TEST_MAIN	tests/LogStream_test.cc	7;"	d	file:
+bench	tests/Logging_test.cc	/^void bench(const char* type)$/;"	f
+dummyOutput	tests/Logging_test.cc	/^void dummyOutput(const char* msg, int len)$/;"	f
+g_file	tests/Logging_test.cc	/^FILE* g_file;$/;"	v
+g_logFile	tests/Logging_test.cc	/^boost::scoped_ptr<muduo::LogFile> g_logFile;$/;"	v
+g_total	tests/Logging_test.cc	/^int g_total;$/;"	v
+logInThread	tests/Logging_test.cc	/^void logInThread()$/;"	f
+main	tests/Logging_test.cc	/^int main()$/;"	f
+foo	tests/Mutex_test.cc	/^int foo()$/;"	f
+g_count	tests/Mutex_test.cc	/^int g_count = 0;$/;"	v
+g_vec	tests/Mutex_test.cc	/^vector<int> g_vec;$/;"	v
+kCount	tests/Mutex_test.cc	/^const int kCount = 10*1000*1000;$/;"	v
+main	tests/Mutex_test.cc	/^int main()$/;"	f
+threadFunc	tests/Mutex_test.cc	/^void threadFunc()$/;"	f
+__STDC_FORMAT_MACROS	tests/ProcessInfo_test.cc	3;"	d	file:
+main	tests/ProcessInfo_test.cc	/^int main()$/;"	f
+STL	tests/SingletonThreadLocal_test.cc	31;"	d	file:
+Test	tests/SingletonThreadLocal_test.cc	/^  Test()$/;"	f	class:Test
+Test	tests/SingletonThreadLocal_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+main	tests/SingletonThreadLocal_test.cc	/^int main()$/;"	f
+name	tests/SingletonThreadLocal_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name_	tests/SingletonThreadLocal_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+print	tests/SingletonThreadLocal_test.cc	/^void print()$/;"	f
+setName	tests/SingletonThreadLocal_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+threadFunc	tests/SingletonThreadLocal_test.cc	/^void threadFunc(const char* changeTo)$/;"	f
+~Test	tests/SingletonThreadLocal_test.cc	/^  ~Test()$/;"	f	class:Test
+Test	tests/Singleton_test.cc	/^  Test()$/;"	f	class:Test
+Test	tests/Singleton_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+TestNoDestroy	tests/Singleton_test.cc	/^  TestNoDestroy()$/;"	f	class:TestNoDestroy
+TestNoDestroy	tests/Singleton_test.cc	/^class TestNoDestroy : boost::noncopyable$/;"	c	file:
+main	tests/Singleton_test.cc	/^int main()$/;"	f
+name	tests/Singleton_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name_	tests/Singleton_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+setName	tests/Singleton_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+threadFunc	tests/Singleton_test.cc	/^void threadFunc()$/;"	f
+~Test	tests/Singleton_test.cc	/^  ~Test()$/;"	f	class:Test
+~TestNoDestroy	tests/Singleton_test.cc	/^  ~TestNoDestroy()$/;"	f	class:TestNoDestroy
+Test	tests/ThreadLocalSingleton_test.cc	/^  Test()$/;"	f	class:Test
+Test	tests/ThreadLocalSingleton_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+main	tests/ThreadLocalSingleton_test.cc	/^int main()$/;"	f
+name	tests/ThreadLocalSingleton_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name_	tests/ThreadLocalSingleton_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+setName	tests/ThreadLocalSingleton_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+threadFunc	tests/ThreadLocalSingleton_test.cc	/^void threadFunc(const char* changeTo)$/;"	f
+~Test	tests/ThreadLocalSingleton_test.cc	/^  ~Test()$/;"	f	class:Test
+Test	tests/ThreadLocal_test.cc	/^  Test()$/;"	f	class:Test
+Test	tests/ThreadLocal_test.cc	/^class Test : boost::noncopyable$/;"	c	file:
+main	tests/ThreadLocal_test.cc	/^int main()$/;"	f
+name	tests/ThreadLocal_test.cc	/^  const muduo::string& name() const { return name_; }$/;"	f	class:Test
+name_	tests/ThreadLocal_test.cc	/^  muduo::string name_;$/;"	m	class:Test	file:
+print	tests/ThreadLocal_test.cc	/^void print()$/;"	f
+setName	tests/ThreadLocal_test.cc	/^  void setName(const muduo::string& n) { name_ = n; }$/;"	f	class:Test
+testObj1	tests/ThreadLocal_test.cc	/^muduo::ThreadLocal<Test> testObj1;$/;"	v
+testObj2	tests/ThreadLocal_test.cc	/^muduo::ThreadLocal<Test> testObj2;$/;"	v
+threadFunc	tests/ThreadLocal_test.cc	/^void threadFunc()$/;"	f
+~Test	tests/ThreadLocal_test.cc	/^  ~Test()$/;"	f	class:Test
+main	tests/ThreadPool_test.cc	/^int main()$/;"	f
+print	tests/ThreadPool_test.cc	/^void print()$/;"	f
+printString	tests/ThreadPool_test.cc	/^void printString(const std::string& str)$/;"	f
+test	tests/ThreadPool_test.cc	/^void test(int maxSize)$/;"	f
+forkBench	tests/Thread_bench.cc	/^void forkBench()$/;"	f
+g_delays	tests/Thread_bench.cc	/^std::map<int, int> g_delays;$/;"	v
+g_mutex	tests/Thread_bench.cc	/^muduo::MutexLock g_mutex;$/;"	v
+main	tests/Thread_bench.cc	/^int main(int argc, char* argv[])$/;"	f
+threadFunc	tests/Thread_bench.cc	/^void threadFunc()$/;"	f
+threadFunc2	tests/Thread_bench.cc	/^void threadFunc2(muduo::Timestamp start)$/;"	f
+Foo	tests/Thread_test.cc	/^  explicit Foo(double x)$/;"	f	class:Foo
+Foo	tests/Thread_test.cc	/^class Foo$/;"	c	file:
+main	tests/Thread_test.cc	/^int main()$/;"	f
+memberFunc	tests/Thread_test.cc	/^  void memberFunc()$/;"	f	class:Foo
+memberFunc2	tests/Thread_test.cc	/^  void memberFunc2(const std::string& text)$/;"	f	class:Foo
+mysleep	tests/Thread_test.cc	/^void mysleep(int seconds)$/;"	f
+threadFunc	tests/Thread_test.cc	/^void threadFunc()$/;"	f
+threadFunc2	tests/Thread_test.cc	/^void threadFunc2(int x)$/;"	f
+threadFunc3	tests/Thread_test.cc	/^void threadFunc3()$/;"	f
+x_	tests/Thread_test.cc	/^  double x_;$/;"	m	class:Foo	file:
+TestCase	tests/TimeZone_unittest.cc	/^struct TestCase$/;"	s	file:
+getGmt	tests/TimeZone_unittest.cc	/^time_t getGmt(const char* str)$/;"	f
+getGmt	tests/TimeZone_unittest.cc	/^time_t getGmt(int year, int month, int day,$/;"	f
+getTm	tests/TimeZone_unittest.cc	/^struct tm getTm(const char* str)$/;"	f
+getTm	tests/TimeZone_unittest.cc	/^struct tm getTm(int year, int month, int day,$/;"	f
+gmt	tests/TimeZone_unittest.cc	/^  const char* gmt;$/;"	m	struct:TestCase	file:
+isdst	tests/TimeZone_unittest.cc	/^  bool isdst;$/;"	m	struct:TestCase	file:
+local	tests/TimeZone_unittest.cc	/^  const char* local;$/;"	m	struct:TestCase	file:
+main	tests/TimeZone_unittest.cc	/^int main()$/;"	f
+test	tests/TimeZone_unittest.cc	/^void test(const TimeZone& tz, TestCase tc)$/;"	f
+testFixedTimezone	tests/TimeZone_unittest.cc	/^void testFixedTimezone()$/;"	f
+testHongKong	tests/TimeZone_unittest.cc	/^void testHongKong()$/;"	f
+testLondon	tests/TimeZone_unittest.cc	/^void testLondon()$/;"	f
+testNewYork	tests/TimeZone_unittest.cc	/^void testNewYork()$/;"	f
+testSydney	tests/TimeZone_unittest.cc	/^void testSydney()$/;"	f
+testUtc	tests/TimeZone_unittest.cc	/^void testUtc()$/;"	f
+benchmark	tests/Timestamp_unittest.cc	/^void benchmark()$/;"	f
+main	tests/Timestamp_unittest.cc	/^int main()$/;"	f
+passByConstReference	tests/Timestamp_unittest.cc	/^void passByConstReference(const Timestamp& x)$/;"	f
+passByValue	tests/Timestamp_unittest.cc	/^void passByValue(Timestamp x)$/;"	f

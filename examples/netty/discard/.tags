@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+DiscardClient	.\client.cc	/^  DiscardClient(EventLoop* loop, const InetAddress& listenAddr, int size)$/;"	f	class:DiscardClient
+DiscardClient	.\client.cc	/^class DiscardClient : boost::noncopyable$/;"	c	file:
+DiscardServer	.\server.cc	/^  DiscardServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:DiscardServer
+DiscardServer	.\server.cc	/^class DiscardServer$/;"	c	file:
+client_	.\client.cc	/^  TcpClient client_;$/;"	m	class:DiscardClient	file:
+connect	.\client.cc	/^  void connect()$/;"	f	class:DiscardClient
+loop_	.\client.cc	/^  EventLoop* loop_;$/;"	m	class:DiscardClient	file:
+main	.\client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	.\server.cc	/^int main(int argc, char* argv[])$/;"	f
+message_	.\client.cc	/^  string message_;$/;"	m	class:DiscardClient	file:
+numThreads	.\server.cc	/^int numThreads = 0;$/;"	v
+oldCounter_	.\server.cc	/^  int64_t oldCounter_;$/;"	m	class:DiscardServer	file:
+onConnection	.\client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:DiscardClient	file:
+onConnection	.\server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:DiscardServer	file:
+onMessage	.\client.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:DiscardClient	file:
+onMessage	.\server.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:DiscardServer	file:
+onWriteComplete	.\client.cc	/^  void onWriteComplete(const TcpConnectionPtr& conn)$/;"	f	class:DiscardClient	file:
+printThroughput	.\server.cc	/^  void printThroughput()$/;"	f	class:DiscardServer	file:
+receivedMessages_	.\server.cc	/^  AtomicInt64 receivedMessages_;$/;"	m	class:DiscardServer	file:
+server_	.\server.cc	/^  TcpServer server_;$/;"	m	class:DiscardServer	file:
+start	.\server.cc	/^  void start()$/;"	f	class:DiscardServer
+startTime_	.\server.cc	/^  Timestamp startTime_;$/;"	m	class:DiscardServer	file:
+transferred_	.\server.cc	/^  AtomicInt64 transferred_;$/;"	m	class:DiscardServer	file:

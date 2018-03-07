@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/timestamp_unittest.dir/Timestamp_unittest.o  -o timestamp_unittest -rdynamic -lmuduo_base 

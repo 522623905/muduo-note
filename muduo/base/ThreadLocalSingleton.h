@@ -13,21 +13,25 @@
 namespace muduo
 {
 
+//每个线程一个singleton
+//线程本地存储:__thread   pthread_key_t
 template<typename T>
 class ThreadLocalSingleton : boost::noncopyable
 {
  public:
 
+    //返回引用
   static T& instance()
   {
     if (!t_value_)
     {
       t_value_ = new T();
-      deleter_.set(t_value_);
+      deleter_.set(t_value_);//主要是为了能够调用Deleter
     }
     return *t_value_;
   }
 
+  //返回指针
   static T* pointer()
   {
     return t_value_;
@@ -68,8 +72,8 @@ class ThreadLocalSingleton : boost::noncopyable
     pthread_key_t pkey_;
   };
 
-  static __thread T* t_value_;
-  static Deleter deleter_;
+  static __thread T* t_value_;//每个线程都有一份的指针
+  static Deleter deleter_;//用于销毁指针指向的对象
 };
 
 template<typename T>

@@ -50,7 +50,7 @@ class EventLoop : boost::noncopyable
   ///
   /// Must be called in the same thread as creation of the object.
   ///
-  void loop();
+  void loop();  //此接口为该类的核心接口，用来启动事件循环
 
   /// Quits loop.
   ///
@@ -69,11 +69,11 @@ class EventLoop : boost::noncopyable
   /// It wakes up the loop, and run the cb.
   /// If in the same loop thread, cb is run within the function.
   /// Safe to call from other threads.
-  void runInLoop(const Functor& cb);
+  void runInLoop(const Functor& cb);  //用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务
   /// Queues callback in the loop thread.
   /// Runs after finish pooling.
   /// Safe to call from other threads.
-  void queueInLoop(const Functor& cb);
+  void queueInLoop(const Functor& cb);  //用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务
 
   size_t queueSize() const;
 
@@ -88,17 +88,17 @@ class EventLoop : boost::noncopyable
   /// Runs callback at 'time'.
   /// Safe to call from other threads.
   ///
-  TimerId runAt(const Timestamp& time, const TimerCallback& cb);
+  TimerId runAt(const Timestamp& time, const TimerCallback& cb);  //用来添加定时任务
   ///
   /// Runs callback after @c delay seconds.
   /// Safe to call from other threads.
   ///
-  TimerId runAfter(double delay, const TimerCallback& cb);
+  TimerId runAfter(double delay, const TimerCallback& cb);  //用来添加定时任务
   ///
   /// Runs callback every @c interval seconds.
   /// Safe to call from other threads.
   ///
-  TimerId runEvery(double interval, const TimerCallback& cb);
+  TimerId runEvery(double interval, const TimerCallback& cb); //用来添加定时任务
   ///
   /// Cancels the timer.
   /// Safe to call from other threads.
@@ -112,20 +112,20 @@ class EventLoop : boost::noncopyable
 #endif
 
   // internal usage
-  void wakeup();
-  void updateChannel(Channel* channel);
-  void removeChannel(Channel* channel);
+  void wakeup();//写一个字节给socket，唤醒可读事件。否则EventLoop::loop()的poll会阻塞
+  void updateChannel(Channel* channel); //在poller中注册或者更新通道
+  void removeChannel(Channel* channel); //从poller中移除通道
   bool hasChannel(Channel* channel);
 
   // pid_t threadId() const { return threadId_; }
-  void assertInLoopThread()
+  void assertInLoopThread() //断言处于当前线程中（主要是因为有些接口不能跨线程调用）
   {
     if (!isInLoopThread())
-    {
-      abortNotInLoopThread();
+    { 
+      abortNotInLoopThread();//如果不是，则终止程序
     }
   }
-  bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }
+  bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }  //判断是是否处于同一线程，而不是跨线程
   // bool callingPendingFunctors() const { return callingPendingFunctors_; }
   bool eventHandling() const { return eventHandling_; }
 
@@ -149,29 +149,30 @@ class EventLoop : boost::noncopyable
 
   typedef std::vector<Channel*> ChannelList;
 
-  bool looping_; /* atomic */
-  bool quit_; /* atomic and shared between threads, okay on x86, I guess. */
-  bool eventHandling_; /* atomic */
+  bool looping_; /* atomic */   //是否处于事件循环
+  bool quit_; /* atomic and shared between threads, okay on x86, I guess. */ //是否退出loop
+  bool eventHandling_; /* atomic */   //当前是否处于事件处理的状态
   bool callingPendingFunctors_; /* atomic */
   int64_t iteration_;
-  const pid_t threadId_;
-  Timestamp pollReturnTime_;
-  boost::scoped_ptr<Poller> poller_;
-  boost::scoped_ptr<TimerQueue> timerQueue_;
-  int wakeupFd_;
+  const pid_t threadId_;    //EventLoop构造函数会记住本对象所属的线程ID
+  Timestamp pollReturnTime_;  //poll返回的时间戳
+  boost::scoped_ptr<Poller> poller_;  //EventLoop首先一定得有个I/O复用才行,它的所有职责都是建立在I/O复用之上的
+  boost::scoped_ptr<TimerQueue> timerQueue_;  //应该支持定时事件，关于定时器的所有操作和组织定义都在类TimerQueue中 
+  int wakeupFd_; //用于eventfd的通知机制
   // unlike in TimerQueue, which is an internal class,
   // we don't expose Channel to client.
-  boost::scoped_ptr<Channel> wakeupChannel_;
+  boost::scoped_ptr<Channel> wakeupChannel_;  //wakeupFd_对于的通道。若此事件发生便会一次执行pendingFunctors_中的可调用对象
   boost::any context_;
 
   // scratch variables
-  ChannelList activeChannels_;
-  Channel* currentActiveChannel_;
+  ChannelList activeChannels_;  //保存的是poller类中的poll调用返回的所有活跃事件集
+  Channel* currentActiveChannel_; //当前正在处理的活动通道
 
   mutable MutexLock mutex_;
   std::vector<Functor> pendingFunctors_; // @GuardedBy mutex_
-};
-
+};                  //当非io线程(搭载EventLoop的线程)想使某个任务放在io线程中来执行，
+                    //那么就可以将其放到数据成员pendingFunctors_中来
+                    //其对应的事件便是wakeupChannel_事件
 }
 }
 #endif  // MUDUO_NET_EVENTLOOP_H

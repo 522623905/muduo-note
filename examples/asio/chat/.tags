@@ -1,0 +1,99 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ChatClient	client.cc	/^  ChatClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:ChatClient
+ChatClient	client.cc	/^class ChatClient : boost::noncopyable$/;"	c	file:
+ChatClient	loadtest.cc	/^  ChatClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:ChatClient
+ChatClient	loadtest.cc	/^class ChatClient : boost::noncopyable$/;"	c	file:
+ChatServer	server.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	server.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	server_threaded.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	server_threaded.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	server_threaded_efficient.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	server_threaded_efficient.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	server_threaded_highperformance.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	server_threaded_highperformance.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ConnectionList	server.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	server_threaded.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	server_threaded_efficient.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	server_threaded_highperformance.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionListPtr	server_threaded_efficient.cc	/^  typedef boost::shared_ptr<ConnectionList> ConnectionListPtr;$/;"	t	class:ChatServer	file:
+LengthHeaderCodec	codec.h	/^  explicit LengthHeaderCodec(const StringMessageCallback& cb)$/;"	f	class:LengthHeaderCodec
+LengthHeaderCodec	codec.h	/^class LengthHeaderCodec : boost::noncopyable$/;"	c
+LocalConnections	server_threaded_highperformance.cc	/^  typedef ThreadLocalSingleton<ConnectionList> LocalConnections;$/;"	t	class:ChatServer	file:
+MUDUO_EXAMPLES_ASIO_CHAT_CODEC_H	codec.h	2;"	d
+StringMessageCallback	codec.h	/^                                muduo::Timestamp)> StringMessageCallback;$/;"	t	class:LengthHeaderCodec
+client_	client.cc	/^  TcpClient client_;$/;"	m	class:ChatClient	file:
+client_	loadtest.cc	/^  TcpClient client_;$/;"	m	class:ChatClient	file:
+codec_	client.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatClient	file:
+codec_	loadtest.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatClient	file:
+codec_	server.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	server_threaded.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	server_threaded_efficient.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	server_threaded_highperformance.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+connect	client.cc	/^  void connect()$/;"	f	class:ChatClient
+connect	loadtest.cc	/^  void connect()$/;"	f	class:ChatClient
+connection_	client.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:ChatClient	file:
+connection_	loadtest.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:ChatClient	file:
+connections_	server.cc	/^  ConnectionList connections_;$/;"	m	class:ChatServer	file:
+connections_	server_threaded.cc	/^  ConnectionList connections_;$/;"	m	class:ChatServer	file:
+connections_	server_threaded_efficient.cc	/^  ConnectionListPtr connections_;$/;"	m	class:ChatServer	file:
+disconnect	client.cc	/^  void disconnect()$/;"	f	class:ChatClient
+disconnect	loadtest.cc	/^  void disconnect()$/;"	f	class:ChatClient
+distributeMessage	server_threaded_highperformance.cc	/^  void distributeMessage(const string& message)$/;"	f	class:ChatServer	file:
+g_aliveConnections	loadtest.cc	/^AtomicInt32 g_aliveConnections;$/;"	v
+g_connections	loadtest.cc	/^int g_connections = 0;$/;"	v
+g_loop	loadtest.cc	/^EventLoop* g_loop;$/;"	v
+g_messagesReceived	loadtest.cc	/^AtomicInt32 g_messagesReceived;$/;"	v
+g_receiveTime	loadtest.cc	/^std::vector<Timestamp> g_receiveTime;$/;"	v
+g_startTime	loadtest.cc	/^Timestamp g_startTime;$/;"	v
+g_statistic	loadtest.cc	/^boost::function<void()> g_statistic;$/;"	v
+getConnectionList	server_threaded_efficient.cc	/^  ConnectionListPtr getConnectionList()$/;"	f	class:ChatServer	file:
+kHeaderLen	codec.h	/^  const static size_t kHeaderLen = sizeof(int32_t);$/;"	m	class:LengthHeaderCodec
+loop_	loadtest.cc	/^  EventLoop* loop_;$/;"	m	class:ChatClient	file:
+loops_	server_threaded_highperformance.cc	/^  std::set<EventLoop*> loops_;$/;"	m	class:ChatServer	file:
+main	client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	loadtest.cc	/^int main(int argc, char* argv[])$/;"	f
+main	server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	server_threaded.cc	/^int main(int argc, char* argv[])$/;"	f
+main	server_threaded_efficient.cc	/^int main(int argc, char* argv[])$/;"	f
+main	server_threaded_highperformance.cc	/^int main(int argc, char* argv[])$/;"	f
+messageCallback_	codec.h	/^  StringMessageCallback messageCallback_;$/;"	m	class:LengthHeaderCodec
+mutex_	client.cc	/^  MutexLock mutex_;$/;"	m	class:ChatClient	file:
+mutex_	server_threaded.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	server_threaded_efficient.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	server_threaded_highperformance.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+onConnection	client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatClient	file:
+onConnection	loadtest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatClient	file:
+onConnection	server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	server_threaded.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	server_threaded_efficient.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	server_threaded_highperformance.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onMessage	codec.h	/^  void onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:LengthHeaderCodec
+onStringMessage	client.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatClient	file:
+onStringMessage	loadtest.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatClient	file:
+onStringMessage	server.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	server_threaded.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	server_threaded_efficient.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	server_threaded_highperformance.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+receiveTime	loadtest.cc	/^  Timestamp receiveTime() const { return receiveTime_; }$/;"	f	class:ChatClient
+receiveTime_	loadtest.cc	/^  Timestamp receiveTime_;$/;"	m	class:ChatClient	file:
+send	codec.h	/^  void send(muduo::net::TcpConnection* conn,$/;"	f	class:LengthHeaderCodec
+send	loadtest.cc	/^  void send()$/;"	f	class:ChatClient	file:
+server_	server.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	server_threaded.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	server_threaded_efficient.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	server_threaded_highperformance.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+setThreadNum	server_threaded.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	server_threaded_efficient.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	server_threaded_highperformance.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+start	server.cc	/^  void start()$/;"	f	class:ChatServer
+start	server_threaded.cc	/^  void start()$/;"	f	class:ChatServer
+start	server_threaded_efficient.cc	/^  void start()$/;"	f	class:ChatServer
+start	server_threaded_highperformance.cc	/^  void start()$/;"	f	class:ChatServer
+statistic	loadtest.cc	/^void statistic(const boost::ptr_vector<ChatClient>& clients)$/;"	f
+threadInit	server_threaded_highperformance.cc	/^  void threadInit(EventLoop* loop)$/;"	f	class:ChatServer	file:
+write	client.cc	/^  void write(const StringPiece& message)$/;"	f	class:ChatClient

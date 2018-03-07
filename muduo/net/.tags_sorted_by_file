@@ -1,0 +1,1035 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Acceptor	Acceptor.cc	/^Acceptor::Acceptor(EventLoop* loop, const InetAddress& listenAddr, bool reuseport)$/;"	f	class:Acceptor
+handleRead	Acceptor.cc	/^void Acceptor::handleRead()$/;"	f	class:Acceptor
+listen	Acceptor.cc	/^void Acceptor::listen()$/;"	f	class:Acceptor
+~Acceptor	Acceptor.cc	/^Acceptor::~Acceptor()$/;"	f	class:Acceptor
+Acceptor	Acceptor.h	/^class Acceptor : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_ACCEPTOR_H	Acceptor.h	12;"	d
+NewConnectionCallback	Acceptor.h	/^                                const InetAddress&)> NewConnectionCallback;$/;"	t	class:muduo::net::Acceptor
+acceptChannel_	Acceptor.h	/^  Channel acceptChannel_; \/\/对应的事件分发$/;"	m	class:muduo::net::Acceptor
+acceptSocket_	Acceptor.h	/^  Socket acceptSocket_; \/\/对监听套接字的封装$/;"	m	class:muduo::net::Acceptor
+idleFd_	Acceptor.h	/^  int idleFd_;  \/\/解决了服务器中文件描述符达到上限后如何处理的大问题!$/;"	m	class:muduo::net::Acceptor
+listenning	Acceptor.h	/^  bool listenning() const { return listenning_; } $/;"	f	class:muduo::net::Acceptor
+listenning_	Acceptor.h	/^  bool listenning_; \/\/是否正在监听状态$/;"	m	class:muduo::net::Acceptor
+loop_	Acceptor.h	/^  EventLoop* loop_; \/\/监听事件放在该loop循环中$/;"	m	class:muduo::net::Acceptor
+muduo	Acceptor.h	/^namespace muduo$/;"	n
+net	Acceptor.h	/^namespace net$/;"	n	namespace:muduo
+newConnectionCallback_	Acceptor.h	/^  NewConnectionCallback newConnectionCallback_;$/;"	m	class:muduo::net::Acceptor
+setNewConnectionCallback	Acceptor.h	/^  void setNewConnectionCallback(const NewConnectionCallback& cb)  \/\/被用于在TcpServer构造函数中设置新连接处理回调$/;"	f	class:muduo::net::Acceptor
+kCRLF	Buffer.cc	/^const char Buffer::kCRLF[] = "\\r\\n";$/;"	m	class:Buffer	file:
+kCheapPrepend	Buffer.cc	/^const size_t Buffer::kCheapPrepend;$/;"	m	class:Buffer	file:
+kInitialSize	Buffer.cc	/^const size_t Buffer::kInitialSize;$/;"	m	class:Buffer	file:
+readFd	Buffer.cc	/^ssize_t Buffer::readFd(int fd, int* savedErrno)$/;"	f	class:Buffer
+Buffer	Buffer.h	/^  explicit Buffer(size_t initialSize = kInitialSize)  \/\/初始化Buffer总大小$/;"	f	class:muduo::net::Buffer
+Buffer	Buffer.h	/^class Buffer : public muduo::copyable$/;"	c	namespace:muduo::net
+MUDUO_NET_BUFFER_H	Buffer.h	12;"	d
+append	Buffer.h	/^  void append(const StringPiece& str)$/;"	f	class:muduo::net::Buffer
+append	Buffer.h	/^  void append(const char* \/*restrict*\/ data, size_t len)$/;"	f	class:muduo::net::Buffer
+append	Buffer.h	/^  void append(const void* \/*restrict*\/ data, size_t len)$/;"	f	class:muduo::net::Buffer
+appendInt16	Buffer.h	/^  void appendInt16(int16_t x)$/;"	f	class:muduo::net::Buffer
+appendInt32	Buffer.h	/^  void appendInt32(int32_t x)$/;"	f	class:muduo::net::Buffer
+appendInt64	Buffer.h	/^  void appendInt64(int64_t x)$/;"	f	class:muduo::net::Buffer
+appendInt8	Buffer.h	/^  void appendInt8(int8_t x)$/;"	f	class:muduo::net::Buffer
+begin	Buffer.h	/^  char* begin() \/\/返回Buffer的起始地址$/;"	f	class:muduo::net::Buffer
+begin	Buffer.h	/^  const char* begin() const$/;"	f	class:muduo::net::Buffer
+beginWrite	Buffer.h	/^  char* beginWrite()  \/\/返回指向可写入位置的指针$/;"	f	class:muduo::net::Buffer
+beginWrite	Buffer.h	/^  const char* beginWrite() const$/;"	f	class:muduo::net::Buffer
+buffer_	Buffer.h	/^  std::vector<char> buffer_;  \/\/连续内存$/;"	m	class:muduo::net::Buffer
+ensureWritableBytes	Buffer.h	/^  void ensureWritableBytes(size_t len)  \/\/确保Buffer中可以写入len长度数据$/;"	f	class:muduo::net::Buffer
+findCRLF	Buffer.h	/^  const char* findCRLF() const  \/\/在[peek(), beginWrite())中找\\r\\n$/;"	f	class:muduo::net::Buffer
+findCRLF	Buffer.h	/^  const char* findCRLF(const char* start) const \/\/从位置start开始查找\\r\\n$/;"	f	class:muduo::net::Buffer
+findEOL	Buffer.h	/^  const char* findEOL() const \/\/查找'\\n'的位置$/;"	f	class:muduo::net::Buffer
+findEOL	Buffer.h	/^  const char* findEOL(const char* start) const  \/\/从位置start开始查找'\\n'的位置$/;"	f	class:muduo::net::Buffer
+hasWritten	Buffer.h	/^  void hasWritten(size_t len) \/\/写入len长度数据后，调用本函数$/;"	f	class:muduo::net::Buffer
+internalCapacity	Buffer.h	/^  size_t internalCapacity() const$/;"	f	class:muduo::net::Buffer
+kCRLF	Buffer.h	/^  static const char kCRLF[];  \/\/存储匹配串内容$/;"	m	class:muduo::net::Buffer
+kCheapPrepend	Buffer.h	/^  static const size_t kCheapPrepend = 8;  \/\/前面预留空间大小$/;"	m	class:muduo::net::Buffer
+kInitialSize	Buffer.h	/^  static const size_t kInitialSize = 1024;  \/\/初始化存储数据空间$/;"	m	class:muduo::net::Buffer
+makeSpace	Buffer.h	/^  void makeSpace(size_t len)  \/\/resize或移动数据，使Buffer能容下len大数据$/;"	f	class:muduo::net::Buffer
+muduo	Buffer.h	/^namespace muduo$/;"	n
+net	Buffer.h	/^namespace net$/;"	n	namespace:muduo
+peek	Buffer.h	/^  const char* peek() const  \/\/返回指向可读空间的起始位置指针$/;"	f	class:muduo::net::Buffer
+peekInt16	Buffer.h	/^  int16_t peekInt16() const$/;"	f	class:muduo::net::Buffer
+peekInt32	Buffer.h	/^  int32_t peekInt32() const$/;"	f	class:muduo::net::Buffer
+peekInt64	Buffer.h	/^  int64_t peekInt64() const \/\/从Buffer中读Int64长度数据并返回此数据$/;"	f	class:muduo::net::Buffer
+peekInt8	Buffer.h	/^  int8_t peekInt8() const$/;"	f	class:muduo::net::Buffer
+prepend	Buffer.h	/^  void prepend(const void* \/*restrict*\/ data, size_t len) \/\/把从data开始，长度为len的数据加到前缀$/;"	f	class:muduo::net::Buffer
+prependInt16	Buffer.h	/^  void prependInt16(int16_t x)$/;"	f	class:muduo::net::Buffer
+prependInt32	Buffer.h	/^  void prependInt32(int32_t x)$/;"	f	class:muduo::net::Buffer
+prependInt64	Buffer.h	/^  void prependInt64(int64_t x)  \/\/向前缀写数据$/;"	f	class:muduo::net::Buffer
+prependInt8	Buffer.h	/^  void prependInt8(int8_t x)$/;"	f	class:muduo::net::Buffer
+prependableBytes	Buffer.h	/^  size_t prependableBytes() const \/\/可写入位置$/;"	f	class:muduo::net::Buffer
+readInt16	Buffer.h	/^  int16_t readInt16()$/;"	f	class:muduo::net::Buffer
+readInt32	Buffer.h	/^  int32_t readInt32()$/;"	f	class:muduo::net::Buffer
+readInt64	Buffer.h	/^  int64_t readInt64()$/;"	f	class:muduo::net::Buffer
+readInt8	Buffer.h	/^  int8_t readInt8()$/;"	f	class:muduo::net::Buffer
+readableBytes	Buffer.h	/^  size_t readableBytes() const  \/\/可读空间有多大（即存储多少内容）$/;"	f	class:muduo::net::Buffer
+readerIndex_	Buffer.h	/^  size_t readerIndex_;  \/\/可读起始位置$/;"	m	class:muduo::net::Buffer
+retrieve	Buffer.h	/^  void retrieve(size_t len) \/\/取走len长度数据，主要在于设置readerIndex_和writerIndex_的值$/;"	f	class:muduo::net::Buffer
+retrieveAll	Buffer.h	/^  void retrieveAll()  \/\/全部取走$/;"	f	class:muduo::net::Buffer
+retrieveAllAsString	Buffer.h	/^  string retrieveAllAsString()  \/\/Buffer中所有数据以字符串形式取走$/;"	f	class:muduo::net::Buffer
+retrieveAsString	Buffer.h	/^  string retrieveAsString(size_t len)$/;"	f	class:muduo::net::Buffer
+retrieveInt16	Buffer.h	/^  void retrieveInt16()$/;"	f	class:muduo::net::Buffer
+retrieveInt32	Buffer.h	/^  void retrieveInt32()$/;"	f	class:muduo::net::Buffer
+retrieveInt64	Buffer.h	/^  void retrieveInt64()$/;"	f	class:muduo::net::Buffer
+retrieveInt8	Buffer.h	/^  void retrieveInt8()$/;"	f	class:muduo::net::Buffer
+retrieveUntil	Buffer.h	/^  void retrieveUntil(const char* end) \/\/end前的数据全取走$/;"	f	class:muduo::net::Buffer
+shrink	Buffer.h	/^  void shrink(size_t reserve) \/\/更改Buffer的大小，使其可写入空间为reserve大小$/;"	f	class:muduo::net::Buffer
+swap	Buffer.h	/^  void swap(Buffer& rhs)$/;"	f	class:muduo::net::Buffer
+toStringPiece	Buffer.h	/^  StringPiece toStringPiece() const$/;"	f	class:muduo::net::Buffer
+unwrite	Buffer.h	/^  void unwrite(size_t len)  \/\/撤销最后写入的len长度数据$/;"	f	class:muduo::net::Buffer
+writableBytes	Buffer.h	/^  size_t writableBytes() const  \/\/可写入空间有多大$/;"	f	class:muduo::net::Buffer
+writerIndex_	Buffer.h	/^  size_t writerIndex_;  \/\/可写入起始位置$/;"	m	class:muduo::net::Buffer
+CloseCallback	Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&)> CloseCallback;$/;"	t	namespace:muduo::net
+ConnectionCallback	Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&)> ConnectionCallback;$/;"	t	namespace:muduo::net
+HighWaterMarkCallback	Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&, size_t)> HighWaterMarkCallback;$/;"	t	namespace:muduo::net
+MUDUO_NET_CALLBACKS_H	Callbacks.h	12;"	d
+MessageCallback	Callbacks.h	/^                              Timestamp)> MessageCallback;$/;"	t	namespace:muduo::net
+TcpConnectionPtr	Callbacks.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+TimerCallback	Callbacks.h	/^typedef boost::function<void()> TimerCallback;$/;"	t	namespace:muduo::net
+WriteCompleteCallback	Callbacks.h	/^typedef boost::function<void (const TcpConnectionPtr&)> WriteCompleteCallback;$/;"	t	namespace:muduo::net
+down_pointer_cast	Callbacks.h	/^inline ::boost::shared_ptr<To> down_pointer_cast(const ::boost::shared_ptr<From>& f)$/;"	f	namespace:muduo
+muduo	Callbacks.h	/^namespace muduo$/;"	n
+net	Callbacks.h	/^namespace net$/;"	n	namespace:muduo
+Channel	Channel.cc	/^Channel::Channel(EventLoop* loop, int fd__)$/;"	f	class:Channel
+eventsToString	Channel.cc	/^string Channel::eventsToString() const$/;"	f	class:Channel
+eventsToString	Channel.cc	/^string Channel::eventsToString(int fd, int ev)$/;"	f	class:Channel
+handleEvent	Channel.cc	/^void Channel::handleEvent(Timestamp receiveTime)$/;"	f	class:Channel
+handleEventWithGuard	Channel.cc	/^void Channel::handleEventWithGuard(Timestamp receiveTime) \/\/根据revents表示的目前活动事件来回调相应函数$/;"	f	class:Channel
+kNoneEvent	Channel.cc	/^const int Channel::kNoneEvent = 0;$/;"	m	class:Channel	file:
+kReadEvent	Channel.cc	/^const int Channel::kReadEvent = POLLIN | POLLPRI;$/;"	m	class:Channel	file:
+kWriteEvent	Channel.cc	/^const int Channel::kWriteEvent = POLLOUT;$/;"	m	class:Channel	file:
+remove	Channel.cc	/^void Channel::remove()$/;"	f	class:Channel
+reventsToString	Channel.cc	/^string Channel::reventsToString() const$/;"	f	class:Channel
+tie	Channel.cc	/^void Channel::tie(const boost::shared_ptr<void>& obj)$/;"	f	class:Channel
+update	Channel.cc	/^void Channel::update()$/;"	f	class:Channel
+~Channel	Channel.cc	/^Channel::~Channel()$/;"	f	class:Channel
+Channel	Channel.h	/^class Channel : boost::noncopyable$/;"	c	namespace:muduo::net
+EventCallback	Channel.h	/^  typedef boost::function<void()> EventCallback;$/;"	t	class:muduo::net::Channel
+MUDUO_NET_CHANNEL_H	Channel.h	12;"	d
+ReadEventCallback	Channel.h	/^  typedef boost::function<void(Timestamp)> ReadEventCallback;$/;"	t	class:muduo::net::Channel
+addedToLoop_	Channel.h	/^  bool addedToLoop_;$/;"	m	class:muduo::net::Channel
+closeCallback_	Channel.h	/^  EventCallback closeCallback_;  \/\/ 定义如何关闭连接$/;"	m	class:muduo::net::Channel
+disableAll	Channel.h	/^  void disableAll() { events_ = kNoneEvent; update(); }$/;"	f	class:muduo::net::Channel
+disableReading	Channel.h	/^  void disableReading() { events_ &= ~kReadEvent; update(); }$/;"	f	class:muduo::net::Channel
+disableWriting	Channel.h	/^  void disableWriting() { events_ &= ~kWriteEvent; update(); }$/;"	f	class:muduo::net::Channel
+doNotLogHup	Channel.h	/^  void doNotLogHup() { logHup_ = false; }$/;"	f	class:muduo::net::Channel
+enableReading	Channel.h	/^  void enableReading() { events_ |= kReadEvent; update(); }$/;"	f	class:muduo::net::Channel
+enableWriting	Channel.h	/^  void enableWriting() { events_ |= kWriteEvent; update(); }$/;"	f	class:muduo::net::Channel
+errorCallback_	Channel.h	/^  EventCallback errorCallback_; \/\/ 定义如果出错的话如何处理$/;"	m	class:muduo::net::Channel
+eventHandling_	Channel.h	/^  bool eventHandling_; \/\/ 当前是否正在处理event$/;"	m	class:muduo::net::Channel
+events	Channel.h	/^  int events() const { return events_; }$/;"	f	class:muduo::net::Channel
+events_	Channel.h	/^  int        events_;   \/\/用户设置关心的IO事件$/;"	m	class:muduo::net::Channel
+fd	Channel.h	/^  int fd() const { return fd_; }$/;"	f	class:muduo::net::Channel
+fd_	Channel.h	/^  const int  fd_; \/\/ 关联fd$/;"	m	class:muduo::net::Channel
+index	Channel.h	/^  int index() { return index_; }$/;"	f	class:muduo::net::Channel
+index_	Channel.h	/^  int        index_; \/\/ used by Poller. 在Poller中的编号，实际上没有特别意思$/;"	m	class:muduo::net::Channel
+isNoneEvent	Channel.h	/^  bool isNoneEvent() const { return events_ == kNoneEvent; }$/;"	f	class:muduo::net::Channel
+isReading	Channel.h	/^  bool isReading() const { return events_ & kReadEvent; }$/;"	f	class:muduo::net::Channel
+isWriting	Channel.h	/^  bool isWriting() const { return events_ & kWriteEvent; }$/;"	f	class:muduo::net::Channel
+kNoneEvent	Channel.h	/^  static const int kNoneEvent;    \/\/static常量定义，用“类::XX”初始化方式$/;"	m	class:muduo::net::Channel
+kReadEvent	Channel.h	/^  static const int kReadEvent;$/;"	m	class:muduo::net::Channel
+kWriteEvent	Channel.h	/^  static const int kWriteEvent;$/;"	m	class:muduo::net::Channel
+logHup_	Channel.h	/^  bool       logHup_;$/;"	m	class:muduo::net::Channel
+loop_	Channel.h	/^  EventLoop* loop_; \/\/ 属于哪一个Reactor$/;"	m	class:muduo::net::Channel
+muduo	Channel.h	/^namespace muduo$/;"	n
+net	Channel.h	/^namespace net$/;"	n	namespace:muduo
+ownerLoop	Channel.h	/^  EventLoop* ownerLoop() { return loop_; }$/;"	f	class:muduo::net::Channel
+readCallback_	Channel.h	/^  ReadEventCallback readCallback_; $/;"	m	class:muduo::net::Channel
+revents_	Channel.h	/^  int        revents_; \/\/ it's the received event types of epoll or poll  目前的活动事件，由EventLoop\/Poller设置$/;"	m	class:muduo::net::Channel
+setCloseCallback	Channel.h	/^  void setCloseCallback(EventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setCloseCallback	Channel.h	/^  void setCloseCallback(const EventCallback& cb)$/;"	f	class:muduo::net::Channel
+setErrorCallback	Channel.h	/^  void setErrorCallback(EventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setErrorCallback	Channel.h	/^  void setErrorCallback(const EventCallback& cb)$/;"	f	class:muduo::net::Channel
+setReadCallback	Channel.h	/^  void setReadCallback(ReadEventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setReadCallback	Channel.h	/^  void setReadCallback(const ReadEventCallback& cb)$/;"	f	class:muduo::net::Channel
+setWriteCallback	Channel.h	/^  void setWriteCallback(EventCallback&& cb)$/;"	f	class:muduo::net::Channel
+setWriteCallback	Channel.h	/^  void setWriteCallback(const EventCallback& cb)$/;"	f	class:muduo::net::Channel
+set_index	Channel.h	/^  void set_index(int idx) { index_ = idx; }$/;"	f	class:muduo::net::Channel
+set_revents	Channel.h	/^  void set_revents(int revt) { revents_ = revt; } \/\/ used by pollers 该接口用来设置Poller需要监听Channel的哪些事件$/;"	f	class:muduo::net::Channel
+tie_	Channel.h	/^  boost::weak_ptr<void> tie_; \/\/ 绑定的对象,用处?$/;"	m	class:muduo::net::Channel
+tied_	Channel.h	/^  bool tied_;  \/\/ 是否绑定了对象上来$/;"	m	class:muduo::net::Channel
+writeCallback_	Channel.h	/^  EventCallback writeCallback_; \/\/ 定义如何写数据$/;"	m	class:muduo::net::Channel
+Connector	Connector.cc	/^Connector::Connector(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:Connector
+connect	Connector.cc	/^void Connector::connect()   \/\/开始建立连接$/;"	f	class:Connector
+connecting	Connector.cc	/^void Connector::connecting(int sockfd)$/;"	f	class:Connector
+handleError	Connector.cc	/^void Connector::handleError()$/;"	f	class:Connector
+handleWrite	Connector.cc	/^void Connector::handleWrite()  \/\/可写不一定表示已经建立连接$/;"	f	class:Connector
+kMaxRetryDelayMs	Connector.cc	/^const int Connector::kMaxRetryDelayMs;$/;"	m	class:Connector	file:
+removeAndResetChannel	Connector.cc	/^int Connector::removeAndResetChannel() \/\/移除channel。Connector中的channel只管理建立连接阶段。连接建立后，交给TcoConnection管理$/;"	f	class:Connector
+resetChannel	Connector.cc	/^void Connector::resetChannel()  \/\/reset后channel_为空$/;"	f	class:Connector
+restart	Connector.cc	/^void Connector::restart()   \/\/重启$/;"	f	class:Connector
+retry	Connector.cc	/^void Connector::retry(int sockfd) \/\/重新尝试连接$/;"	f	class:Connector
+start	Connector.cc	/^void Connector::start()$/;"	f	class:Connector
+startInLoop	Connector.cc	/^void Connector::startInLoop() \/\/在当前IO中建立连接$/;"	f	class:Connector
+stop	Connector.cc	/^void Connector::stop()$/;"	f	class:Connector
+stopInLoop	Connector.cc	/^void Connector::stopInLoop()$/;"	f	class:Connector
+~Connector	Connector.cc	/^Connector::~Connector()$/;"	f	class:Connector
+Connector	Connector.h	/^class Connector : boost::noncopyable,$/;"	c	namespace:muduo::net
+MUDUO_NET_CONNECTOR_H	Connector.h	12;"	d
+NewConnectionCallback	Connector.h	/^  typedef boost::function<void (int sockfd)> NewConnectionCallback;$/;"	t	class:muduo::net::Connector
+States	Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	g	class:muduo::net::Connector
+channel_	Connector.h	/^  boost::scoped_ptr<Channel> channel_;  \/\/Connector所对应的Channel$/;"	m	class:muduo::net::Connector
+connect_	Connector.h	/^  bool connect_; \/\/ atomic$/;"	m	class:muduo::net::Connector
+kConnected	Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	e	enum:muduo::net::Connector::States
+kConnecting	Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	e	enum:muduo::net::Connector::States
+kDisconnected	Connector.h	/^  enum States { kDisconnected, kConnecting, kConnected };$/;"	e	enum:muduo::net::Connector::States
+kInitRetryDelayMs	Connector.h	/^  static const int kInitRetryDelayMs = 500;  \/\/初始化重试延迟$/;"	m	class:muduo::net::Connector
+kMaxRetryDelayMs	Connector.h	/^  static const int kMaxRetryDelayMs = 30*1000;  \/\/最大重试延迟$/;"	m	class:muduo::net::Connector
+loop_	Connector.h	/^  EventLoop* loop_;  \/\/所属的EventLoop$/;"	m	class:muduo::net::Connector
+muduo	Connector.h	/^namespace muduo$/;"	n
+net	Connector.h	/^namespace net$/;"	n	namespace:muduo
+newConnectionCallback_	Connector.h	/^  NewConnectionCallback newConnectionCallback_; \/\/连接成功回调函数$/;"	m	class:muduo::net::Connector
+retryDelayMs_	Connector.h	/^  int retryDelayMs_;  \/\/重连延迟时间(单位ms)$/;"	m	class:muduo::net::Connector
+serverAddr_	Connector.h	/^  InetAddress serverAddr_;  \/\/server地址$/;"	m	class:muduo::net::Connector
+serverAddress	Connector.h	/^  const InetAddress& serverAddress() const { return serverAddr_; }$/;"	f	class:muduo::net::Connector
+setNewConnectionCallback	Connector.h	/^  void setNewConnectionCallback(const NewConnectionCallback& cb)$/;"	f	class:muduo::net::Connector
+setState	Connector.h	/^  void setState(States s) { state_ = s; }$/;"	f	class:muduo::net::Connector
+state_	Connector.h	/^  States state_;  \/\/ FIXME: use atomic variable$/;"	m	class:muduo::net::Connector
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+MUDUO_NET_ENDIAN_H	Endian.h	12;"	d
+hostToNetwork16	Endian.h	/^inline uint16_t hostToNetwork16(uint16_t host16)$/;"	f	namespace:muduo::net::sockets
+hostToNetwork32	Endian.h	/^inline uint32_t hostToNetwork32(uint32_t host32)$/;"	f	namespace:muduo::net::sockets
+hostToNetwork64	Endian.h	/^inline uint64_t hostToNetwork64(uint64_t host64)$/;"	f	namespace:muduo::net::sockets
+muduo	Endian.h	/^namespace muduo$/;"	n
+net	Endian.h	/^namespace net$/;"	n	namespace:muduo
+networkToHost16	Endian.h	/^inline uint16_t networkToHost16(uint16_t net16)$/;"	f	namespace:muduo::net::sockets
+networkToHost32	Endian.h	/^inline uint32_t networkToHost32(uint32_t net32)$/;"	f	namespace:muduo::net::sockets
+networkToHost64	Endian.h	/^inline uint64_t networkToHost64(uint64_t net64)$/;"	f	namespace:muduo::net::sockets
+sockets	Endian.h	/^namespace sockets$/;"	n	namespace:muduo::net
+EventLoop	EventLoop.cc	/^EventLoop::EventLoop()    \/\/不能跨线程调用，只能在创建EventLoop的线程使用！$/;"	f	class:EventLoop
+IgnoreSigPipe	EventLoop.cc	/^  IgnoreSigPipe()$/;"	f	class:__anon1::IgnoreSigPipe
+IgnoreSigPipe	EventLoop.cc	/^class IgnoreSigPipe$/;"	c	namespace:__anon1	file:
+abortNotInLoopThread	EventLoop.cc	/^void EventLoop::abortNotInLoopThread()$/;"	f	class:EventLoop
+cancel	EventLoop.cc	/^void EventLoop::cancel(TimerId timerId)$/;"	f	class:EventLoop
+createEventfd	EventLoop.cc	/^int createEventfd()$/;"	f	namespace:__anon1
+doPendingFunctors	EventLoop.cc	/^void EventLoop::doPendingFunctors() \/\/调用Functor$/;"	f	class:EventLoop
+getEventLoopOfCurrentThread	EventLoop.cc	/^EventLoop* EventLoop::getEventLoopOfCurrentThread() \/\/返回该线程的EventLoop对象（one loop per thread）$/;"	f	class:EventLoop
+handleRead	EventLoop.cc	/^void EventLoop::handleRead()$/;"	f	class:EventLoop
+hasChannel	EventLoop.cc	/^bool EventLoop::hasChannel(Channel* channel)$/;"	f	class:EventLoop
+initObj	EventLoop.cc	/^IgnoreSigPipe initObj;$/;"	m	namespace:__anon1	file:
+kPollTimeMs	EventLoop.cc	/^const int kPollTimeMs = 10000;$/;"	m	namespace:__anon1	file:
+loop	EventLoop.cc	/^void EventLoop::loop()$/;"	f	class:EventLoop
+printActiveChannels	EventLoop.cc	/^void EventLoop::printActiveChannels() const$/;"	f	class:EventLoop
+queueInLoop	EventLoop.cc	/^void EventLoop::queueInLoop(Functor&& cb)$/;"	f	class:EventLoop
+queueInLoop	EventLoop.cc	/^void EventLoop::queueInLoop(const Functor& cb)  $/;"	f	class:EventLoop
+queueSize	EventLoop.cc	/^size_t EventLoop::queueSize() const$/;"	f	class:EventLoop
+quit	EventLoop.cc	/^void EventLoop::quit()$/;"	f	class:EventLoop
+removeChannel	EventLoop.cc	/^void EventLoop::removeChannel(Channel* channel)$/;"	f	class:EventLoop
+runAfter	EventLoop.cc	/^TimerId EventLoop::runAfter(double delay, TimerCallback&& cb)$/;"	f	class:EventLoop
+runAfter	EventLoop.cc	/^TimerId EventLoop::runAfter(double delay, const TimerCallback& cb)$/;"	f	class:EventLoop
+runAt	EventLoop.cc	/^TimerId EventLoop::runAt(const Timestamp& time, TimerCallback&& cb)$/;"	f	class:EventLoop
+runAt	EventLoop.cc	/^TimerId EventLoop::runAt(const Timestamp& time, const TimerCallback& cb)$/;"	f	class:EventLoop
+runEvery	EventLoop.cc	/^TimerId EventLoop::runEvery(double interval, TimerCallback&& cb)$/;"	f	class:EventLoop
+runEvery	EventLoop.cc	/^TimerId EventLoop::runEvery(double interval, const TimerCallback& cb)$/;"	f	class:EventLoop
+runInLoop	EventLoop.cc	/^void EventLoop::runInLoop(Functor&& cb)$/;"	f	class:EventLoop
+runInLoop	EventLoop.cc	/^void EventLoop::runInLoop(const Functor& cb)  \/\/在它的IO线程内执行某个用户任务回调,避免线程不安全的问题，保证不会被多个线程同时访问。$/;"	f	class:EventLoop
+t_loopInThisThread	EventLoop.cc	/^__thread EventLoop* t_loopInThisThread = 0; \/\/使用线程局部变量.然后在EventLoop构造函数的时候判断这个是否==0,如果不为=0的话说明在这个线程已经构造过一个EventLoop了$/;"	m	namespace:__anon1	file:
+updateChannel	EventLoop.cc	/^void EventLoop::updateChannel(Channel* channel)$/;"	f	class:EventLoop
+wakeup	EventLoop.cc	/^void EventLoop::wakeup()    \/\/写一个字节给socket，唤醒可读事件。否则EventLoop::loop()的poll会阻塞$/;"	f	class:EventLoop
+~EventLoop	EventLoop.cc	/^EventLoop::~EventLoop()$/;"	f	class:EventLoop
+ChannelList	EventLoop.h	/^  typedef std::vector<Channel*> ChannelList;$/;"	t	class:muduo::net::EventLoop
+EventLoop	EventLoop.h	/^class EventLoop : boost::noncopyable$/;"	c	namespace:muduo::net
+Functor	EventLoop.h	/^  typedef boost::function<void()> Functor;$/;"	t	class:muduo::net::EventLoop
+MUDUO_NET_EVENTLOOP_H	EventLoop.h	12;"	d
+activeChannels_	EventLoop.h	/^  ChannelList activeChannels_;  \/\/保存的是poller类中的poll调用返回的所有活跃事件集$/;"	m	class:muduo::net::EventLoop
+assertInLoopThread	EventLoop.h	/^  void assertInLoopThread() \/\/断言处于当前线程中（主要是因为有些接口不能跨线程调用）$/;"	f	class:muduo::net::EventLoop
+callingPendingFunctors_	EventLoop.h	/^  bool callingPendingFunctors_; \/* atomic *\/$/;"	m	class:muduo::net::EventLoop
+context_	EventLoop.h	/^  boost::any context_;$/;"	m	class:muduo::net::EventLoop
+currentActiveChannel_	EventLoop.h	/^  Channel* currentActiveChannel_;$/;"	m	class:muduo::net::EventLoop
+eventHandling	EventLoop.h	/^  bool eventHandling() const { return eventHandling_; }$/;"	f	class:muduo::net::EventLoop
+eventHandling_	EventLoop.h	/^  bool eventHandling_; \/* atomic *\/$/;"	m	class:muduo::net::EventLoop
+getContext	EventLoop.h	/^  const boost::any& getContext() const$/;"	f	class:muduo::net::EventLoop
+getMutableContext	EventLoop.h	/^  boost::any* getMutableContext()$/;"	f	class:muduo::net::EventLoop
+isInLoopThread	EventLoop.h	/^  bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }  \/\/判断是是否处于同一线程，而不是跨线程$/;"	f	class:muduo::net::EventLoop
+iteration	EventLoop.h	/^  int64_t iteration() const { return iteration_; }$/;"	f	class:muduo::net::EventLoop
+iteration_	EventLoop.h	/^  int64_t iteration_;$/;"	m	class:muduo::net::EventLoop
+looping_	EventLoop.h	/^  bool looping_; \/* atomic *\/   \/\/是否处于事件循环$/;"	m	class:muduo::net::EventLoop
+muduo	EventLoop.h	/^namespace muduo$/;"	n
+mutex_	EventLoop.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::net::EventLoop
+net	EventLoop.h	/^namespace net$/;"	n	namespace:muduo
+pendingFunctors_	EventLoop.h	/^  std::vector<Functor> pendingFunctors_; \/\/ @GuardedBy mutex_$/;"	m	class:muduo::net::EventLoop
+pollReturnTime	EventLoop.h	/^  Timestamp pollReturnTime() const { return pollReturnTime_; }$/;"	f	class:muduo::net::EventLoop
+pollReturnTime_	EventLoop.h	/^  Timestamp pollReturnTime_;$/;"	m	class:muduo::net::EventLoop
+poller_	EventLoop.h	/^  boost::scoped_ptr<Poller> poller_;  \/\/EventLoop首先一定得有个I\/O复用才行,它的所有职责都是建立在I\/O复用之上的$/;"	m	class:muduo::net::EventLoop
+quit_	EventLoop.h	/^  bool quit_; \/* atomic and shared between threads, okay on x86, I guess. *\/$/;"	m	class:muduo::net::EventLoop
+setContext	EventLoop.h	/^  void setContext(const boost::any& context)$/;"	f	class:muduo::net::EventLoop
+threadId_	EventLoop.h	/^  const pid_t threadId_;    \/\/EventLoop构造函数会记住本对象所属的线程ID$/;"	m	class:muduo::net::EventLoop
+timerQueue_	EventLoop.h	/^  boost::scoped_ptr<TimerQueue> timerQueue_;  \/\/应该支持定时事件，关于定时器的所有操作和组织定义都在类TimerQueue中 $/;"	m	class:muduo::net::EventLoop
+wakeupChannel_	EventLoop.h	/^  boost::scoped_ptr<Channel> wakeupChannel_;  \/\/若此事件发生便会一次执行pendingFunctors_中的可调用对象 $/;"	m	class:muduo::net::EventLoop
+wakeupFd_	EventLoop.h	/^  int wakeupFd_;$/;"	m	class:muduo::net::EventLoop
+EventLoopThread	EventLoopThread.cc	/^EventLoopThread::EventLoopThread(const ThreadInitCallback& cb,$/;"	f	class:EventLoopThread
+startLoop	EventLoopThread.cc	/^EventLoop* EventLoopThread::startLoop() \/\/另一个线程在调用这个函数$/;"	f	class:EventLoopThread
+threadFunc	EventLoopThread.cc	/^void EventLoopThread::threadFunc()$/;"	f	class:EventLoopThread
+~EventLoopThread	EventLoopThread.cc	/^EventLoopThread::~EventLoopThread()$/;"	f	class:EventLoopThread
+EventLoopThread	EventLoopThread.h	/^class EventLoopThread : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_EVENTLOOPTHREAD_H	EventLoopThread.h	12;"	d
+ThreadInitCallback	EventLoopThread.h	/^  typedef boost::function<void(EventLoop*)> ThreadInitCallback;$/;"	t	class:muduo::net::EventLoopThread
+callback_	EventLoopThread.h	/^  ThreadInitCallback callback_; \/\/ 回调函数在EventLoop::loop事件循环之前被调用$/;"	m	class:muduo::net::EventLoopThread
+cond_	EventLoopThread.h	/^  Condition cond_;  \/\/条件变量$/;"	m	class:muduo::net::EventLoopThread
+exiting_	EventLoopThread.h	/^  bool exiting_;  \/\/是否已经退出$/;"	m	class:muduo::net::EventLoopThread
+loop_	EventLoopThread.h	/^  EventLoop* loop_; \/\/本线程持有的EventLoop对象指针$/;"	m	class:muduo::net::EventLoopThread
+muduo	EventLoopThread.h	/^namespace muduo$/;"	n
+mutex_	EventLoopThread.h	/^  MutexLock mutex_; \/\/互斥锁$/;"	m	class:muduo::net::EventLoopThread
+net	EventLoopThread.h	/^namespace net$/;"	n	namespace:muduo
+thread_	EventLoopThread.h	/^  Thread thread_; \/\/本线程$/;"	m	class:muduo::net::EventLoopThread
+EventLoopThreadPool	EventLoopThreadPool.cc	/^EventLoopThreadPool::EventLoopThreadPool(EventLoop* baseLoop, const string& nameArg)$/;"	f	class:EventLoopThreadPool
+getAllLoops	EventLoopThreadPool.cc	/^std::vector<EventLoop*> EventLoopThreadPool::getAllLoops()$/;"	f	class:EventLoopThreadPool
+getLoopForHash	EventLoopThreadPool.cc	/^EventLoop* EventLoopThreadPool::getLoopForHash(size_t hashCode)$/;"	f	class:EventLoopThreadPool
+getNextLoop	EventLoopThreadPool.cc	/^EventLoop* EventLoopThreadPool::getNextLoop()$/;"	f	class:EventLoopThreadPool
+start	EventLoopThreadPool.cc	/^void EventLoopThreadPool::start(const ThreadInitCallback& cb) $/;"	f	class:EventLoopThreadPool
+~EventLoopThreadPool	EventLoopThreadPool.cc	/^EventLoopThreadPool::~EventLoopThreadPool()$/;"	f	class:EventLoopThreadPool
+EventLoopThreadPool	EventLoopThreadPool.h	/^class EventLoopThreadPool : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_EVENTLOOPTHREADPOOL_H	EventLoopThreadPool.h	12;"	d
+ThreadInitCallback	EventLoopThreadPool.h	/^  typedef boost::function<void(EventLoop*)> ThreadInitCallback;$/;"	t	class:muduo::net::EventLoopThreadPool
+baseLoop_	EventLoopThreadPool.h	/^  EventLoop* baseLoop_; \/\/ 与Acceptor所属EventLoop相同$/;"	m	class:muduo::net::EventLoopThreadPool
+loops_	EventLoopThreadPool.h	/^  std::vector<EventLoop*> loops_; \/\/用来保存每个loop循环的EventLoop的指针$/;"	m	class:muduo::net::EventLoopThreadPool
+muduo	EventLoopThreadPool.h	/^namespace muduo$/;"	n
+name	EventLoopThreadPool.h	/^  const string& name() const$/;"	f	class:muduo::net::EventLoopThreadPool
+name_	EventLoopThreadPool.h	/^  string name_;$/;"	m	class:muduo::net::EventLoopThreadPool
+net	EventLoopThreadPool.h	/^namespace net$/;"	n	namespace:muduo
+next_	EventLoopThreadPool.h	/^  int next_;  \/\/next为保存当前loops_的下标$/;"	m	class:muduo::net::EventLoopThreadPool
+numThreads_	EventLoopThreadPool.h	/^  int numThreads_;  \/\/表示创建多少个loop线程$/;"	m	class:muduo::net::EventLoopThreadPool
+setThreadNum	EventLoopThreadPool.h	/^  void setThreadNum(int numThreads) { numThreads_ = numThreads; } \/\/设置开启loop循环的线程数量$/;"	f	class:muduo::net::EventLoopThreadPool
+started	EventLoopThreadPool.h	/^  bool started() const$/;"	f	class:muduo::net::EventLoopThreadPool
+started_	EventLoopThreadPool.h	/^  bool started_;$/;"	m	class:muduo::net::EventLoopThreadPool
+threads_	EventLoopThreadPool.h	/^  boost::ptr_vector<EventLoopThread> threads_;  \/\/保存运行loop循环的线程$/;"	m	class:muduo::net::EventLoopThreadPool
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+InetAddress	InetAddress.cc	/^InetAddress::InetAddress(StringArg ip, uint16_t port, bool ipv6)$/;"	f	class:InetAddress
+InetAddress	InetAddress.cc	/^InetAddress::InetAddress(uint16_t port, bool loopbackOnly, bool ipv6)$/;"	f	class:InetAddress
+ipNetEndian	InetAddress.cc	/^uint32_t InetAddress::ipNetEndian() const$/;"	f	class:InetAddress
+kInaddrAny	InetAddress.cc	/^static const in_addr_t kInaddrAny = INADDR_ANY;$/;"	v	file:
+kInaddrLoopback	InetAddress.cc	/^static const in_addr_t kInaddrLoopback = INADDR_LOOPBACK;$/;"	v	file:
+resolve	InetAddress.cc	/^bool InetAddress::resolve(StringArg hostname, InetAddress* out)$/;"	f	class:InetAddress
+t_resolveBuffer	InetAddress.cc	/^static __thread char t_resolveBuffer[64 * 1024];$/;"	v	file:
+toIp	InetAddress.cc	/^string InetAddress::toIp() const$/;"	f	class:InetAddress
+toIpPort	InetAddress.cc	/^string InetAddress::toIpPort() const$/;"	f	class:InetAddress
+toPort	InetAddress.cc	/^uint16_t InetAddress::toPort() const$/;"	f	class:InetAddress
+InetAddress	InetAddress.h	/^  explicit InetAddress(const struct sockaddr_in& addr)$/;"	f	class:muduo::net::InetAddress
+InetAddress	InetAddress.h	/^  explicit InetAddress(const struct sockaddr_in6& addr)$/;"	f	class:muduo::net::InetAddress
+InetAddress	InetAddress.h	/^class InetAddress : public muduo::copyable$/;"	c	namespace:muduo::net
+MUDUO_NET_INETADDRESS_H	InetAddress.h	12;"	d
+addr6_	InetAddress.h	/^    struct sockaddr_in6 addr6_;$/;"	m	union:muduo::net::InetAddress::__anon7	typeref:struct:muduo::net::InetAddress::__anon7::sockaddr_in6
+addr_	InetAddress.h	/^    struct sockaddr_in addr_;$/;"	m	union:muduo::net::InetAddress::__anon7	typeref:struct:muduo::net::InetAddress::__anon7::sockaddr_in
+family	InetAddress.h	/^  sa_family_t family() const { return addr_.sin_family; }$/;"	f	class:muduo::net::InetAddress
+getSockAddr	InetAddress.h	/^  const struct sockaddr* getSockAddr() const { return sockets::sockaddr_cast(&addr6_); }$/;"	f	class:muduo::net::InetAddress
+muduo	InetAddress.h	/^namespace muduo$/;"	n
+net	InetAddress.h	/^namespace net$/;"	n	namespace:muduo
+portNetEndian	InetAddress.h	/^  uint16_t portNetEndian() const { return addr_.sin_port; }$/;"	f	class:muduo::net::InetAddress
+setSockAddrInet6	InetAddress.h	/^  void setSockAddrInet6(const struct sockaddr_in6& addr6) { addr6_ = addr6; }$/;"	f	class:muduo::net::InetAddress
+sockets	InetAddress.h	/^namespace sockets$/;"	n	namespace:muduo::net
+Poller	Poller.cc	/^Poller::Poller(EventLoop* loop)$/;"	f	class:Poller
+hasChannel	Poller.cc	/^bool Poller::hasChannel(Channel* channel) const$/;"	f	class:Poller
+~Poller	Poller.cc	/^Poller::~Poller()$/;"	f	class:Poller
+ChannelList	Poller.h	/^  typedef std::vector<Channel*> ChannelList;$/;"	t	class:muduo::net::Poller
+ChannelMap	Poller.h	/^  typedef std::map<int, Channel*> ChannelMap;$/;"	t	class:muduo::net::Poller
+MUDUO_NET_POLLER_H	Poller.h	12;"	d
+Poller	Poller.h	/^class Poller : boost::noncopyable$/;"	c	namespace:muduo::net
+assertInLoopThread	Poller.h	/^  void assertInLoopThread() const$/;"	f	class:muduo::net::Poller
+channels_	Poller.h	/^  ChannelMap channels_;$/;"	m	class:muduo::net::Poller
+muduo	Poller.h	/^namespace muduo$/;"	n
+net	Poller.h	/^namespace net$/;"	n	namespace:muduo
+ownerLoop_	Poller.h	/^  EventLoop* ownerLoop_;$/;"	m	class:muduo::net::Poller
+accept	Socket.cc	/^int Socket::accept(InetAddress* peeraddr)$/;"	f	class:Socket
+bindAddress	Socket.cc	/^void Socket::bindAddress(const InetAddress& addr)$/;"	f	class:Socket
+getTcpInfo	Socket.cc	/^bool Socket::getTcpInfo(struct tcp_info* tcpi) const$/;"	f	class:Socket
+getTcpInfoString	Socket.cc	/^bool Socket::getTcpInfoString(char* buf, int len) const$/;"	f	class:Socket
+listen	Socket.cc	/^void Socket::listen()$/;"	f	class:Socket
+setKeepAlive	Socket.cc	/^void Socket::setKeepAlive(bool on)$/;"	f	class:Socket
+setReuseAddr	Socket.cc	/^void Socket::setReuseAddr(bool on)$/;"	f	class:Socket
+setReusePort	Socket.cc	/^void Socket::setReusePort(bool on)$/;"	f	class:Socket
+setTcpNoDelay	Socket.cc	/^void Socket::setTcpNoDelay(bool on)$/;"	f	class:Socket
+shutdownWrite	Socket.cc	/^void Socket::shutdownWrite()$/;"	f	class:Socket
+~Socket	Socket.cc	/^Socket::~Socket()$/;"	f	class:Socket
+MUDUO_NET_SOCKET_H	Socket.h	12;"	d
+Socket	Socket.h	/^  explicit Socket(int sockfd)$/;"	f	class:muduo::net::Socket
+Socket	Socket.h	/^class Socket : boost::noncopyable$/;"	c	namespace:muduo::net
+fd	Socket.h	/^  int fd() const { return sockfd_; }$/;"	f	class:muduo::net::Socket
+muduo	Socket.h	/^namespace muduo$/;"	n
+net	Socket.h	/^namespace net$/;"	n	namespace:muduo
+sockfd_	Socket.h	/^  const int sockfd_;$/;"	m	class:muduo::net::Socket
+SA	SocketsOps.cc	/^typedef struct sockaddr SA;$/;"	t	namespace:__anon2	typeref:struct:__anon2::sockaddr	file:
+accept	SocketsOps.cc	/^int sockets::accept(int sockfd, struct sockaddr_in6* addr)  $/;"	f	class:sockets
+bindOrDie	SocketsOps.cc	/^void sockets::bindOrDie(int sockfd, const struct sockaddr* addr)$/;"	f	class:sockets
+close	SocketsOps.cc	/^void sockets::close(int sockfd)$/;"	f	class:sockets
+connect	SocketsOps.cc	/^int sockets::connect(int sockfd, const struct sockaddr* addr)$/;"	f	class:sockets
+createNonblockingOrDie	SocketsOps.cc	/^int sockets::createNonblockingOrDie(sa_family_t family)$/;"	f	class:sockets
+fromIpPort	SocketsOps.cc	/^void sockets::fromIpPort(const char* ip, uint16_t port,$/;"	f	class:sockets
+getLocalAddr	SocketsOps.cc	/^struct sockaddr_in6 sockets::getLocalAddr(int sockfd)$/;"	f	class:sockets
+getPeerAddr	SocketsOps.cc	/^struct sockaddr_in6 sockets::getPeerAddr(int sockfd)$/;"	f	class:sockets
+getSocketError	SocketsOps.cc	/^int sockets::getSocketError(int sockfd)$/;"	f	class:sockets
+isSelfConnect	SocketsOps.cc	/^bool sockets::isSelfConnect(int sockfd)   \/\/判断是否发生了自连接,即源端IP\/PORT=目的端IP\/PORT$/;"	f	class:sockets
+listenOrDie	SocketsOps.cc	/^void sockets::listenOrDie(int sockfd)$/;"	f	class:sockets
+read	SocketsOps.cc	/^ssize_t sockets::read(int sockfd, void *buf, size_t count)$/;"	f	class:sockets
+readv	SocketsOps.cc	/^ssize_t sockets::readv(int sockfd, const struct iovec *iov, int iovcnt)$/;"	f	class:sockets
+setNonBlockAndCloseOnExec	SocketsOps.cc	/^void setNonBlockAndCloseOnExec(int sockfd)$/;"	f	namespace:__anon2
+shutdownWrite	SocketsOps.cc	/^void sockets::shutdownWrite(int sockfd)$/;"	f	class:sockets
+sockaddr_cast	SocketsOps.cc	/^const struct sockaddr* sockets::sockaddr_cast(const struct sockaddr_in* addr)$/;"	f	class:sockets
+sockaddr_cast	SocketsOps.cc	/^const struct sockaddr* sockets::sockaddr_cast(const struct sockaddr_in6* addr)$/;"	f	class:sockets
+sockaddr_cast	SocketsOps.cc	/^struct sockaddr* sockets::sockaddr_cast(struct sockaddr_in6* addr)$/;"	f	class:sockets
+sockaddr_in6_cast	SocketsOps.cc	/^const struct sockaddr_in6* sockets::sockaddr_in6_cast(const struct sockaddr* addr)$/;"	f	class:sockets
+sockaddr_in_cast	SocketsOps.cc	/^const struct sockaddr_in* sockets::sockaddr_in_cast(const struct sockaddr* addr)$/;"	f	class:sockets
+toIp	SocketsOps.cc	/^void sockets::toIp(char* buf, size_t size,$/;"	f	class:sockets
+toIpPort	SocketsOps.cc	/^void sockets::toIpPort(char* buf, size_t size,$/;"	f	class:sockets
+write	SocketsOps.cc	/^ssize_t sockets::write(int sockfd, const void *buf, size_t count)$/;"	f	class:sockets
+MUDUO_NET_SOCKETSOPS_H	SocketsOps.h	12;"	d
+muduo	SocketsOps.h	/^namespace muduo$/;"	n
+net	SocketsOps.h	/^namespace net$/;"	n	namespace:muduo
+sockets	SocketsOps.h	/^namespace sockets$/;"	n	namespace:muduo::net
+TcpClient	TcpClient.cc	/^TcpClient::TcpClient(EventLoop* loop,$/;"	f	class:TcpClient
+connect	TcpClient.cc	/^void TcpClient::connect()   \/\/用来向服务端发起连接$/;"	f	class:TcpClient
+detail	TcpClient.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+disconnect	TcpClient.cc	/^void TcpClient::disconnect()  \/\/关闭连接$/;"	f	class:TcpClient
+muduo	TcpClient.cc	/^namespace muduo$/;"	n	file:
+net	TcpClient.cc	/^namespace net$/;"	n	namespace:muduo	file:
+newConnection	TcpClient.cc	/^void TcpClient::newConnection(int sockfd)$/;"	f	class:TcpClient
+removeConnection	TcpClient.cc	/^void TcpClient::removeConnection(const TcpConnectionPtr& conn)$/;"	f	class:TcpClient
+removeConnection	TcpClient.cc	/^void removeConnection(EventLoop* loop, const TcpConnectionPtr& conn)$/;"	f	namespace:muduo::net::detail
+removeConnector	TcpClient.cc	/^void removeConnector(const ConnectorPtr& connector)$/;"	f	namespace:muduo::net::detail
+stop	TcpClient.cc	/^void TcpClient::stop()$/;"	f	class:TcpClient
+~TcpClient	TcpClient.cc	/^TcpClient::~TcpClient()$/;"	f	class:TcpClient
+ConnectorPtr	TcpClient.h	/^typedef boost::shared_ptr<Connector> ConnectorPtr;$/;"	t	namespace:muduo::net
+MUDUO_NET_TCPCLIENT_H	TcpClient.h	12;"	d
+TcpClient	TcpClient.h	/^class TcpClient : boost::noncopyable$/;"	c	namespace:muduo::net
+connect_	TcpClient.h	/^  bool connect_; \/\/ atomic$/;"	m	class:muduo::net::TcpClient
+connection	TcpClient.h	/^  TcpConnectionPtr connection() const$/;"	f	class:muduo::net::TcpClient
+connectionCallback_	TcpClient.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:muduo::net::TcpClient
+connection_	TcpClient.h	/^  TcpConnectionPtr connection_; \/\/ @GuardedBy mutex_  Connector建立连接成功后把控制交给TcpConnection$/;"	m	class:muduo::net::TcpClient
+connector_	TcpClient.h	/^  ConnectorPtr connector_; \/\/ avoid revealing Connector  一个TcpClient有一个Connector对应,Connector用来建立连接$/;"	m	class:muduo::net::TcpClient
+enableRetry	TcpClient.h	/^  void enableRetry() { retry_ = true; }$/;"	f	class:muduo::net::TcpClient
+getLoop	TcpClient.h	/^  EventLoop* getLoop() const { return loop_; }$/;"	f	class:muduo::net::TcpClient
+loop_	TcpClient.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::TcpClient
+messageCallback_	TcpClient.h	/^  MessageCallback messageCallback_;$/;"	m	class:muduo::net::TcpClient
+muduo	TcpClient.h	/^namespace muduo$/;"	n
+mutex_	TcpClient.h	/^  mutable MutexLock mutex_;$/;"	m	class:muduo::net::TcpClient
+name	TcpClient.h	/^  const string& name() const$/;"	f	class:muduo::net::TcpClient
+name_	TcpClient.h	/^  const string name_;$/;"	m	class:muduo::net::TcpClient
+net	TcpClient.h	/^namespace net$/;"	n	namespace:muduo
+nextConnId_	TcpClient.h	/^  int nextConnId_;          \/\/name_+nextConnid_用于标识一个连接$/;"	m	class:muduo::net::TcpClient
+retry	TcpClient.h	/^  bool retry() const { return retry_; }$/;"	f	class:muduo::net::TcpClient
+retry_	TcpClient.h	/^  bool retry_;   \/\/ atomic   \/\/是否重连，是指建立的连接成功后又断开是否重连。而Connector的重连是一直不成功是否重试的意思$/;"	m	class:muduo::net::TcpClient
+setConnectionCallback	TcpClient.h	/^  void setConnectionCallback(ConnectionCallback&& cb)$/;"	f	class:muduo::net::TcpClient
+setConnectionCallback	TcpClient.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:muduo::net::TcpClient
+setMessageCallback	TcpClient.h	/^  void setMessageCallback(MessageCallback&& cb)$/;"	f	class:muduo::net::TcpClient
+setMessageCallback	TcpClient.h	/^  void setMessageCallback(const MessageCallback& cb)$/;"	f	class:muduo::net::TcpClient
+setWriteCompleteCallback	TcpClient.h	/^  void setWriteCompleteCallback(WriteCompleteCallback&& cb)$/;"	f	class:muduo::net::TcpClient
+setWriteCompleteCallback	TcpClient.h	/^  void setWriteCompleteCallback(const WriteCompleteCallback& cb)$/;"	f	class:muduo::net::TcpClient
+writeCompleteCallback_	TcpClient.h	/^  WriteCompleteCallback writeCompleteCallback_;$/;"	m	class:muduo::net::TcpClient
+TcpConnection	TcpConnection.cc	/^TcpConnection::TcpConnection(EventLoop* loop,  \/\/ 建立连接需要一个Reactor$/;"	f	class:TcpConnection
+connectDestroyed	TcpConnection.cc	/^void TcpConnection::connectDestroyed()$/;"	f	class:TcpConnection
+connectEstablished	TcpConnection.cc	/^void TcpConnection::connectEstablished()  \/\/连接建立。在TcpServer中建立连接后会调用次函数$/;"	f	class:TcpConnection
+defaultConnectionCallback	TcpConnection.cc	/^void muduo::net::defaultConnectionCallback(const TcpConnectionPtr& conn)$/;"	f	class:muduo::net
+defaultMessageCallback	TcpConnection.cc	/^void muduo::net::defaultMessageCallback(const TcpConnectionPtr&,$/;"	f	class:muduo::net
+forceClose	TcpConnection.cc	/^void TcpConnection::forceClose()  \/\/关闭Connection$/;"	f	class:TcpConnection
+forceCloseInLoop	TcpConnection.cc	/^void TcpConnection::forceCloseInLoop()$/;"	f	class:TcpConnection
+forceCloseWithDelay	TcpConnection.cc	/^void TcpConnection::forceCloseWithDelay(double seconds) \/\/延迟关闭，使用了定时器$/;"	f	class:TcpConnection
+getTcpInfo	TcpConnection.cc	/^bool TcpConnection::getTcpInfo(struct tcp_info* tcpi) const$/;"	f	class:TcpConnection
+getTcpInfoString	TcpConnection.cc	/^string TcpConnection::getTcpInfoString() const$/;"	f	class:TcpConnection
+handleClose	TcpConnection.cc	/^void TcpConnection::handleClose() \/\/处理关闭事件$/;"	f	class:TcpConnection
+handleError	TcpConnection.cc	/^void TcpConnection::handleError()$/;"	f	class:TcpConnection
+handleRead	TcpConnection.cc	/^void TcpConnection::handleRead(Timestamp receiveTime) \/\/数据到来,调用用户定义的接收信息回调$/;"	f	class:TcpConnection
+handleWrite	TcpConnection.cc	/^void TcpConnection::handleWrite() \/\/自己处理可写事件$/;"	f	class:TcpConnection
+send	TcpConnection.cc	/^void TcpConnection::send(Buffer* buf)$/;"	f	class:TcpConnection
+send	TcpConnection.cc	/^void TcpConnection::send(const StringPiece& message)$/;"	f	class:TcpConnection
+send	TcpConnection.cc	/^void TcpConnection::send(const void* data, int len)$/;"	f	class:TcpConnection
+sendInLoop	TcpConnection.cc	/^void TcpConnection::sendInLoop(const StringPiece& message)$/;"	f	class:TcpConnection
+sendInLoop	TcpConnection.cc	/^void TcpConnection::sendInLoop(const void* data, size_t len)$/;"	f	class:TcpConnection
+setTcpNoDelay	TcpConnection.cc	/^void TcpConnection::setTcpNoDelay(bool on)$/;"	f	class:TcpConnection
+shutdown	TcpConnection.cc	/^void TcpConnection::shutdown()  \/\/半关闭，关闭写端$/;"	f	class:TcpConnection
+shutdownInLoop	TcpConnection.cc	/^void TcpConnection::shutdownInLoop()$/;"	f	class:TcpConnection
+startRead	TcpConnection.cc	/^void TcpConnection::startRead()$/;"	f	class:TcpConnection
+startReadInLoop	TcpConnection.cc	/^void TcpConnection::startReadInLoop() \/\/开始读$/;"	f	class:TcpConnection
+stateToString	TcpConnection.cc	/^const char* TcpConnection::stateToString() const$/;"	f	class:TcpConnection
+stopRead	TcpConnection.cc	/^void TcpConnection::stopRead()$/;"	f	class:TcpConnection
+stopReadInLoop	TcpConnection.cc	/^void TcpConnection::stopReadInLoop()  \/\/停止读$/;"	f	class:TcpConnection
+~TcpConnection	TcpConnection.cc	/^TcpConnection::~TcpConnection()$/;"	f	class:TcpConnection
+MUDUO_NET_TCPCONNECTION_H	TcpConnection.h	12;"	d
+StateE	TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	g	class:muduo::net::TcpConnection
+TcpConnection	TcpConnection.h	/^class TcpConnection : boost::noncopyable,$/;"	c	namespace:muduo::net
+TcpConnectionPtr	TcpConnection.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+channel_	TcpConnection.h	/^  boost::scoped_ptr<Channel> channel_; \/\/套接字上对应的事件以及处理都将由和套接字对应的Channel来处理$/;"	m	class:muduo::net::TcpConnection
+closeCallback_	TcpConnection.h	/^  CloseCallback closeCallback_;   \/\/ 内部的close回调函数$/;"	m	class:muduo::net::TcpConnection
+connected	TcpConnection.h	/^  bool connected() const { return state_ == kConnected; }$/;"	f	class:muduo::net::TcpConnection
+connectionCallback_	TcpConnection.h	/^  ConnectionCallback connectionCallback_; \/\/连接回调$/;"	m	class:muduo::net::TcpConnection
+context_	TcpConnection.h	/^  boost::any context_;  \/\/ boost的any库 可以保持任意的类型 绑定一个未知类型的上下文对象$/;"	m	class:muduo::net::TcpConnection
+disconnected	TcpConnection.h	/^  bool disconnected() const { return state_ == kDisconnected; }$/;"	f	class:muduo::net::TcpConnection
+getContext	TcpConnection.h	/^  const boost::any& getContext() const$/;"	f	class:muduo::net::TcpConnection
+getLoop	TcpConnection.h	/^  EventLoop* getLoop() const { return loop_; }$/;"	f	class:muduo::net::TcpConnection
+getMutableContext	TcpConnection.h	/^  boost::any* getMutableContext()$/;"	f	class:muduo::net::TcpConnection
+highWaterMarkCallback_	TcpConnection.h	/^  HighWaterMarkCallback highWaterMarkCallback_; \/\/outbuffer快满了的高水位回调函数 $/;"	m	class:muduo::net::TcpConnection
+highWaterMark_	TcpConnection.h	/^  size_t highWaterMark_;  \/\/\/\/发送缓冲区数据“上限阀值”，超过这个值$/;"	m	class:muduo::net::TcpConnection
+inputBuffer	TcpConnection.h	/^  Buffer* inputBuffer()$/;"	f	class:muduo::net::TcpConnection
+inputBuffer_	TcpConnection.h	/^  Buffer inputBuffer_;  \/\/每一个连接都会对应一对读写input\/output buffer$/;"	m	class:muduo::net::TcpConnection
+isReading	TcpConnection.h	/^  bool isReading() const { return reading_; }; \/\/ NOT thread safe, may race with start\/stopReadInLoop$/;"	f	class:muduo::net::TcpConnection
+kConnected	TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kConnecting	TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kDisconnected	TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+kDisconnecting	TcpConnection.h	/^  enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };$/;"	e	enum:muduo::net::TcpConnection::StateE
+localAddr_	TcpConnection.h	/^  const InetAddress localAddr_; \/\/本地服务器地址$/;"	m	class:muduo::net::TcpConnection
+localAddress	TcpConnection.h	/^  const InetAddress& localAddress() const { return localAddr_; }$/;"	f	class:muduo::net::TcpConnection
+loop_	TcpConnection.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::TcpConnection
+messageCallback_	TcpConnection.h	/^  MessageCallback messageCallback_; \/\/接收消息到达时的回调$/;"	m	class:muduo::net::TcpConnection
+muduo	TcpConnection.h	/^namespace muduo$/;"	n
+name	TcpConnection.h	/^  const string& name() const { return name_; }$/;"	f	class:muduo::net::TcpConnection
+name_	TcpConnection.h	/^  const string name_;$/;"	m	class:muduo::net::TcpConnection
+net	TcpConnection.h	/^namespace net$/;"	n	namespace:muduo
+outputBuffer	TcpConnection.h	/^  Buffer* outputBuffer()$/;"	f	class:muduo::net::TcpConnection
+outputBuffer_	TcpConnection.h	/^  Buffer outputBuffer_; \/\/ FIXME: use list<Buffer> as output buffer.$/;"	m	class:muduo::net::TcpConnection
+peerAddr_	TcpConnection.h	/^  const InetAddress peerAddr_;  \/\/对方客户端地址$/;"	m	class:muduo::net::TcpConnection
+peerAddress	TcpConnection.h	/^  const InetAddress& peerAddress() const { return peerAddr_; }$/;"	f	class:muduo::net::TcpConnection
+reading_	TcpConnection.h	/^  bool reading_;$/;"	m	class:muduo::net::TcpConnection
+setCloseCallback	TcpConnection.h	/^  void setCloseCallback(const CloseCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setConnectionCallback	TcpConnection.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setContext	TcpConnection.h	/^  void setContext(const boost::any& context)  \/\/boost::any是一个能保存任意类型值的类$/;"	f	class:muduo::net::TcpConnection
+setHighWaterMarkCallback	TcpConnection.h	/^  void setHighWaterMarkCallback(const HighWaterMarkCallback& cb, size_t highWaterMark)$/;"	f	class:muduo::net::TcpConnection
+setMessageCallback	TcpConnection.h	/^  void setMessageCallback(const MessageCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+setState	TcpConnection.h	/^  void setState(StateE s) { state_ = s; }$/;"	f	class:muduo::net::TcpConnection
+setWriteCompleteCallback	TcpConnection.h	/^  void setWriteCompleteCallback(const WriteCompleteCallback& cb)$/;"	f	class:muduo::net::TcpConnection
+socket_	TcpConnection.h	/^  boost::scoped_ptr<Socket> socket_;  \/\/套接字类$/;"	m	class:muduo::net::TcpConnection
+state_	TcpConnection.h	/^  StateE state_;  \/\/ FIXME: use atomic variable$/;"	m	class:muduo::net::TcpConnection
+writeCompleteCallback_	TcpConnection.h	/^  WriteCompleteCallback writeCompleteCallback_; \/\/ 低水位回调函数$/;"	m	class:muduo::net::TcpConnection
+TcpServer	TcpServer.cc	/^TcpServer::TcpServer(EventLoop* loop,$/;"	f	class:TcpServer
+newConnection	TcpServer.cc	/^void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)$/;"	f	class:TcpServer
+removeConnection	TcpServer.cc	/^void TcpServer::removeConnection(const TcpConnectionPtr& conn)$/;"	f	class:TcpServer
+removeConnectionInLoop	TcpServer.cc	/^void TcpServer::removeConnectionInLoop(const TcpConnectionPtr& conn)$/;"	f	class:TcpServer
+setThreadNum	TcpServer.cc	/^void TcpServer::setThreadNum(int numThreads)  \/\/设置线程池大小$/;"	f	class:TcpServer
+start	TcpServer.cc	/^void TcpServer::start() $/;"	f	class:TcpServer
+~TcpServer	TcpServer.cc	/^TcpServer::~TcpServer()$/;"	f	class:TcpServer
+ConnectionMap	TcpServer.h	/^  typedef std::map<string, TcpConnectionPtr> ConnectionMap; \/\/通过每一个连接的名字来找到对应的连接来维护管理TcpConnection的$/;"	t	class:muduo::net::TcpServer
+MUDUO_NET_TCPSERVER_H	TcpServer.h	12;"	d
+Option	TcpServer.h	/^  enum Option$/;"	g	class:muduo::net::TcpServer
+TcpServer	TcpServer.h	/^class TcpServer : boost::noncopyable$/;"	c	namespace:muduo::net
+ThreadInitCallback	TcpServer.h	/^  typedef boost::function<void(EventLoop*)> ThreadInitCallback;$/;"	t	class:muduo::net::TcpServer
+acceptor_	TcpServer.h	/^  boost::scoped_ptr<Acceptor> acceptor_; \/\/ avoid revealing Acceptor 使用该类来监听连接，并通过处理该套接字来获得新连接sockfd$/;"	m	class:muduo::net::TcpServer
+connectionCallback_	TcpServer.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:muduo::net::TcpServer
+connections_	TcpServer.h	/^  ConnectionMap connections_; \/\/Map的key为connection的name(name与TcpConnectionPtr作映射)$/;"	m	class:muduo::net::TcpServer
+getLoop	TcpServer.h	/^  EventLoop* getLoop() const { return loop_; }$/;"	f	class:muduo::net::TcpServer
+ipPort	TcpServer.h	/^  const string& ipPort() const { return ipPort_; }$/;"	f	class:muduo::net::TcpServer
+ipPort_	TcpServer.h	/^  const string ipPort_; \/\/端口号$/;"	m	class:muduo::net::TcpServer
+kNoReusePort	TcpServer.h	/^    kNoReusePort,$/;"	e	enum:muduo::net::TcpServer::Option
+kReusePort	TcpServer.h	/^    kReusePort,$/;"	e	enum:muduo::net::TcpServer::Option
+loop_	TcpServer.h	/^  EventLoop* loop_;  \/\/ the acceptor loop I\/O复用抽象之后的EventLoop类变量loop_,只用来接受连接，而新连接会用线程池返回的EventLoop来执行IO$/;"	m	class:muduo::net::TcpServer
+messageCallback_	TcpServer.h	/^  MessageCallback messageCallback_;$/;"	m	class:muduo::net::TcpServer
+muduo	TcpServer.h	/^namespace muduo$/;"	n
+name	TcpServer.h	/^  const string& name() const { return name_; }$/;"	f	class:muduo::net::TcpServer
+name_	TcpServer.h	/^  const string name_; \/\/主机名,为创建TcpServer时传入$/;"	m	class:muduo::net::TcpServer
+net	TcpServer.h	/^namespace net$/;"	n	namespace:muduo
+nextConnId_	TcpServer.h	/^  int nextConnId_;  \/\/用来计算标记Connection的名字$/;"	m	class:muduo::net::TcpServer
+setConnectionCallback	TcpServer.h	/^  void setConnectionCallback(const ConnectionCallback& cb)  \/\/保存用户自定义连接回调$/;"	f	class:muduo::net::TcpServer
+setMessageCallback	TcpServer.h	/^  void setMessageCallback(const MessageCallback& cb)  \/\/保存用户自定义消息回调$/;"	f	class:muduo::net::TcpServer
+setThreadInitCallback	TcpServer.h	/^  void setThreadInitCallback(const ThreadInitCallback& cb)$/;"	f	class:muduo::net::TcpServer
+setWriteCompleteCallback	TcpServer.h	/^  void setWriteCompleteCallback(const WriteCompleteCallback& cb)  \/\/调用该接口用来设置用户自定义写完成回调$/;"	f	class:muduo::net::TcpServer
+started_	TcpServer.h	/^  AtomicInt32 started_;$/;"	m	class:muduo::net::TcpServer
+threadInitCallback_	TcpServer.h	/^  ThreadInitCallback threadInitCallback_;$/;"	m	class:muduo::net::TcpServer
+threadPool	TcpServer.h	/^  boost::shared_ptr<EventLoopThreadPool> threadPool()$/;"	f	class:muduo::net::TcpServer
+threadPool_	TcpServer.h	/^  boost::shared_ptr<EventLoopThreadPool> threadPool_; \/\/实现多个”one loop per thread$/;"	m	class:muduo::net::TcpServer
+writeCompleteCallback_	TcpServer.h	/^  WriteCompleteCallback writeCompleteCallback_;$/;"	m	class:muduo::net::TcpServer
+restart	Timer.cc	/^void Timer::restart(Timestamp now)$/;"	f	class:Timer
+MUDUO_NET_TIMER_H	Timer.h	12;"	d
+Timer	Timer.h	/^  Timer(TimerCallback&& cb, Timestamp when, double interval)$/;"	f	class:muduo::net::Timer
+Timer	Timer.h	/^  Timer(const TimerCallback& cb, Timestamp when, double interval)$/;"	f	class:muduo::net::Timer
+Timer	Timer.h	/^class Timer : boost::noncopyable       $/;"	c	namespace:muduo::net
+callback_	Timer.h	/^  const TimerCallback callback_;    \/\/回调函数$/;"	m	class:muduo::net::Timer
+expiration	Timer.h	/^  Timestamp expiration() const  { return expiration_; }$/;"	f	class:muduo::net::Timer
+expiration_	Timer.h	/^  Timestamp expiration_;    \/\/超时时间（绝对时间）$/;"	m	class:muduo::net::Timer
+interval_	Timer.h	/^  const double interval_;   \/\/间隔多久重新闹铃$/;"	m	class:muduo::net::Timer
+muduo	Timer.h	/^namespace muduo$/;"	n
+net	Timer.h	/^namespace net$/;"	n	namespace:muduo
+numCreated	Timer.h	/^  static int64_t numCreated() { return s_numCreated_.get(); }$/;"	f	class:muduo::net::Timer
+repeat	Timer.h	/^  bool repeat() const { return repeat_; }$/;"	f	class:muduo::net::Timer
+repeat_	Timer.h	/^  const bool repeat_;   \/\/是否重复$/;"	m	class:muduo::net::Timer
+run	Timer.h	/^  void run() const        \/\/超时时调用的回调函数$/;"	f	class:muduo::net::Timer
+s_numCreated_	Timer.h	/^  static AtomicInt64 s_numCreated_;   \/\/创建Timer序列号使用，static$/;"	m	class:muduo::net::Timer
+sequence	Timer.h	/^  int64_t sequence() const { return sequence_; }$/;"	f	class:muduo::net::Timer
+sequence_	Timer.h	/^  const int64_t sequence_;    \/\/Timer序号$/;"	m	class:muduo::net::Timer
+MUDUO_NET_TIMERID_H	TimerId.h	12;"	d
+TimerId	TimerId.h	/^  TimerId()$/;"	f	class:muduo::net::TimerId
+TimerId	TimerId.h	/^  TimerId(Timer* timer, int64_t seq)$/;"	f	class:muduo::net::TimerId
+TimerId	TimerId.h	/^class TimerId : public muduo::copyable$/;"	c	namespace:muduo::net
+muduo	TimerId.h	/^namespace muduo$/;"	n
+net	TimerId.h	/^namespace net$/;"	n	namespace:muduo
+sequence_	TimerId.h	/^  int64_t sequence_;  \/\/序列号$/;"	m	class:muduo::net::TimerId
+timer_	TimerId.h	/^  Timer* timer_;        \/\/一个Timer*指针$/;"	m	class:muduo::net::TimerId
+TimerQueue	TimerQueue.cc	/^TimerQueue::TimerQueue(EventLoop* loop)$/;"	f	class:TimerQueue
+__STDC_LIMIT_MACROS	TimerQueue.cc	10;"	d	file:
+addTimer	TimerQueue.cc	/^TimerId TimerQueue::addTimer(TimerCallback&& cb,$/;"	f	class:TimerQueue
+addTimer	TimerQueue.cc	/^TimerId TimerQueue::addTimer(const TimerCallback& cb,   \/\/添加新的定时器$/;"	f	class:TimerQueue
+addTimerInLoop	TimerQueue.cc	/^void TimerQueue::addTimerInLoop(Timer* timer)$/;"	f	class:TimerQueue
+cancel	TimerQueue.cc	/^void TimerQueue::cancel(TimerId timerId)$/;"	f	class:TimerQueue
+cancelInLoop	TimerQueue.cc	/^void TimerQueue::cancelInLoop(TimerId timerId)$/;"	f	class:TimerQueue
+createTimerfd	TimerQueue.cc	/^int createTimerfd()   \/\/创建非阻塞timerfd$/;"	f	namespace:muduo::net::detail
+detail	TimerQueue.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+getExpired	TimerQueue.cc	/^std::vector<TimerQueue::Entry> TimerQueue::getExpired(Timestamp now)    \/\/找到now之前的超时的定时器列表$/;"	f	class:TimerQueue
+handleRead	TimerQueue.cc	/^void TimerQueue::handleRead()   \/\/处理timerfd读事件$/;"	f	class:TimerQueue
+howMuchTimeFromNow	TimerQueue.cc	/^struct timespec howMuchTimeFromNow(Timestamp when)  \/\/现在距离超时时间when还有多久$/;"	f	namespace:muduo::net::detail
+insert	TimerQueue.cc	/^bool TimerQueue::insert(Timer* timer) \/\/插入一个timer$/;"	f	class:TimerQueue
+muduo	TimerQueue.cc	/^namespace muduo$/;"	n	file:
+net	TimerQueue.cc	/^namespace net$/;"	n	namespace:muduo	file:
+readTimerfd	TimerQueue.cc	/^void readTimerfd(int timerfd, Timestamp now)  \/\/处理超时事件。超时后，timerfd变为可读$/;"	f	namespace:muduo::net::detail
+reset	TimerQueue.cc	/^void TimerQueue::reset(const std::vector<Entry>& expired, Timestamp now)  \/\/把要重复设置的定时器重新加入到定时器中$/;"	f	class:TimerQueue
+resetTimerfd	TimerQueue.cc	/^void resetTimerfd(int timerfd, Timestamp expiration)    \/\/重新设置timerfd表示的定时器,超时时间为expiration，并启动$/;"	f	namespace:muduo::net::detail
+~TimerQueue	TimerQueue.cc	/^TimerQueue::~TimerQueue()$/;"	f	class:TimerQueue
+ActiveTimer	TimerQueue.h	/^  typedef std::pair<Timer*, int64_t> ActiveTimer; \/\/Timer*指针和定时器序列号$/;"	t	class:muduo::net::TimerQueue
+ActiveTimerSet	TimerQueue.h	/^  typedef std::set<ActiveTimer> ActiveTimerSet; \/\/元素为定时器和其序列号$/;"	t	class:muduo::net::TimerQueue
+Entry	TimerQueue.h	/^  typedef std::pair<Timestamp, Timer*> Entry;  \/\/std::pair支持比较运算,存储超时事件和Timer*指针$/;"	t	class:muduo::net::TimerQueue
+MUDUO_NET_TIMERQUEUE_H	TimerQueue.h	12;"	d
+TimerList	TimerQueue.h	/^  typedef std::set<Entry> TimerList;  \/\/元素为超时时间和指向超时的定时器$/;"	t	class:muduo::net::TimerQueue
+TimerQueue	TimerQueue.h	/^class TimerQueue : boost::noncopyable$/;"	c	namespace:muduo::net
+activeTimers_	TimerQueue.h	/^  ActiveTimerSet activeTimers_;$/;"	m	class:muduo::net::TimerQueue
+callingExpiredTimers_	TimerQueue.h	/^  bool callingExpiredTimers_; \/* atomic *\/  \/\/是否正在处理超时事件$/;"	m	class:muduo::net::TimerQueue
+cancelingTimers_	TimerQueue.h	/^  ActiveTimerSet cancelingTimers_;  \/\/取消了的定时器的集合$/;"	m	class:muduo::net::TimerQueue
+loop_	TimerQueue.h	/^  EventLoop* loop_;$/;"	m	class:muduo::net::TimerQueue
+muduo	TimerQueue.h	/^namespace muduo$/;"	n
+net	TimerQueue.h	/^namespace net$/;"	n	namespace:muduo
+timerfdChannel_	TimerQueue.h	/^  Channel timerfdChannel_;  \/\/用于观察timerfd_的readable事件（超时则可读）$/;"	m	class:muduo::net::TimerQueue
+timerfd_	TimerQueue.h	/^  const int timerfd_;$/;"	m	class:muduo::net::TimerQueue
+timers_	TimerQueue.h	/^  TimerList timers_;    \/\/定时器集合$/;"	m	class:muduo::net::TimerQueue
+ZlibInputStream	ZlibStream.h	/^  explicit ZlibInputStream(Buffer* output)$/;"	f	class:muduo::net::ZlibInputStream
+ZlibInputStream	ZlibStream.h	/^class ZlibInputStream : boost::noncopyable$/;"	c	namespace:muduo::net
+ZlibOutputStream	ZlibStream.h	/^  explicit ZlibOutputStream(Buffer* output)$/;"	f	class:muduo::net::ZlibOutputStream
+ZlibOutputStream	ZlibStream.h	/^class ZlibOutputStream : boost::noncopyable$/;"	c	namespace:muduo::net
+bufferSize_	ZlibStream.h	/^  int bufferSize_;$/;"	m	class:muduo::net::ZlibOutputStream
+compress	ZlibStream.h	/^  int compress(int flush)$/;"	f	class:muduo::net::ZlibOutputStream
+finish	ZlibStream.h	/^  bool finish()$/;"	f	class:muduo::net::ZlibOutputStream
+inputBytes	ZlibStream.h	/^  int64_t inputBytes() const { return zstream_.total_in; }$/;"	f	class:muduo::net::ZlibOutputStream
+internalOutputBufferSize	ZlibStream.h	/^  int internalOutputBufferSize() const { return bufferSize_; }$/;"	f	class:muduo::net::ZlibOutputStream
+muduo	ZlibStream.h	/^namespace muduo$/;"	n
+net	ZlibStream.h	/^namespace net$/;"	n	namespace:muduo
+outputBytes	ZlibStream.h	/^  int64_t outputBytes() const { return zstream_.total_out; }$/;"	f	class:muduo::net::ZlibOutputStream
+output_	ZlibStream.h	/^  Buffer* output_;$/;"	m	class:muduo::net::ZlibInputStream
+output_	ZlibStream.h	/^  Buffer* output_;$/;"	m	class:muduo::net::ZlibOutputStream
+write	ZlibStream.h	/^  bool write(Buffer* input)$/;"	f	class:muduo::net::ZlibOutputStream
+write	ZlibStream.h	/^  bool write(StringPiece buf)$/;"	f	class:muduo::net::ZlibOutputStream
+zerror_	ZlibStream.h	/^  int zerror_;$/;"	m	class:muduo::net::ZlibInputStream
+zerror_	ZlibStream.h	/^  int zerror_;$/;"	m	class:muduo::net::ZlibOutputStream
+zlibErrorCode	ZlibStream.h	/^  int zlibErrorCode() const { return zerror_; }$/;"	f	class:muduo::net::ZlibOutputStream
+zlibErrorMessage	ZlibStream.h	/^  const char* zlibErrorMessage() const { return zstream_.msg; }$/;"	f	class:muduo::net::ZlibOutputStream
+zstream_	ZlibStream.h	/^  z_stream zstream_;$/;"	m	class:muduo::net::ZlibInputStream
+zstream_	ZlibStream.h	/^  z_stream zstream_;$/;"	m	class:muduo::net::ZlibOutputStream
+~ZlibInputStream	ZlibStream.h	/^  ~ZlibInputStream()$/;"	f	class:muduo::net::ZlibInputStream
+~ZlibOutputStream	ZlibStream.h	/^  ~ZlibOutputStream()$/;"	f	class:muduo::net::ZlibOutputStream
+BoilerPlate	boilerplate.h	/^class BoilerPlate : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_BOILERPLATE_H	boilerplate.h	13;"	d
+muduo	boilerplate.h	/^namespace muduo$/;"	n
+net	boilerplate.h	/^namespace net$/;"	n	namespace:muduo
+parseRequest	http/HttpContext.cc	/^bool HttpContext::parseRequest(Buffer* buf, Timestamp receiveTime)  \/\/处理请求，利用状态机编程$/;"	f	class:HttpContext
+processRequestLine	http/HttpContext.cc	/^bool HttpContext::processRequestLine(const char* begin, const char* end)  \/\/解析请求行  格式 : GET http:\/\/....  HTTP\/1.1$/;"	f	class:HttpContext
+HttpContext	http/HttpContext.h	/^  HttpContext()$/;"	f	class:muduo::net::HttpContext
+HttpContext	http/HttpContext.h	/^class HttpContext : public muduo::copyable    $/;"	c	namespace:muduo::net
+HttpRequestParseState	http/HttpContext.h	/^  enum HttpRequestParseState  \/\/解析请求状态的枚举常量$/;"	g	class:muduo::net::HttpContext
+MUDUO_NET_HTTP_HTTPCONTEXT_H	http/HttpContext.h	12;"	d
+gotAll	http/HttpContext.h	/^  bool gotAll() const$/;"	f	class:muduo::net::HttpContext
+kExpectBody	http/HttpContext.h	/^    kExpectBody,  \/\/当前正处于解析请求实体的状态$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kExpectHeaders	http/HttpContext.h	/^    kExpectHeaders,  \/\/当前正处于解析请求头部的状态$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kExpectRequestLine	http/HttpContext.h	/^    kExpectRequestLine,  \/\/当前正处于解析请求行的状态$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kGotAll	http/HttpContext.h	/^    kGotAll,   \/\/解析完毕$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+muduo	http/HttpContext.h	/^namespace muduo$/;"	n
+net	http/HttpContext.h	/^namespace net$/;"	n	namespace:muduo
+request	http/HttpContext.h	/^  HttpRequest& request()$/;"	f	class:muduo::net::HttpContext
+request	http/HttpContext.h	/^  const HttpRequest& request() const  \/\/返回request$/;"	f	class:muduo::net::HttpContext
+request_	http/HttpContext.h	/^  HttpRequest request_;  \/\/ http请求$/;"	m	class:muduo::net::HttpContext
+reset	http/HttpContext.h	/^  void reset()   \/\/重置HttpContext状态$/;"	f	class:muduo::net::HttpContext
+state_	http/HttpContext.h	/^  HttpRequestParseState state_;  \/\/ 请求解析状态$/;"	m	class:muduo::net::HttpContext
+HttpRequest	http/HttpRequest.h	/^  HttpRequest()$/;"	f	class:muduo::net::HttpRequest
+HttpRequest	http/HttpRequest.h	/^class HttpRequest : public muduo::copyable$/;"	c	namespace:muduo::net
+MUDUO_NET_HTTP_HTTPREQUEST_H	http/HttpRequest.h	12;"	d
+Method	http/HttpRequest.h	/^  enum Method   \/\/请求方法$/;"	g	class:muduo::net::HttpRequest
+Version	http/HttpRequest.h	/^  enum Version   \/\/请求方法$/;"	g	class:muduo::net::HttpRequest
+addHeader	http/HttpRequest.h	/^  void addHeader(const char* start, const char* colon, const char* end)$/;"	f	class:muduo::net::HttpRequest
+getHeader	http/HttpRequest.h	/^  string getHeader(const string& field) const  \/\/根据头部字段返回值内容$/;"	f	class:muduo::net::HttpRequest
+getVersion	http/HttpRequest.h	/^  Version getVersion() const$/;"	f	class:muduo::net::HttpRequest
+headers	http/HttpRequest.h	/^  const std::map<string, string>& headers() const    \/\/返回头部列表$/;"	f	class:muduo::net::HttpRequest
+headers_	http/HttpRequest.h	/^  std::map<string, string> headers_;  \/\/头部列表$/;"	m	class:muduo::net::HttpRequest
+kDelete	http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kGet	http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kHead	http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kHttp10	http/HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kHttp11	http/HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kInvalid	http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kPost	http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kPut	http/HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kUnknown	http/HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+method	http/HttpRequest.h	/^  Method method() const   \/\/返回请求方法$/;"	f	class:muduo::net::HttpRequest
+methodString	http/HttpRequest.h	/^  const char* methodString() const  \/\/请求方法转换成字符串$/;"	f	class:muduo::net::HttpRequest
+method_	http/HttpRequest.h	/^  Method method_; \/\/请求方法$/;"	m	class:muduo::net::HttpRequest
+muduo	http/HttpRequest.h	/^namespace muduo$/;"	n
+net	http/HttpRequest.h	/^namespace net$/;"	n	namespace:muduo
+path	http/HttpRequest.h	/^  const string& path() const$/;"	f	class:muduo::net::HttpRequest
+path_	http/HttpRequest.h	/^  string path_; \/\/请求路径$/;"	m	class:muduo::net::HttpRequest
+query	http/HttpRequest.h	/^  const string& query() const$/;"	f	class:muduo::net::HttpRequest
+query_	http/HttpRequest.h	/^  string query_;  \/\/请求参数$/;"	m	class:muduo::net::HttpRequest
+receiveTime	http/HttpRequest.h	/^  Timestamp receiveTime() const$/;"	f	class:muduo::net::HttpRequest
+receiveTime_	http/HttpRequest.h	/^  Timestamp receiveTime_; \/\/请求时间$/;"	m	class:muduo::net::HttpRequest
+setMethod	http/HttpRequest.h	/^  bool setMethod(const char* start, const char* end)  \/\/设置方法$/;"	f	class:muduo::net::HttpRequest
+setPath	http/HttpRequest.h	/^  void setPath(const char* start, const char* end)  \/\/设置路径 $/;"	f	class:muduo::net::HttpRequest
+setQuery	http/HttpRequest.h	/^  void setQuery(const char* start, const char* end)  \/\/设置参数$/;"	f	class:muduo::net::HttpRequest
+setReceiveTime	http/HttpRequest.h	/^  void setReceiveTime(Timestamp t)  \/\/设置接收时间$/;"	f	class:muduo::net::HttpRequest
+setVersion	http/HttpRequest.h	/^  void setVersion(Version v)  \/\/设置版本$/;"	f	class:muduo::net::HttpRequest
+swap	http/HttpRequest.h	/^  void swap(HttpRequest& that)  \/\/交换HttpRequest内容$/;"	f	class:muduo::net::HttpRequest
+version_	http/HttpRequest.h	/^  Version version_; \/\/协议版本1.0\/1.1$/;"	m	class:muduo::net::HttpRequest
+appendToBuffer	http/HttpResponse.cc	/^void HttpResponse::appendToBuffer(Buffer* output) const$/;"	f	class:HttpResponse
+HttpResponse	http/HttpResponse.h	/^  explicit HttpResponse(bool close)$/;"	f	class:muduo::net::HttpResponse
+HttpResponse	http/HttpResponse.h	/^class HttpResponse : public muduo::copyable$/;"	c	namespace:muduo::net
+HttpStatusCode	http/HttpResponse.h	/^  enum HttpStatusCode   \/\/HTTP状态码$/;"	g	class:muduo::net::HttpResponse
+MUDUO_NET_HTTP_HTTPRESPONSE_H	http/HttpResponse.h	12;"	d
+addHeader	http/HttpResponse.h	/^  void addHeader(const string& key, const string& value)$/;"	f	class:muduo::net::HttpResponse
+body_	http/HttpResponse.h	/^  string body_; \/\/实体(响应报文)$/;"	m	class:muduo::net::HttpResponse
+closeConnection	http/HttpResponse.h	/^  bool closeConnection() const$/;"	f	class:muduo::net::HttpResponse
+closeConnection_	http/HttpResponse.h	/^  bool closeConnection_;  \/\/\/\/是否 keep-alive$/;"	m	class:muduo::net::HttpResponse
+headers_	http/HttpResponse.h	/^  std::map<string, string> headers_;  \/\/头列表$/;"	m	class:muduo::net::HttpResponse
+k200Ok	http/HttpResponse.h	/^    k200Ok = 200,   \/\/请求成功$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k301MovedPermanently	http/HttpResponse.h	/^    k301MovedPermanently = 301, \/\/资源被转移，请求将被重定向$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k400BadRequest	http/HttpResponse.h	/^    k400BadRequest = 400, \/\/通用客户请求错误$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k404NotFound	http/HttpResponse.h	/^    k404NotFound = 404, \/\/资源未找到$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+kUnknown	http/HttpResponse.h	/^    kUnknown,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+muduo	http/HttpResponse.h	/^namespace muduo$/;"	n
+net	http/HttpResponse.h	/^namespace net$/;"	n	namespace:muduo
+setBody	http/HttpResponse.h	/^  void setBody(const string& body)$/;"	f	class:muduo::net::HttpResponse
+setCloseConnection	http/HttpResponse.h	/^  void setCloseConnection(bool on)  $/;"	f	class:muduo::net::HttpResponse
+setContentType	http/HttpResponse.h	/^  void setContentType(const string& contentType)$/;"	f	class:muduo::net::HttpResponse
+setStatusCode	http/HttpResponse.h	/^  void setStatusCode(HttpStatusCode code)   \/\/设置状态码$/;"	f	class:muduo::net::HttpResponse
+setStatusMessage	http/HttpResponse.h	/^  void setStatusMessage(const string& message)  \/\/设置状态码对应的文本信息$/;"	f	class:muduo::net::HttpResponse
+statusCode_	http/HttpResponse.h	/^  HttpStatusCode statusCode_; \/\/状态码$/;"	m	class:muduo::net::HttpResponse
+statusMessage_	http/HttpResponse.h	/^  string statusMessage_;  \/\/状态响应码对应的文本信息$/;"	m	class:muduo::net::HttpResponse
+HttpServer	http/HttpServer.cc	/^HttpServer::HttpServer(EventLoop* loop,$/;"	f	class:HttpServer
+defaultHttpCallback	http/HttpServer.cc	/^void defaultHttpCallback(const HttpRequest&, HttpResponse* resp)  \/\/默认HTTP回调，返回错误码$/;"	f	namespace:muduo::net::detail
+detail	http/HttpServer.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+muduo	http/HttpServer.cc	/^namespace muduo$/;"	n	file:
+net	http/HttpServer.cc	/^namespace net$/;"	n	namespace:muduo	file:
+onConnection	http/HttpServer.cc	/^void HttpServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:HttpServer
+onMessage	http/HttpServer.cc	/^void HttpServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:HttpServer
+onRequest	http/HttpServer.cc	/^void HttpServer::onRequest(const TcpConnectionPtr& conn, const HttpRequest& req)$/;"	f	class:HttpServer
+start	http/HttpServer.cc	/^void HttpServer::start()$/;"	f	class:HttpServer
+~HttpServer	http/HttpServer.cc	/^HttpServer::~HttpServer()$/;"	f	class:HttpServer
+HttpCallback	http/HttpServer.h	/^                                HttpResponse*)> HttpCallback;  \/\/http回调类型$/;"	t	class:muduo::net::HttpServer
+HttpServer	http/HttpServer.h	/^class HttpServer : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_HTTP_HTTPSERVER_H	http/HttpServer.h	12;"	d
+getLoop	http/HttpServer.h	/^  EventLoop* getLoop() const { return server_.getLoop(); }$/;"	f	class:muduo::net::HttpServer
+httpCallback_	http/HttpServer.h	/^  HttpCallback httpCallback_;  \/\/在处理http请求时(即调用onRequest)的过程中回调此函数，对请求进行具体的处理。$/;"	m	class:muduo::net::HttpServer
+muduo	http/HttpServer.h	/^namespace muduo$/;"	n
+net	http/HttpServer.h	/^namespace net$/;"	n	namespace:muduo
+server_	http/HttpServer.h	/^  TcpServer server_;  \/\/http服务器也是一个Tcp服务器，所以包含一个TcpServer$/;"	m	class:muduo::net::HttpServer
+setHttpCallback	http/HttpServer.h	/^  void setHttpCallback(const HttpCallback& cb)$/;"	f	class:muduo::net::HttpServer
+setThreadNum	http/HttpServer.h	/^  void setThreadNum(int numThreads)$/;"	f	class:muduo::net::HttpServer
+BOOST_AUTO_TEST_CASE	http/tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestAllInOne)$/;"	f
+BOOST_AUTO_TEST_CASE	http/tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestEmptyHeaderValue)$/;"	f
+BOOST_AUTO_TEST_CASE	http/tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestInTwoPieces)$/;"	f
+BOOST_TEST_DYN_LINK	http/tests/HttpRequest_unittest.cc	6;"	d	file:
+BOOST_TEST_MAIN	http/tests/HttpRequest_unittest.cc	5;"	d	file:
+benchmark	http/tests/HttpServer_test.cc	/^bool benchmark = false;$/;"	v
+favicon	http/tests/HttpServer_test.cc	/^char favicon[555] = {$/;"	v
+main	http/tests/HttpServer_test.cc	/^int main(int argc, char* argv[])$/;"	f
+onRequest	http/tests/HttpServer_test.cc	/^void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+Inspector	inspect/Inspector.cc	/^Inspector::Inspector(EventLoop* loop,$/;"	f	class:Inspector
+add	inspect/Inspector.cc	/^void Inspector::add(const string& module,$/;"	f	class:Inspector
+favicon	inspect/Inspector.cc	/^char favicon[1743] =$/;"	v
+g_globalInspector	inspect/Inspector.cc	/^Inspector* g_globalInspector = 0;$/;"	m	namespace:__anon5	file:
+onRequest	inspect/Inspector.cc	/^void Inspector::onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f	class:Inspector
+remove	inspect/Inspector.cc	/^void Inspector::remove(const string& module, const string& command)$/;"	f	class:Inspector
+split	inspect/Inspector.cc	/^std::vector<string> split(const string& str)$/;"	f	namespace:__anon5
+start	inspect/Inspector.cc	/^void Inspector::start()$/;"	f	class:Inspector
+~Inspector	inspect/Inspector.cc	/^Inspector::~Inspector()$/;"	f	class:Inspector
+ArgList	inspect/Inspector.h	/^  typedef std::vector<string> ArgList;$/;"	t	class:muduo::net::Inspector
+Callback	inspect/Inspector.h	/^  typedef boost::function<string (HttpRequest::Method, const ArgList& args)> Callback;$/;"	t	class:muduo::net::Inspector
+CommandList	inspect/Inspector.h	/^  typedef std::map<string, Callback> CommandList;$/;"	t	class:muduo::net::Inspector
+HelpList	inspect/Inspector.h	/^  typedef std::map<string, string> HelpList;$/;"	t	class:muduo::net::Inspector
+Inspector	inspect/Inspector.h	/^class Inspector : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_INSPECT_INSPECTOR_H	inspect/Inspector.h	12;"	d
+helps_	inspect/Inspector.h	/^  std::map<string, HelpList> helps_;$/;"	m	class:muduo::net::Inspector
+modules_	inspect/Inspector.h	/^  std::map<string, CommandList> modules_;$/;"	m	class:muduo::net::Inspector
+muduo	inspect/Inspector.h	/^namespace muduo$/;"	n
+mutex_	inspect/Inspector.h	/^  MutexLock mutex_;$/;"	m	class:muduo::net::Inspector
+net	inspect/Inspector.h	/^namespace net$/;"	n	namespace:muduo
+performanceInspector_	inspect/Inspector.h	/^  boost::scoped_ptr<PerformanceInspector> performanceInspector_;$/;"	m	class:muduo::net::Inspector
+processInspector_	inspect/Inspector.h	/^  boost::scoped_ptr<ProcessInspector> processInspector_;$/;"	m	class:muduo::net::Inspector
+server_	inspect/Inspector.h	/^  HttpServer server_;$/;"	m	class:muduo::net::Inspector
+systemInspector_	inspect/Inspector.h	/^  boost::scoped_ptr<SystemInspector> systemInspector_;$/;"	m	class:muduo::net::Inspector
+cmdline	inspect/PerformanceInspector.cc	/^string PerformanceInspector::cmdline(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+growth	inspect/PerformanceInspector.cc	/^string PerformanceInspector::growth(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+heap	inspect/PerformanceInspector.cc	/^string PerformanceInspector::heap(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+memhistogram	inspect/PerformanceInspector.cc	/^string PerformanceInspector::memhistogram(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+memstats	inspect/PerformanceInspector.cc	/^string PerformanceInspector::memstats(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+profile	inspect/PerformanceInspector.cc	/^string PerformanceInspector::profile(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+registerCommands	inspect/PerformanceInspector.cc	/^void PerformanceInspector::registerCommands(Inspector* ins)$/;"	f	class:PerformanceInspector
+releaseFreeMemory	inspect/PerformanceInspector.cc	/^string PerformanceInspector::releaseFreeMemory(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:PerformanceInspector
+MUDUO_NET_INSPECT_PERFORMANCEINSPECTOR_H	inspect/PerformanceInspector.h	12;"	d
+PerformanceInspector	inspect/PerformanceInspector.h	/^class PerformanceInspector : boost::noncopyable$/;"	c	namespace:muduo::net
+muduo	inspect/PerformanceInspector.h	/^namespace muduo$/;"	n
+net	inspect/PerformanceInspector.h	/^namespace net$/;"	n	namespace:muduo
+getCpuTime	inspect/ProcessInspector.cc	/^ProcessInfo::CpuTime getCpuTime(StringPiece data)$/;"	f	namespace:muduo::inspect
+getLong	inspect/ProcessInspector.cc	/^long getLong(const string& procStatus, const char* key)$/;"	f	namespace:muduo::inspect
+getProcessName	inspect/ProcessInspector.cc	/^string getProcessName(const string& procStatus)$/;"	f	namespace:muduo::inspect
+inspect	inspect/ProcessInspector.cc	/^namespace inspect$/;"	n	namespace:muduo	file:
+muduo	inspect/ProcessInspector.cc	/^namespace muduo$/;"	n	file:
+next	inspect/ProcessInspector.cc	/^StringPiece next(StringPiece data)$/;"	f	namespace:muduo::inspect
+openedFiles	inspect/ProcessInspector.cc	/^string ProcessInspector::openedFiles(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+overview	inspect/ProcessInspector.cc	/^string ProcessInspector::overview(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+pid	inspect/ProcessInspector.cc	/^string ProcessInspector::pid(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+procStatus	inspect/ProcessInspector.cc	/^string ProcessInspector::procStatus(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+registerCommands	inspect/ProcessInspector.cc	/^void ProcessInspector::registerCommands(Inspector* ins)$/;"	f	class:ProcessInspector
+stringPrintf	inspect/ProcessInspector.cc	/^int stringPrintf(string* out, const char* fmt, ...)$/;"	f	namespace:muduo::inspect
+threads	inspect/ProcessInspector.cc	/^string ProcessInspector::threads(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:ProcessInspector
+uptime	inspect/ProcessInspector.cc	/^string uptime(Timestamp now, Timestamp start, bool showMicroseconds)$/;"	f	namespace:muduo::inspect
+MUDUO_NET_INSPECT_PROCESSINSPECTOR_H	inspect/ProcessInspector.h	12;"	d
+ProcessInspector	inspect/ProcessInspector.h	/^class ProcessInspector : boost::noncopyable$/;"	c	namespace:muduo::net
+muduo	inspect/ProcessInspector.h	/^namespace muduo$/;"	n
+net	inspect/ProcessInspector.h	/^namespace net$/;"	n	namespace:muduo
+username_	inspect/ProcessInspector.h	/^  static string username_;$/;"	m	class:muduo::net::ProcessInspector
+cpuinfo	inspect/SystemInspector.cc	/^string SystemInspector::cpuinfo(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+inspect	inspect/SystemInspector.cc	/^namespace inspect$/;"	n	namespace:muduo	file:
+loadavg	inspect/SystemInspector.cc	/^string SystemInspector::loadavg(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+meminfo	inspect/SystemInspector.cc	/^string SystemInspector::meminfo(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+muduo	inspect/SystemInspector.cc	/^namespace muduo$/;"	n	file:
+overview	inspect/SystemInspector.cc	/^string SystemInspector::overview(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+registerCommands	inspect/SystemInspector.cc	/^void SystemInspector::registerCommands(Inspector* ins)$/;"	f	class:SystemInspector
+stat	inspect/SystemInspector.cc	/^string SystemInspector::stat(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+version	inspect/SystemInspector.cc	/^string SystemInspector::version(HttpRequest::Method, const Inspector::ArgList&)$/;"	f	class:SystemInspector
+MUDUO_NET_INSPECT_SYSTEMINSPECTOR_H	inspect/SystemInspector.h	12;"	d
+SystemInspector	inspect/SystemInspector.h	/^class SystemInspector : boost::noncopyable$/;"	c	namespace:muduo::net
+muduo	inspect/SystemInspector.h	/^namespace muduo$/;"	n
+net	inspect/SystemInspector.h	/^namespace net$/;"	n	namespace:muduo
+main	inspect/tests/Inspector_test.cc	/^int main()$/;"	f
+newDefaultPoller	poller/DefaultPoller.cc	/^Poller* Poller::newDefaultPoller(EventLoop* loop)$/;"	f	class:Poller
+EPollPoller	poller/EPollPoller.cc	/^EPollPoller::EPollPoller(EventLoop* loop)$/;"	f	class:EPollPoller
+fillActiveChannels	poller/EPollPoller.cc	/^void EPollPoller::fillActiveChannels(int numEvents,$/;"	f	class:EPollPoller
+kAdded	poller/EPollPoller.cc	/^const int kAdded = 1;$/;"	m	namespace:__anon8	file:
+kDeleted	poller/EPollPoller.cc	/^const int kDeleted = 2;$/;"	m	namespace:__anon8	file:
+kNew	poller/EPollPoller.cc	/^const int kNew = -1;$/;"	m	namespace:__anon8	file:
+operationToString	poller/EPollPoller.cc	/^const char* EPollPoller::operationToString(int op)$/;"	f	class:EPollPoller
+poll	poller/EPollPoller.cc	/^Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)$/;"	f	class:EPollPoller
+removeChannel	poller/EPollPoller.cc	/^void EPollPoller::removeChannel(Channel* channel)$/;"	f	class:EPollPoller
+update	poller/EPollPoller.cc	/^void EPollPoller::update(int operation, Channel* channel)$/;"	f	class:EPollPoller
+updateChannel	poller/EPollPoller.cc	/^void EPollPoller::updateChannel(Channel* channel)$/;"	f	class:EPollPoller
+~EPollPoller	poller/EPollPoller.cc	/^EPollPoller::~EPollPoller()$/;"	f	class:EPollPoller
+EPollPoller	poller/EPollPoller.h	/^class EPollPoller : public Poller$/;"	c	namespace:muduo::net
+EventList	poller/EPollPoller.h	/^  typedef std::vector<struct epoll_event> EventList;$/;"	t	class:muduo::net::EPollPoller
+MUDUO_NET_POLLER_EPOLLPOLLER_H	poller/EPollPoller.h	12;"	d
+epollfd_	poller/EPollPoller.h	/^  int epollfd_;$/;"	m	class:muduo::net::EPollPoller
+events_	poller/EPollPoller.h	/^  EventList events_;$/;"	m	class:muduo::net::EPollPoller
+kInitEventListSize	poller/EPollPoller.h	/^  static const int kInitEventListSize = 16;$/;"	m	class:muduo::net::EPollPoller
+muduo	poller/EPollPoller.h	/^namespace muduo$/;"	n
+net	poller/EPollPoller.h	/^namespace net$/;"	n	namespace:muduo
+PollPoller	poller/PollPoller.cc	/^PollPoller::PollPoller(EventLoop* loop)$/;"	f	class:PollPoller
+fillActiveChannels	poller/PollPoller.cc	/^void PollPoller::fillActiveChannels(int numEvents,$/;"	f	class:PollPoller
+poll	poller/PollPoller.cc	/^Timestamp PollPoller::poll(int timeoutMs, ChannelList* activeChannels)$/;"	f	class:PollPoller
+removeChannel	poller/PollPoller.cc	/^void PollPoller::removeChannel(Channel* channel)$/;"	f	class:PollPoller
+updateChannel	poller/PollPoller.cc	/^void PollPoller::updateChannel(Channel* channel)    \/\/负责维护和更新pollfds_数组$/;"	f	class:PollPoller
+~PollPoller	poller/PollPoller.cc	/^PollPoller::~PollPoller()$/;"	f	class:PollPoller
+MUDUO_NET_POLLER_POLLPOLLER_H	poller/PollPoller.h	12;"	d
+PollFdList	poller/PollPoller.h	/^  typedef std::vector<struct pollfd> PollFdList;$/;"	t	class:muduo::net::PollPoller
+PollPoller	poller/PollPoller.h	/^class PollPoller : public Poller$/;"	c	namespace:muduo::net
+muduo	poller/PollPoller.h	/^namespace muduo$/;"	n
+net	poller/PollPoller.h	/^namespace net$/;"	n	namespace:muduo
+pollfds_	poller/PollPoller.h	/^  PollFdList pollfds_;$/;"	m	class:muduo::net::PollPoller
+BackUp	protobuf/BufferStream.h	/^  virtual void BackUp(int count) \/\/ override$/;"	f	class:muduo::net::BufferOutputStream
+BufferOutputStream	protobuf/BufferStream.h	/^  BufferOutputStream(Buffer* buf)$/;"	f	class:muduo::net::BufferOutputStream
+BufferOutputStream	protobuf/BufferStream.h	/^class BufferOutputStream : public google::protobuf::io::ZeroCopyOutputStream$/;"	c	namespace:muduo::net
+ByteCount	protobuf/BufferStream.h	/^  virtual int64_t ByteCount() const \/\/ override$/;"	f	class:muduo::net::BufferOutputStream
+Next	protobuf/BufferStream.h	/^  virtual bool Next(void** data, int* size) \/\/ override$/;"	f	class:muduo::net::BufferOutputStream
+buffer_	protobuf/BufferStream.h	/^  Buffer* buffer_;$/;"	m	class:muduo::net::BufferOutputStream
+muduo	protobuf/BufferStream.h	/^namespace muduo$/;"	n
+net	protobuf/BufferStream.h	/^namespace net$/;"	n	namespace:muduo
+originalSize_	protobuf/BufferStream.h	/^  size_t originalSize_;$/;"	m	class:muduo::net::BufferOutputStream
+ProtobufVersionCheck	protobuf/ProtobufCodecLite.cc	/^  int ProtobufVersionCheck()$/;"	f	namespace:__anon3
+asInt32	protobuf/ProtobufCodecLite.cc	/^int32_t ProtobufCodecLite::asInt32(const char* buf)$/;"	f	class:ProtobufCodecLite
+checksum	protobuf/ProtobufCodecLite.cc	/^int32_t ProtobufCodecLite::checksum(const void* buf, int len)$/;"	f	class:ProtobufCodecLite
+defaultErrorCallback	protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::defaultErrorCallback(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodecLite
+dummy	protobuf/ProtobufCodecLite.cc	/^  int __attribute__ ((unused)) dummy = ProtobufVersionCheck();$/;"	m	namespace:__anon3	file:
+errorCodeToString	protobuf/ProtobufCodecLite.cc	/^const string& ProtobufCodecLite::errorCodeToString(ErrorCode errorCode)$/;"	f	class:ProtobufCodecLite
+fillEmptyBuffer	protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::fillEmptyBuffer(muduo::net::Buffer* buf,$/;"	f	class:ProtobufCodecLite
+kCheckSumErrorStr	protobuf/ProtobufCodecLite.cc	/^  const string kCheckSumErrorStr = "CheckSumError";$/;"	m	namespace:__anon4	file:
+kInvalidLengthStr	protobuf/ProtobufCodecLite.cc	/^  const string kInvalidLengthStr = "InvalidLength";$/;"	m	namespace:__anon4	file:
+kInvalidNameLenStr	protobuf/ProtobufCodecLite.cc	/^  const string kInvalidNameLenStr = "InvalidNameLen";$/;"	m	namespace:__anon4	file:
+kNoErrorStr	protobuf/ProtobufCodecLite.cc	/^  const string kNoErrorStr = "NoError";$/;"	m	namespace:__anon4	file:
+kParseErrorStr	protobuf/ProtobufCodecLite.cc	/^  const string kParseErrorStr = "ParseError";$/;"	m	namespace:__anon4	file:
+kUnknownErrorStr	protobuf/ProtobufCodecLite.cc	/^  const string kUnknownErrorStr = "UnknownError";$/;"	m	namespace:__anon4	file:
+kUnknownMessageTypeStr	protobuf/ProtobufCodecLite.cc	/^  const string kUnknownMessageTypeStr = "UnknownMessageType";$/;"	m	namespace:__anon4	file:
+onMessage	protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodecLite
+parse	protobuf/ProtobufCodecLite.cc	/^ProtobufCodecLite::ErrorCode ProtobufCodecLite::parse(const char* buf,$/;"	f	class:ProtobufCodecLite
+parseFromBuffer	protobuf/ProtobufCodecLite.cc	/^bool ProtobufCodecLite::parseFromBuffer(StringPiece buf, google::protobuf::Message* message)$/;"	f	class:ProtobufCodecLite
+send	protobuf/ProtobufCodecLite.cc	/^void ProtobufCodecLite::send(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodecLite
+serializeToBuffer	protobuf/ProtobufCodecLite.cc	/^int ProtobufCodecLite::serializeToBuffer(const google::protobuf::Message& message, Buffer* buf)$/;"	f	class:ProtobufCodecLite
+validateChecksum	protobuf/ProtobufCodecLite.cc	/^bool ProtobufCodecLite::validateChecksum(const char* buf, int len)$/;"	f	class:ProtobufCodecLite
+ConcreteMessagePtr	protobuf/ProtobufCodecLite.h	/^  typedef boost::shared_ptr<MSG> ConcreteMessagePtr;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+ErrorCallback	protobuf/ProtobufCodecLite.h	/^                                ErrorCode)> ErrorCallback;$/;"	t	class:muduo::net::ProtobufCodecLite
+ErrorCallback	protobuf/ProtobufCodecLite.h	/^  typedef ProtobufCodecLite::ErrorCallback ErrorCallback;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+ErrorCode	protobuf/ProtobufCodecLite.h	/^  enum ErrorCode$/;"	g	class:muduo::net::ProtobufCodecLite
+MUDUO_NET_PROTOBUF_CODEC_H	protobuf/ProtobufCodecLite.h	15;"	d
+MessagePtr	protobuf/ProtobufCodecLite.h	/^typedef boost::shared_ptr<google::protobuf::Message> MessagePtr;$/;"	t	namespace:muduo::net
+ProtobufCodecLite	protobuf/ProtobufCodecLite.h	/^  ProtobufCodecLite(const ::google::protobuf::Message* prototype,$/;"	f	class:muduo::net::ProtobufCodecLite
+ProtobufCodecLite	protobuf/ProtobufCodecLite.h	/^class ProtobufCodecLite : boost::noncopyable$/;"	c	namespace:muduo::net
+ProtobufCodecLiteT	protobuf/ProtobufCodecLite.h	/^  explicit ProtobufCodecLiteT(const ProtobufMessageCallback& messageCb,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+ProtobufCodecLiteT	protobuf/ProtobufCodecLite.h	/^class ProtobufCodecLiteT$/;"	c	namespace:muduo::net
+ProtobufMessageCallback	protobuf/ProtobufCodecLite.h	/^                                Timestamp)> ProtobufMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLite
+ProtobufMessageCallback	protobuf/ProtobufCodecLite.h	/^                                Timestamp)> ProtobufMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+RawMessageCallback	protobuf/ProtobufCodecLite.h	/^                                Timestamp)> RawMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLite
+RawMessageCallback	protobuf/ProtobufCodecLite.h	/^  typedef ProtobufCodecLite::RawMessageCallback RawMessageCallback;$/;"	t	class:muduo::net::ProtobufCodecLiteT
+TcpConnectionPtr	protobuf/ProtobufCodecLite.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+codec_	protobuf/ProtobufCodecLite.h	/^  CODEC codec_;$/;"	m	class:muduo::net::ProtobufCodecLiteT
+errorCallback_	protobuf/ProtobufCodecLite.h	/^  ErrorCallback errorCallback_;$/;"	m	class:muduo::net::ProtobufCodecLite
+fillEmptyBuffer	protobuf/ProtobufCodecLite.h	/^  void fillEmptyBuffer(muduo::net::Buffer* buf, const MSG& message)$/;"	f	class:muduo::net::ProtobufCodecLiteT
+google	protobuf/ProtobufCodecLite.h	/^namespace google$/;"	n
+kCheckSumError	protobuf/ProtobufCodecLite.h	/^    kCheckSumError,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kChecksumLen	protobuf/ProtobufCodecLite.h	/^  const static int kChecksumLen = sizeof(int32_t);$/;"	m	class:muduo::net::ProtobufCodecLite
+kHeaderLen	protobuf/ProtobufCodecLite.h	/^  const static int kHeaderLen = sizeof(int32_t);$/;"	m	class:muduo::net::ProtobufCodecLite
+kInvalidLength	protobuf/ProtobufCodecLite.h	/^    kInvalidLength,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kInvalidNameLen	protobuf/ProtobufCodecLite.h	/^    kInvalidNameLen,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kMaxMessageLen	protobuf/ProtobufCodecLite.h	/^  const static int kMaxMessageLen = 64*1024*1024; \/\/ same as codec_stream.h kDefaultTotalBytesLimit$/;"	m	class:muduo::net::ProtobufCodecLite
+kMinMessageLen	protobuf/ProtobufCodecLite.h	/^  const int kMinMessageLen;$/;"	m	class:muduo::net::ProtobufCodecLite
+kNoError	protobuf/ProtobufCodecLite.h	/^    kNoError = 0,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kParseError	protobuf/ProtobufCodecLite.h	/^    kParseError,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+kUnknownMessageType	protobuf/ProtobufCodecLite.h	/^    kUnknownMessageType,$/;"	e	enum:muduo::net::ProtobufCodecLite::ErrorCode
+messageCallback_	protobuf/ProtobufCodecLite.h	/^  ProtobufMessageCallback messageCallback_;$/;"	m	class:muduo::net::ProtobufCodecLite
+messageCallback_	protobuf/ProtobufCodecLite.h	/^  ProtobufMessageCallback messageCallback_;$/;"	m	class:muduo::net::ProtobufCodecLiteT
+muduo	protobuf/ProtobufCodecLite.h	/^namespace muduo$/;"	n
+net	protobuf/ProtobufCodecLite.h	/^namespace net$/;"	n	namespace:muduo
+onMessage	protobuf/ProtobufCodecLite.h	/^  void onMessage(const TcpConnectionPtr& conn,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+onRpcMessage	protobuf/ProtobufCodecLite.h	/^  void onRpcMessage(const TcpConnectionPtr& conn,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+protobuf	protobuf/ProtobufCodecLite.h	/^namespace protobuf$/;"	n	namespace:google
+prototype_	protobuf/ProtobufCodecLite.h	/^  const ::google::protobuf::Message* prototype_;$/;"	m	class:muduo::net::ProtobufCodecLite
+rawCb_	protobuf/ProtobufCodecLite.h	/^  RawMessageCallback rawCb_;$/;"	m	class:muduo::net::ProtobufCodecLite
+send	protobuf/ProtobufCodecLite.h	/^  void send(const TcpConnectionPtr& conn,$/;"	f	class:muduo::net::ProtobufCodecLiteT
+tag	protobuf/ProtobufCodecLite.h	/^  const string& tag() const { return codec_.tag(); }$/;"	f	class:muduo::net::ProtobufCodecLiteT
+tag	protobuf/ProtobufCodecLite.h	/^  const string& tag() const { return tag_; }$/;"	f	class:muduo::net::ProtobufCodecLite
+tag_	protobuf/ProtobufCodecLite.h	/^  const string tag_;$/;"	m	class:muduo::net::ProtobufCodecLite
+~ProtobufCodecLite	protobuf/ProtobufCodecLite.h	/^  virtual ~ProtobufCodecLite() { }$/;"	f	class:muduo::net::ProtobufCodecLite
+CallMethod	protorpc/RpcChannel.cc	/^void RpcChannel::CallMethod(const ::google::protobuf::MethodDescriptor* method,$/;"	f	class:RpcChannel
+RpcChannel	protorpc/RpcChannel.cc	/^RpcChannel::RpcChannel()$/;"	f	class:RpcChannel
+RpcChannel	protorpc/RpcChannel.cc	/^RpcChannel::RpcChannel(const TcpConnectionPtr& conn)$/;"	f	class:RpcChannel
+doneCallback	protorpc/RpcChannel.cc	/^void RpcChannel::doneCallback(::google::protobuf::Message* response, int64_t id)$/;"	f	class:RpcChannel
+onMessage	protorpc/RpcChannel.cc	/^void RpcChannel::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:RpcChannel
+onRpcMessage	protorpc/RpcChannel.cc	/^void RpcChannel::onRpcMessage(const TcpConnectionPtr& conn,$/;"	f	class:RpcChannel
+~RpcChannel	protorpc/RpcChannel.cc	/^RpcChannel::~RpcChannel()$/;"	f	class:RpcChannel
+MUDUO_NET_PROTORPC_RPCCHANNEL_H	protorpc/RpcChannel.h	12;"	d
+OutstandingCall	protorpc/RpcChannel.h	/^  struct OutstandingCall$/;"	s	class:muduo::net::RpcChannel
+RpcChannel	protorpc/RpcChannel.h	/^class RpcChannel : public ::google::protobuf::RpcChannel$/;"	c	namespace:muduo::net
+RpcChannelPtr	protorpc/RpcChannel.h	/^typedef boost::shared_ptr<RpcChannel> RpcChannelPtr;$/;"	t	namespace:muduo::net
+codec_	protorpc/RpcChannel.h	/^  RpcCodec codec_;$/;"	m	class:muduo::net::RpcChannel
+conn_	protorpc/RpcChannel.h	/^  TcpConnectionPtr conn_;$/;"	m	class:muduo::net::RpcChannel
+done	protorpc/RpcChannel.h	/^    ::google::protobuf::Closure* done;$/;"	m	struct:muduo::net::RpcChannel::OutstandingCall
+google	protorpc/RpcChannel.h	/^namespace google {$/;"	n
+id_	protorpc/RpcChannel.h	/^  AtomicInt64 id_;$/;"	m	class:muduo::net::RpcChannel
+muduo	protorpc/RpcChannel.h	/^namespace muduo$/;"	n
+mutex_	protorpc/RpcChannel.h	/^  MutexLock mutex_;$/;"	m	class:muduo::net::RpcChannel
+net	protorpc/RpcChannel.h	/^namespace net$/;"	n	namespace:muduo
+outstandings_	protorpc/RpcChannel.h	/^  std::map<int64_t, OutstandingCall> outstandings_;$/;"	m	class:muduo::net::RpcChannel
+protobuf	protorpc/RpcChannel.h	/^namespace protobuf {$/;"	n	namespace:google
+response	protorpc/RpcChannel.h	/^    ::google::protobuf::Message* response;$/;"	m	struct:muduo::net::RpcChannel::OutstandingCall
+services_	protorpc/RpcChannel.h	/^  const std::map<std::string, ::google::protobuf::Service*>* services_;$/;"	m	class:muduo::net::RpcChannel
+setConnection	protorpc/RpcChannel.h	/^  void setConnection(const TcpConnectionPtr& conn)$/;"	f	class:muduo::net::RpcChannel
+setServices	protorpc/RpcChannel.h	/^  void setServices(const std::map<std::string, ::google::protobuf::Service*>* services)$/;"	f	class:muduo::net::RpcChannel
+ProtobufVersionCheck	protorpc/RpcCodec.cc	/^  int ProtobufVersionCheck()$/;"	f	namespace:__anon6
+dummy	protorpc/RpcCodec.cc	/^  int dummy __attribute__ ((unused)) = ProtobufVersionCheck();$/;"	m	namespace:__anon6	file:
+muduo	protorpc/RpcCodec.cc	/^namespace muduo$/;"	n	file:
+net	protorpc/RpcCodec.cc	/^namespace net$/;"	n	namespace:muduo	file:
+rpctag	protorpc/RpcCodec.cc	/^const char rpctag [] = "RPC0";$/;"	m	namespace:muduo::net	file:
+MUDUO_NET_PROTORPC_RPCCODEC_H	protorpc/RpcCodec.h	12;"	d
+RpcCodec	protorpc/RpcCodec.h	/^typedef ProtobufCodecLiteT<RpcMessage, rpctag> RpcCodec;$/;"	t	namespace:muduo::net
+RpcMessagePtr	protorpc/RpcCodec.h	/^typedef boost::shared_ptr<RpcMessage> RpcMessagePtr;$/;"	t	namespace:muduo::net
+TcpConnectionPtr	protorpc/RpcCodec.h	/^typedef boost::shared_ptr<TcpConnection> TcpConnectionPtr;$/;"	t	namespace:muduo::net
+muduo	protorpc/RpcCodec.h	/^namespace muduo$/;"	n
+net	protorpc/RpcCodec.h	/^namespace net$/;"	n	namespace:muduo
+NDEBUG	protorpc/RpcCodec_test.cc	1;"	d	file:
+g_msgptr	protorpc/RpcCodec_test.cc	/^MessagePtr g_msgptr;$/;"	v
+main	protorpc/RpcCodec_test.cc	/^int main()$/;"	f
+messageCallback	protorpc/RpcCodec_test.cc	/^void messageCallback(const TcpConnectionPtr&,$/;"	f
+print	protorpc/RpcCodec_test.cc	/^void print(const Buffer& buf)$/;"	f
+rpcMessageCallback	protorpc/RpcCodec_test.cc	/^void rpcMessageCallback(const TcpConnectionPtr&,$/;"	f
+rpctag	protorpc/RpcCodec_test.cc	/^char rpctag[] = "RPC0";$/;"	v
+RpcServer	protorpc/RpcServer.cc	/^RpcServer::RpcServer(EventLoop* loop,$/;"	f	class:RpcServer
+onConnection	protorpc/RpcServer.cc	/^void RpcServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:RpcServer
+registerService	protorpc/RpcServer.cc	/^void RpcServer::registerService(google::protobuf::Service* service)$/;"	f	class:RpcServer
+start	protorpc/RpcServer.cc	/^void RpcServer::start()$/;"	f	class:RpcServer
+MUDUO_NET_PROTORPC_RPCSERVER_H	protorpc/RpcServer.h	12;"	d
+RpcServer	protorpc/RpcServer.h	/^class RpcServer$/;"	c	namespace:muduo::net
+google	protorpc/RpcServer.h	/^namespace google {$/;"	n
+muduo	protorpc/RpcServer.h	/^namespace muduo$/;"	n
+net	protorpc/RpcServer.h	/^namespace net$/;"	n	namespace:muduo
+protobuf	protorpc/RpcServer.h	/^namespace protobuf {$/;"	n	namespace:google
+server_	protorpc/RpcServer.h	/^  TcpServer server_;$/;"	m	class:muduo::net::RpcServer
+services_	protorpc/RpcServer.h	/^  std::map<std::string, ::google::protobuf::Service*> services_;$/;"	m	class:muduo::net::RpcServer
+setThreadNum	protorpc/RpcServer.h	/^  void setThreadNum(int numThreads)$/;"	f	class:muduo::net::RpcServer
+ByteSizeConsistencyError	protorpc/google-inl.h	/^void ByteSizeConsistencyError(int byte_size_before_serialization,$/;"	f
+InitializationErrorMessage	protorpc/google-inl.h	/^std::string InitializationErrorMessage(const char* action,$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferAppendRetrieve)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferFindEOL)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferGrow)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferInsideGrow)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferPrepend)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferReadInt)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testBufferShrink)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/Buffer_unittest.cc	/^BOOST_AUTO_TEST_CASE(testMove)$/;"	f
+BOOST_TEST_DYN_LINK	tests/Buffer_unittest.cc	5;"	d	file:
+BOOST_TEST_MAIN	tests/Buffer_unittest.cc	4;"	d	file:
+output	tests/Buffer_unittest.cc	/^void output(Buffer&& buf, const void* inner)$/;"	f
+PeriodicTimer	tests/Channel_test.cc	/^  PeriodicTimer(EventLoop* loop, double interval, const TimerCallback& cb)$/;"	f	class:PeriodicTimer
+PeriodicTimer	tests/Channel_test.cc	/^class PeriodicTimer$/;"	c	file:
+cb_	tests/Channel_test.cc	/^  TimerCallback cb_;$/;"	m	class:PeriodicTimer	file:
+detail	tests/Channel_test.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+handleRead	tests/Channel_test.cc	/^  void handleRead()$/;"	f	class:PeriodicTimer	file:
+interval_	tests/Channel_test.cc	/^  const double interval_; \/\/ in seconds$/;"	m	class:PeriodicTimer	file:
+loop_	tests/Channel_test.cc	/^  EventLoop* loop_;$/;"	m	class:PeriodicTimer	file:
+main	tests/Channel_test.cc	/^int main(int argc, char* argv[])$/;"	f
+muduo	tests/Channel_test.cc	/^namespace muduo$/;"	n	file:
+net	tests/Channel_test.cc	/^namespace net$/;"	n	namespace:muduo	file:
+print	tests/Channel_test.cc	/^void print(const char* msg)$/;"	f
+start	tests/Channel_test.cc	/^  void start()$/;"	f	class:PeriodicTimer
+timerfdChannel_	tests/Channel_test.cc	/^  Channel timerfdChannel_;$/;"	m	class:PeriodicTimer	file:
+timerfd_	tests/Channel_test.cc	/^  const int timerfd_;$/;"	m	class:PeriodicTimer	file:
+toTimeSpec	tests/Channel_test.cc	/^  static struct timespec toTimeSpec(double seconds)$/;"	f	class:PeriodicTimer	file:
+~PeriodicTimer	tests/Channel_test.cc	/^  ~PeriodicTimer()$/;"	f	class:PeriodicTimer
+EchoClient	tests/EchoClient_unittest.cc	/^  EchoClient(EventLoop* loop, const InetAddress& listenAddr, const string& id)$/;"	f	class:EchoClient
+EchoClient	tests/EchoClient_unittest.cc	/^class EchoClient : boost::noncopyable$/;"	c	file:
+client_	tests/EchoClient_unittest.cc	/^  TcpClient client_;$/;"	m	class:EchoClient	file:
+clients	tests/EchoClient_unittest.cc	/^boost::ptr_vector<EchoClient> clients;$/;"	v
+connect	tests/EchoClient_unittest.cc	/^  void connect()$/;"	f	class:EchoClient
+current	tests/EchoClient_unittest.cc	/^int current = 0;$/;"	v
+loop_	tests/EchoClient_unittest.cc	/^  EventLoop* loop_;$/;"	m	class:EchoClient	file:
+main	tests/EchoClient_unittest.cc	/^int main(int argc, char* argv[])$/;"	f
+numThreads	tests/EchoClient_unittest.cc	/^int numThreads = 0;$/;"	v
+onConnection	tests/EchoClient_unittest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoClient	file:
+onMessage	tests/EchoClient_unittest.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:EchoClient	file:
+EchoServer	tests/EchoServer_unittest.cc	/^  EchoServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:EchoServer
+EchoServer	tests/EchoServer_unittest.cc	/^class EchoServer$/;"	c	file:
+loop_	tests/EchoServer_unittest.cc	/^  EventLoop* loop_;$/;"	m	class:EchoServer	file:
+main	tests/EchoServer_unittest.cc	/^int main(int argc, char* argv[])$/;"	f
+numThreads	tests/EchoServer_unittest.cc	/^int numThreads = 0;$/;"	v
+onConnection	tests/EchoServer_unittest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer	file:
+onMessage	tests/EchoServer_unittest.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:EchoServer	file:
+server_	tests/EchoServer_unittest.cc	/^  TcpServer server_;$/;"	m	class:EchoServer	file:
+start	tests/EchoServer_unittest.cc	/^  void start()$/;"	f	class:EchoServer
+init	tests/EventLoopThreadPool_unittest.cc	/^void init(EventLoop* p)$/;"	f
+main	tests/EventLoopThreadPool_unittest.cc	/^int main()$/;"	f
+print	tests/EventLoopThreadPool_unittest.cc	/^void print(EventLoop* p = NULL)$/;"	f
+main	tests/EventLoopThread_unittest.cc	/^int main()$/;"	f
+print	tests/EventLoopThread_unittest.cc	/^void print(EventLoop* p = NULL)$/;"	f
+quit	tests/EventLoopThread_unittest.cc	/^void quit(EventLoop* p)$/;"	f
+callback	tests/EventLoop_unittest.cc	/^void callback()$/;"	f
+main	tests/EventLoop_unittest.cc	/^int main()$/;"	f
+threadFunc	tests/EventLoop_unittest.cc	/^void threadFunc()$/;"	f
+BOOST_AUTO_TEST_CASE	tests/InetAddress_unittest.cc	/^BOOST_AUTO_TEST_CASE(testInetAddress)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/InetAddress_unittest.cc	/^BOOST_AUTO_TEST_CASE(testInetAddressResolve)$/;"	f
+BOOST_TEST_DYN_LINK	tests/InetAddress_unittest.cc	7;"	d	file:
+BOOST_TEST_MAIN	tests/InetAddress_unittest.cc	6;"	d	file:
+main	tests/TcpClient_reg1.cc	/^int main(int argc, char* argv[])$/;"	f
+timeout	tests/TcpClient_reg1.cc	/^void timeout()$/;"	f
+main	tests/TcpClient_reg2.cc	/^int main(int argc, char* argv[])$/;"	f
+threadFunc	tests/TcpClient_reg2.cc	/^void threadFunc(EventLoop* loop)$/;"	f
+main	tests/TcpClient_reg3.cc	/^int main(int argc, char* argv[])$/;"	f
+cancel	tests/TimerQueue_unittest.cc	/^void cancel(TimerId timer)$/;"	f
+cnt	tests/TimerQueue_unittest.cc	/^int cnt = 0;$/;"	v
+g_loop	tests/TimerQueue_unittest.cc	/^EventLoop* g_loop;$/;"	v
+main	tests/TimerQueue_unittest.cc	/^int main()$/;"	f
+print	tests/TimerQueue_unittest.cc	/^void print(const char* msg)$/;"	f
+printTid	tests/TimerQueue_unittest.cc	/^void printTid()$/;"	f
+BOOST_AUTO_TEST_CASE	tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream1)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream2)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream3)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream4)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/ZlibStream_unittest.cc	/^BOOST_AUTO_TEST_CASE(testZlibOutputStream5)$/;"	f
+BOOST_TEST_DYN_LINK	tests/ZlibStream_unittest.cc	6;"	d	file:
+BOOST_TEST_MAIN	tests/ZlibStream_unittest.cc	5;"	d	file:

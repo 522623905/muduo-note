@@ -1,0 +1,67 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+parseMessage	codec.cc	/^ParseResult pubsub::parseMessage(Buffer* buf,$/;"	f	class:pubsub
+MUDUO_EXAMPLES_HUB_CODEC_H	codec.h	2;"	d
+ParseResult	codec.h	/^enum ParseResult$/;"	g	namespace:pubsub
+kContinue	codec.h	/^  kContinue,$/;"	e	enum:pubsub::ParseResult
+kError	codec.h	/^  kError,$/;"	e	enum:pubsub::ParseResult
+kSuccess	codec.h	/^  kSuccess,$/;"	e	enum:pubsub::ParseResult
+pubsub	codec.h	/^namespace pubsub$/;"	n
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+ConnectionSubscription	hub.cc	/^typedef std::set<string> ConnectionSubscription;$/;"	t	namespace:pubsub	file:
+PubSubServer	hub.cc	/^  PubSubServer(muduo::net::EventLoop* loop,$/;"	f	class:pubsub::PubSubServer
+PubSubServer	hub.cc	/^class PubSubServer : boost::noncopyable$/;"	c	namespace:pubsub	file:
+Topic	hub.cc	/^  Topic(const string& topic)$/;"	f	class:pubsub::Topic
+Topic	hub.cc	/^class Topic : public muduo::copyable$/;"	c	namespace:pubsub	file:
+add	hub.cc	/^  void add(const TcpConnectionPtr& conn)  \/\/给topic添加一个订阅客户$/;"	f	class:pubsub::Topic
+audiences_	hub.cc	/^  std::set<TcpConnectionPtr> audiences_;  \/\/所有订阅的客户$/;"	m	class:pubsub::Topic	file:
+content_	hub.cc	/^  string content_;  \/\/内容$/;"	m	class:pubsub::Topic	file:
+doPublish	hub.cc	/^  void doPublish(const string& source,$/;"	f	class:pubsub::PubSubServer	file:
+doSubscribe	hub.cc	/^  void doSubscribe(const TcpConnectionPtr& conn,$/;"	f	class:pubsub::PubSubServer	file:
+doUnsubscribe	hub.cc	/^  void doUnsubscribe(const TcpConnectionPtr& conn,$/;"	f	class:pubsub::PubSubServer	file:
+getTopic	hub.cc	/^  Topic& getTopic(const string& topic)$/;"	f	class:pubsub::PubSubServer	file:
+lastPubTime_	hub.cc	/^  Timestamp lastPubTime_; \/\/上次提交时间$/;"	m	class:pubsub::Topic	file:
+loop_	hub.cc	/^  EventLoop* loop_;$/;"	m	class:pubsub::PubSubServer	file:
+main	hub.cc	/^int main(int argc, char* argv[])$/;"	f
+makeMessage	hub.cc	/^  string makeMessage()$/;"	f	class:pubsub::Topic	file:
+onConnection	hub.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:pubsub::PubSubServer	file:
+onMessage	hub.cc	/^  void onMessage(const TcpConnectionPtr& conn,$/;"	f	class:pubsub::PubSubServer	file:
+publish	hub.cc	/^  void publish(const string& content, Timestamp time) \/\/发表内容至订阅的客户$/;"	f	class:pubsub::Topic
+pubsub	hub.cc	/^namespace pubsub$/;"	n	file:
+remove	hub.cc	/^  void remove(const TcpConnectionPtr& conn)  \/\/移除该订阅客户$/;"	f	class:pubsub::Topic
+server_	hub.cc	/^  TcpServer server_;$/;"	m	class:pubsub::PubSubServer	file:
+start	hub.cc	/^  void start()$/;"	f	class:pubsub::PubSubServer
+timePublish	hub.cc	/^  void timePublish()$/;"	f	class:pubsub::PubSubServer	file:
+topic_	hub.cc	/^  string topic_;  \/\/话题$/;"	m	class:pubsub::Topic	file:
+topics_	hub.cc	/^  std::map<string, Topic> topics_; \/\/一个topic对应一个Topic结构，所有的保存至topics_中$/;"	m	class:pubsub::PubSubServer	file:
+connection	pub.cc	/^void connection(PubSubClient* client)$/;"	f
+g_content	pub.cc	/^string g_content;$/;"	v
+g_topic	pub.cc	/^string g_topic;$/;"	v
+main	pub.cc	/^int main(int argc, char* argv[])$/;"	f
+PubSubClient	pubsub.cc	/^PubSubClient::PubSubClient(EventLoop* loop,$/;"	f	class:PubSubClient
+connected	pubsub.cc	/^bool PubSubClient::connected() const$/;"	f	class:PubSubClient
+onConnection	pubsub.cc	/^void PubSubClient::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:PubSubClient
+onMessage	pubsub.cc	/^void PubSubClient::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:PubSubClient
+publish	pubsub.cc	/^bool PubSubClient::publish(const string& topic, const string& content)$/;"	f	class:PubSubClient
+send	pubsub.cc	/^bool PubSubClient::send(const string& message)$/;"	f	class:PubSubClient
+start	pubsub.cc	/^void PubSubClient::start()$/;"	f	class:PubSubClient
+stop	pubsub.cc	/^void PubSubClient::stop()$/;"	f	class:PubSubClient
+subscribe	pubsub.cc	/^bool PubSubClient::subscribe(const string& topic, const SubscribeCallback& cb)$/;"	f	class:PubSubClient
+unsubscribe	pubsub.cc	/^void PubSubClient::unsubscribe(const string& topic)$/;"	f	class:PubSubClient
+ConnectionCallback	pubsub.h	/^  typedef boost::function<void (PubSubClient*)> ConnectionCallback;$/;"	t	class:pubsub::PubSubClient
+MUDUO_EXAMPLES_HUB_PUBSUB_H	pubsub.h	2;"	d
+PubSubClient	pubsub.h	/^class PubSubClient : boost::noncopyable$/;"	c	namespace:pubsub
+SubscribeCallback	pubsub.h	/^                                Timestamp)> SubscribeCallback;$/;"	t	class:pubsub::PubSubClient
+client_	pubsub.h	/^  muduo::net::TcpClient client_;$/;"	m	class:pubsub::PubSubClient
+conn_	pubsub.h	/^  muduo::net::TcpConnectionPtr conn_;$/;"	m	class:pubsub::PubSubClient
+connectionCallback_	pubsub.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:pubsub::PubSubClient
+pubsub	pubsub.h	/^namespace pubsub$/;"	n
+setConnectionCallback	pubsub.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:pubsub::PubSubClient
+subscribeCallback_	pubsub.h	/^  SubscribeCallback subscribeCallback_;$/;"	m	class:pubsub::PubSubClient
+connection	sub.cc	/^void connection(PubSubClient* client)$/;"	f
+g_topics	sub.cc	/^std::vector<string> g_topics;  \/\/用来存储感兴趣的topic，可有多个，因此用vector$/;"	v
+main	sub.cc	/^int main(int argc, char* argv[])$/;"	f
+subscription	sub.cc	/^void subscription(const string& topic, const string& content, Timestamp)$/;"	f

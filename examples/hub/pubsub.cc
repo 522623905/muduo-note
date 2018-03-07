@@ -36,8 +36,8 @@ bool PubSubClient::connected() const
 
 bool PubSubClient::subscribe(const string& topic, const SubscribeCallback& cb)
 {
-  string message = "sub " + topic + "\r\n";
-  subscribeCallback_ = cb;
+  string message = "sub " + topic + "\r\n"; 
+  subscribeCallback_ = cb;  //设置回调函数
   return send(message);
 }
 
@@ -80,13 +80,13 @@ void PubSubClient::onMessage(const TcpConnectionPtr& conn,
   {
     string cmd;
     string topic;
-    string content;
-    result = parseMessage(buf, &cmd, &topic, &content);
-    if (result == kSuccess)
+    string content; 
+    result = parseMessage(buf, &cmd, &topic, &content); // 从buf消息内容中分别解析出cmd topic content
+    if (result == kSuccess) 
     {
       if (cmd == "pub" && subscribeCallback_)
       {
-        subscribeCallback_(topic, content, receiveTime);
+        subscribeCallback_(topic, content, receiveTime); //当客户端收到收到pub命令后，回调该函数，打印相关内容（即为订阅topic的内容）
       }
     }
     else if (result == kError)
@@ -96,6 +96,7 @@ void PubSubClient::onMessage(const TcpConnectionPtr& conn,
   }
 }
 
+//发送message给conn
 bool PubSubClient::send(const string& message)
 {
   bool succeed = false;

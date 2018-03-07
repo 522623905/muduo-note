@@ -21,6 +21,7 @@ namespace FileUtil
 {
 
 // read small file < 64KB
+//小文件读取的类封装
 class ReadSmallFile : boost::noncopyable
 {
  public:
@@ -28,16 +29,17 @@ class ReadSmallFile : boost::noncopyable
   ~ReadSmallFile();
 
   // return errno
+  //该函数用于将小文件的内容转换为字符串
   template<typename String>
-  int readToString(int maxSize,
-                   String* content,
-                   int64_t* fileSize,
-                   int64_t* modifyTime,
-                   int64_t* createTime);
+  int readToString(int maxSize,    //期望读取的大小
+                   String* content, //要读入的content缓冲区
+                   int64_t* fileSize, //读取出的整个文件大小
+                   int64_t* modifyTime, //读取出的文件修改的时间
+                   int64_t* createTime); //读取出的创建文件的时间
 
   /// Read at maxium kBufferSize into buf_
   // return errno
-  int readToBuffer(int* size);
+  int readToBuffer(int* size);//从文件读取数据到buf_
 
   const char* buffer() const { return buf_; }
 
@@ -50,10 +52,11 @@ class ReadSmallFile : boost::noncopyable
 };
 
 // read the file content, returns errno if error happens.
+//一个全局函数，readFile函数，调用ReadSmallFile类中的readToString方法，供外部将小文件中的内容转化为字符串。
 template<typename String>
 int readFile(StringArg filename,
              int maxSize,
-             String* content,
+             String* content,   //把file内容保存到content变量
              int64_t* fileSize = NULL,
              int64_t* modifyTime = NULL,
              int64_t* createTime = NULL)
@@ -63,6 +66,7 @@ int readFile(StringArg filename,
 }
 
 // not thread safe
+//封装了一个文件指针的操作类,用于把数据写入文件中
 class AppendFile : boost::noncopyable
 {
  public:
@@ -80,9 +84,9 @@ class AppendFile : boost::noncopyable
 
   size_t write(const char* logline, size_t len);
 
-  FILE* fp_;
-  char buffer_[64*1024];
-  size_t writtenBytes_;
+  FILE* fp_; //文件指针
+  char buffer_[64*1024]; //缓冲区，64K
+  size_t writtenBytes_; //已经写入的字节数
 };
 }
 

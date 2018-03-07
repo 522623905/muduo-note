@@ -1,0 +1,1801 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AnswerPtr	protobuf/codec/client.cc	/^typedef boost::shared_ptr<muduo::Answer> AnswerPtr;$/;"	t	file:
+AnswerPtr	protobuf/codec/dispatcher_test.cc	/^typedef boost::shared_ptr<muduo::Answer> AnswerPtr;$/;"	t	file:
+AnswerPtr	protobuf/codec/server.cc	/^typedef boost::shared_ptr<muduo::Answer> AnswerPtr;$/;"	t	file:
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatFuzz)$/;"	f
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpAhead5)$/;"	f
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpAhead59)$/;"	f
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpAhead60)$/;"	f
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpBack3)$/;"	f
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatNextSecond)$/;"	f
+BOOST_AUTO_TEST_CASE	sudoku/stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatSameSecond)$/;"	f
+BOOST_TEST_DYN_LINK	sudoku/stat_unittest.cc	8;"	d	file:
+BOOST_TEST_MAIN	sudoku/stat_unittest.cc	7;"	d	file:
+BUFSIZE	wordcount/slowsink.py	/^BUFSIZE = int(bps\/10) # sleep 100ms at full speed$/;"	v
+BackendSession	protobuf/rpcbalancer/balancer.cc	/^  BackendSession(EventLoop* loop, const InetAddress& backendAddr, const string& name)$/;"	f	class:BackendSession
+BackendSession	protobuf/rpcbalancer/balancer.cc	/^class BackendSession : boost::noncopyable$/;"	c	file:
+BackendSession	protobuf/rpcbalancer/balancer_raw.cc	/^  BackendSession(EventLoop* loop, const InetAddress& backendAddr, const string& name)$/;"	f	class:BackendSession
+BackendSession	protobuf/rpcbalancer/balancer_raw.cc	/^class BackendSession : boost::noncopyable$/;"	c	file:
+Balancer	protobuf/rpcbalancer/balancer.cc	/^  Balancer(EventLoop* loop,$/;"	f	class:Balancer
+Balancer	protobuf/rpcbalancer/balancer.cc	/^class Balancer : boost::noncopyable$/;"	c	file:
+Balancer	protobuf/rpcbalancer/balancer_raw.cc	/^  Balancer(EventLoop* loop,$/;"	f	class:Balancer
+Balancer	protobuf/rpcbalancer/balancer_raw.cc	/^class Balancer : boost::noncopyable$/;"	c	file:
+Bucket	idleconnection/echo.h	/^  typedef boost::unordered_set<EntryPtr> Bucket;  \/\/unordered_set是散列容器，基于哈希表实现，通过相应哈希函数处理关键字得到相应关键值$/;"	t	class:EchoServer
+CURL	curl/Curl.h	/^typedef void CURL;$/;"	t
+CURLM	curl/Curl.h	/^typedef void CURLM;$/;"	t
+Callback	cdns/Resolver.h	/^  typedef boost::function<void(const muduo::net::InetAddress&)> Callback;$/;"	t	class:cdns::Resolver
+Callback	fastcgi/fastcgi.h	/^                                muduo::net::Buffer*)> Callback;$/;"	t	class:FastCgiCodec
+Callback	protobuf/codec/dispatcher.h	/^class Callback : boost::noncopyable$/;"	c
+CallbackMap	protobuf/codec/dispatcher.h	/^  typedef std::map<const google::protobuf::Descriptor*, boost::shared_ptr<Callback> > CallbackMap;$/;"	t	class:ProtobufDispatcher
+CallbackMap	protobuf/codec/dispatcher_lite.h	/^  typedef std::map<const google::protobuf::Descriptor*, ProtobufMessageCallback> CallbackMap;$/;"	t	class:ProtobufDispatcherLite
+CallbackT	protobuf/codec/dispatcher.h	/^  CallbackT(const ProtobufMessageTCallback& callback)$/;"	f	class:CallbackT
+CallbackT	protobuf/codec/dispatcher.h	/^class CallbackT : public Callback$/;"	c
+ChannelList	cdns/Resolver.h	/^  typedef boost::ptr_map<int, muduo::net::Channel> ChannelList;$/;"	t	class:cdns::Resolver
+ChargenClient	simple/chargenclient/chargenclient.cc	/^  ChargenClient(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:ChargenClient
+ChargenClient	simple/chargenclient/chargenclient.cc	/^class ChargenClient : boost::noncopyable$/;"	c	file:
+ChargenServer	simple/chargen/chargen.cc	/^ChargenServer::ChargenServer(EventLoop* loop,$/;"	f	class:ChargenServer
+ChargenServer	simple/chargen/chargen.h	/^class ChargenServer$/;"	c
+ChatClient	asio/chat/client.cc	/^  ChatClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:ChatClient
+ChatClient	asio/chat/client.cc	/^class ChatClient : boost::noncopyable$/;"	c	file:
+ChatClient	asio/chat/loadtest.cc	/^  ChatClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:ChatClient
+ChatClient	asio/chat/loadtest.cc	/^class ChatClient : boost::noncopyable$/;"	c	file:
+ChatServer	asio/chat/server.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	asio/chat/server.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	asio/chat/server_threaded.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	asio/chat/server_threaded.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	asio/chat/server_threaded_efficient.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	asio/chat/server_threaded_efficient.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+ChatServer	asio/chat/server_threaded_highperformance.cc	/^  ChatServer(EventLoop* loop,$/;"	f	class:ChatServer
+ChatServer	asio/chat/server_threaded_highperformance.cc	/^class ChatServer : boost::noncopyable$/;"	c	file:
+Client	filetransfer/loadtest/Client.java	/^public class Client {$/;"	c
+Client	memcached/client/bench.cc	/^  Client(const string& name,$/;"	f	class:Client
+Client	memcached/client/bench.cc	/^class Client : boost::noncopyable$/;"	c	file:
+Client	pingpong/client.cc	/^  Client(EventLoop* loop,$/;"	f	class:Client
+Client	pingpong/client.cc	/^class Client : boost::noncopyable$/;"	c	file:
+Codec	ace/logging/client.cc	/^typedef ProtobufCodecLiteT<LogRecord, logtag> Codec;$/;"	t	namespace:logging	file:
+Codec	ace/logging/server.cc	/^typedef ProtobufCodecLiteT<LogRecord, logtag> Codec;$/;"	t	namespace:logging	file:
+Column	sudoku/sudoku.cc	/^typedef Node Column;$/;"	t	file:
+ConnectionCallback	hub/pubsub.h	/^  typedef boost::function<void (PubSubClient*)> ConnectionCallback;$/;"	t	class:pubsub::PubSubClient
+ConnectionList	asio/chat/server.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	asio/chat/server_threaded.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	asio/chat/server_threaded_efficient.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionList	asio/chat/server_threaded_highperformance.cc	/^  typedef std::set<TcpConnectionPtr> ConnectionList;$/;"	t	class:ChatServer	file:
+ConnectionListPtr	asio/chat/server_threaded_efficient.cc	/^  typedef boost::shared_ptr<ConnectionList> ConnectionListPtr;$/;"	t	class:ChatServer	file:
+ConnectionSubscription	hub/hub.cc	/^typedef std::set<string> ConnectionSubscription;$/;"	t	namespace:pubsub	file:
+ConstItemPtr	memcached/server/Item.h	/^typedef boost::shared_ptr<const Item> ConstItemPtr;  \/\/ TODO: use unique_ptr$/;"	t
+Context	ace/ttcp/ttcp.cc	/^  Context()$/;"	f	struct:Context
+Context	ace/ttcp/ttcp.cc	/^struct Context$/;"	s	file:
+CpuTime	procmon/procmon.cc	/^  struct CpuTime$/;"	s	class:Procmon	file:
+Curl	curl/Curl.cc	/^Curl::Curl(EventLoop* loop)$/;"	f	class:Curl
+Curl	curl/Curl.h	/^class Curl : boost::noncopyable$/;"	c	namespace:curl
+DataCallback	curl/Curl.h	/^  typedef boost::function<void(const char*, int)> DataCallback;$/;"	t	class:curl::Request
+DataEvent	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public DataEvent(EventSource source, int whichClient, ChannelBuffer data) {$/;"	m	class:DataEvent
+DataEvent	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^public class DataEvent extends Event {$/;"	c
+DaytimeServer	simple/daytime/daytime.cc	/^DaytimeServer::DaytimeServer(EventLoop* loop,$/;"	f	class:DaytimeServer
+DaytimeServer	simple/daytime/daytime.h	/^class DaytimeServer$/;"	c
+DemuxServer	multiplexer/demux.cc	/^  DemuxServer(EventLoop* loop, const InetAddress& listenAddr, const InetAddress& socksAddr)$/;"	f	class:DemuxServer
+DemuxServer	multiplexer/demux.cc	/^class DemuxServer : boost::noncopyable$/;"	c	file:
+DiscardClient	netty/discard/client.cc	/^  DiscardClient(EventLoop* loop, const InetAddress& listenAddr, int size)$/;"	f	class:DiscardClient
+DiscardClient	netty/discard/client.cc	/^class DiscardClient : boost::noncopyable$/;"	c	file:
+DiscardServer	netty/discard/server.cc	/^  DiscardServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:DiscardServer
+DiscardServer	netty/discard/server.cc	/^class DiscardServer$/;"	c	file:
+DiscardServer	simple/discard/discard.cc	/^DiscardServer::DiscardServer(EventLoop* loop,$/;"	f	class:DiscardServer
+DiscardServer	simple/discard/discard.h	/^class DiscardServer$/;"	c
+DoneCallback	curl/Curl.h	/^  typedef boost::function<void(Request*, int)> DoneCallback;$/;"	t	class:curl::Request
+DoneCallback	sudoku/batch.cc	/^typedef boost::function<void(const string&, double, int)> DoneCallback;$/;"	t	file:
+Downloader	curl/download.cc	/^  Downloader(EventLoop* loop, const string& url)$/;"	f	class:Downloader
+Downloader	curl/download.cc	/^class Downloader : boost::noncopyable$/;"	c	file:
+Echo	protobuf/rpcbench/server.cc	/^  virtual void Echo(::google::protobuf::RpcController* controller,$/;"	f	class:echo::EchoServiceImpl
+EchoClient	netty/echo/client.cc	/^  EchoClient(EventLoop* loop, const InetAddress& listenAddr, int size)$/;"	f	class:EchoClient
+EchoClient	netty/echo/client.cc	/^class EchoClient : boost::noncopyable$/;"	c	file:
+EchoServer	idleconnection/echo.cc	/^EchoServer::EchoServer(EventLoop* loop,$/;"	f	class:EchoServer
+EchoServer	idleconnection/echo.h	/^class EchoServer$/;"	c
+EchoServer	idleconnection/sortedlist.cc	/^EchoServer::EchoServer(EventLoop* loop,$/;"	f	class:EchoServer
+EchoServer	idleconnection/sortedlist.cc	/^class EchoServer$/;"	c	file:
+EchoServer	maxconnection/echo.cc	/^EchoServer::EchoServer(EventLoop* loop,$/;"	f	class:EchoServer
+EchoServer	maxconnection/echo.h	/^class EchoServer$/;"	c
+EchoServer	netty/echo/server.cc	/^  EchoServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:EchoServer
+EchoServer	netty/echo/server.cc	/^class EchoServer$/;"	c	file:
+EchoServer	netty/echo/server2.cc	/^  EchoServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:EchoServer
+EchoServer	netty/echo/server2.cc	/^class EchoServer$/;"	c	file:
+EchoServer	simple/echo/echo.cc	/^EchoServer::EchoServer(muduo::net::EventLoop* loop,$/;"	f	class:EchoServer
+EchoServer	simple/echo/echo.h	/^class EchoServer$/;"	c
+EchoServiceImpl	protobuf/rpcbench/server.cc	/^class EchoServiceImpl : public EchoService$/;"	c	namespace:echo	file:
+EmptyPtr	protobuf/codec/client.cc	/^typedef boost::shared_ptr<muduo::Empty> EmptyPtr;$/;"	t	file:
+Entry	idleconnection/echo.h	/^    explicit Entry(const WeakTcpConnectionPtr& weakConn)  \/*初始化时候获得muduo::net::TcpConnection类型对象的弱指针*\/$/;"	f	struct:EchoServer::Entry
+Entry	idleconnection/echo.h	/^  struct Entry : public muduo::copyable$/;"	s	class:EchoServer
+Entry	multiplexer/demux.cc	/^struct Entry$/;"	s	file:
+EntryPtr	idleconnection/echo.h	/^  typedef boost::shared_ptr<Entry> EntryPtr;$/;"	t	class:EchoServer
+Equal	memcached/server/MemcacheServer.h	/^  struct Equal$/;"	s	class:MemcacheServer
+ErrorCallback	protobuf/codec/codec.h	/^                                ErrorCode)> ErrorCallback;$/;"	t	class:ProtobufCodec
+ErrorCode	protobuf/codec/codec.h	/^  enum ErrorCode$/;"	g	class:ProtobufCodec
+Event	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/Event.java	/^public class Event {$/;"	c
+EventQueue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^public class EventQueue {$/;"	c
+EventSource	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^public enum EventSource {$/;"	g
+FastCgiCodec	fastcgi/fastcgi.h	/^  explicit FastCgiCodec(const Callback& cb)$/;"	f	class:FastCgiCodec
+FastCgiCodec	fastcgi/fastcgi.h	/^class FastCgiCodec : boost::noncopyable$/;"	c
+FcgiConstant	fastcgi/fastcgi.cc	/^enum FcgiConstant$/;"	g	file:
+FcgiRole	fastcgi/fastcgi.cc	/^enum FcgiRole$/;"	g	file:
+FcgiType	fastcgi/fastcgi.cc	/^enum FcgiType$/;"	g	file:
+FilePtr	curl/download.cc	/^typedef boost::shared_ptr<FILE> FilePtr;$/;"	t	file:
+FilePtr	filetransfer/download3.cc	/^typedef boost::shared_ptr<FILE> FilePtr;$/;"	t	file:
+Handler	filetransfer/loadtest/Handler.java	/^    public Handler(int maxLength, CountDownLatch latch) throws Exception {$/;"	m	class:Handler
+Handler	filetransfer/loadtest/Handler.java	/^public class Handler extends SimpleChannelUpstreamHandler {$/;"	c
+Handler	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private class Handler extends SimpleChannelHandler {$/;"	c	class:MockBackendServer
+Handler	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private class Handler extends SimpleChannelHandler {$/;"	c	class:MockClient
+Hash	memcached/server/MemcacheServer.h	/^  struct Hash$/;"	s	class:MemcacheServer
+Input	sudoku/batch.cc	/^typedef std::vector<string> Input;$/;"	t	file:
+Input	sudoku/loadtest.cc	/^typedef std::vector<string> Input;$/;"	t	file:
+Input	sudoku/pipeline.cc	/^typedef std::vector<string> Input;$/;"	t	file:
+InputPtr	sudoku/batch.cc	/^typedef boost::shared_ptr<Input> InputPtr;$/;"	t	file:
+InputPtr	sudoku/loadtest.cc	/^typedef boost::shared_ptr<const Input> InputPtr;$/;"	t	file:
+InputPtr	sudoku/pipeline.cc	/^typedef boost::shared_ptr<const Input> InputPtr;$/;"	t	file:
+Item	memcached/server/Item.cc	/^Item::Item(StringPiece keyArg,$/;"	f	class:Item
+Item	memcached/server/Item.h	/^class Item : boost::noncopyable$/;"	c
+ItemMap	memcached/server/MemcacheServer.h	/^  typedef boost::unordered_set<ConstItemPtr, Hash, Equal> ItemMap;$/;"	t	class:MemcacheServer
+ItemPtr	memcached/server/Item.h	/^typedef boost::shared_ptr<Item> ItemPtr;  \/\/ TODO: use unique_ptr$/;"	t
+LengthHeaderCodec	asio/chat/codec.h	/^  explicit LengthHeaderCodec(const StringMessageCallback& cb)   \/\/构造函数则是设置messageCallback_回调函数$/;"	f	class:LengthHeaderCodec
+LengthHeaderCodec	asio/chat/codec.h	/^class LengthHeaderCodec : boost::noncopyable$/;"	c
+LocalConnections	asio/chat/server_threaded_highperformance.cc	/^  typedef ThreadLocalSingleton<ConnectionList> LocalConnections;$/;"	t	class:ChatServer	file:
+LogClient	ace/logging/client.cc	/^  LogClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:logging::LogClient
+LogClient	ace/logging/client.cc	/^class LogClient : boost::noncopyable$/;"	c	namespace:logging	file:
+LogServer	ace/logging/server.cc	/^  LogServer(EventLoop* loop, const InetAddress& listenAddr, int numThreads)$/;"	f	class:logging::LogServer
+LogServer	ace/logging/server.cc	/^class LogServer : boost::noncopyable$/;"	c	namespace:logging	file:
+MUDUO_EXAMPLES_ASIO_CHAT_CODEC_H	asio/chat/codec.h	2;"	d
+MUDUO_EXAMPLES_CDNS_RESOLVER_H	cdns/Resolver.h	2;"	d
+MUDUO_EXAMPLES_CURL_CURL_H	curl/Curl.h	2;"	d
+MUDUO_EXAMPLES_FASTCGI_FASTCGI_H	fastcgi/fastcgi.h	2;"	d
+MUDUO_EXAMPLES_HUB_CODEC_H	hub/codec.h	2;"	d
+MUDUO_EXAMPLES_HUB_PUBSUB_H	hub/pubsub.h	2;"	d
+MUDUO_EXAMPLES_IDLECONNECTION_ECHO_H	idleconnection/echo.h	2;"	d
+MUDUO_EXAMPLES_MEMCACHED_SERVER_ITEM_H	memcached/server/Item.h	2;"	d
+MUDUO_EXAMPLES_MEMCACHED_SERVER_MEMCACHESERVER_H	memcached/server/MemcacheServer.h	2;"	d
+MUDUO_EXAMPLES_MEMCACHED_SERVER_SESSION_H	memcached/server/Session.h	2;"	d
+MUDUO_EXAMPLES_PROTOBUF_CODEC_CODEC_H	protobuf/codec/codec.h	10;"	d
+MUDUO_EXAMPLES_PROTOBUF_CODEC_DISPATCHER_H	protobuf/codec/dispatcher.h	10;"	d
+MUDUO_EXAMPLES_PROTOBUF_CODEC_DISPATCHER_LITE_H	protobuf/codec/dispatcher_lite.h	10;"	d
+MUDUO_EXAMPLES_SIMPLE_CHARGEN_CHARGEN_H	simple/chargen/chargen.h	2;"	d
+MUDUO_EXAMPLES_SIMPLE_DAYTIME_DAYTIME_H	simple/daytime/daytime.h	2;"	d
+MUDUO_EXAMPLES_SIMPLE_DISCARD_DISCARD_H	simple/discard/discard.h	2;"	d
+MUDUO_EXAMPLES_SIMPLE_ECHO_ECHO_H	maxconnection/echo.h	2;"	d
+MUDUO_EXAMPLES_SIMPLE_ECHO_ECHO_H	simple/echo/echo.h	2;"	d
+MUDUO_EXAMPLES_SIMPLE_TIME_TIME_H	simple/time/time.h	2;"	d
+MUDUO_EXAMPLES_SOCKS4A_TUNNEL_H	socks4a/tunnel.h	2;"	d
+MUDUO_EXAMPLES_SUDOKU_SUDOKU_H	sudoku/sudoku.h	2;"	d
+MUDUO_EXAMPLES_WORDCOUNT_HASH_H	wordcount/hash.h	2;"	d
+MapWithLock	memcached/server/MemcacheServer.h	/^  struct MapWithLock$/;"	s	class:MemcacheServer
+MemcacheServer	memcached/server/MemcacheServer.cc	/^MemcacheServer::MemcacheServer(muduo::net::EventLoop* loop, const Options& options)$/;"	f	class:MemcacheServer
+MemcacheServer	memcached/server/MemcacheServer.h	/^class MemcacheServer : boost::noncopyable$/;"	c
+MessagePtr	protobuf/codec/codec.h	/^typedef boost::shared_ptr<google::protobuf::Message> MessagePtr;$/;"	t
+MessagePtr	protobuf/codec/dispatcher.h	/^typedef boost::shared_ptr<google::protobuf::Message> MessagePtr;$/;"	t
+MessagePtr	protobuf/codec/dispatcher_lite.h	/^typedef boost::shared_ptr<google::protobuf::Message> MessagePtr;$/;"	t
+MockBackendServer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public MockBackendServer(EventQueue queue, int listeningPort, Executor boss, Executor worker,$/;"	m	class:MockBackendServer
+MockBackendServer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^public class MockBackendServer {$/;"	c
+MockClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public MockClient(EventQueue queue, InetSocketAddress remoteAddress, Executor boss,$/;"	m	class:MockClient
+MockClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^public class MockClient {$/;"	c
+MultiplexServer	multiplexer/multiplexer.cc	/^  MultiplexServer(EventLoop* loop,$/;"	f	class:MultiplexServer
+MultiplexServer	multiplexer/multiplexer.cc	/^class MultiplexServer$/;"	c	file:
+MultiplexServer	multiplexer/multiplexer_simple.cc	/^  MultiplexServer(EventLoop* loop, const InetAddress& listenAddr, const InetAddress& backendAddr)$/;"	f	class:MultiplexServer
+MultiplexServer	multiplexer/multiplexer_simple.cc	/^class MultiplexServer : boost::noncopyable$/;"	c	file:
+MultiplexerTest	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public MultiplexerTest(String multiplexerHost) {$/;"	m	class:MultiplexerTest
+MultiplexerTest	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^public class MultiplexerTest {$/;"	c
+MyCountDownLatch	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^    public MyCountDownLatch(int count) {$/;"	m	class:MyCountDownLatch
+MyCountDownLatch	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^public class MyCountDownLatch extends CountDownLatch {$/;"	c
+MyGdFont	procmon/plot.cc	/^struct Plot::MyGdFont : public gdFont {};$/;"	s	class:Plot	file:
+MyGdFontPtr	procmon/plot.h	/^  typedef struct MyGdFont* MyGdFontPtr;$/;"	t	class:Plot	typeref:struct:Plot::MyGdFont
+NDEBUG	ace/ttcp/ttcp_blocking.cc	4;"	d	file:
+Node	idleconnection/sortedlist.cc	/^  struct Node : public muduo::copyable$/;"	s	class:EchoServer	file:
+Node	sudoku/sudoku.cc	/^struct Node$/;"	s	file:
+Operation	memcached/client/bench.cc	/^  enum Operation$/;"	g	class:Client	file:
+Option	cdns/Resolver.h	/^  enum Option$/;"	g	class:cdns::Resolver
+Option	curl/Curl.h	/^  enum Option$/;"	g	class:curl::Curl
+Options	ace/ttcp/common.h	/^  Options()$/;"	f	struct:Options
+Options	ace/ttcp/common.h	/^struct Options$/;"	s
+Options	memcached/server/MemcacheServer.cc	/^MemcacheServer::Options::Options()$/;"	f	class:MemcacheServer::Options
+Options	memcached/server/MemcacheServer.h	/^  struct Options$/;"	s	class:MemcacheServer
+ParamMap	fastcgi/fastcgi.h	/^  typedef std::map<string, string> ParamMap;$/;"	t	class:FastCgiCodec
+ParseResult	hub/codec.h	/^enum ParseResult$/;"	g	namespace:pubsub
+PayloadMessage	ace/ttcp/common.h	/^struct PayloadMessage$/;"	s
+PerThread	protobuf/rpcbalancer/balancer.cc	/^    PerThread() : current(0) { }$/;"	f	struct:Balancer::PerThread
+PerThread	protobuf/rpcbalancer/balancer.cc	/^  struct PerThread$/;"	s	class:Balancer	file:
+PerThread	protobuf/rpcbalancer/balancer_raw.cc	/^    PerThread() : current(0) { }$/;"	f	struct:Balancer::PerThread
+PerThread	protobuf/rpcbalancer/balancer_raw.cc	/^  struct PerThread$/;"	s	class:Balancer	file:
+Percentile	sudoku/percentile.h	/^  Percentile(std::vector<int>& latencies, int infly)$/;"	f	class:Percentile
+Percentile	sudoku/percentile.h	/^class Percentile$/;"	c
+Piece	curl/download.cc	/^  Piece(const curl::RequestPtr& req,$/;"	f	class:Piece
+Piece	curl/download.cc	/^class Piece : boost::noncopyable$/;"	c	file:
+PipelineFactory	filetransfer/loadtest/Client.java	/^        private PipelineFactory(int kMinLength, int kMaxLength, CountDownLatch latch) {$/;"	m	class:Client.PipelineFactory	file:
+PipelineFactory	filetransfer/loadtest/Client.java	/^    private static final class PipelineFactory implements ChannelPipelineFactory {$/;"	c	class:Client
+Plot	procmon/plot.cc	/^Plot::Plot(int width, int height, int totalSeconds, int samplingPeriod)$/;"	f	class:Plot
+Plot	procmon/plot.h	/^class Plot : boost::noncopyable$/;"	c
+Printer	asio/tutorial/timer4/timer.cc	/^  Printer(muduo::net::EventLoop* loop)$/;"	f	class:Printer
+Printer	asio/tutorial/timer4/timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+Printer	asio/tutorial/timer5/timer.cc	/^  Printer(muduo::net::EventLoop* loop1, muduo::net::EventLoop* loop2)$/;"	f	class:Printer
+Printer	asio/tutorial/timer5/timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+Printer	asio/tutorial/timer6/timer.cc	/^  Printer(muduo::net::EventLoop* loop1, muduo::net::EventLoop* loop2)$/;"	f	class:Printer
+Printer	asio/tutorial/timer6/timer.cc	/^class Printer : boost::noncopyable$/;"	c	file:
+Procmon	procmon/procmon.cc	/^  Procmon(EventLoop* loop, pid_t pid, uint16_t port, const char* procname)$/;"	f	class:Procmon
+Procmon	procmon/procmon.cc	/^class Procmon : boost::noncopyable$/;"	c	file:
+ProtobufCodec	protobuf/codec/codec.h	/^  ProtobufCodec(const ProtobufMessageCallback& messageCb, const ErrorCallback& errorCb)$/;"	f	class:ProtobufCodec
+ProtobufCodec	protobuf/codec/codec.h	/^  explicit ProtobufCodec(const ProtobufMessageCallback& messageCb)$/;"	f	class:ProtobufCodec
+ProtobufCodec	protobuf/codec/codec.h	/^class ProtobufCodec : boost::noncopyable$/;"	c
+ProtobufDispatcher	protobuf/codec/dispatcher.h	/^  explicit ProtobufDispatcher(const ProtobufMessageCallback& defaultCb)$/;"	f	class:ProtobufDispatcher
+ProtobufDispatcher	protobuf/codec/dispatcher.h	/^class ProtobufDispatcher$/;"	c
+ProtobufDispatcherLite	protobuf/codec/dispatcher_lite.h	/^  explicit ProtobufDispatcherLite(const ProtobufMessageCallback& defaultCb)$/;"	f	class:ProtobufDispatcherLite
+ProtobufDispatcherLite	protobuf/codec/dispatcher_lite.h	/^class ProtobufDispatcherLite : boost::noncopyable$/;"	c
+ProtobufMessageCallback	protobuf/codec/codec.h	/^                                muduo::Timestamp)> ProtobufMessageCallback;$/;"	t	class:ProtobufCodec
+ProtobufMessageCallback	protobuf/codec/dispatcher.h	/^                                muduo::Timestamp)> ProtobufMessageCallback;$/;"	t	class:ProtobufDispatcher
+ProtobufMessageCallback	protobuf/codec/dispatcher_lite.h	/^                                muduo::Timestamp)> ProtobufMessageCallback;$/;"	t	class:ProtobufDispatcherLite
+ProtobufMessageTCallback	protobuf/codec/dispatcher.h	/^                                muduo::Timestamp)> ProtobufMessageTCallback;$/;"	t	class:CallbackT
+Protocol	memcached/server/Session.h	/^  enum Protocol$/;"	g	class:Session
+PubSubClient	hub/pubsub.cc	/^PubSubClient::PubSubClient(EventLoop* loop,$/;"	f	class:PubSubClient
+PubSubClient	hub/pubsub.h	/^class PubSubClient : boost::noncopyable$/;"	c	namespace:pubsub
+PubSubServer	hub/hub.cc	/^  PubSubServer(muduo::net::EventLoop* loop,$/;"	f	class:pubsub::PubSubServer
+PubSubServer	hub/hub.cc	/^class PubSubServer : boost::noncopyable$/;"	c	namespace:pubsub	file:
+QueryClient	protobuf/codec/client.cc	/^  QueryClient(EventLoop* loop,$/;"	f	class:QueryClient
+QueryClient	protobuf/codec/client.cc	/^class QueryClient : boost::noncopyable$/;"	c	file:
+QueryData	cdns/Resolver.h	/^    QueryData(Resolver* o, const Callback& cb)$/;"	f	struct:cdns::Resolver::QueryData
+QueryData	cdns/Resolver.h	/^  struct QueryData$/;"	s	class:cdns::Resolver
+QueryPtr	protobuf/codec/dispatcher_test.cc	/^typedef boost::shared_ptr<muduo::Query> QueryPtr;$/;"	t	file:
+QueryPtr	protobuf/codec/server.cc	/^typedef boost::shared_ptr<muduo::Query> QueryPtr;$/;"	t	file:
+QueryServer	protobuf/codec/server.cc	/^  QueryServer(EventLoop* loop,$/;"	f	class:QueryServer
+QueryServer	protobuf/codec/server.cc	/^class QueryServer : boost::noncopyable$/;"	c	file:
+RawMessage	protobuf/rpcbalancer/balancer_raw.cc	/^  RawMessage(StringPiece m)$/;"	f	struct:RawMessage
+RawMessage	protobuf/rpcbalancer/balancer_raw.cc	/^struct RawMessage$/;"	s	file:
+Reader	memcached/server/Session.cc	/^  Reader(Tokenizer::iterator& beg, Tokenizer::iterator end)$/;"	f	struct:Session::Reader
+Reader	memcached/server/Session.cc	/^struct Session::Reader$/;"	s	class:Session	file:
+RecordHeader	fastcgi/fastcgi.cc	/^struct FastCgiCodec::RecordHeader$/;"	s	class:FastCgiCodec	file:
+Request	curl/Curl.cc	/^Request::Request(Curl* owner, const char* url)$/;"	f	class:Request
+Request	curl/Curl.h	/^class Request : public boost::enable_shared_from_this<Request>,$/;"	c	namespace:curl
+Request	protobuf/rpcbalancer/balancer.cc	/^  struct Request$/;"	s	class:BackendSession	file:
+Request	protobuf/rpcbalancer/balancer_raw.cc	/^  struct Request$/;"	s	class:BackendSession	file:
+Request	sudoku/server_hybrid.cc	/^  struct Request$/;"	s	class:SudokuServer	file:
+Request	sudoku/server_prod.cc	/^  struct Request$/;"	s	class:SudokuServer	file:
+RequestPtr	curl/Curl.h	/^typedef boost::shared_ptr<Request> RequestPtr;$/;"	t	namespace:curl
+Resolve	protobuf/resolver/server.cc	/^  virtual void Resolve(::google::protobuf::RpcController* controller,$/;"	f	class:resolver::ResolverServiceImpl
+Resolver	cdns/Resolver.cc	/^Resolver::Resolver(EventLoop* loop, Option opt)$/;"	f	class:Resolver
+Resolver	cdns/Resolver.h	/^class Resolver : boost::noncopyable$/;"	c	namespace:cdns
+ResolverServiceImpl	protobuf/resolver/server.cc	/^  ResolverServiceImpl(EventLoop* loop)$/;"	f	class:resolver::ResolverServiceImpl
+ResolverServiceImpl	protobuf/resolver/server.cc	/^class ResolverServiceImpl : public ResolverService$/;"	c	namespace:resolver	file:
+RpcClient	protobuf/resolver/client.cc	/^  RpcClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:RpcClient
+RpcClient	protobuf/resolver/client.cc	/^class RpcClient : boost::noncopyable$/;"	c	file:
+RpcClient	protobuf/rpc/client.cc	/^  RpcClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:RpcClient
+RpcClient	protobuf/rpc/client.cc	/^class RpcClient : boost::noncopyable$/;"	c	file:
+RpcClient	protobuf/rpcbench/client.cc	/^  RpcClient(EventLoop* loop,$/;"	f	class:RpcClient
+RpcClient	protobuf/rpcbench/client.cc	/^class RpcClient : boost::noncopyable$/;"	c	file:
+SendThrottler	wordcount/hasher.cc	/^  SendThrottler(EventLoop* loop, const InetAddress& addr)$/;"	f	class:SendThrottler
+SendThrottler	wordcount/hasher.cc	/^class SendThrottler : boost::noncopyable$/;"	c	file:
+ServerClient	socks4a/tunnel.h	/^  enum ServerClient$/;"	g	class:Tunnel
+Session	ace/logging/server.cc	/^  explicit Session(const TcpConnectionPtr& conn)$/;"	f	class:logging::Session
+Session	ace/logging/server.cc	/^class Session : boost::noncopyable$/;"	c	namespace:logging	file:
+Session	memcached/server/Session.h	/^  Session(MemcacheServer* owner, const muduo::net::TcpConnectionPtr& conn)$/;"	f	class:Session
+Session	memcached/server/Session.h	/^class Session : boost::noncopyable,$/;"	c
+Session	pingpong/client.cc	/^  Session(EventLoop* loop,$/;"	f	class:Session
+Session	pingpong/client.cc	/^class Session : boost::noncopyable$/;"	c	file:
+SessionMessage	ace/ttcp/common.h	/^struct SessionMessage$/;"	s
+SessionPtr	ace/logging/server.cc	/^typedef boost::shared_ptr<Session> SessionPtr;$/;"	t	namespace:logging	file:
+SessionPtr	memcached/server/Session.h	/^typedef boost::shared_ptr<Session> SessionPtr;$/;"	t
+Solve	protobuf/rpc/server.cc	/^  virtual void Solve(::google::protobuf::RpcController* controller,$/;"	f	class:sudoku::SudokuServiceImpl
+SpaceSeparator	memcached/server/Session.h	/^  struct SpaceSeparator$/;"	s	class:Session
+StatData	procmon/procmon.cc	/^struct StatData$/;"	s	file:
+State	memcached/server/Session.h	/^  enum State$/;"	g	class:Session
+Stats	memcached/server/MemcacheServer.cc	/^struct MemcacheServer::Stats$/;"	s	class:MemcacheServer	file:
+StringMessageCallback	asio/chat/codec.h	/^                                muduo::Timestamp)> StringMessageCallback;$/;"	t	class:LengthHeaderCodec
+SubscribeCallback	hub/pubsub.h	/^                                Timestamp)> SubscribeCallback;$/;"	t	class:pubsub::PubSubClient
+SudokuClient	sudoku/batch.cc	/^  SudokuClient(EventLoop* loop,$/;"	f	class:SudokuClient
+SudokuClient	sudoku/batch.cc	/^class SudokuClient : boost::noncopyable$/;"	c	file:
+SudokuClient	sudoku/loadtest.cc	/^  SudokuClient(EventLoop* loop,$/;"	f	class:SudokuClient
+SudokuClient	sudoku/loadtest.cc	/^class SudokuClient : boost::noncopyable$/;"	c	file:
+SudokuClient	sudoku/pipeline.cc	/^  SudokuClient(EventLoop* loop,$/;"	f	class:SudokuClient
+SudokuClient	sudoku/pipeline.cc	/^class SudokuClient : boost::noncopyable$/;"	c	file:
+SudokuLoadtest	sudoku/loadtest.cc	/^  SudokuLoadtest()$/;"	f	class:SudokuLoadtest
+SudokuLoadtest	sudoku/loadtest.cc	/^class SudokuLoadtest : boost::noncopyable$/;"	c	file:
+SudokuServer	sudoku/server_basic.cc	/^  SudokuServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:SudokuServer
+SudokuServer	sudoku/server_basic.cc	/^class SudokuServer$/;"	c	file:
+SudokuServer	sudoku/server_hybrid.cc	/^  SudokuServer(EventLoop* loop,$/;"	f	class:SudokuServer
+SudokuServer	sudoku/server_hybrid.cc	/^class SudokuServer : boost::noncopyable$/;"	c	file:
+SudokuServer	sudoku/server_multiloop.cc	/^  SudokuServer(EventLoop* loop, const InetAddress& listenAddr, int numThreads)$/;"	f	class:SudokuServer
+SudokuServer	sudoku/server_multiloop.cc	/^class SudokuServer$/;"	c	file:
+SudokuServer	sudoku/server_prod.cc	/^  SudokuServer(EventLoop* loop,$/;"	f	class:SudokuServer
+SudokuServer	sudoku/server_prod.cc	/^class SudokuServer : boost::noncopyable$/;"	c	file:
+SudokuServer	sudoku/server_threadpool.cc	/^  SudokuServer(EventLoop* loop, const InetAddress& listenAddr, int numThreads)$/;"	f	class:SudokuServer
+SudokuServer	sudoku/server_threadpool.cc	/^class SudokuServer$/;"	c	file:
+SudokuServiceImpl	protobuf/rpc/server.cc	/^class SudokuServiceImpl : public SudokuService$/;"	c	namespace:sudoku	file:
+SudokuSolver	sudoku/sudoku.cc	/^    SudokuSolver(int board[kCells])$/;"	f	class:SudokuSolver
+SudokuSolver	sudoku/sudoku.cc	/^class SudokuSolver$/;"	c	file:
+SudokuStat	sudoku/stat.h	/^  SudokuStat(const ThreadPool& pool)$/;"	f	class:SudokuStat
+SudokuStat	sudoku/stat.h	/^class SudokuStat : boost::noncopyable$/;"	c
+TcpClientPtr	multiplexer/demux.cc	/^typedef boost::shared_ptr<TcpClient> TcpClientPtr;$/;"	t	file:
+TestCase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^public abstract class TestCase {$/;"	c
+TestFailedException	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^    public TestFailedException(String message) {$/;"	m	class:TestFailedException
+TestFailedException	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^public class TestFailedException extends RuntimeException {$/;"	c
+TestOneClientBackendSend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBackendSend.java	/^public class TestOneClientBackendSend extends TestCase {$/;"	c
+TestOneClientBothSend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBothSend.java	/^public class TestOneClientBothSend extends TestCase {$/;"	c
+TestOneClientNoData	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientNoData.java	/^public class TestOneClientNoData extends TestCase {$/;"	c
+TestOneClientSend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientSend.java	/^public class TestOneClientSend extends TestCase {$/;"	c
+TestTwoClients	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestTwoClients.java	/^public class TestTwoClients extends TestCase {$/;"	c
+TimeClient	simple/timeclient/timeclient.cc	/^  TimeClient(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:TimeClient
+TimeClient	simple/timeclient/timeclient.cc	/^class TimeClient : boost::noncopyable$/;"	c	file:
+TimeServer	simple/time/time.cc	/^TimeServer::TimeServer(muduo::net::EventLoop* loop,$/;"	f	class:TimeServer
+TimeServer	simple/time/time.h	/^class TimeServer$/;"	c
+Tokenizer	memcached/server/Session.h	/^      muduo::StringPiece> Tokenizer;$/;"	t	class:Session
+Topic	hub/hub.cc	/^  Topic(const string& topic)$/;"	f	class:pubsub::Topic
+Topic	hub/hub.cc	/^class Topic : public muduo::copyable$/;"	c	namespace:pubsub	file:
+Tunnel	socks4a/tunnel.h	/^  Tunnel(muduo::net::EventLoop* loop,$/;"	f	class:Tunnel
+Tunnel	socks4a/tunnel.h	/^class Tunnel : public boost::enable_shared_from_this<Tunnel>,$/;"	c
+TunnelPtr	socks4a/tunnel.h	/^typedef boost::shared_ptr<Tunnel> TunnelPtr;$/;"	t
+UpdatePolicy	memcached/server/Item.h	/^  enum UpdatePolicy$/;"	g	class:Item
+UptimeClient	netty/uptime/uptime.cc	/^  UptimeClient(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:UptimeClient
+UptimeClient	netty/uptime/uptime.cc	/^class UptimeClient : boost::noncopyable$/;"	c	file:
+UserMap	twisted/finger/finger06.cc	/^typedef std::map<string, string> UserMap;$/;"	t	file:
+UserMap	twisted/finger/finger07.cc	/^typedef std::map<string, string> UserMap;$/;"	t	file:
+WeakConnectionList	idleconnection/echo.h	/^  typedef boost::circular_buffer<Bucket> WeakConnectionList;  \/\/circular_buffer实现了循环缓冲的数据结构，但大小固定，当到达容器末尾，将自动循环利用容器的另一端空间(如满时，在末尾添加，则begin处元素被删除，begin+1处成为新的begin，依次。。；如果在头添加则反过来)$/;"	t	class:EchoServer
+WeakConnectionList	idleconnection/sortedlist.cc	/^  typedef std::list<WeakTcpConnectionPtr> WeakConnectionList;$/;"	t	class:EchoServer	file:
+WeakEntryPtr	idleconnection/echo.h	/^  typedef boost::weak_ptr<Entry> WeakEntryPtr;  \/\/弱引用，weak_ptr不会增加shared_ptr对象的引用计数$/;"	t	class:EchoServer
+WeakTcpConnectionPtr	idleconnection/echo.h	/^  typedef boost::weak_ptr<muduo::net::TcpConnection> WeakTcpConnectionPtr;$/;"	t	class:EchoServer
+WeakTcpConnectionPtr	idleconnection/sortedlist.cc	/^  typedef boost::weak_ptr<TcpConnection> WeakTcpConnectionPtr;$/;"	t	class:EchoServer	file:
+WordCountMap	wordcount/hash.h	/^typedef boost::unordered_map<muduo::string, int64_t> WordCountMap;$/;"	t
+WordCountReceiver	wordcount/receiver.cc	/^  WordCountReceiver(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:WordCountReceiver
+WordCountReceiver	wordcount/receiver.cc	/^class WordCountReceiver : boost::noncopyable$/;"	c	file:
+WordCountSender	wordcount/hasher.cc	/^WordCountSender::WordCountSender(const std::string& receivers)$/;"	f	class:WordCountSender
+WordCountSender	wordcount/hasher.cc	/^class WordCountSender : boost::noncopyable$/;"	c	file:
+__STDC_FORMAT_MACROS	wordcount/hasher.cc	17;"	d	file:
+acceptOrDie	ace/ttcp/ttcp_blocking.cc	/^static int acceptOrDie(uint16_t port)$/;"	f	file:
+acceptRanges_	curl/download.cc	/^  bool acceptRanges_;$/;"	m	class:Downloader	file:
+acked_	memcached/client/bench.cc	/^  int acked_;$/;"	m	class:Client	file:
+add	hub/hub.cc	/^  void add(const TcpConnectionPtr& conn)$/;"	f	class:pubsub::Topic
+addTestCase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private void addTestCase(TestCase testCase) {$/;"	m	class:MultiplexerTest	file:
+allConnected_	protobuf/rpcbench/client.cc	/^  CountDownLatch* allConnected_;$/;"	m	class:RpcClient	file:
+allFinished_	protobuf/rpcbench/client.cc	/^  CountDownLatch* allFinished_;$/;"	m	class:RpcClient	file:
+alphabet	wordcount/gen.py	/^alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-'$/;"	v
+append	memcached/server/Item.cc	/^void Item::append(const char* data, size_t len)$/;"	f	class:Item
+appendResponse	procmon/procmon.cc	/^int Procmon::appendResponse(const char* fmt, ...)$/;"	f	class:Procmon
+appendTableRow	procmon/procmon.cc	/^  void appendTableRow(const char* name, StringArg value)$/;"	f	class:Procmon	file:
+appendTableRow	procmon/procmon.cc	/^  void appendTableRow(const char* name, long value)$/;"	f	class:Procmon	file:
+appendTableRowFloat	procmon/procmon.cc	/^  void appendTableRowFloat(const char* name, double value)$/;"	f	class:Procmon	file:
+append_column	sudoku/sudoku.cc	/^    void append_column(int n)$/;"	f	class:SudokuSolver	file:
+ares_channel	cdns/Resolver.h	/^  typedef struct ares_channeldata* ares_channel;$/;"	t	typeref:struct:ares_channeldata
+ares_host_callback	cdns/Resolver.cc	/^void Resolver::ares_host_callback(void* data, int status, int timeouts, struct hostent* hostent)$/;"	f	class:Resolver
+ares_sock_create_callback	cdns/Resolver.cc	/^int Resolver::ares_sock_create_callback(int sockfd, int type, void* data)$/;"	f	class:Resolver
+ares_sock_state_callback	cdns/Resolver.cc	/^void Resolver::ares_sock_state_callback(void* data, int sockfd, int read, int write)$/;"	f	class:Resolver
+arr	wordcount/gen.py	/^	arr = [random.choice(alphabet) for i in range(word_len)]$/;"	v
+asInt32	protobuf/codec/codec.cc	/^int32_t asInt32(const char* buf)$/;"	f
+assertEquals	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected void assertEquals(Object expected, Object actual) {$/;"	m	class:TestCase
+assertTrue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected void assertTrue(boolean yes) {$/;"	m	class:TestCase
+audiences_	hub/hub.cc	/^  std::set<TcpConnectionPtr> audiences_;$/;"	m	class:pubsub::Topic	file:
+availIds_	multiplexer/multiplexer.cc	/^  std::queue<int> availIds_;$/;"	m	class:MultiplexServer	file:
+availIds_	multiplexer/multiplexer_simple.cc	/^  std::queue<int> availIds_;$/;"	m	class:MultiplexServer	file:
+awaitUninterruptibly	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^    public void awaitUninterruptibly() {$/;"	m	class:MyCountDownLatch
+awaitUninterruptibly	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^    public void awaitUninterruptibly(int millis) {$/;"	m	class:MyCountDownLatch
+backend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private MockBackendServer backend;$/;"	f	class:MultiplexerTest	file:
+backend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected MockBackendServer backend;$/;"	f	class:TestCase
+backendConn_	multiplexer/multiplexer.cc	/^  TcpConnectionPtr backendConn_;$/;"	m	class:MultiplexServer	file:
+backendConn_	multiplexer/multiplexer_simple.cc	/^  TcpConnectionPtr backendConn_;$/;"	m	class:MultiplexServer	file:
+backendIp	multiplexer/multiplexer.cc	/^const char* backendIp = "127.0.0.1";$/;"	v
+backendIp	multiplexer/multiplexer_simple.cc	/^const char* backendIp = "127.0.0.1";$/;"	v
+backend_	multiplexer/multiplexer.cc	/^  TcpClient backend_;$/;"	m	class:MultiplexServer	file:
+backend_	multiplexer/multiplexer_simple.cc	/^  TcpClient backend_;$/;"	m	class:MultiplexServer	file:
+backends	protobuf/rpcbalancer/balancer.cc	/^    boost::ptr_vector<BackendSession> backends;$/;"	m	struct:Balancer::PerThread	file:
+backends	protobuf/rpcbalancer/balancer_raw.cc	/^    boost::ptr_vector<BackendSession> backends;$/;"	m	struct:Balancer::PerThread	file:
+backends_	protobuf/rpcbalancer/balancer.cc	/^  std::vector<InetAddress> backends_;$/;"	m	class:Balancer	file:
+backends_	protobuf/rpcbalancer/balancer_raw.cc	/^  std::vector<InetAddress> backends_;$/;"	m	class:Balancer	file:
+background_	procmon/plot.h	/^  const int background_;$/;"	m	class:Plot
+badLatency_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+badRequests_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+benchmark	shorturl/shorturl.cc	/^bool benchmark = false;$/;"	v
+black_	procmon/plot.h	/^  const int black_;$/;"	m	class:Plot
+blue_	procmon/plot.h	/^  const int blue_;$/;"	m	class:Plot
+boost	idleconnection/echo.h	/^namespace boost$/;"	n
+boost	wordcount/hash.h	/^namespace boost$/;"	n
+bootstrap	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private ClientBootstrap bootstrap;$/;"	f	class:MockClient	file:
+boss	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final Executor boss;$/;"	f	class:MockBackendServer	file:
+boss	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final Executor boss;$/;"	f	class:MockClient	file:
+boss	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private final ExecutorService boss;$/;"	f	class:MultiplexerTest	file:
+bps	wordcount/slowsink.py	/^bps = mps * 1000000$/;"	v
+buckets_	wordcount/hasher.cc	/^  boost::ptr_vector<SendThrottler> buckets_;$/;"	m	class:WordCountSender	file:
+bufferFactory	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public static final ChannelBufferFactory bufferFactory =$/;"	f	class:MultiplexerTest
+bufferFactory	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected static final ChannelBufferFactory bufferFactory = MultiplexerTest.bufferFactory;$/;"	f	class:TestCase
+buffer_	wordcount/hasher.cc	/^  Buffer buffer_;$/;"	m	class:SendThrottler	file:
+busy	procmon/dummyload.cc	/^double busy(int cycles)$/;"	f
+bytes	ace/ttcp/ttcp.cc	/^  int64_t bytes;$/;"	m	struct:Context	file:
+bytesRead	pingpong/client.cc	/^  int64_t bytesRead() const$/;"	f	class:Session
+bytesRead_	memcached/server/Session.h	/^  size_t bytesRead_;$/;"	m	class:Session
+bytesRead_	pingpong/client.cc	/^  int64_t bytesRead_;$/;"	m	class:Session	file:
+bytesToDiscard_	memcached/server/Session.h	/^  size_t bytesToDiscard_;$/;"	m	class:Session
+bytesWritten_	pingpong/client.cc	/^  int64_t bytesWritten_;$/;"	m	class:Session	file:
+callback	cdns/Resolver.h	/^    Callback callback;$/;"	m	struct:cdns::Resolver::QueryData
+callback_	protobuf/codec/dispatcher.h	/^  ProtobufMessageTCallback callback_;$/;"	m	class:CallbackT
+callbacks_	protobuf/codec/dispatcher.h	/^  CallbackMap callbacks_;$/;"	m	class:ProtobufDispatcher
+callbacks_	protobuf/codec/dispatcher_lite.h	/^  CallbackMap callbacks_;$/;"	m	class:ProtobufDispatcherLite
+cas	memcached/server/Item.h	/^  uint64_t cas() const$/;"	f	class:Item
+cas_	memcached/server/Item.h	/^  uint64_t       cas_;$/;"	m	class:Item
+cb_	fastcgi/fastcgi.h	/^  Callback cb_;$/;"	m	class:FastCgiCodec
+cb_	sudoku/batch.cc	/^  DoneCallback cb_;$/;"	m	class:SudokuClient	file:
+cdns	cdns/Resolver.h	/^namespace cdns$/;"	n
+channelConnected	filetransfer/loadtest/Handler.java	/^    public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:Handler
+channelConnected	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockBackendServer.Handler
+channelConnected	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockClient.Handler
+channelDisconnected	filetransfer/loadtest/Handler.java	/^    public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:Handler
+channelDisconnected	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockBackendServer.Handler
+channelDisconnected	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockClient.Handler
+channel_	curl/Curl.h	/^  boost::shared_ptr<muduo::net::Channel> channel_;$/;"	m	class:curl::Request
+channel_	protobuf/resolver/client.cc	/^  RpcChannelPtr channel_;$/;"	m	class:RpcClient	file:
+channel_	protobuf/rpc/client.cc	/^  RpcChannelPtr channel_;$/;"	m	class:RpcClient	file:
+channel_	protobuf/rpcbench/client.cc	/^  RpcChannelPtr channel_;$/;"	m	class:RpcClient	file:
+channels_	cdns/Resolver.h	/^  ChannelList channels_;$/;"	m	class:cdns::Resolver
+checkFinish	curl/Curl.cc	/^void Curl::checkFinish()$/;"	f	class:Curl
+client	multiplexer/demux.cc	/^  TcpClientPtr client;$/;"	m	struct:Entry	file:
+clientConn	protobuf/rpcbalancer/balancer.cc	/^    boost::weak_ptr<TcpConnection> clientConn;$/;"	m	struct:BackendSession::Request	file:
+clientConn	protobuf/rpcbalancer/balancer_raw.cc	/^    boost::weak_ptr<TcpConnection> clientConn;$/;"	m	struct:BackendSession::Request	file:
+clientConn_	socks4a/tunnel.h	/^  muduo::net::TcpConnectionPtr clientConn_;$/;"	m	class:Tunnel
+clientConnection	roundtrip/roundtrip.cc	/^TcpConnectionPtr clientConnection;$/;"	v
+clientConnectionCallback	roundtrip/roundtrip.cc	/^void clientConnectionCallback(const TcpConnectionPtr& conn)$/;"	f
+clientConns_	multiplexer/multiplexer.cc	/^  std::map<int, TcpConnectionPtr> clientConns_;$/;"	m	class:MultiplexServer	file:
+clientConns_	multiplexer/multiplexer_simple.cc	/^  std::map<int, TcpConnectionPtr> clientConns_;$/;"	m	class:MultiplexServer	file:
+clientMessageCallback	roundtrip/roundtrip.cc	/^void clientMessageCallback(const TcpConnectionPtr&,$/;"	f
+clientReadCallback	roundtrip/roundtrip_udp.cc	/^void clientReadCallback(int sockfd, muduo::Timestamp receiveTime)$/;"	f
+client_	ace/logging/client.cc	/^  TcpClient client_;$/;"	m	class:logging::LogClient	file:
+client_	asio/chat/client.cc	/^  TcpClient client_;$/;"	m	class:ChatClient	file:
+client_	asio/chat/loadtest.cc	/^  TcpClient client_;$/;"	m	class:ChatClient	file:
+client_	hub/pubsub.h	/^  muduo::net::TcpClient client_;$/;"	m	class:pubsub::PubSubClient
+client_	memcached/client/bench.cc	/^  TcpClient client_;$/;"	m	class:Client	file:
+client_	netty/discard/client.cc	/^  TcpClient client_;$/;"	m	class:DiscardClient	file:
+client_	netty/echo/client.cc	/^  TcpClient client_;$/;"	m	class:EchoClient	file:
+client_	netty/uptime/uptime.cc	/^  TcpClient client_;$/;"	m	class:UptimeClient	file:
+client_	pingpong/client.cc	/^  TcpClient client_;$/;"	m	class:Session	file:
+client_	protobuf/codec/client.cc	/^  TcpClient client_;$/;"	m	class:QueryClient	file:
+client_	protobuf/resolver/client.cc	/^  TcpClient client_;$/;"	m	class:RpcClient	file:
+client_	protobuf/rpc/client.cc	/^  TcpClient client_;$/;"	m	class:RpcClient	file:
+client_	protobuf/rpcbalancer/balancer.cc	/^  TcpClient client_;$/;"	m	class:BackendSession	file:
+client_	protobuf/rpcbalancer/balancer_raw.cc	/^  TcpClient client_;$/;"	m	class:BackendSession	file:
+client_	protobuf/rpcbench/client.cc	/^  TcpClient client_;$/;"	m	class:RpcClient	file:
+client_	simple/chargenclient/chargenclient.cc	/^  TcpClient client_;$/;"	m	class:ChargenClient	file:
+client_	simple/timeclient/timeclient.cc	/^  TcpClient client_;$/;"	m	class:TimeClient	file:
+client_	socks4a/tunnel.h	/^  muduo::net::TcpClient client_;$/;"	m	class:Tunnel
+client_	sudoku/batch.cc	/^  TcpClient client_;$/;"	m	class:SudokuClient	file:
+client_	sudoku/loadtest.cc	/^  TcpClient client_;$/;"	m	class:SudokuClient	file:
+client_	sudoku/pipeline.cc	/^  TcpClient client_;$/;"	m	class:SudokuClient	file:
+client_	wordcount/hasher.cc	/^  TcpClient client_;$/;"	m	class:SendThrottler	file:
+client_socket	wordcount/slowsink.py	/^	client_socket = socket.create_connection((host, port))$/;"	v
+clients_	sudoku/loadtest.cc	/^  boost::ptr_vector<SudokuClient> clients_;$/;"	m	class:SudokuLoadtest	file:
+cmajflt	procmon/procmon.cc	/^  long cmajflt;$/;"	m	struct:StatData	file:
+cmdline_	procmon/procmon.cc	/^  const string cmdline_;$/;"	m	class:Procmon	file:
+cminflt	procmon/procmon.cc	/^  long cminflt;$/;"	m	struct:StatData	file:
+codec_	ace/logging/client.cc	/^  Codec codec_;$/;"	m	class:logging::LogClient	file:
+codec_	ace/logging/server.cc	/^  Codec codec_;$/;"	m	class:logging::Session	file:
+codec_	asio/chat/client.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatClient	file:
+codec_	asio/chat/loadtest.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatClient	file:
+codec_	asio/chat/server.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	asio/chat/server_threaded.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	asio/chat/server_threaded_efficient.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	asio/chat/server_threaded_highperformance.cc	/^  LengthHeaderCodec codec_;$/;"	m	class:ChatServer	file:
+codec_	protobuf/codec/client.cc	/^  ProtobufCodec codec_;$/;"	m	class:QueryClient	file:
+codec_	protobuf/codec/server.cc	/^  ProtobufCodec codec_;$/;"	m	class:QueryServer	file:
+codec_	protobuf/rpcbalancer/balancer.cc	/^  RpcCodec codec_;$/;"	m	class:BackendSession	file:
+codec_	protobuf/rpcbalancer/balancer.cc	/^  RpcCodec codec_;$/;"	m	class:Balancer	file:
+codec_	protobuf/rpcbalancer/balancer_raw.cc	/^  RpcCodec codec_;$/;"	m	class:BackendSession	file:
+codec_	protobuf/rpcbalancer/balancer_raw.cc	/^  RpcCodec codec_;$/;"	m	class:Balancer	file:
+col	sudoku/sudoku.cc	/^    Column* col;$/;"	m	struct:Node	file:
+columns_	sudoku/sudoku.cc	/^    Column* columns_[400];$/;"	m	class:SudokuSolver	file:
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/Event.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+com.chenshuo.muduo.example.multiplexer.testcase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBackendSend.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+com.chenshuo.muduo.example.multiplexer.testcase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBothSend.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+com.chenshuo.muduo.example.multiplexer.testcase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientNoData.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+com.chenshuo.muduo.example.multiplexer.testcase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientSend.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+com.chenshuo.muduo.example.multiplexer.testcase	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestTwoClients.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+commandChannel	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public final Pattern commandChannel = Pattern.compile("CONN (\\\\d+) FROM [0-9.:]+ IS ([A-Z]+)\\r\\n");$/;"	f	class:MultiplexerTest
+command_	memcached/server/Session.h	/^  string command_;$/;"	m	class:Session
+concurrentDownload	curl/download.cc	/^  void concurrentDownload()$/;"	f	class:Downloader	file:
+concurrent_	curl/download.cc	/^  int concurrent_;$/;"	m	class:Downloader	file:
+cond_	wordcount/hasher.cc	/^  Condition cond_;$/;"	m	class:SendThrottler	file:
+congestion_	wordcount/hasher.cc	/^  bool congestion_;$/;"	m	class:SendThrottler	file:
+connId	multiplexer/demux.cc	/^  int connId;$/;"	m	struct:Entry	file:
+connId	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private int connId;$/;"	f	class:MockClient	file:
+conn_	hub/pubsub.h	/^  muduo::net::TcpConnectionPtr conn_;$/;"	m	class:pubsub::PubSubClient
+conn_	memcached/client/bench.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:Client	file:
+conn_	memcached/server/Session.h	/^  muduo::net::TcpConnectionPtr conn_;$/;"	m	class:Session
+conn_	protobuf/rpcbalancer/balancer.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:BackendSession	file:
+conn_	protobuf/rpcbalancer/balancer_raw.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:BackendSession	file:
+conn_	sudoku/loadtest.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:SudokuClient	file:
+conn_	sudoku/pipeline.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:SudokuClient	file:
+conn_	wordcount/hasher.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:SendThrottler	file:
+connect	ace/logging/client.cc	/^  void connect()$/;"	f	class:logging::LogClient
+connect	asio/chat/client.cc	/^  void connect()$/;"	f	class:ChatClient
+connect	asio/chat/loadtest.cc	/^  void connect()$/;"	f	class:ChatClient
+connect	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public ChannelFuture connect() {$/;"	m	class:MockClient
+connect	netty/discard/client.cc	/^  void connect()$/;"	f	class:DiscardClient
+connect	netty/echo/client.cc	/^  void connect()$/;"	f	class:EchoClient
+connect	netty/uptime/uptime.cc	/^  void connect()$/;"	f	class:UptimeClient
+connect	protobuf/codec/client.cc	/^  void connect()$/;"	f	class:QueryClient
+connect	protobuf/resolver/client.cc	/^  void connect()$/;"	f	class:RpcClient
+connect	protobuf/rpc/client.cc	/^  void connect()$/;"	f	class:RpcClient
+connect	protobuf/rpcbalancer/balancer.cc	/^  void connect()$/;"	f	class:BackendSession
+connect	protobuf/rpcbalancer/balancer_raw.cc	/^  void connect()$/;"	f	class:BackendSession
+connect	protobuf/rpcbench/client.cc	/^  void connect()$/;"	f	class:RpcClient
+connect	simple/chargenclient/chargenclient.cc	/^  void connect()$/;"	f	class:ChargenClient
+connect	simple/timeclient/timeclient.cc	/^  void connect()$/;"	f	class:TimeClient
+connect	socks4a/tunnel.h	/^  void connect()$/;"	f	class:Tunnel
+connect	sudoku/batch.cc	/^  void connect()$/;"	f	class:SudokuClient
+connect	sudoku/loadtest.cc	/^  void connect()$/;"	f	class:SudokuClient
+connect	sudoku/pipeline.cc	/^  void connect()$/;"	f	class:SudokuClient
+connect	wordcount/hasher.cc	/^  void connect()$/;"	f	class:SendThrottler
+connectAll	wordcount/hasher.cc	/^  void connectAll()$/;"	f	class:WordCountSender
+connectAndWait	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void connectAndWait() {$/;"	m	class:MockClient
+connectLatch_	wordcount/hasher.cc	/^  CountDownLatch connectLatch_;$/;"	m	class:SendThrottler	file:
+connected	hub/pubsub.cc	/^bool PubSubClient::connected() const$/;"	f	class:PubSubClient
+connected_	memcached/client/bench.cc	/^  CountDownLatch* const connected_;$/;"	m	class:Client	file:
+connection	hub/pub.cc	/^void connection(PubSubClient* client)$/;"	f
+connection	hub/sub.cc	/^void connection(PubSubClient* client)$/;"	f
+connection	multiplexer/demux.cc	/^  TcpConnectionPtr connection;$/;"	m	struct:Entry	file:
+connection	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private volatile Channel connection;$/;"	f	class:MockBackendServer	file:
+connection	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private volatile Channel connection;$/;"	f	class:MockClient	file:
+connectionBuckets_	idleconnection/echo.h	/^  WeakConnectionList connectionBuckets_;  \/\/存放连接的强指针$/;"	m	class:EchoServer
+connectionCallback_	hub/pubsub.h	/^  ConnectionCallback connectionCallback_;$/;"	m	class:pubsub::PubSubClient
+connectionList_	idleconnection/sortedlist.cc	/^  WeakConnectionList connectionList_;$/;"	m	class:EchoServer	file:
+connection_	ace/logging/client.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:logging::LogClient	file:
+connection_	asio/chat/client.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:ChatClient	file:
+connection_	asio/chat/loadtest.cc	/^  TcpConnectionPtr connection_;$/;"	m	class:ChatClient	file:
+connections_	asio/chat/server.cc	/^  ConnectionList connections_;$/;"	m	class:ChatServer	file:
+connections_	asio/chat/server_threaded.cc	/^  ConnectionList connections_;$/;"	m	class:ChatServer	file:
+connections_	asio/chat/server_threaded_efficient.cc	/^  ConnectionListPtr connections_;$/;"	m	class:ChatServer	file:
+connections_	netty/echo/server2.cc	/^  AtomicInt32 connections_;$/;"	m	class:EchoServer	file:
+content_	hub/hub.cc	/^  string content_;$/;"	m	class:pubsub::Topic	file:
+cosine	procmon/dummyload.cc	/^void cosine()$/;"	f
+count	ace/ttcp/ttcp.cc	/^  int count;$/;"	m	struct:Context	file:
+count	cdns/dns.cc	/^int count = 0;$/;"	v
+count_	asio/tutorial/timer4/timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+count_	asio/tutorial/timer5/timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+count_	asio/tutorial/timer6/timer.cc	/^  int count_;$/;"	m	class:Printer	file:
+count_	protobuf/rpcbench/client.cc	/^  int count_;$/;"	m	class:RpcClient	file:
+count_	sudoku/batch.cc	/^  int count_;$/;"	m	class:SudokuClient	file:
+count_	sudoku/loadtest.cc	/^  int count_;$/;"	m	class:SudokuClient	file:
+count_	sudoku/loadtest.cc	/^  int count_;$/;"	m	class:SudokuLoadtest	file:
+count_	sudoku/pipeline.cc	/^  int count_;$/;"	m	class:SudokuClient	file:
+cover	sudoku/sudoku.cc	/^    void cover(Column* c)$/;"	f	class:SudokuSolver	file:
+cpuUsage	procmon/procmon.cc	/^    double cpuUsage(double kPeriod, double kClockTicksPerSecond) const$/;"	f	struct:Procmon::CpuTime
+cpu_chart_	procmon/procmon.cc	/^  Plot cpu_chart_;$/;"	m	class:Procmon	file:
+cpu_usage_	procmon/procmon.cc	/^  boost::circular_buffer<CpuTime> cpu_usage_;$/;"	m	class:Procmon	file:
+createMessage	protobuf/codec/codec.cc	/^google::protobuf::Message* ProtobufCodec::createMessage(const std::string& typeName)$/;"	f	class:ProtobufCodec
+createNonblockingUDP	roundtrip/roundtrip_udp.cc	/^int createNonblockingUDP()$/;"	f
+created	filetransfer/loadtest/Handler.java	/^    private static int created = 0;$/;"	f	class:Handler	file:
+cstime	procmon/procmon.cc	/^  long cstime;$/;"	m	struct:StatData	file:
+ctx_	cdns/Resolver.h	/^  ares_channel ctx_;$/;"	m	class:cdns::Resolver
+cur_node_	sudoku/sudoku.cc	/^    int     cur_node_;$/;"	m	class:SudokuSolver	file:
+curl	curl/Curl.h	/^namespace curl$/;"	n
+curl_	curl/Curl.h	/^  CURL* curl_;$/;"	m	class:curl::Request
+curl_	curl/download.cc	/^  curl::Curl curl_;$/;"	m	class:Downloader	file:
+curlm_	curl/Curl.h	/^  CURLM* curlm_;$/;"	m	class:curl::Curl
+currItem_	memcached/server/Session.h	/^  ItemPtr currItem_;$/;"	m	class:Session
+current	protobuf/rpcbalancer/balancer.cc	/^    size_t current;$/;"	m	struct:Balancer::PerThread	file:
+current	protobuf/rpcbalancer/balancer_raw.cc	/^    size_t current;$/;"	m	struct:Balancer::PerThread	file:
+cutime	procmon/procmon.cc	/^  long cutime;$/;"	m	struct:StatData	file:
+data	ace/ttcp/common.h	/^  char data[0];$/;"	m	struct:PayloadMessage
+data	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public final ChannelBuffer data;$/;"	f	class:DataEvent
+data	wordcount/slowsink.py	/^	data = client_socket.recv(BUFSIZE)$/;"	v
+dataCallback	curl/Curl.cc	/^void Request::dataCallback(const char* buffer, int len)$/;"	f	class:Request
+dataCb_	curl/Curl.h	/^  DataCallback dataCb_;$/;"	m	class:curl::Request
+data_	memcached/server/Item.h	/^  char*          data_;$/;"	m	class:Item
+defaultCallback_	protobuf/codec/dispatcher.h	/^  ProtobufMessageCallback defaultCallback_;$/;"	m	class:ProtobufDispatcher
+defaultCallback_	protobuf/codec/dispatcher_lite.h	/^  ProtobufMessageCallback defaultCallback_;$/;"	m	class:ProtobufDispatcherLite
+defaultErrorCallback	protobuf/codec/codec.cc	/^void ProtobufCodec::defaultErrorCallback(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodec
+deleteItem	memcached/server/MemcacheServer.cc	/^bool MemcacheServer::deleteItem(const ConstItemPtr& key)$/;"	f	class:MemcacheServer
+digest	filetransfer/loadtest/Handler.java	/^    private MessageDigest digest;$/;"	f	class:Handler	file:
+discardValue	memcached/server/Session.cc	/^void Session::discardValue(muduo::net::Buffer* buf)$/;"	f	class:Session
+disconnect	ace/logging/client.cc	/^  void disconnect()$/;"	f	class:logging::LogClient
+disconnect	asio/chat/client.cc	/^  void disconnect()$/;"	f	class:ChatClient
+disconnect	asio/chat/loadtest.cc	/^  void disconnect()$/;"	f	class:ChatClient
+disconnect	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void disconnect() {$/;"	m	class:MockClient
+disconnect	socks4a/tunnel.h	/^  void disconnect()$/;"	f	class:Tunnel
+disconnect	wordcount/hasher.cc	/^  void disconnect()$/;"	f	class:SendThrottler
+disconnectAll	wordcount/hasher.cc	/^  void disconnectAll()$/;"	f	class:WordCountSender
+disconnectLatch_	wordcount/hasher.cc	/^  CountDownLatch disconnectLatch_;$/;"	m	class:SendThrottler	file:
+dispatcher_	protobuf/codec/client.cc	/^  ProtobufDispatcher dispatcher_;$/;"	m	class:QueryClient	file:
+dispatcher_	protobuf/codec/server.cc	/^  ProtobufDispatcher dispatcher_;$/;"	m	class:QueryServer	file:
+distributeMessage	asio/chat/server_threaded_highperformance.cc	/^  void distributeMessage(const string& message)$/;"	f	class:ChatServer	file:
+doCommand	multiplexer/demux.cc	/^  void doCommand(const string& cmd)$/;"	f	class:DemuxServer
+doCommand	multiplexer/multiplexer_simple.cc	/^  void doCommand(const string& cmd)$/;"	f	class:MultiplexServer	file:
+doDelete	memcached/server/Session.cc	/^void Session::doDelete(Session::Tokenizer::iterator& beg, Session::Tokenizer::iterator end)$/;"	f	class:Session
+doPublish	hub/hub.cc	/^  void doPublish(const string& source,$/;"	f	class:pubsub::PubSubServer	file:
+doSubscribe	hub/hub.cc	/^  void doSubscribe(const TcpConnectionPtr& conn,$/;"	f	class:pubsub::PubSubServer	file:
+doUnsubscribe	hub/hub.cc	/^  void doUnsubscribe(const TcpConnectionPtr& conn,$/;"	f	class:pubsub::PubSubServer	file:
+doUpdate	memcached/server/Session.cc	/^bool Session::doUpdate(Session::Tokenizer::iterator& beg, Session::Tokenizer::iterator end)$/;"	f	class:Session
+done	curl/Curl.cc	/^void Request::done(int code)$/;"	f	class:Request
+done	curl/mcurl.cc	/^void done(curl::Request* c, int code)$/;"	f
+done	sudoku/batch.cc	/^void done(const string& name, double elapsed, int count)$/;"	f
+done2	curl/mcurl.cc	/^void done2(curl::Request* c, int code)$/;"	f
+doneCallback	protobuf/resolver/server.cc	/^  void doneCallback(const std::string& host,$/;"	f	class:resolver::ResolverServiceImpl	file:
+doneCb_	curl/Curl.h	/^  DoneCallback doneCb_;$/;"	m	class:curl::Request
+doneCb_	curl/download.cc	/^  boost::function<void()> doneCb_;$/;"	m	class:Piece	file:
+dot	wordcount/slowsink.py	/^dot = bps$/;"	v
+down	sudoku/sudoku.cc	/^    Node* down;$/;"	m	struct:Node	file:
+droppedRequests_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+dummy	curl/Curl.cc	/^static void dummy(const boost::shared_ptr<Channel>&)$/;"	f	file:
+dumpConnectionBuckets	idleconnection/echo.cc	/^void EchoServer::dumpConnectionBuckets() const      \/\/打印circular_buffer的变化情况$/;"	f	class:EchoServer
+dumpConnectionList	idleconnection/sortedlist.cc	/^void EchoServer::dumpConnectionList() const$/;"	f	class:EchoServer
+echo	protobuf/rpcbench/server.cc	/^namespace echo$/;"	n	file:
+elapsed	wordcount/slowsink.py	/^elapsed = end - start$/;"	v
+end	wordcount/slowsink.py	/^end = time.time()$/;"	v
+endRequest	fastcgi/fastcgi.cc	/^void FastCgiCodec::endRequest(Buffer* buf)$/;"	f	class:FastCgiCodec
+endStdout	fastcgi/fastcgi.cc	/^void FastCgiCodec::endStdout(Buffer* buf)$/;"	f	class:FastCgiCodec
+endsWithCRLF	memcached/server/Item.h	/^  bool endsWithCRLF() const$/;"	f	class:Item
+errorCallback_	protobuf/codec/codec.h	/^  ErrorCallback errorCallback_;$/;"	m	class:ProtobufCodec
+errorCodeToString	protobuf/codec/codec.cc	/^const string& ProtobufCodec::errorCodeToString(ErrorCode errorCode)$/;"	f	class:ProtobufCodec
+exceptionCaught	filetransfer/loadtest/Handler.java	/^    public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e) throws Exception {$/;"	m	class:Handler
+exceptionCaught	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e)$/;"	m	class:MockBackendServer.Handler
+exceptionCaught	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e)$/;"	m	class:MockClient.Handler
+fail	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected void fail(String message) {$/;"	m	class:TestCase
+favicon	shorturl/shorturl.cc	/^char favicon[555] = {$/;"	v
+file_	ace/logging/server.cc	/^  FileUtil::AppendFile file_;$/;"	m	class:logging::Session	file:
+fill	memcached/client/bench.cc	/^  void fill(Buffer* buf)$/;"	f	class:Client	file:
+fillEmptyBuffer	protobuf/codec/codec.cc	/^void ProtobufCodec::fillEmptyBuffer(Buffer* buf, const google::protobuf::Message& message)$/;"	f	class:ProtobufCodec
+fillOverview	procmon/procmon.cc	/^  void fillOverview(const string& query)$/;"	f	class:Procmon	file:
+fillRefresh	procmon/procmon.cc	/^  void fillRefresh(const string& query)$/;"	f	class:Procmon	file:
+fillThreads	procmon/procmon.cc	/^  void fillThreads()$/;"	f	class:Procmon	file:
+findCycles	procmon/dummyload.cc	/^void findCycles()$/;"	f
+finished_	memcached/client/bench.cc	/^  CountDownLatch* const finished_;$/;"	m	class:Client	file:
+first_	memcached/server/Session.cc	/^  Tokenizer::iterator first_;$/;"	m	struct:Session::Reader	file:
+fixed	procmon/dummyload.cc	/^void fixed()$/;"	f
+flags	memcached/server/Item.h	/^  uint32_t flags() const$/;"	f	class:Item
+flags	procmon/procmon.cc	/^  int flags;$/;"	m	struct:StatData	file:
+flags_	memcached/server/Item.h	/^  const uint32_t flags_;$/;"	m	class:Item
+fontHeight_	procmon/plot.h	/^  const int fontHeight_;$/;"	m	class:Plot
+fontWidth_	procmon/plot.h	/^  const int fontWidth_;$/;"	m	class:Plot
+font_	procmon/plot.h	/^  const MyGdFontPtr font_;$/;"	m	class:Plot
+found_	curl/download.cc	/^  bool found_;$/;"	m	class:Downloader	file:
+frameLen	roundtrip/roundtrip.cc	/^const size_t frameLen = 2*sizeof(int64_t);$/;"	v
+frameLen	roundtrip/roundtrip_udp.cc	/^const size_t frameLen = 2*sizeof(int64_t);$/;"	v
+g_aliveConnections	asio/chat/loadtest.cc	/^AtomicInt32 g_aliveConnections;$/;"	v
+g_busy	procmon/dummyload.cc	/^bool g_busy = false;$/;"	v
+g_channels	pingpong/bench.cc	/^boost::ptr_vector<Channel> g_channels;$/;"	v
+g_connections	asio/chat/loadtest.cc	/^int g_connections = 0;$/;"	v
+g_connections	sudoku/batch.cc	/^int g_connections;$/;"	v
+g_content	hub/pub.cc	/^string g_content;$/;"	v
+g_count	protobuf/codec/codec_test.cc	/^int g_count = 0;$/;"	v
+g_current	socks4a/balancer.cc	/^size_t g_current = 0;$/;"	v
+g_cycles	procmon/dummyload.cc	/^int g_cycles = 0;$/;"	v
+g_done	procmon/dummyload.cc	/^AtomicInt32 g_done;$/;"	v
+g_file	filetransfer/download.cc	/^const char* g_file = NULL;$/;"	v
+g_file	filetransfer/download2.cc	/^const char* g_file = NULL;$/;"	v
+g_file	filetransfer/download3.cc	/^const char* g_file = NULL;$/;"	v
+g_finished	sudoku/batch.cc	/^int g_finished;$/;"	v
+g_fired	pingpong/bench.cc	/^int g_reads, g_writes, g_fired;$/;"	v
+g_loop	asio/chat/loadtest.cc	/^EventLoop* g_loop;$/;"	v
+g_loop	pingpong/bench.cc	/^EventLoop* g_loop;$/;"	v
+g_loop	sudoku/batch.cc	/^EventLoop* g_loop;$/;"	v
+g_message	zeromq/remote_lat.cc	/^muduo::string g_message;$/;"	v
+g_messagesReceived	asio/chat/loadtest.cc	/^AtomicInt32 g_messagesReceived;$/;"	v
+g_msgCount	zeromq/remote_lat.cc	/^int g_msgCount = 0;$/;"	v
+g_msgSize	zeromq/remote_lat.cc	/^int g_msgSize = 0;$/;"	v
+g_mutex	procmon/dummyload.cc	/^MutexLock g_mutex;$/;"	v
+g_mutex	socks4a/balancer.cc	/^MutexLock g_mutex;$/;"	v
+g_percent	procmon/dummyload.cc	/^int g_percent = 82;$/;"	v
+g_reads	pingpong/bench.cc	/^int g_reads, g_writes, g_fired;$/;"	v
+g_receiveTime	asio/chat/loadtest.cc	/^std::vector<Timestamp> g_receiveTime;$/;"	v
+g_serverAddr	socks4a/tcprelay.cc	/^InetAddress* g_serverAddr;$/;"	v
+g_start	sudoku/batch.cc	/^Timestamp g_start;$/;"	v
+g_start	zeromq/remote_lat.cc	/^muduo::Timestamp g_start;$/;"	v
+g_startTime	asio/chat/loadtest.cc	/^Timestamp g_startTime;$/;"	v
+g_statistic	asio/chat/loadtest.cc	/^boost::function<void()> g_statistic;$/;"	v
+g_tcpNoDelay	zeromq/local_lat.cc	/^bool g_tcpNoDelay = false;$/;"	v
+g_tcpNoDelay	zeromq/remote_lat.cc	/^bool g_tcpNoDelay = false;$/;"	v
+g_topic	hub/pub.cc	/^string g_topic;$/;"	v
+g_topics	hub/sub.cc	/^std::vector<string> g_topics;$/;"	v
+g_totalMsgs	zeromq/remote_lat.cc	/^int g_totalMsgs = 0;$/;"	v
+g_tunnels	socks4a/socks4a.cc	/^std::map<string, TunnelPtr> g_tunnels;$/;"	v
+g_tunnels	socks4a/tcprelay.cc	/^std::map<string, TunnelPtr> g_tunnels;$/;"	v
+g_writes	pingpong/bench.cc	/^int g_reads, g_writes, g_fired;$/;"	v
+gdImagePtr	procmon/plot.h	/^typedef struct gdImageStruct* gdImagePtr;$/;"	t	typeref:struct:gdImageStruct
+getBackend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public MockBackendServer getBackend() {$/;"	m	class:MultiplexerTest
+getBootTime	procmon/procmon.cc	/^  static long getBootTime()$/;"	f	class:Procmon	file:
+getBootstrap	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private ServerBootstrap getBootstrap() {$/;"	m	class:MockBackendServer	file:
+getChannel	curl/Curl.h	/^  muduo::net::Channel* getChannel() { return get_pointer(channel_); }$/;"	f	class:curl::Request
+getCmdLine	procmon/procmon.cc	/^  string getCmdLine()$/;"	f	class:Procmon	file:
+getConnectionList	asio/chat/server_threaded_efficient.cc	/^  ConnectionListPtr getConnectionList()$/;"	f	class:ChatServer	file:
+getCurl	curl/Curl.h	/^  CURL* getCurl() { return curl_; }$/;"	f	class:curl::Request
+getCurlm	curl/Curl.h	/^  CURLM* getCurlm() { return curlm_; }$/;"	f	class:curl::Curl
+getEffectiveUrl	curl/Curl.cc	/^const char* Request::getEffectiveUrl()$/;"	f	class:Request
+getEnviron	procmon/procmon.cc	/^  string getEnviron()$/;"	f	class:Procmon	file:
+getEventQueue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public EventQueue getEventQueue() {$/;"	m	class:MultiplexerTest
+getFileName	ace/logging/server.cc	/^  string getFileName(const TcpConnectionPtr& conn)$/;"	f	class:logging::Session	file:
+getItem	memcached/server/MemcacheServer.cc	/^ConstItemPtr MemcacheServer::getItem(const ConstItemPtr& key) const$/;"	f	class:MemcacheServer
+getLong	netty/echo/server2.cc	/^  long getLong(const string& procStatus, const char* key)$/;"	f	class:EchoServer	file:
+getLong	procmon/procmon.cc	/^  static long getLong(const string& status, const char* key)$/;"	f	class:Procmon	file:
+getLoop	curl/Curl.h	/^  muduo::net::EventLoop* getLoop() { return loop_; }$/;"	f	class:curl::Curl
+getName	procmon/procmon.cc	/^  string getName() const$/;"	f	class:Procmon	file:
+getPercentile	sudoku/percentile.h	/^  static int getPercentile(const std::vector<int>& latencies, int percent)$/;"	f	class:Percentile
+getPipeline	filetransfer/loadtest/Client.java	/^        public ChannelPipeline getPipeline() throws Exception {$/;"	m	class:Client.PipelineFactory
+getRedirectUrl	curl/Curl.cc	/^const char* Request::getRedirectUrl()$/;"	f	class:Request
+getResponseCode	curl/Curl.cc	/^int Request::getResponseCode()$/;"	f	class:Request
+getSeconds	cdns/Resolver.cc	/^double getSeconds(struct timeval* tv)$/;"	f	namespace:__anon1
+getSeconds	procmon/dummyload.cc	/^double getSeconds(int cycles)$/;"	f
+getSeconds	procmon/procmon.cc	/^  double getSeconds(long ticks)$/;"	f	class:Procmon	file:
+getSocketType	cdns/Resolver.cc	/^const char* getSocketType(int type)$/;"	f	namespace:__anon1
+getStartTime	procmon/procmon.cc	/^  Timestamp getStartTime(long starttime)$/;"	f	class:Procmon	file:
+getState	procmon/procmon.cc	/^  static const char* getState(char state)$/;"	f	class:Procmon	file:
+getString	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public String getString() {$/;"	m	class:DataEvent
+getTopic	hub/hub.cc	/^  Topic& getTopic(const string& topic)$/;"	f	class:pubsub::PubSubServer	file:
+getUrl	curl/Curl.cc	/^RequestPtr Curl::getUrl(StringArg url)$/;"	f	class:Curl
+getUser	twisted/finger/finger06.cc	/^string getUser(const string& user)$/;"	f
+getUser	twisted/finger/finger07.cc	/^string getUser(const string& user)$/;"	f
+getX	procmon/plot.cc	/^int Plot::getX(ssize_t i, ssize_t total) const$/;"	f	class:Plot
+getY	procmon/plot.cc	/^int Plot::getY(double value) const$/;"	f	class:Plot
+get_box_col	sudoku/sudoku.cc	/^    int get_box_col(int box, int val)$/;"	f	class:SudokuSolver	file:
+get_col_col	sudoku/sudoku.cc	/^    int get_col_col(int col, int val)$/;"	f	class:SudokuSolver	file:
+get_min_column	sudoku/sudoku.cc	/^    Column* get_min_column()$/;"	f	class:SudokuSolver	file:
+get_row_col	sudoku/sudoku.cc	/^    int get_row_col(int row, int val)$/;"	f	class:SudokuSolver	file:
+globalCount_	ace/logging/server.cc	/^  static AtomicInt32 globalCount_;$/;"	m	class:logging::Session	file:
+globalCount_	ace/logging/server.cc	/^AtomicInt32 Session::globalCount_;$/;"	m	class:logging::Session	file:
+god	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected MultiplexerTest god;$/;"	f	class:TestCase
+gotRequest_	fastcgi/fastcgi.h	/^  bool gotRequest_;$/;"	m	class:FastCgiCodec
+got_	protobuf/resolver/client.cc	/^  int got_;$/;"	m	class:RpcClient	file:
+gperfport	memcached/server/MemcacheServer.h	/^    uint16_t gperfport;$/;"	m	struct:MemcacheServer::Options
+gray_	procmon/plot.h	/^  const int gray_;$/;"	m	class:Plot
+handleTimeout	pingpong/client.cc	/^  void handleTimeout()$/;"	f	class:Client	file:
+hash	memcached/server/Item.h	/^  size_t hash() const$/;"	f	class:Item
+hash_	memcached/server/Item.h	/^  size_t         hash_;$/;"	m	class:Item
+hash_value	idleconnection/echo.h	/^inline size_t hash_value(const boost::shared_ptr<T>& x)$/;"	f	namespace:boost
+hash_value	wordcount/hash.h	/^inline std::size_t hash_value(const muduo::string& x)$/;"	f	namespace:boost
+headerCallback	curl/Curl.cc	/^void Request::headerCallback(const char* buffer, int len)$/;"	f	class:Request
+headerCb_	curl/Curl.h	/^  DataCallback headerCb_;$/;"	m	class:curl::Request
+headerData	curl/Curl.cc	/^size_t Request::headerData(char* buffer, size_t size, size_t nmemb, void* userp)$/;"	f	class:Request
+headerOnly	curl/Curl.cc	/^void Request::headerOnly()$/;"	f	class:Request
+height_	procmon/plot.h	/^  const int height_;$/;"	m	class:Plot
+highWaterMark	sudoku/server_prod.cc	/^  void highWaterMark(const TcpConnectionPtr& conn, size_t tosend)$/;"	f	class:SudokuServer	file:
+host	ace/ttcp/common.h	/^  std::string host;$/;"	m	struct:Options
+host	wordcount/slowsink.py	/^	host = sys.argv[2]$/;"	v
+host	wordcount/slowsink.py	/^host = ''$/;"	v
+hostname_	procmon/procmon.cc	/^  const string hostname_;$/;"	m	class:Procmon	file:
+id	fastcgi/fastcgi.cc	/^  uint16_t id;$/;"	m	struct:FastCgiCodec::RecordHeader	file:
+id	filetransfer/loadtest/Handler.java	/^    private int id;$/;"	f	class:Handler	file:
+id	protobuf/rpcbalancer/balancer_raw.cc	/^  uint64_t id() const { return id_; }$/;"	f	struct:RawMessage
+id	sudoku/server_hybrid.cc	/^    string id;$/;"	m	struct:SudokuServer::Request	file:
+id	sudoku/server_prod.cc	/^    string id;$/;"	m	struct:SudokuServer::Request	file:
+id_	protobuf/rpcbalancer/balancer_raw.cc	/^  uint64_t id_;$/;"	m	struct:RawMessage	file:
+idleSeconds_	idleconnection/sortedlist.cc	/^  int idleSeconds_;$/;"	m	class:EchoServer	file:
+image_	procmon/plot.h	/^  const gdImagePtr image_;$/;"	m	class:Plot
+initPerThread	protobuf/rpcbalancer/balancer.cc	/^  void initPerThread(EventLoop* ioLoop)$/;"	f	class:Balancer	file:
+initPerThread	protobuf/rpcbalancer/balancer_raw.cc	/^  void initPerThread(EventLoop* ioLoop)$/;"	f	class:Balancer	file:
+initialize	curl/Curl.cc	/^void Curl::initialize(Option opt)$/;"	f	class:Curl
+inout_	sudoku/sudoku.cc	/^    int*    inout_;$/;"	m	class:SudokuSolver	file:
+input_	sudoku/batch.cc	/^  InputPtr input_;$/;"	m	class:SudokuClient	file:
+input_	sudoku/loadtest.cc	/^  const InputPtr input_;$/;"	m	class:SudokuClient	file:
+input_	sudoku/pipeline.cc	/^  const InputPtr input_;$/;"	m	class:SudokuClient	file:
+inspectThread_	sudoku/server_hybrid.cc	/^  EventLoopThread inspectThread_;$/;"	m	class:SudokuServer	file:
+inspectThread_	sudoku/server_prod.cc	/^  EventLoopThread inspectThread_;$/;"	m	class:SudokuServer	file:
+inspector_	sudoku/server_hybrid.cc	/^  Inspector inspector_;$/;"	m	class:SudokuServer	file:
+inspector_	sudoku/server_prod.cc	/^  Inspector inspector_;$/;"	m	class:SudokuServer	file:
+isBinaryProtocol	memcached/server/Session.cc	/^static bool isBinaryProtocol(uint8_t firstByte)$/;"	f	file:
+isEmpty	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    public boolean isEmpty() {$/;"	m	class:EventQueue
+items	memcached/server/MemcacheServer.h	/^    ItemMap items;$/;"	m	struct:MemcacheServer::MapWithLock
+itrealvalue	procmon/procmon.cc	/^  long itrealvalue;$/;"	m	struct:StatData	file:
+kAdd	memcached/server/Item.h	/^    kAdd,$/;"	e	enum:Item::UpdatePolicy
+kAppend	memcached/server/Item.h	/^    kAppend,$/;"	e	enum:Item::UpdatePolicy
+kAscii	memcached/server/Session.h	/^    kAscii,$/;"	e	enum:Session::Protocol
+kAuto	memcached/server/Session.h	/^    kAuto,$/;"	e	enum:Session::Protocol
+kBackend	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^    kBackend, kClient$/;"	e	enum:EventSource	file:
+kBackendPort	multiplexer/multiplexer.cc	/^const uint16_t kBackendPort = 9999;$/;"	v
+kBackendPort	multiplexer/multiplexer_simple.cc	/^const uint16_t kBackendPort = 9999;$/;"	v
+kBinary	memcached/server/Session.h	/^    kBinary,$/;"	e	enum:Session::Protocol
+kBootTime_	procmon/procmon.cc	/^  const long kBootTime_;  \/\/ in Unix-time$/;"	m	class:Procmon	file:
+kBox	sudoku/sudoku.cc	/^const int kRow = 100, kCol = 200, kBox = 300;$/;"	v
+kBufSize	filetransfer/download2.cc	/^const int kBufSize = 64*1024;$/;"	v
+kBufSize	filetransfer/download3.cc	/^const int kBufSize = 64*1024;$/;"	v
+kCURLnossl	curl/Curl.h	/^    kCURLnossl = 0,$/;"	e	enum:curl::Curl::Option
+kCURLssl	curl/Curl.h	/^    kCURLssl   = 1,$/;"	e	enum:curl::Curl::Option
+kCas	memcached/server/Item.h	/^    kCas,$/;"	e	enum:Item::UpdatePolicy
+kCells	sudoku/sudoku.h	/^const int kCells = 81;$/;"	v
+kCheckSumError	protobuf/codec/codec.h	/^    kCheckSumError,$/;"	e	enum:ProtobufCodec::ErrorCode
+kCheckSumErrorStr	protobuf/codec/codec.cc	/^  const string kCheckSumErrorStr = "CheckSumError";$/;"	m	namespace:__anon2	file:
+kClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^    kBackend, kClient$/;"	e	enum:EventSource	file:
+kClient	socks4a/tunnel.h	/^    kServer, kClient$/;"	e	enum:Tunnel::ServerClient
+kClientPort	multiplexer/multiplexer.cc	/^const uint16_t kClientPort = 3333;$/;"	v
+kClientPort	multiplexer/multiplexer_simple.cc	/^const uint16_t kClientPort = 3333;$/;"	v
+kClients	filetransfer/loadtest/Client.java	/^    static final int kClients = 500;$/;"	f	class:Client
+kClockTicksPerSecond_	procmon/procmon.cc	/^  const int kClockTicksPerSecond_;$/;"	m	class:Procmon	file:
+kCol	sudoku/sudoku.cc	/^const int kRow = 100, kCol = 200, kBox = 300;$/;"	v
+kConcurrent	curl/download.cc	/^  const static int kConcurrent = 4;$/;"	m	class:Downloader	file:
+kContinue	hub/codec.h	/^  kContinue,$/;"	e	enum:pubsub::ParseResult
+kDNSandHostsFile	cdns/Resolver.h	/^    kDNSandHostsFile,$/;"	e	enum:cdns::Resolver::Option
+kDNSonly	cdns/Resolver.h	/^    kDNSonly,$/;"	e	enum:cdns::Resolver::Option
+kDebug	cdns/Resolver.cc	/^const bool kDebug = false;$/;"	m	namespace:__anon1	file:
+kDiscardValue	memcached/server/Session.h	/^    kDiscardValue,$/;"	e	enum:Session::State
+kError	hub/codec.h	/^  kError,$/;"	e	enum:pubsub::ParseResult
+kFcgiAbortRequest	fastcgi/fastcgi.cc	/^  kFcgiAbortRequest = 2,$/;"	e	enum:FcgiType	file:
+kFcgiAuthorizer	fastcgi/fastcgi.cc	/^  kFcgiAuthorizer = 2,$/;"	e	enum:FcgiRole	file:
+kFcgiBeginRequest	fastcgi/fastcgi.cc	/^  kFcgiBeginRequest = 1,$/;"	e	enum:FcgiType	file:
+kFcgiData	fastcgi/fastcgi.cc	/^  kFcgiData = 8,$/;"	e	enum:FcgiType	file:
+kFcgiEndRequest	fastcgi/fastcgi.cc	/^  kFcgiEndRequest = 3,$/;"	e	enum:FcgiType	file:
+kFcgiGetValues	fastcgi/fastcgi.cc	/^  kFcgiGetValues = 9,$/;"	e	enum:FcgiType	file:
+kFcgiGetValuesResult	fastcgi/fastcgi.cc	/^  kFcgiGetValuesResult = 10,$/;"	e	enum:FcgiType	file:
+kFcgiInvalid	fastcgi/fastcgi.cc	/^  kFcgiInvalid = 0,$/;"	e	enum:FcgiType	file:
+kFcgiKeepConn	fastcgi/fastcgi.cc	/^  kFcgiKeepConn = 1,$/;"	e	enum:FcgiConstant	file:
+kFcgiParams	fastcgi/fastcgi.cc	/^  kFcgiParams = 4,$/;"	e	enum:FcgiType	file:
+kFcgiResponder	fastcgi/fastcgi.cc	/^  kFcgiResponder = 1,$/;"	e	enum:FcgiRole	file:
+kFcgiStderr	fastcgi/fastcgi.cc	/^  kFcgiStderr = 7,$/;"	e	enum:FcgiType	file:
+kFcgiStdin	fastcgi/fastcgi.cc	/^  kFcgiStdin = 5,$/;"	e	enum:FcgiType	file:
+kFcgiStdout	fastcgi/fastcgi.cc	/^  kFcgiStdout = 6,$/;"	e	enum:FcgiType	file:
+kGet	memcached/client/bench.cc	/^    kGet,$/;"	e	enum:Client::Operation	file:
+kHeaderLen	asio/chat/codec.h	/^  const static size_t kHeaderLen = sizeof(int32_t);$/;"	m	class:LengthHeaderCodec
+kHeaderLen	multiplexer/demux.cc	/^const size_t kHeaderLen = 3;$/;"	v
+kHeaderLen	multiplexer/multiplexer.cc	/^const size_t kHeaderLen = 3;$/;"	v
+kHeaderLen	multiplexer/multiplexer_simple.cc	/^const size_t kHeaderLen = 3;$/;"	v
+kHeaderLen	protobuf/codec/codec.h	/^  const static int kHeaderLen = sizeof(int32_t);$/;"	m	class:ProtobufCodec
+kHz	sudoku/loadtest.cc	/^  static const int kHz = 100;$/;"	m	class:SudokuLoadtest	file:
+kInvalid	memcached/server/Item.h	/^    kInvalid,$/;"	e	enum:Item::UpdatePolicy
+kInvalidLength	protobuf/codec/codec.h	/^    kInvalidLength,$/;"	e	enum:ProtobufCodec::ErrorCode
+kInvalidLengthStr	protobuf/codec/codec.cc	/^  const string kInvalidLengthStr = "InvalidLength";$/;"	m	namespace:__anon2	file:
+kInvalidNameLen	protobuf/codec/codec.h	/^    kInvalidNameLen,$/;"	e	enum:ProtobufCodec::ErrorCode
+kInvalidNameLenStr	protobuf/codec/codec.cc	/^  const string kInvalidNameLenStr = "InvalidNameLen";$/;"	m	namespace:__anon2	file:
+kLeftMargin_	procmon/plot.h	/^  static const int kLeftMargin_ = 5;$/;"	m	class:Plot
+kListenPort	multiplexer/demux.cc	/^const uint16_t kListenPort = 9999;$/;"	v
+kLogicalServerPort	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private static final int kLogicalServerPort = 9999;$/;"	f	class:MultiplexerTest	file:
+kLongestKey	memcached/server/Session.h	/^  static string kLongestKey;$/;"	m	class:Session
+kLongestKeySize	memcached/server/Session.cc	/^const int kLongestKeySize = 250;$/;"	v
+kMB	filetransfer/loadtest/Client.java	/^    static final int kMB = 1024 * 1024;$/;"	f	class:Client
+kMarginY_	procmon/plot.h	/^  static const int kMarginY_ = 5;$/;"	m	class:Plot
+kMaxConnections_	maxconnection/echo.h	/^  const int kMaxConnections_;$/;"	m	class:EchoServer
+kMaxConns	multiplexer/multiplexer.cc	/^const int kMaxConns = 10;  \/\/ 65535$/;"	v
+kMaxConns	multiplexer/multiplexer_simple.cc	/^const int kMaxConns = 10;  \/\/ 65535$/;"	v
+kMaxHashSize	wordcount/hasher.cc	/^const size_t kMaxHashSize = 10 * 1000 * 1000;$/;"	v
+kMaxLength	filetransfer/loadtest/Client.java	/^        private final int kMaxLength;$/;"	f	class:Client.PipelineFactory	file:
+kMaxLength	filetransfer/loadtest/Client.java	/^    static final int kMaxLength = 6 * kMB;$/;"	f	class:Client
+kMaxMessageLen	protobuf/codec/codec.h	/^  const static int kMaxMessageLen = 64*1024*1024; \/\/ same as codec_stream.h kDefaultTotalBytesLimit$/;"	m	class:ProtobufCodec
+kMaxNodes	sudoku/sudoku.cc	/^const int kMaxNodes = 1 + 81*4 + 9*9*9*4;$/;"	v
+kMaxPacketLen	multiplexer/demux.cc	/^const size_t kMaxPacketLen = 255;$/;"	v
+kMaxPacketLen	multiplexer/multiplexer.cc	/^const size_t kMaxPacketLen = 255;$/;"	v
+kMaxPacketLen	multiplexer/multiplexer_simple.cc	/^const size_t kMaxPacketLen = 255;$/;"	v
+kMinLength	filetransfer/loadtest/Client.java	/^        private final int kMinLength;$/;"	f	class:Client.PipelineFactory	file:
+kMinLength	filetransfer/loadtest/Client.java	/^    static final int kMinLength = 1 * kMB;$/;"	f	class:Client
+kMinMessageLen	protobuf/codec/codec.h	/^  const static int kMinMessageLen = 2*kHeaderLen + 2; \/\/ nameLen + typeName + checkSum$/;"	m	class:ProtobufCodec
+kMultiplexerServerPort	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private static final int kMultiplexerServerPort = 3333;$/;"	f	class:MultiplexerTest	file:
+kNewCommand	memcached/server/Session.h	/^    kNewCommand,$/;"	e	enum:Session::State
+kNoError	protobuf/codec/codec.h	/^    kNoError = 0,$/;"	e	enum:ProtobufCodec::ErrorCode
+kNoErrorStr	protobuf/codec/codec.cc	/^  const string kNoErrorStr = "NoError";$/;"	m	namespace:__anon2	file:
+kNoSolution	sudoku/sudoku.cc	/^extern const char kNoSolution[] = "NoSolution";$/;"	v
+kParseError	protobuf/codec/codec.h	/^    kParseError,$/;"	e	enum:ProtobufCodec::ErrorCode
+kParseErrorStr	protobuf/codec/codec.cc	/^  const string kParseErrorStr = "ParseError";$/;"	m	namespace:__anon2	file:
+kPath	fastcgi/fastcgi_test.cc	/^const string kPath = "\/sudoku\/";$/;"	v
+kPeriod_	procmon/procmon.cc	/^  const static int kPeriod_ = 2.0;$/;"	m	class:Procmon	file:
+kPrepend	memcached/server/Item.h	/^    kPrepend,$/;"	e	enum:Item::UpdatePolicy
+kReceiveValue	memcached/server/Session.h	/^    kReceiveValue,$/;"	e	enum:Session::State
+kRecordHeader	fastcgi/fastcgi.cc	/^const unsigned FastCgiCodec::kRecordHeader = static_cast<unsigned>(sizeof(FastCgiCodec::RecordHeader));$/;"	m	class:FastCgiCodec	file:
+kRecordHeader	fastcgi/fastcgi.h	/^  const static unsigned kRecordHeader;$/;"	m	class:FastCgiCodec
+kReplace	memcached/server/Item.h	/^    kReplace,$/;"	e	enum:Item::UpdatePolicy
+kRequests	protobuf/rpcbench/client.cc	/^static const int kRequests = 50000;$/;"	v	file:
+kRightMargin_	procmon/plot.h	/^  const int kRightMargin_;$/;"	m	class:Plot
+kRow	sudoku/sudoku.cc	/^const int kRow = 100, kCol = 200, kBox = 300;$/;"	v
+kSeconds	sudoku/stat.h	/^  static const int kSeconds = 60;$/;"	m	class:SudokuStat
+kServer	socks4a/tunnel.h	/^    kServer, kClient$/;"	e	enum:Tunnel::ServerClient
+kSet	memcached/client/bench.cc	/^    kSet,$/;"	e	enum:Client::Operation	file:
+kSet	memcached/server/Item.h	/^    kSet,$/;"	e	enum:Item::UpdatePolicy
+kShards	memcached/server/MemcacheServer.h	/^  const static int kShards = 4096;$/;"	m	class:MemcacheServer
+kSocksPort	multiplexer/demux.cc	/^const uint16_t kSocksPort = 7777;$/;"	v
+kSuccess	hub/codec.h	/^  kSuccess,$/;"	e	enum:pubsub::ParseResult
+kUnknownErrorStr	protobuf/codec/codec.cc	/^  const string kUnknownErrorStr = "UnknownError";$/;"	m	namespace:__anon2	file:
+kUnknownMessageType	protobuf/codec/codec.h	/^    kUnknownMessageType,$/;"	e	enum:ProtobufCodec::ErrorCode
+kUnknownMessageTypeStr	protobuf/codec/codec.cc	/^  const string kUnknownMessageTypeStr = "UnknownMessageType";$/;"	m	namespace:__anon2	file:
+kbPerPage_	procmon/procmon.cc	/^  const int kbPerPage_;$/;"	m	class:Procmon	file:
+keepConn_	fastcgi/fastcgi.h	/^  bool keepConn_;$/;"	m	class:FastCgiCodec
+key	memcached/server/Item.h	/^  muduo::StringPiece key() const$/;"	f	class:Item
+keylen_	memcached/server/Item.h	/^  int            keylen_;$/;"	m	class:Item
+keys_	memcached/client/bench.cc	/^  const int keys_;$/;"	m	class:Client	file:
+label	procmon/plot.cc	/^void Plot::label(double maxValue)$/;"	f	class:Plot
+lastPubTime_	hub/hub.cc	/^  Timestamp lastPubTime_;$/;"	m	class:pubsub::Topic	file:
+lastReceiveTime	idleconnection/sortedlist.cc	/^    Timestamp lastReceiveTime;$/;"	m	struct:EchoServer::Node	file:
+lastSecond_	sudoku/stat.h	/^  time_t lastSecond_;$/;"	m	class:SudokuStat
+lastStatData_	procmon/procmon.cc	/^  StatData lastStatData_;$/;"	m	class:Procmon	file:
+last_	memcached/server/Session.cc	/^  Tokenizer::iterator last_;;$/;"	m	struct:Session::Reader	file:
+latch	filetransfer/loadtest/Client.java	/^        private final CountDownLatch latch;$/;"	f	class:Client.PipelineFactory	file:
+latch	filetransfer/loadtest/Handler.java	/^    private CountDownLatch latch;$/;"	f	class:Handler	file:
+latch	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final CountDownLatch latch;$/;"	f	class:MockBackendServer	file:
+latch	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private MyCountDownLatch latch;$/;"	f	class:MockClient	file:
+latch	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private MyCountDownLatch latch;$/;"	f	class:MultiplexerTest	file:
+latencies_	sudoku/loadtest.cc	/^  std::vector<int> latencies_;$/;"	m	class:SudokuClient	file:
+latencies_	sudoku/pipeline.cc	/^  std::vector<int> latencies_;$/;"	m	class:SudokuClient	file:
+latencies_	sudoku/stat.h	/^  boost::circular_buffer<int64_t> latencies_;$/;"	m	class:SudokuStat
+left	sudoku/sudoku.cc	/^    Node* left;$/;"	m	struct:Node	file:
+length	ace/ttcp/common.h	/^  int length;$/;"	m	struct:Options
+length	ace/ttcp/common.h	/^  int32_t length;$/;"	m	struct:PayloadMessage
+length	ace/ttcp/common.h	/^  int32_t length;$/;"	m	struct:SessionMessage
+length	fastcgi/fastcgi.cc	/^  uint16_t length;$/;"	m	struct:FastCgiCodec::RecordHeader	file:
+length_	curl/download.cc	/^  int64_t length_;$/;"	m	class:Downloader	file:
+listen_address	wordcount/slowsink.py	/^	listen_address = ("", port)$/;"	v
+listener	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private Channel listener;$/;"	f	class:MockBackendServer	file:
+load	procmon/dummyload.cc	/^void load(int percent)$/;"	f
+loc_	protobuf/rpcbalancer/balancer_raw.cc	/^  const void* loc_;$/;"	m	struct:RawMessage	file:
+logRecord_	ace/logging/client.cc	/^  LogRecord logRecord_;$/;"	m	class:logging::LogClient	file:
+logger	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private static final Logger logger = LoggerFactory.getLogger("MockBackendServer");$/;"	f	class:MockBackendServer	file:
+logger	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private static final Logger logger = LoggerFactory.getLogger("MockClient");$/;"	f	class:MockClient	file:
+logger	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private static final Logger logger = LoggerFactory.getLogger("MultiplexerTest");$/;"	f	class:MultiplexerTest	file:
+logging	ace/logging/client.cc	/^namespace logging$/;"	n	file:
+logging	ace/logging/server.cc	/^namespace logging$/;"	n	file:
+logtag	ace/logging/client.cc	/^extern const char logtag[] = "LOG0";$/;"	m	namespace:logging	file:
+logtag	ace/logging/server.cc	/^extern const char logtag[] = "LOG0";$/;"	m	namespace:logging	file:
+loop1_	asio/tutorial/timer5/timer.cc	/^  muduo::net::EventLoop* loop1_;$/;"	m	class:Printer	file:
+loop1_	asio/tutorial/timer6/timer.cc	/^  muduo::net::EventLoop* loop1_;$/;"	m	class:Printer	file:
+loop2_	asio/tutorial/timer5/timer.cc	/^  muduo::net::EventLoop* loop2_;$/;"	m	class:Printer	file:
+loop2_	asio/tutorial/timer6/timer.cc	/^  muduo::net::EventLoop* loop2_;$/;"	m	class:Printer	file:
+loopThread_	wordcount/hasher.cc	/^  EventLoopThread loopThread_;$/;"	m	class:WordCountSender	file:
+loop_	ace/logging/server.cc	/^  EventLoop* loop_;$/;"	m	class:logging::LogServer	file:
+loop_	asio/chat/loadtest.cc	/^  EventLoop* loop_;$/;"	m	class:ChatClient	file:
+loop_	asio/tutorial/timer4/timer.cc	/^  muduo::net::EventLoop* loop_;$/;"	m	class:Printer	file:
+loop_	cdns/Resolver.h	/^  muduo::net::EventLoop* loop_;$/;"	m	class:cdns::Resolver
+loop_	curl/Curl.h	/^  muduo::net::EventLoop* loop_;$/;"	m	class:curl::Curl
+loop_	curl/download.cc	/^  EventLoop* loop_;$/;"	m	class:Downloader	file:
+loop_	hub/hub.cc	/^  EventLoop* loop_;$/;"	m	class:pubsub::PubSubServer	file:
+loop_	memcached/server/MemcacheServer.h	/^  muduo::net::EventLoop* loop_;  \/\/ not own$/;"	m	class:MemcacheServer
+loop_	multiplexer/demux.cc	/^  EventLoop* loop_;$/;"	m	class:DemuxServer	file:
+loop_	netty/discard/client.cc	/^  EventLoop* loop_;$/;"	m	class:DiscardClient	file:
+loop_	netty/echo/client.cc	/^  EventLoop* loop_;$/;"	m	class:EchoClient	file:
+loop_	pingpong/client.cc	/^  EventLoop* loop_;$/;"	m	class:Client	file:
+loop_	protobuf/codec/client.cc	/^  EventLoop* loop_;$/;"	m	class:QueryClient	file:
+loop_	protobuf/resolver/client.cc	/^  EventLoop* loop_;$/;"	m	class:RpcClient	file:
+loop_	protobuf/rpc/client.cc	/^  EventLoop* loop_;$/;"	m	class:RpcClient	file:
+loop_	protobuf/rpcbalancer/balancer.cc	/^  EventLoop* loop_;$/;"	m	class:BackendSession	file:
+loop_	protobuf/rpcbalancer/balancer.cc	/^  EventLoop* loop_;$/;"	m	class:Balancer	file:
+loop_	protobuf/rpcbalancer/balancer_raw.cc	/^  EventLoop* loop_;$/;"	m	class:BackendSession	file:
+loop_	protobuf/rpcbalancer/balancer_raw.cc	/^  EventLoop* loop_;$/;"	m	class:Balancer	file:
+loop_	simple/chargenclient/chargenclient.cc	/^  EventLoop* loop_;$/;"	m	class:ChargenClient	file:
+loop_	simple/timeclient/timeclient.cc	/^  EventLoop* loop_;$/;"	m	class:TimeClient	file:
+loop_	wordcount/hasher.cc	/^  EventLoop* loop_;$/;"	m	class:WordCountSender	file:
+loop_	wordcount/receiver.cc	/^  EventLoop* loop_;$/;"	m	class:WordCountReceiver	file:
+loops_	asio/chat/server_threaded_highperformance.cc	/^  std::set<EventLoop*> loops_;$/;"	m	class:ChatServer	file:
+main	ace/logging/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	ace/logging/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	ace/ttcp/main.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/chat/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/chat/loadtest.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/chat/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/chat/server_threaded.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/chat/server_threaded_efficient.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/chat/server_threaded_highperformance.cc	/^int main(int argc, char* argv[])$/;"	f
+main	asio/tutorial/timer2/timer.cc	/^int main()$/;"	f
+main	asio/tutorial/timer3/timer.cc	/^int main()$/;"	f
+main	asio/tutorial/timer4/timer.cc	/^int main()$/;"	f
+main	asio/tutorial/timer5/timer.cc	/^int main()$/;"	f
+main	asio/tutorial/timer6/timer.cc	/^int main()$/;"	f
+main	cdns/dns.cc	/^int main(int argc, char* argv[])$/;"	f
+main	curl/download.cc	/^int main(int argc, char* argv[])$/;"	f
+main	curl/mcurl.cc	/^int main(int argc, char* argv[])$/;"	f
+main	fastcgi/fastcgi_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	filetransfer/download.cc	/^int main(int argc, char* argv[])$/;"	f
+main	filetransfer/download2.cc	/^int main(int argc, char* argv[])$/;"	f
+main	filetransfer/download3.cc	/^int main(int argc, char* argv[])$/;"	f
+main	filetransfer/loadtest/Client.java	/^    public static void main(String[] args) throws Exception {$/;"	m	class:Client
+main	hub/hub.cc	/^int main(int argc, char* argv[])$/;"	f
+main	hub/pub.cc	/^int main(int argc, char* argv[])$/;"	f
+main	hub/sub.cc	/^int main(int argc, char* argv[])$/;"	f
+main	idleconnection/main.cc	/^int main(int argc, char* argv[])$/;"	f
+main	idleconnection/sortedlist.cc	/^int main(int argc, char* argv[])$/;"	f
+main	maxconnection/main.cc	/^int main(int argc, char* argv[])$/;"	f
+main	memcached/client/bench.cc	/^int main(int argc, char* argv[])$/;"	f
+main	memcached/server/footprint_test.cc	/^int main(int argc, char* argv[])$/;"	f
+main	memcached/server/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	multiplexer/demux.cc	/^int main(int argc, char* argv[])$/;"	f
+main	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public static void main(String[] args) {$/;"	m	class:MultiplexerTest
+main	multiplexer/multiplexer.cc	/^int main(int argc, char* argv[])$/;"	f
+main	multiplexer/multiplexer_simple.cc	/^int main(int argc, char* argv[])$/;"	f
+main	netty/discard/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	netty/discard/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	netty/echo/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	netty/echo/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	netty/echo/server2.cc	/^int main(int argc, char* argv[])$/;"	f
+main	netty/uptime/uptime.cc	/^int main(int argc, char* argv[])$/;"	f
+main	pingpong/bench.cc	/^int main(int argc, char* argv[])$/;"	f
+main	pingpong/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	pingpong/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	procmon/dummyload.cc	/^int main(int argc, char* argv[])$/;"	f
+main	procmon/plot_test.cc	/^int main()$/;"	f
+main	procmon/procmon.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/codec/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/codec/codec_test.cc	/^int main()$/;"	f
+main	protobuf/codec/dispatcher_lite_test.cc	/^int main()$/;"	f
+main	protobuf/codec/dispatcher_test.cc	/^int main()$/;"	f
+main	protobuf/codec/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/resolver/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/resolver/server.cc	/^int main()$/;"	f
+main	protobuf/rpc/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/rpc/server.cc	/^int main()$/;"	f
+main	protobuf/rpcbalancer/balancer.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/rpcbalancer/balancer_raw.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/rpcbench/client.cc	/^int main(int argc, char* argv[])$/;"	f
+main	protobuf/rpcbench/server.cc	/^int main(int argc, char* argv[])$/;"	f
+main	roundtrip/roundtrip.cc	/^int main(int argc, char* argv[])$/;"	f
+main	roundtrip/roundtrip_udp.cc	/^int main(int argc, char* argv[])$/;"	f
+main	shorturl/shorturl.cc	/^int main(int argc, char* argv[])$/;"	f
+main	simple/allinone/allinone.cc	/^int main()$/;"	f
+main	simple/chargen/main.cc	/^int main()$/;"	f
+main	simple/chargenclient/chargenclient.cc	/^int main(int argc, char* argv[])$/;"	f
+main	simple/daytime/main.cc	/^int main()$/;"	f
+main	simple/discard/main.cc	/^int main()$/;"	f
+main	simple/echo/main.cc	/^int main()$/;"	f
+main	simple/time/main.cc	/^int main()$/;"	f
+main	simple/time/test.cpp	/^int main()$/;"	f
+main	simple/timeclient/timeclient.cc	/^int main(int argc, char* argv[])$/;"	f
+main	socks4a/balancer.cc	/^int main(int argc, char* argv[])$/;"	f
+main	socks4a/socks4a.cc	/^int main(int argc, char* argv[])$/;"	f
+main	socks4a/tcprelay.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/batch.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/loadtest.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/pipeline.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/server_basic.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/server_hybrid.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/server_multiloop.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/server_prod.cc	/^int main(int argc, char* argv[])$/;"	f
+main	sudoku/server_threadpool.cc	/^int main(int argc, char* argv[])$/;"	f
+main	twisted/finger/finger01.cc	/^int main()$/;"	f
+main	twisted/finger/finger02.cc	/^int main()$/;"	f
+main	twisted/finger/finger03.cc	/^int main()$/;"	f
+main	twisted/finger/finger04.cc	/^int main()$/;"	f
+main	twisted/finger/finger05.cc	/^int main()$/;"	f
+main	twisted/finger/finger06.cc	/^int main()$/;"	f
+main	twisted/finger/finger07.cc	/^int main()$/;"	f
+main	wordcount/hasher.cc	/^int main(int argc, char* argv[])$/;"	f
+main	wordcount/receiver.cc	/^int main(int argc, char* argv[])$/;"	f
+main	zeromq/local_lat.cc	/^int main(int argc, char* argv[])$/;"	f
+main	zeromq/remote_lat.cc	/^int main(int argc, char* argv[])$/;"	f
+majflt	procmon/procmon.cc	/^  long majflt;$/;"	m	struct:StatData	file:
+makeItem	memcached/server/Item.h	/^  static ItemPtr makeItem(StringPiece keyArg,$/;"	f	class:Item
+makeMessage	hub/hub.cc	/^  string makeMessage()$/;"	f	class:pubsub::Topic	file:
+maxLength	filetransfer/loadtest/Handler.java	/^    private final int maxLength;$/;"	f	class:Handler	file:
+memstat	socks4a/tcprelay.cc	/^void memstat()$/;"	f
+message	pingpong/client.cc	/^  const string& message() const$/;"	f	class:Client
+messageCallback_	asio/chat/codec.h	/^  StringMessageCallback messageCallback_;$/;"	m	class:LengthHeaderCodec
+messageCallback_	protobuf/codec/codec.h	/^  ProtobufMessageCallback messageCallback_;$/;"	m	class:ProtobufCodec
+messageReceived	filetransfer/loadtest/Handler.java	/^    public void messageReceived(ChannelHandlerContext ctx, MessageEvent e) throws Exception {$/;"	m	class:Handler
+messageReceived	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)$/;"	m	class:MockBackendServer.Handler
+messageReceived	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)$/;"	m	class:MockClient.Handler
+messageToSend	protobuf/codec/client.cc	/^google::protobuf::Message* messageToSend;$/;"	v
+message_	netty/discard/client.cc	/^  string message_;$/;"	m	class:DiscardClient	file:
+message_	netty/echo/client.cc	/^  string message_;$/;"	m	class:EchoClient	file:
+message_	pingpong/client.cc	/^  string message_;$/;"	m	class:Client	file:
+message_	protobuf/rpcbalancer/balancer_raw.cc	/^  StringPiece message_;$/;"	m	struct:RawMessage	file:
+message_	simple/chargen/chargen.h	/^  muduo::string message_;$/;"	m	class:ChargenServer
+messagesRead	pingpong/client.cc	/^  int64_t messagesRead() const$/;"	f	class:Session
+messagesRead_	pingpong/client.cc	/^  int64_t messagesRead_;$/;"	m	class:Session	file:
+minflt	procmon/procmon.cc	/^  long minflt;$/;"	m	struct:StatData	file:
+mps	wordcount/slowsink.py	/^	mps = 1.0$/;"	v
+mps	wordcount/slowsink.py	/^	mps = float(sys.argv[1])$/;"	v
+muduo	cdns/Resolver.h	/^namespace muduo$/;"	n
+muduo	curl/Curl.h	/^namespace muduo$/;"	n
+muduo	memcached/server/Item.h	/^namespace muduo$/;"	n
+multiplexerAddress	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private final InetSocketAddress multiplexerAddress;$/;"	f	class:MultiplexerTest	file:
+mutex	memcached/server/MemcacheServer.h	/^    mutable muduo::MutexLock mutex;$/;"	m	struct:MemcacheServer::MapWithLock
+mutex_	ace/logging/client.cc	/^  MutexLock mutex_;$/;"	m	class:logging::LogClient	file:
+mutex_	asio/chat/client.cc	/^  MutexLock mutex_;$/;"	m	class:ChatClient	file:
+mutex_	asio/chat/server_threaded.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	asio/chat/server_threaded_efficient.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	asio/chat/server_threaded_highperformance.cc	/^  MutexLock mutex_;$/;"	m	class:ChatServer	file:
+mutex_	asio/tutorial/timer5/timer.cc	/^  muduo::MutexLock mutex_;$/;"	m	class:Printer	file:
+mutex_	asio/tutorial/timer6/timer.cc	/^  muduo::MutexLock mutex_;$/;"	m	class:Printer	file:
+mutex_	memcached/server/MemcacheServer.h	/^  mutable muduo::MutexLock mutex_;$/;"	m	class:MemcacheServer
+mutex_	multiplexer/multiplexer.cc	/^  MutexLock mutex_;$/;"	m	class:MultiplexServer	file:
+mutex_	sudoku/stat.h	/^  mutable MutexLock mutex_;$/;"	m	class:SudokuStat
+mutex_	wordcount/hasher.cc	/^  MutexLock mutex_;$/;"	m	class:SendThrottler	file:
+name	sudoku/sudoku.cc	/^    int name;$/;"	m	struct:Node	file:
+name_	memcached/client/bench.cc	/^  string name_;$/;"	m	class:Client	file:
+name_	sudoku/batch.cc	/^  string name_;$/;"	m	class:SudokuClient	file:
+name_	sudoku/loadtest.cc	/^  const string name_;$/;"	m	class:SudokuClient	file:
+name_	sudoku/pipeline.cc	/^  const string name_;$/;"	m	class:SudokuClient	file:
+neededBytes	memcached/server/Item.h	/^  size_t neededBytes() const$/;"	f	class:Item
+needle_	memcached/server/Session.h	/^  ItemPtr needle_;$/;"	m	class:Session
+net	cdns/Resolver.h	/^namespace net$/;"	n	namespace:muduo
+net	curl/Curl.h	/^namespace net$/;"	n	namespace:muduo
+net	memcached/server/Item.h	/^namespace net$/;"	n	namespace:muduo
+newClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public MockClient newClient() {$/;"	m	class:MultiplexerTest
+new_column	sudoku/sudoku.cc	/^    Column* new_column(int n = 0)$/;"	f	class:SudokuSolver	file:
+new_row	sudoku/sudoku.cc	/^    Node* new_row(int col)$/;"	f	class:SudokuSolver	file:
+nextId_	protobuf/rpcbalancer/balancer.cc	/^  uint64_t nextId_;$/;"	m	class:BackendSession	file:
+nextId_	protobuf/rpcbalancer/balancer_raw.cc	/^  uint64_t nextId_;$/;"	m	class:BackendSession	file:
+nice	procmon/procmon.cc	/^  long nice;$/;"	m	struct:StatData	file:
+nodelay	ace/ttcp/common.h	/^  bool transmit, receive, nodelay;$/;"	m	struct:Options
+nodes_	sudoku/sudoku.cc	/^    Node    nodes_[kMaxNodes];$/;"	m	class:SudokuSolver	file:
+noreply_	memcached/server/Session.h	/^  bool noreply_;$/;"	m	class:Session
+numActive	pingpong/bench.cc	/^int numActive;$/;"	v
+numConnected_	maxconnection/echo.h	/^  int numConnected_; \/\/ should be atomic_int$/;"	m	class:EchoServer
+numConnected_	pingpong/client.cc	/^  AtomicInt32 numConnected_;$/;"	m	class:Client	file:
+numPipes	pingpong/bench.cc	/^int numPipes;$/;"	v
+numThreads	netty/discard/server.cc	/^int numThreads = 0;$/;"	v
+numThreads	netty/echo/server.cc	/^int numThreads = 0;$/;"	v
+numThreads	netty/echo/server2.cc	/^int numThreads = 0;$/;"	v
+numThreads_	multiplexer/multiplexer.cc	/^  int numThreads_;$/;"	m	class:MultiplexServer	file:
+numThreads_	sudoku/server_hybrid.cc	/^  const int numThreads_;$/;"	m	class:SudokuServer	file:
+numThreads_	sudoku/server_multiloop.cc	/^  int numThreads_;$/;"	m	class:SudokuServer	file:
+numThreads_	sudoku/server_prod.cc	/^  const int numThreads_;$/;"	m	class:SudokuServer	file:
+numThreads_	sudoku/server_threadpool.cc	/^  int numThreads_;$/;"	m	class:SudokuServer	file:
+numWrites	pingpong/bench.cc	/^int numWrites;$/;"	v
+num_threads	procmon/procmon.cc	/^  long num_threads;$/;"	m	struct:StatData	file:
+number	ace/ttcp/common.h	/^  int number;$/;"	m	struct:Options
+number	ace/ttcp/common.h	/^  int32_t number;$/;"	m	struct:SessionMessage
+oldCounter_	multiplexer/multiplexer.cc	/^  int64_t oldCounter_;$/;"	m	class:MultiplexServer	file:
+oldCounter_	netty/discard/server.cc	/^  int64_t oldCounter_;$/;"	m	class:DiscardServer	file:
+oldCounter_	netty/echo/server.cc	/^  int64_t oldCounter_;$/;"	m	class:EchoServer	file:
+onAnswer	protobuf/codec/client.cc	/^  void onAnswer(const muduo::net::TcpConnectionPtr&,$/;"	f	class:QueryClient	file:
+onAnswer	protobuf/codec/dispatcher_lite_test.cc	/^void onAnswer(const muduo::net::TcpConnectionPtr&,$/;"	f
+onAnswer	protobuf/codec/dispatcher_test.cc	/^void onAnswer(const muduo::net::TcpConnectionPtr&,$/;"	f
+onAnswer	protobuf/codec/server.cc	/^  void onAnswer(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:QueryServer	file:
+onBackendConnection	multiplexer/multiplexer.cc	/^  void onBackendConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onBackendConnection	multiplexer/multiplexer_simple.cc	/^  void onBackendConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onBackendMessage	multiplexer/multiplexer.cc	/^  void onBackendMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+onBackendMessage	multiplexer/multiplexer_simple.cc	/^  void onBackendMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+onBeginRequest	fastcgi/fastcgi.cc	/^bool FastCgiCodec::onBeginRequest(const RecordHeader& header, const Buffer* buf)$/;"	f	class:FastCgiCodec
+onClientConnection	multiplexer/multiplexer.cc	/^  void onClientConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onClientConnection	multiplexer/multiplexer_simple.cc	/^  void onClientConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onClientConnection	socks4a/tunnel.h	/^  void onClientConnection(const muduo::net::TcpConnectionPtr& conn)$/;"	f	class:Tunnel
+onClientMessage	multiplexer/multiplexer.cc	/^  void onClientMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+onClientMessage	multiplexer/multiplexer_simple.cc	/^  void onClientMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+onClientMessage	socks4a/tunnel.h	/^  void onClientMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:Tunnel
+onConnect	pingpong/client.cc	/^  void onConnect()$/;"	f	class:Client
+onConnection	ace/logging/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:logging::LogClient	file:
+onConnection	ace/logging/server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:logging::LogServer	file:
+onConnection	ace/ttcp/ttcp.cc	/^void onConnection(const Options& opt, const TcpConnectionPtr& conn)$/;"	f	namespace:trans
+onConnection	ace/ttcp/ttcp.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f	namespace:receiving
+onConnection	asio/chat/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatClient	file:
+onConnection	asio/chat/loadtest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatClient	file:
+onConnection	asio/chat/server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	asio/chat/server_threaded.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	asio/chat/server_threaded_efficient.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	asio/chat/server_threaded_highperformance.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChatServer	file:
+onConnection	fastcgi/fastcgi_test.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f
+onConnection	filetransfer/download.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f
+onConnection	filetransfer/download2.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f
+onConnection	filetransfer/download3.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f
+onConnection	hub/hub.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:pubsub::PubSubServer	file:
+onConnection	hub/pubsub.cc	/^void PubSubClient::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:PubSubClient
+onConnection	idleconnection/echo.cc	/^void EchoServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onConnection	idleconnection/sortedlist.cc	/^void EchoServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onConnection	maxconnection/echo.cc	/^void EchoServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onConnection	memcached/client/bench.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:Client	file:
+onConnection	memcached/server/MemcacheServer.cc	/^void MemcacheServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:MemcacheServer
+onConnection	netty/discard/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:DiscardClient	file:
+onConnection	netty/discard/server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:DiscardServer	file:
+onConnection	netty/echo/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoClient	file:
+onConnection	netty/echo/server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer	file:
+onConnection	netty/echo/server2.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer	file:
+onConnection	netty/uptime/uptime.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:UptimeClient	file:
+onConnection	pingpong/client.cc	/^void Session::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:Session
+onConnection	pingpong/server.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f
+onConnection	protobuf/codec/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:QueryClient	file:
+onConnection	protobuf/codec/server.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:QueryServer	file:
+onConnection	protobuf/resolver/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:RpcClient	file:
+onConnection	protobuf/rpc/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:RpcClient	file:
+onConnection	protobuf/rpcbalancer/balancer.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:BackendSession	file:
+onConnection	protobuf/rpcbalancer/balancer.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:Balancer	file:
+onConnection	protobuf/rpcbalancer/balancer_raw.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:BackendSession	file:
+onConnection	protobuf/rpcbalancer/balancer_raw.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:Balancer	file:
+onConnection	protobuf/rpcbench/client.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:RpcClient	file:
+onConnection	simple/chargen/chargen.cc	/^void ChargenServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChargenServer
+onConnection	simple/chargenclient/chargenclient.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChargenClient	file:
+onConnection	simple/daytime/daytime.cc	/^void DaytimeServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:DaytimeServer
+onConnection	simple/discard/discard.cc	/^void DiscardServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:DiscardServer
+onConnection	simple/echo/echo.cc	/^void EchoServer::onConnection(const muduo::net::TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onConnection	simple/time/time.cc	/^void TimeServer::onConnection(const muduo::net::TcpConnectionPtr& conn)$/;"	f	class:TimeServer
+onConnection	simple/timeclient/timeclient.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:TimeClient	file:
+onConnection	sudoku/batch.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuClient	file:
+onConnection	sudoku/loadtest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuClient	file:
+onConnection	sudoku/pipeline.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuClient	file:
+onConnection	sudoku/server_basic.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onConnection	sudoku/server_hybrid.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onConnection	sudoku/server_multiloop.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onConnection	sudoku/server_prod.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onConnection	sudoku/server_threadpool.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onConnection	twisted/finger/finger03.cc	/^void onConnection(const TcpConnectionPtr& conn)$/;"	f
+onConnection	wordcount/hasher.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SendThrottler	file:
+onConnection	wordcount/receiver.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:WordCountReceiver	file:
+onConnection	zeromq/local_lat.cc	/^void onConnection(const muduo::net::TcpConnectionPtr& conn)$/;"	f
+onConnection	zeromq/remote_lat.cc	/^void onConnection(LengthHeaderCodec* codec, const muduo::net::TcpConnectionPtr& conn)$/;"	f
+onData	curl/download.cc	/^  void onData(const char* data, int len)$/;"	f	class:Downloader	file:
+onData	curl/download.cc	/^  void onData(const char* data, int len)$/;"	f	class:Piece	file:
+onData	curl/mcurl.cc	/^void onData(const char* data, int len)$/;"	f
+onDisconnect	pingpong/client.cc	/^  void onDisconnect(const TcpConnectionPtr& conn)$/;"	f	class:Client
+onDone	curl/download.cc	/^  void onDone(curl::Request* c, int code)$/;"	f	class:Piece	file:
+onDownloadDone	curl/download.cc	/^  void onDownloadDone()$/;"	f	class:Downloader	file:
+onEmpty	protobuf/codec/client.cc	/^  void onEmpty(const muduo::net::TcpConnectionPtr&,$/;"	f	class:QueryClient	file:
+onHeader	curl/download.cc	/^  void onHeader(const char* data, int len)$/;"	f	class:Downloader	file:
+onHeaderDone	curl/download.cc	/^  void onHeaderDone(curl::Request* c, int code)$/;"	f	class:Downloader	file:
+onHighWaterMark	filetransfer/download.cc	/^void onHighWaterMark(const TcpConnectionPtr& conn, size_t len)$/;"	f
+onHighWaterMark	filetransfer/download2.cc	/^void onHighWaterMark(const TcpConnectionPtr& conn, size_t len)$/;"	f
+onHighWaterMark	filetransfer/download3.cc	/^void onHighWaterMark(const TcpConnectionPtr& conn, size_t len)$/;"	f
+onHighWaterMark	socks4a/tunnel.h	/^  void onHighWaterMark(ServerClient which,$/;"	f	class:Tunnel
+onHighWaterMark	wordcount/hasher.cc	/^  void onHighWaterMark()$/;"	f	class:SendThrottler	file:
+onHighWaterMarkWeak	socks4a/tunnel.h	/^  static void onHighWaterMarkWeak(const boost::weak_ptr<Tunnel>& wkTunnel,$/;"	f	class:Tunnel
+onMessage	ace/logging/client.cc	/^  void onMessage(const TcpConnectionPtr&,$/;"	f	class:logging::LogClient	file:
+onMessage	ace/logging/server.cc	/^  void onMessage(const TcpConnectionPtr& conn,$/;"	f	class:logging::Session	file:
+onMessage	ace/ttcp/ttcp.cc	/^void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	namespace:receiving
+onMessage	ace/ttcp/ttcp.cc	/^void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	namespace:trans
+onMessage	asio/chat/codec.h	/^  void onMessage(const muduo::net::TcpConnectionPtr& conn,      $/;"	f	class:LengthHeaderCodec
+onMessage	fastcgi/fastcgi.h	/^  void onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:FastCgiCodec
+onMessage	hub/hub.cc	/^  void onMessage(const TcpConnectionPtr& conn,$/;"	f	class:pubsub::PubSubServer	file:
+onMessage	hub/pubsub.cc	/^void PubSubClient::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:PubSubClient
+onMessage	idleconnection/echo.cc	/^void EchoServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+onMessage	idleconnection/sortedlist.cc	/^void EchoServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+onMessage	maxconnection/echo.cc	/^void EchoServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+onMessage	memcached/client/bench.cc	/^  void onMessage(const TcpConnectionPtr& conn,$/;"	f	class:Client	file:
+onMessage	memcached/server/Session.cc	/^void Session::onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:Session
+onMessage	netty/discard/client.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:DiscardClient	file:
+onMessage	netty/discard/server.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:DiscardServer	file:
+onMessage	netty/echo/client.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:EchoClient	file:
+onMessage	netty/echo/server.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:EchoServer	file:
+onMessage	netty/echo/server2.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:EchoServer	file:
+onMessage	netty/uptime/uptime.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp time)$/;"	f	class:UptimeClient	file:
+onMessage	pingpong/client.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:Session	file:
+onMessage	pingpong/server.cc	/^void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f
+onMessage	protobuf/codec/codec.cc	/^void ProtobufCodec::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodec
+onMessage	protobuf/codec/codec_test.cc	/^void onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f
+onMessage	protobuf/codec/dispatcher.h	/^  virtual void onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:CallbackT
+onMessage	simple/chargen/chargen.cc	/^void ChargenServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:ChargenServer
+onMessage	simple/chargenclient/chargenclient.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp receiveTime)$/;"	f	class:ChargenClient	file:
+onMessage	simple/daytime/daytime.cc	/^void DaytimeServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:DaytimeServer
+onMessage	simple/discard/discard.cc	/^void DiscardServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:DiscardServer
+onMessage	simple/echo/echo.cc	/^void EchoServer::onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+onMessage	simple/time/time.cc	/^void TimeServer::onMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:TimeServer
+onMessage	simple/timeclient/timeclient.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp receiveTime)$/;"	f	class:TimeClient	file:
+onMessage	sudoku/batch.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuClient	file:
+onMessage	sudoku/loadtest.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+onMessage	sudoku/pipeline.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+onMessage	sudoku/server_basic.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuServer	file:
+onMessage	sudoku/server_hybrid.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+onMessage	sudoku/server_multiloop.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuServer	file:
+onMessage	sudoku/server_prod.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+onMessage	sudoku/server_threadpool.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuServer	file:
+onMessage	twisted/finger/finger04.cc	/^void onMessage(const TcpConnectionPtr& conn,$/;"	f
+onMessage	twisted/finger/finger05.cc	/^void onMessage(const TcpConnectionPtr& conn,$/;"	f
+onMessage	twisted/finger/finger06.cc	/^void onMessage(const TcpConnectionPtr& conn,$/;"	f
+onMessage	twisted/finger/finger07.cc	/^void onMessage(const TcpConnectionPtr& conn,$/;"	f
+onMessage	wordcount/receiver.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:WordCountReceiver	file:
+onMessageT	protobuf/rpcbalancer/balancer_raw.cc	/^  bool onMessageT(const TcpConnectionPtr& conn, MSG& msg)$/;"	f	class:Balancer	file:
+onMessageT	protobuf/rpcbalancer/balancer_raw.cc	/^  void onMessageT(MSG& msg)$/;"	f	class:BackendSession	file:
+onParams	fastcgi/fastcgi.cc	/^bool FastCgiCodec::onParams(const char* content, uint16_t length)$/;"	f	class:FastCgiCodec
+onProtobufMessage	protobuf/codec/dispatcher.h	/^  void onProtobufMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:ProtobufDispatcher
+onProtobufMessage	protobuf/codec/dispatcher_lite.h	/^  void onProtobufMessage(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:ProtobufDispatcherLite
+onQuery	protobuf/codec/dispatcher_lite_test.cc	/^void onQuery(const muduo::net::TcpConnectionPtr&,$/;"	f
+onQuery	protobuf/codec/dispatcher_test.cc	/^void onQuery(const muduo::net::TcpConnectionPtr&,$/;"	f
+onQuery	protobuf/codec/server.cc	/^  void onQuery(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:QueryServer	file:
+onQueryResult	cdns/Resolver.cc	/^void Resolver::onQueryResult(int status, struct hostent* result, const Callback& callback)$/;"	f	class:Resolver
+onRawMessage	protobuf/rpcbalancer/balancer_raw.cc	/^  bool onRawMessage(const TcpConnectionPtr& conn,$/;"	f	class:Balancer	file:
+onRawMessage	protobuf/rpcbalancer/balancer_raw.cc	/^  bool onRawMessage(const TcpConnectionPtr&,$/;"	f	class:BackendSession	file:
+onRead	cdns/Resolver.cc	/^void Resolver::onRead(int sockfd, Timestamp t)$/;"	f	class:Resolver
+onRead	curl/Curl.cc	/^void Curl::onRead(int fd)$/;"	f	class:Curl
+onRequest	fastcgi/fastcgi_test.cc	/^void onRequest(const TcpConnectionPtr& conn,$/;"	f
+onRequest	procmon/procmon.cc	/^  void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f	class:Procmon	file:
+onRequest	shorturl/shorturl.cc	/^void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f
+onRpcMessage	protobuf/rpcbalancer/balancer.cc	/^  void onRpcMessage(const TcpConnectionPtr& conn,$/;"	f	class:Balancer	file:
+onRpcMessage	protobuf/rpcbalancer/balancer.cc	/^  void onRpcMessage(const TcpConnectionPtr&,$/;"	f	class:BackendSession	file:
+onRpcMessage	protobuf/rpcbalancer/balancer_raw.cc	/^  void onRpcMessage(const TcpConnectionPtr& conn,$/;"	f	class:Balancer	file:
+onRpcMessage	protobuf/rpcbalancer/balancer_raw.cc	/^  void onRpcMessage(const TcpConnectionPtr&,$/;"	f	class:BackendSession	file:
+onServerConnection	multiplexer/demux.cc	/^  void onServerConnection(const TcpConnectionPtr& conn)$/;"	f	class:DemuxServer
+onServerConnection	socks4a/balancer.cc	/^void onServerConnection(const TcpConnectionPtr& conn)$/;"	f
+onServerConnection	socks4a/socks4a.cc	/^void onServerConnection(const TcpConnectionPtr& conn)$/;"	f
+onServerConnection	socks4a/tcprelay.cc	/^void onServerConnection(const TcpConnectionPtr& conn)$/;"	f
+onServerMessage	multiplexer/demux.cc	/^  void onServerMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:DemuxServer
+onServerMessage	socks4a/balancer.cc	/^void onServerMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f
+onServerMessage	socks4a/socks4a.cc	/^void onServerMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f
+onServerMessage	socks4a/tcprelay.cc	/^void onServerMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f
+onSockCreate	cdns/Resolver.cc	/^void Resolver::onSockCreate(int sockfd, int type)$/;"	f	class:Resolver
+onSockStateChange	cdns/Resolver.cc	/^void Resolver::onSockStateChange(int sockfd, bool read, bool write)$/;"	f	class:Resolver
+onSocksConnection	multiplexer/demux.cc	/^  void onSocksConnection(int connId, const TcpConnectionPtr& conn)$/;"	f	class:DemuxServer
+onSocksMessage	multiplexer/demux.cc	/^  void onSocksMessage(int connId, const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:DemuxServer
+onStdin	fastcgi/fastcgi.cc	/^void FastCgiCodec::onStdin(const char* content, uint16_t length)$/;"	f	class:FastCgiCodec
+onStringMessage	asio/chat/client.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatClient	file:
+onStringMessage	asio/chat/loadtest.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatClient	file:
+onStringMessage	asio/chat/server.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	asio/chat/server_threaded.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	asio/chat/server_threaded_efficient.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	asio/chat/server_threaded_highperformance.cc	/^  void onStringMessage(const TcpConnectionPtr&,$/;"	f	class:ChatServer	file:
+onStringMessage	zeromq/local_lat.cc	/^void onStringMessage(LengthHeaderCodec* codec,$/;"	f
+onStringMessage	zeromq/remote_lat.cc	/^void onStringMessage(LengthHeaderCodec* codec,$/;"	f
+onTimer	cdns/Resolver.cc	/^void Resolver::onTimer()$/;"	f	class:Resolver
+onTimer	curl/Curl.cc	/^void Curl::onTimer()$/;"	f	class:Curl
+onTimer	idleconnection/echo.cc	/^void EchoServer::onTimer()  \/\/每秒的回调函数，模拟时间轮$/;"	f	class:EchoServer
+onTimer	idleconnection/sortedlist.cc	/^void EchoServer::onTimer()$/;"	f	class:EchoServer
+onUnknownMessage	protobuf/codec/client.cc	/^  void onUnknownMessage(const TcpConnectionPtr&,$/;"	f	class:QueryClient	file:
+onUnknownMessage	protobuf/codec/server.cc	/^  void onUnknownMessage(const TcpConnectionPtr& conn,$/;"	f	class:QueryServer	file:
+onUnknownMessageType	protobuf/codec/dispatcher_lite_test.cc	/^void onUnknownMessageType(const muduo::net::TcpConnectionPtr&,$/;"	f
+onUnknownMessageType	protobuf/codec/dispatcher_test.cc	/^void onUnknownMessageType(const muduo::net::TcpConnectionPtr&,$/;"	f
+onWrite	curl/Curl.cc	/^void Curl::onWrite(int fd)$/;"	f	class:Curl
+onWriteComplete	filetransfer/download2.cc	/^void onWriteComplete(const TcpConnectionPtr& conn)  \/\/写完成回调。读取并发送下次数据.如此往复直到文件内容全部发送完毕$/;"	f
+onWriteComplete	filetransfer/download3.cc	/^void onWriteComplete(const TcpConnectionPtr& conn)$/;"	f
+onWriteComplete	netty/discard/client.cc	/^  void onWriteComplete(const TcpConnectionPtr& conn)$/;"	f	class:DiscardClient	file:
+onWriteComplete	simple/chargen/chargen.cc	/^void ChargenServer::onWriteComplete(const TcpConnectionPtr& conn)$/;"	f	class:ChargenServer
+onWriteComplete	socks4a/tunnel.h	/^  void onWriteComplete(ServerClient which, const muduo::net::TcpConnectionPtr& conn)$/;"	f	class:Tunnel
+onWriteComplete	wordcount/hasher.cc	/^  void onWriteComplete()$/;"	f	class:SendThrottler	file:
+onWriteCompleteWeak	socks4a/tunnel.h	/^  static void onWriteCompleteWeak(const boost::weak_ptr<Tunnel>& wkTunnel,$/;"	f	class:Tunnel
+op_	memcached/client/bench.cc	/^  const Operation op_;$/;"	m	class:Client	file:
+operator ()	memcached/server/MemcacheServer.h	/^    bool operator()(const ConstItemPtr& x, const ConstItemPtr& y) const$/;"	f	struct:MemcacheServer::Equal
+operator ()	memcached/server/MemcacheServer.h	/^    size_t operator()(const ConstItemPtr& x) const$/;"	f	struct:MemcacheServer::Hash
+operator ()	memcached/server/Session.cc	/^bool Session::SpaceSeparator::operator()(InputIterator& next, InputIterator end, Token& tok)$/;"	f	class:Session::SpaceSeparator
+options_	memcached/server/MemcacheServer.h	/^  Options options_;$/;"	m	class:MemcacheServer
+origId	protobuf/rpcbalancer/balancer.cc	/^    uint64_t origId;$/;"	m	struct:BackendSession::Request	file:
+origId	protobuf/rpcbalancer/balancer_raw.cc	/^    uint64_t origId;$/;"	m	struct:BackendSession::Request	file:
+out_	curl/download.cc	/^  FilePtr out_;$/;"	m	class:Downloader	file:
+out_	curl/download.cc	/^  FilePtr out_;$/;"	m	class:Piece	file:
+output	ace/ttcp/ttcp.cc	/^  Buffer output;$/;"	m	struct:Context	file:
+output	memcached/server/Item.cc	/^void Item::output(Buffer* out, bool needCas) const$/;"	f	class:Item
+output	wordcount/gen.py	/^output = open('random_words', 'w')$/;"	v
+output	wordcount/receiver.cc	/^  void output()$/;"	f	class:WordCountReceiver	file:
+outputBuf_	memcached/server/Session.h	/^  muduo::net::Buffer outputBuf_;$/;"	m	class:Session
+outstandings_	protobuf/rpcbalancer/balancer.cc	/^  std::map<uint64_t, Request> outstandings_;$/;"	m	class:BackendSession	file:
+outstandings_	protobuf/rpcbalancer/balancer_raw.cc	/^  std::map<uint64_t, Request> outstandings_;$/;"	m	class:BackendSession	file:
+owner	cdns/Resolver.h	/^    Resolver* owner;$/;"	m	struct:cdns::Resolver::QueryData
+owner_	curl/Curl.h	/^  class Curl* owner_;$/;"	m	class:curl::Request	typeref:class:curl::Request::Curl
+owner_	memcached/server/Session.h	/^  MemcacheServer* owner_;$/;"	m	class:Session
+owner_	pingpong/client.cc	/^  Client* owner_;$/;"	m	class:Session	file:
+padding	fastcgi/fastcgi.cc	/^  uint8_t padding;$/;"	m	struct:FastCgiCodec::RecordHeader	file:
+paramsStream_	fastcgi/fastcgi.h	/^  muduo::net::Buffer paramsStream_;$/;"	m	class:FastCgiCodec
+params_	fastcgi/fastcgi.h	/^  ParamMap params_;$/;"	m	class:FastCgiCodec
+parse	procmon/procmon.cc	/^  void parse(const char* startAtState, int kbPerPage)$/;"	f	struct:StatData
+parse	protobuf/codec/codec.cc	/^MessagePtr ProtobufCodec::parse(const char* buf, int len, ErrorCode* error)$/;"	f	class:ProtobufCodec
+parse	protobuf/rpcbalancer/balancer_raw.cc	/^  bool parse(const string& tag)$/;"	f	struct:RawMessage
+parseAllParams	fastcgi/fastcgi.cc	/^bool FastCgiCodec::parseAllParams()$/;"	f	class:FastCgiCodec
+parseCommandLine	ace/ttcp/common.cc	/^bool parseCommandLine(int argc, char* argv[], Options* opt)$/;"	f
+parseCommandLine	memcached/server/server.cc	/^bool parseCommandLine(int argc, char* argv[], MemcacheServer::Options* options)$/;"	f
+parseMessage	hub/codec.cc	/^ParseResult pubsub::parseMessage(Buffer* buf,$/;"	f	class:pubsub
+parseRequest	fastcgi/fastcgi.cc	/^bool FastCgiCodec::parseRequest(Buffer* buf)$/;"	f	class:FastCgiCodec
+pending	multiplexer/demux.cc	/^  Buffer pending;$/;"	m	struct:Entry	file:
+pgrp	procmon/procmon.cc	/^  int pgrp;$/;"	m	struct:StatData	file:
+pid_	procmon/procmon.cc	/^  const pid_t pid_;$/;"	m	class:Procmon	file:
+pieces_	curl/download.cc	/^  boost::ptr_vector<Piece> pieces_;$/;"	m	class:Downloader	file:
+pipelines_	sudoku/pipeline.cc	/^  const int pipelines_;$/;"	m	class:SudokuClient	file:
+plotCpu	procmon/plot.cc	/^muduo::string Plot::plotCpu(const std::vector<double>& data)$/;"	f	class:Plot
+policy_	memcached/server/Session.h	/^  Item::UpdatePolicy policy_;$/;"	m	class:Session
+pool_	sudoku/stat.h	/^  const ThreadPool& pool_;  \/\/ only for ThreadPool::queueSize()$/;"	m	class:SudokuStat
+port	ace/ttcp/common.h	/^  uint16_t port;$/;"	m	struct:Options
+port	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final int port;$/;"	f	class:MockBackendServer	file:
+port	wordcount/slowsink.py	/^	port = int(sys.argv[3])$/;"	v
+port	wordcount/slowsink.py	/^port = 2007$/;"	v
+position	idleconnection/sortedlist.cc	/^    WeakConnectionList::iterator position;$/;"	m	struct:EchoServer::Node	file:
+ppid	procmon/procmon.cc	/^  int ppid;$/;"	m	struct:StatData	file:
+prevRunningHandles_	curl/Curl.h	/^  int prevRunningHandles_;$/;"	m	class:curl::Curl
+print	asio/tutorial/timer2/timer.cc	/^void print()$/;"	f
+print	asio/tutorial/timer3/timer.cc	/^void print(muduo::net::EventLoop* loop, int* count)$/;"	f
+print	asio/tutorial/timer4/timer.cc	/^  void print()$/;"	f	class:Printer
+print	protobuf/codec/codec_test.cc	/^void print(const Buffer& buf)$/;"	f
+print1	asio/tutorial/timer5/timer.cc	/^  void print1()$/;"	f	class:Printer
+print1	asio/tutorial/timer6/timer.cc	/^  void print1()$/;"	f	class:Printer
+print2	asio/tutorial/timer5/timer.cc	/^  void print2()$/;"	f	class:Printer
+print2	asio/tutorial/timer6/timer.cc	/^  void print2()$/;"	f	class:Printer
+printConnection	netty/echo/server2.cc	/^  void printConnection()$/;"	f	class:EchoServer	file:
+printStatistics	multiplexer/multiplexer.cc	/^  void printStatistics()$/;"	f	class:MultiplexServer	file:
+printThroughput	netty/discard/server.cc	/^  void printThroughput()$/;"	f	class:DiscardServer	file:
+printThroughput	netty/echo/server.cc	/^  void printThroughput()$/;"	f	class:EchoServer	file:
+printThroughput	netty/echo/server2.cc	/^  void printThroughput()$/;"	f	class:EchoServer	file:
+printThroughput	simple/chargen/chargen.cc	/^void ChargenServer::printThroughput()$/;"	f	class:ChargenServer
+priority	procmon/procmon.cc	/^  long priority;$/;"	m	struct:StatData	file:
+processExists	procmon/procmon.cc	/^bool processExists(pid_t pid)$/;"	f
+processFile	wordcount/hasher.cc	/^void WordCountSender::processFile(const char* filename)$/;"	f	class:WordCountSender
+processRequest	memcached/server/Session.cc	/^bool Session::processRequest(StringPiece request)$/;"	f	class:Session
+processRequest	sudoku/server_basic.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request)$/;"	f	class:SudokuServer	file:
+processRequest	sudoku/server_hybrid.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+processRequest	sudoku/server_multiloop.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request)$/;"	f	class:SudokuServer	file:
+processRequest	sudoku/server_prod.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+processRequest	sudoku/server_threadpool.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request)$/;"	f	class:SudokuServer	file:
+procname_	procmon/procmon.cc	/^  const string procname_;$/;"	m	class:Procmon	file:
+protocol_	memcached/server/Session.h	/^  Protocol protocol_;$/;"	m	class:Session
+publish	hub/hub.cc	/^  void publish(const string& content, Timestamp time)$/;"	f	class:pubsub::Topic
+publish	hub/pubsub.cc	/^bool PubSubClient::publish(const string& topic, const string& content)$/;"	f	class:PubSubClient
+pubsub	hub/codec.h	/^namespace pubsub$/;"	n
+pubsub	hub/hub.cc	/^namespace pubsub$/;"	n	file:
+pubsub	hub/pubsub.h	/^namespace pubsub$/;"	n
+put	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    public void put(Event e) {$/;"	m	class:EventQueue
+put_left	sudoku/sudoku.cc	/^    void put_left(Column* old, Column* nnew)$/;"	f	class:SudokuSolver	file:
+put_up	sudoku/sudoku.cc	/^    void put_up(Column* old, Node* nnew)$/;"	f	class:SudokuSolver	file:
+puzzle	sudoku/server_hybrid.cc	/^    string puzzle;$/;"	m	struct:SudokuServer::Request	file:
+puzzle	sudoku/server_prod.cc	/^    string puzzle;$/;"	m	struct:SudokuServer::Request	file:
+queue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    private BlockingDeque<Event> queue = new LinkedBlockingDeque<Event>();$/;"	f	class:EventQueue	file:
+queue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final EventQueue queue;$/;"	f	class:MockBackendServer	file:
+queue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final EventQueue queue;$/;"	f	class:MockClient	file:
+queue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private EventQueue queue;$/;"	f	class:MultiplexerTest	file:
+queue	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected EventQueue queue;$/;"	f	class:TestCase
+quit	cdns/dns.cc	/^void quit()$/;"	f
+quit	pingpong/client.cc	/^  void quit()$/;"	f	class:Client	file:
+ram_chart_	procmon/procmon.cc	/^  Plot ram_chart_;$/;"	m	class:Procmon	file:
+random	filetransfer/loadtest/Client.java	/^        Random random = new Random();$/;"	f	class:Client.PipelineFactory
+range_	curl/download.cc	/^  muduo::string range_;$/;"	m	class:Piece	file:
+ratioX_	procmon/plot.h	/^  const double ratioX_;$/;"	m	class:Plot
+read	memcached/server/Session.cc	/^  bool read(T* val)$/;"	f	struct:Session::Reader
+readCallback	pingpong/bench.cc	/^void readCallback(Timestamp, int fd, int idx)$/;"	f
+readFile	filetransfer/download.cc	/^string readFile(const char* filename)$/;"	f
+readInput	sudoku/batch.cc	/^InputPtr readInput(std::istream& in)$/;"	f
+readInput	sudoku/loadtest.cc	/^InputPtr readInput(std::istream& in)$/;"	f
+readInput	sudoku/pipeline.cc	/^InputPtr readInput(std::istream& in)$/;"	f
+readInt16	fastcgi/fastcgi.cc	/^uint16_t readInt16(const void* p)$/;"	f
+readLen	fastcgi/fastcgi.cc	/^uint32_t FastCgiCodec::readLen()$/;"	f	class:FastCgiCodec
+readLink	procmon/procmon.cc	/^  string readLink(const char* basename)$/;"	f	class:Procmon	file:
+readProcFile	procmon/procmon.cc	/^  string readProcFile(const char* basename)$/;"	f	class:Procmon	file:
+read_n	ace/ttcp/ttcp_blocking.cc	/^static int read_n(int sockfd, void* buf, int length)$/;"	f	file:
+receive	ace/ttcp/common.h	/^  bool transmit, receive, nodelay;$/;"	m	struct:Options
+receive	ace/ttcp/ttcp.cc	/^void receive(const Options& opt)$/;"	f
+receive	ace/ttcp/ttcp_blocking.cc	/^void receive(const Options& opt)$/;"	f
+receiveTime	asio/chat/loadtest.cc	/^  Timestamp receiveTime() const { return receiveTime_; }$/;"	f	class:ChatClient
+receiveTime	sudoku/server_hybrid.cc	/^    Timestamp receiveTime;$/;"	m	struct:SudokuServer::Request	file:
+receiveTime	sudoku/server_prod.cc	/^    Timestamp receiveTime;$/;"	m	struct:SudokuServer::Request	file:
+receiveTime_	asio/chat/loadtest.cc	/^  Timestamp receiveTime_;$/;"	m	class:ChatClient	file:
+receiveValue	memcached/server/Session.cc	/^void Session::receiveValue(muduo::net::Buffer* buf)$/;"	f	class:Session
+received	filetransfer/loadtest/Handler.java	/^    private int received = 0;$/;"	f	class:Handler	file:
+receivedBytes_	memcached/server/Item.h	/^  int            receivedBytes_;  \/\/ FIXME: remove this member$/;"	m	class:Item
+receivedMessages_	multiplexer/multiplexer.cc	/^  AtomicInt64 receivedMessages_;$/;"	m	class:MultiplexServer	file:
+receivedMessages_	netty/discard/server.cc	/^  AtomicInt64 receivedMessages_;$/;"	m	class:DiscardServer	file:
+receivedMessages_	netty/echo/server.cc	/^  AtomicInt64 receivedMessages_;$/;"	m	class:EchoServer	file:
+receivedMessages_	netty/echo/server2.cc	/^  AtomicInt32 receivedMessages_;$/;"	m	class:EchoServer	file:
+receiving	ace/ttcp/ttcp.cc	/^namespace receiving$/;"	n	file:
+reconnect	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        private void reconnect() {$/;"	m	class:MockClient.Handler	file:
+recordBadRequest	sudoku/stat.h	/^  void recordBadRequest()$/;"	f	class:SudokuStat
+recordDroppedRequest	sudoku/stat.h	/^  void recordDroppedRequest()$/;"	f	class:SudokuStat
+recordRequest	sudoku/stat.h	/^  void recordRequest()$/;"	f	class:SudokuStat
+recordResponse	sudoku/stat.h	/^  void recordResponse(Timestamp now, Timestamp receive, bool solved)$/;"	f	class:SudokuStat
+redirections	shorturl/shorturl.cc	/^std::map<string, string> redirections;$/;"	v
+redoCheckSum	protobuf/codec/codec_test.cc	/^void redoCheckSum(string& data, int len)$/;"	f
+registerMessageCallback	protobuf/codec/dispatcher.h	/^  void registerMessageCallback(const typename CallbackT<T>::ProtobufMessageTCallback& callback)$/;"	f	class:ProtobufDispatcher
+registerMessageCallback	protobuf/codec/dispatcher_lite.h	/^  void registerMessageCallback(const google::protobuf::Descriptor* desc,$/;"	f	class:ProtobufDispatcherLite
+rel_exptime	memcached/server/Item.h	/^  int rel_exptime() const$/;"	f	class:Item
+rel_exptime_	memcached/server/Item.h	/^  const int      rel_exptime_;$/;"	m	class:Item
+remoteAddress	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final InetSocketAddress remoteAddress;$/;"	f	class:MockClient	file:
+remove	hub/hub.cc	/^  void remove(const TcpConnectionPtr& conn)$/;"	f	class:pubsub::Topic
+removeChannel	curl/Curl.cc	/^void Request::removeChannel()$/;"	f	class:Request
+replied	protobuf/rpcbench/client.cc	/^  void replied(echo::EchoResponse* resp)$/;"	f	class:RpcClient	file:
+reply	memcached/server/Session.cc	/^void Session::reply(muduo::StringPiece msg)$/;"	f	class:Session
+report	sudoku/loadtest.cc	/^  void report(std::vector<int>* latency, int* infly)$/;"	f	class:SudokuClient
+report	sudoku/percentile.h	/^  const muduo::LogStream::Buffer& report() const$/;"	f	class:Percentile
+report	sudoku/pipeline.cc	/^  void report(std::vector<int>* latency, int* infly)$/;"	f	class:SudokuClient
+report	sudoku/pipeline.cc	/^void report(boost::ptr_vector<SudokuClient>* clients)$/;"	f
+report	sudoku/stat.h	/^  string report() const$/;"	f	class:SudokuStat
+req2_	curl/download.cc	/^  curl::RequestPtr req2_;$/;"	m	class:Downloader	file:
+req_	curl/download.cc	/^  curl::RequestPtr req_;$/;"	m	class:Downloader	file:
+req_	curl/download.cc	/^  curl::RequestPtr req_;$/;"	m	class:Piece	file:
+requestsProcessed_	memcached/server/Session.h	/^  size_t requestsProcessed_;$/;"	m	class:Session
+requests_	memcached/client/bench.cc	/^  const int requests_;$/;"	m	class:Client	file:
+requests_	sudoku/loadtest.cc	/^  Buffer requests_;$/;"	m	class:SudokuClient	file:
+requests_	sudoku/stat.h	/^  boost::circular_buffer<int64_t> requests_;$/;"	m	class:SudokuStat
+reset	memcached/server/Session.h	/^    void reset() {}$/;"	f	struct:Session::SpaceSeparator
+reset	sudoku/stat.h	/^  string reset()$/;"	f	class:SudokuStat
+resetKey	memcached/server/Item.cc	/^void Item::resetKey(StringPiece k)$/;"	f	class:Item
+resetRequest	memcached/server/Session.cc	/^void Session::resetRequest()$/;"	f	class:Session
+resolve	cdns/Resolver.cc	/^bool Resolver::resolve(StringArg hostname, const Callback& cb)$/;"	f	class:Resolver
+resolve	cdns/dns.cc	/^void resolve(Resolver* res, const string& host)$/;"	f
+resolve	protobuf/resolver/client.cc	/^  void resolve(const std::string& host)$/;"	f	class:RpcClient	file:
+resolveCallback	cdns/dns.cc	/^void resolveCallback(const string& host, const InetAddress& addr)$/;"	f
+resolveOrDie	ace/ttcp/common.cc	/^struct sockaddr_in resolveOrDie(const char* host, uint16_t port)$/;"	f
+resolved	protobuf/resolver/client.cc	/^  void resolved(resolver::ResolveResponse* resp, std::string host)$/;"	f	class:RpcClient	file:
+resolver	protobuf/resolver/server.cc	/^namespace resolver$/;"	n	file:
+resolver_	protobuf/resolver/server.cc	/^  cdns::Resolver resolver_;$/;"	m	class:resolver::ResolverServiceImpl	file:
+respond	fastcgi/fastcgi.cc	/^void FastCgiCodec::respond(Buffer* response)$/;"	f	class:FastCgiCodec
+response_	procmon/procmon.cc	/^  Buffer response_;$/;"	m	class:Procmon	file:
+right	sudoku/sudoku.cc	/^    Node* right;$/;"	m	struct:Node	file:
+root_	sudoku/sudoku.cc	/^    Column* root_;$/;"	m	class:SudokuSolver	file:
+rssKb	procmon/procmon.cc	/^  long rssKb;$/;"	m	struct:StatData	file:
+rsslim	procmon/procmon.cc	/^  long rsslim;$/;"	m	struct:StatData	file:
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private void run() {$/;"	m	class:MultiplexerTest	file:
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    public abstract void run();$/;"	m	class:TestCase
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBackendSend.java	/^    public void run() {$/;"	m	class:TestOneClientBackendSend
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBothSend.java	/^    public void run() {$/;"	m	class:TestOneClientBothSend
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientNoData.java	/^    public void run() {$/;"	m	class:TestOneClientNoData
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientSend.java	/^    public void run() {$/;"	m	class:TestOneClientSend
+run	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestTwoClients.java	/^    public void run() {$/;"	m	class:TestTwoClients
+runClient	roundtrip/roundtrip.cc	/^void runClient(const char* ip, uint16_t port)$/;"	f
+runClient	roundtrip/roundtrip_udp.cc	/^void runClient(const char* ip, uint16_t port)$/;"	f
+runClient	sudoku/batch.cc	/^void runClient(std::istream& in, const InetAddress& serverAddr, int conn)$/;"	f
+runClient	sudoku/loadtest.cc	/^  void runClient(const InputPtr& input, const InetAddress& serverAddr, int rps, int conn, bool nodelay)$/;"	f	class:SudokuLoadtest
+runClient	sudoku/pipeline.cc	/^void runClient(const InputPtr& input,$/;"	f
+runLocal	sudoku/batch.cc	/^void runLocal(std::istream& in)$/;"	f
+runOnce	pingpong/bench.cc	/^std::pair<int, int> runOnce()$/;"	f
+runServer	roundtrip/roundtrip.cc	/^void runServer(uint16_t port)$/;"	f
+runServer	roundtrip/roundtrip_udp.cc	/^void runServer(uint16_t port)$/;"	f
+runningHandles_	curl/Curl.h	/^  int runningHandles_;$/;"	m	class:curl::Curl
+samplingPeriod_	procmon/plot.h	/^  const int samplingPeriod_;$/;"	m	class:Plot
+save	sudoku/percentile.h	/^  void save(const std::vector<int>& latencies, muduo::StringArg name) const$/;"	f	class:Percentile
+sawtooth	procmon/dummyload.cc	/^void sawtooth()$/;"	f
+send	asio/chat/codec.h	/^  void send(muduo::net::TcpConnection* conn,      \/\/打包把muduo::string转换成muduo::Buffer的发送函数$/;"	f	class:LengthHeaderCodec
+send	asio/chat/loadtest.cc	/^  void send()$/;"	f	class:ChatClient	file:
+send	hub/pubsub.cc	/^bool PubSubClient::send(const string& message)$/;"	f	class:PubSubClient
+send	memcached/client/bench.cc	/^  void send()$/;"	f	class:Client
+send	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public ChannelBuffer send(String str) {$/;"	m	class:MockClient
+send	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void send(ChannelBuffer buf) {$/;"	m	class:MockClient
+send	protobuf/codec/codec.h	/^  void send(const muduo::net::TcpConnectionPtr& conn,$/;"	f	class:ProtobufCodec
+send	protobuf/rpcbalancer/balancer.cc	/^  bool send(RpcMessage& msg, const TcpConnectionPtr& clientConn)$/;"	f	class:BackendSession
+send	protobuf/rpcbalancer/balancer_raw.cc	/^  bool send(MSG& msg, const TcpConnectionPtr& clientConn)$/;"	f	class:BackendSession
+send	sudoku/loadtest.cc	/^  void send(int n)$/;"	f	class:SudokuClient
+send	sudoku/pipeline.cc	/^  void send(int n)$/;"	f	class:SudokuClient	file:
+send	wordcount/hasher.cc	/^  void send(const string& word, int64_t count)$/;"	f	class:SendThrottler
+sendBackendBuffer	multiplexer/multiplexer.cc	/^  void sendBackendBuffer(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendBuffer	multiplexer/multiplexer_simple.cc	/^  void sendBackendBuffer(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendPacket	multiplexer/multiplexer.cc	/^  void sendBackendPacket(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendPacket	multiplexer/multiplexer_simple.cc	/^  void sendBackendPacket(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendString	multiplexer/multiplexer.cc	/^  void sendBackendString(int id, const string& msg)$/;"	f	class:MultiplexServer	file:
+sendBackendString	multiplexer/multiplexer_simple.cc	/^  void sendBackendString(int id, const string& msg)$/;"	f	class:MultiplexServer	file:
+sendMyTime	roundtrip/roundtrip.cc	/^void sendMyTime()$/;"	f
+sendMyTime	roundtrip/roundtrip_udp.cc	/^void sendMyTime(int sockfd)$/;"	f
+sendRequest	protobuf/rpcbench/client.cc	/^  void sendRequest()$/;"	f	class:RpcClient
+sendServerPacket	multiplexer/demux.cc	/^  void sendServerPacket(int connId, Buffer* buf)$/;"	f	class:DemuxServer
+sendTime_	sudoku/loadtest.cc	/^  boost::unordered_map<int, Timestamp> sendTime_;$/;"	m	class:SudokuClient	file:
+sendTime_	sudoku/pipeline.cc	/^  boost::unordered_map<int, Timestamp> sendTime_;$/;"	m	class:SudokuClient	file:
+sendTo	protobuf/rpcbalancer/balancer_raw.cc	/^  void sendTo(const TcpConnectionPtr& conn, RawMessage& msg)$/;"	f	class:BackendSession	file:
+sendTo	protobuf/rpcbalancer/balancer_raw.cc	/^  void sendTo(const TcpConnectionPtr& conn, const RpcMessage& msg)$/;"	f	class:BackendSession	file:
+sendToClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public ChannelBuffer sendToClient(int whichClient, String str) {$/;"	m	class:MockBackendServer
+sendToClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public void sendToClient(int whichClient, ChannelBuffer data) {$/;"	m	class:MockBackendServer
+sendToClient	multiplexer/multiplexer.cc	/^  void sendToClient(Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendToClient	multiplexer/multiplexer_simple.cc	/^  void sendToClient(Buffer* buf)$/;"	f	class:MultiplexServer	file:
+senders_	wordcount/receiver.cc	/^  int senders_;$/;"	m	class:WordCountReceiver	file:
+sent_	memcached/client/bench.cc	/^  int sent_;$/;"	m	class:Client	file:
+serialVersionUID	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^    private static final long serialVersionUID = 1982L;$/;"	f	class:TestFailedException	file:
+serverConn_	multiplexer/demux.cc	/^  TcpConnectionPtr serverConn_;$/;"	m	class:DemuxServer	file:
+serverConn_	socks4a/tunnel.h	/^  muduo::net::TcpConnectionPtr serverConn_;$/;"	m	class:Tunnel
+serverConnectionCallback	roundtrip/roundtrip.cc	/^void serverConnectionCallback(const TcpConnectionPtr& conn)$/;"	f
+serverMessageCallback	roundtrip/roundtrip.cc	/^void serverMessageCallback(const TcpConnectionPtr& conn,$/;"	f
+serverReadCallback	roundtrip/roundtrip_udp.cc	/^void serverReadCallback(int sockfd, muduo::Timestamp receiveTime)$/;"	f
+server_	ace/logging/server.cc	/^  TcpServer server_;$/;"	m	class:logging::LogServer	file:
+server_	asio/chat/server.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	asio/chat/server_threaded.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	asio/chat/server_threaded_efficient.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	asio/chat/server_threaded_highperformance.cc	/^  TcpServer server_;$/;"	m	class:ChatServer	file:
+server_	hub/hub.cc	/^  TcpServer server_;$/;"	m	class:pubsub::PubSubServer	file:
+server_	idleconnection/echo.h	/^  muduo::net::TcpServer server_;$/;"	m	class:EchoServer
+server_	idleconnection/sortedlist.cc	/^  TcpServer server_;$/;"	m	class:EchoServer	file:
+server_	maxconnection/echo.h	/^  muduo::net::TcpServer server_;$/;"	m	class:EchoServer
+server_	memcached/server/MemcacheServer.h	/^  muduo::net::TcpServer server_;$/;"	m	class:MemcacheServer
+server_	multiplexer/demux.cc	/^  TcpServer server_;$/;"	m	class:DemuxServer	file:
+server_	multiplexer/multiplexer.cc	/^  TcpServer server_;$/;"	m	class:MultiplexServer	file:
+server_	multiplexer/multiplexer_simple.cc	/^  TcpServer server_;$/;"	m	class:MultiplexServer	file:
+server_	netty/discard/server.cc	/^  TcpServer server_;$/;"	m	class:DiscardServer	file:
+server_	netty/echo/server.cc	/^  TcpServer server_;$/;"	m	class:EchoServer	file:
+server_	netty/echo/server2.cc	/^  TcpServer server_;$/;"	m	class:EchoServer	file:
+server_	procmon/procmon.cc	/^  HttpServer server_;$/;"	m	class:Procmon	file:
+server_	protobuf/codec/server.cc	/^  TcpServer server_;$/;"	m	class:QueryServer	file:
+server_	protobuf/rpcbalancer/balancer.cc	/^  TcpServer server_;$/;"	m	class:Balancer	file:
+server_	protobuf/rpcbalancer/balancer_raw.cc	/^  TcpServer server_;$/;"	m	class:Balancer	file:
+server_	simple/chargen/chargen.h	/^  muduo::net::TcpServer server_;$/;"	m	class:ChargenServer
+server_	simple/daytime/daytime.h	/^  muduo::net::TcpServer server_;$/;"	m	class:DaytimeServer
+server_	simple/discard/discard.h	/^  muduo::net::TcpServer server_;$/;"	m	class:DiscardServer
+server_	simple/echo/echo.h	/^  muduo::net::TcpServer server_;$/;"	m	class:EchoServer
+server_	simple/time/time.h	/^  muduo::net::TcpServer server_;$/;"	m	class:TimeServer
+server_	sudoku/server_basic.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+server_	sudoku/server_hybrid.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+server_	sudoku/server_multiloop.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+server_	sudoku/server_prod.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+server_	sudoku/server_threadpool.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+server_	wordcount/receiver.cc	/^  TcpServer server_;$/;"	m	class:WordCountReceiver	file:
+server_socket	wordcount/slowsink.py	/^	server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)$/;"	v
+session	ace/ttcp/ttcp.cc	/^  SessionMessage session;$/;"	m	struct:Context	file:
+session	procmon/procmon.cc	/^  int session;$/;"	m	struct:StatData	file:
+sessionCount_	pingpong/client.cc	/^  int sessionCount_;$/;"	m	class:Client	file:
+sessions_	memcached/server/MemcacheServer.h	/^  boost::unordered_map<string, SessionPtr> sessions_;$/;"	m	class:MemcacheServer
+sessions_	pingpong/client.cc	/^  boost::ptr_vector<Session> sessions_;$/;"	m	class:Client	file:
+setCas	memcached/server/Item.h	/^  void setCas(uint64_t casArg)$/;"	f	class:Item
+setChannel	curl/Curl.cc	/^Channel* Request::setChannel(int fd)$/;"	f	class:Request
+setConnectionCallback	hub/pubsub.h	/^  void setConnectionCallback(const ConnectionCallback& cb)$/;"	f	class:pubsub::PubSubClient
+setDataCallback	curl/Curl.h	/^  void setDataCallback(const DataCallback& cb)$/;"	f	class:curl::Request
+setDoneCallback	curl/Curl.h	/^  void setDoneCallback(const DoneCallback& cb)$/;"	f	class:curl::Request
+setHeaderCallback	curl/Curl.h	/^  void setHeaderCallback(const DataCallback& cb)$/;"	f	class:curl::Request
+setId	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void setId(int connId) {$/;"	m	class:MockClient
+setOwner	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    public void setOwner(MultiplexerTest god) {$/;"	m	class:TestCase
+setRange	curl/Curl.cc	/^void Request::setRange(const StringArg range)$/;"	f	class:Request
+setThreadNum	asio/chat/server_threaded.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	asio/chat/server_threaded_efficient.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	asio/chat/server_threaded_highperformance.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:ChatServer
+setThreadNum	memcached/server/MemcacheServer.h	/^  void setThreadNum(int threads) { server_.setThreadNum(threads); }$/;"	f	class:MemcacheServer
+setThreadNum	protobuf/rpcbalancer/balancer.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:Balancer
+setThreadNum	protobuf/rpcbalancer/balancer_raw.cc	/^  void setThreadNum(int numThreads)$/;"	f	class:Balancer
+set_id	protobuf/rpcbalancer/balancer_raw.cc	/^  void set_id(uint64_t x) { id_ = x; }$/;"	f	struct:RawMessage
+setopt	curl/Curl.h	/^  int setopt(OPT opt, const char* p)$/;"	f	class:curl::Request
+setopt	curl/Curl.h	/^  int setopt(OPT opt, long p)$/;"	f	class:curl::Request
+setopt	curl/Curl.h	/^  int setopt(OPT opt, size_t (*p)(char *, size_t , size_t , void *))$/;"	f	class:curl::Request
+setopt	curl/Curl.h	/^  int setopt(OPT opt, void* p)$/;"	f	class:curl::Request
+setup	socks4a/tunnel.h	/^  void setup()$/;"	f	class:Tunnel
+shards_	memcached/server/MemcacheServer.h	/^  boost::array<MapWithLock, kShards> shards_;$/;"	m	class:MemcacheServer
+size	sudoku/sudoku.cc	/^    int size;$/;"	m	struct:Node	file:
+size	wordcount/slowsink.py	/^		size = len(data)$/;"	v
+sleep	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public void sleep(int millis) {$/;"	m	class:MultiplexerTest
+socketCallback	curl/Curl.cc	/^int Curl::socketCallback(CURL* c, int fd, int what, void* userp, void* socketp)$/;"	f	class:Curl
+socksAddr_	multiplexer/demux.cc	/^  const InetAddress socksAddr_;$/;"	m	class:DemuxServer	file:
+socksConns_	multiplexer/demux.cc	/^  std::map<int, Entry> socksConns_;$/;"	m	class:DemuxServer	file:
+socksIp	multiplexer/demux.cc	/^const char* socksIp = "127.0.0.1";$/;"	v
+sofar_	sudoku/loadtest.cc	/^  int64_t sofar_;$/;"	m	class:SudokuLoadtest	file:
+solve	sudoku/server_hybrid.cc	/^  void solve(const TcpConnectionPtr& conn, const Request& req)$/;"	f	class:SudokuServer	file:
+solve	sudoku/server_prod.cc	/^  void solve(const TcpConnectionPtr& conn, const Request& req)$/;"	f	class:SudokuServer	file:
+solve	sudoku/server_threadpool.cc	/^  static void solve(const TcpConnectionPtr& conn,$/;"	f	class:SudokuServer	file:
+solve	sudoku/sudoku.cc	/^    bool solve()$/;"	f	class:SudokuSolver
+solveSudoku	sudoku/sudoku.cc	/^string solveSudoku(const StringPiece& puzzle)$/;"	f
+solved	protobuf/rpc/client.cc	/^  void solved(sudoku::SudokuResponse* resp)$/;"	f	class:RpcClient	file:
+source	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public final EventSource source;$/;"	f	class:DataEvent
+stack_	sudoku/sudoku.cc	/^    std::vector<Node*> stack_;$/;"	m	class:SudokuSolver	file:
+start	ace/logging/server.cc	/^  void start()$/;"	f	class:logging::LogServer
+start	asio/chat/server.cc	/^  void start()$/;"	f	class:ChatServer
+start	asio/chat/server_threaded.cc	/^  void start()$/;"	f	class:ChatServer
+start	asio/chat/server_threaded_efficient.cc	/^  void start()$/;"	f	class:ChatServer
+start	asio/chat/server_threaded_highperformance.cc	/^  void start()$/;"	f	class:ChatServer
+start	hub/hub.cc	/^  void start()$/;"	f	class:pubsub::PubSubServer
+start	hub/pubsub.cc	/^void PubSubClient::start()$/;"	f	class:PubSubClient
+start	idleconnection/echo.cc	/^void EchoServer::start()$/;"	f	class:EchoServer
+start	idleconnection/sortedlist.cc	/^  void start()$/;"	f	class:EchoServer
+start	maxconnection/echo.cc	/^void EchoServer::start()$/;"	f	class:EchoServer
+start	memcached/server/MemcacheServer.cc	/^void MemcacheServer::start()$/;"	f	class:MemcacheServer
+start	multiplexer/demux.cc	/^  void start()$/;"	f	class:DemuxServer
+start	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public void start() {$/;"	m	class:MockBackendServer
+start	multiplexer/multiplexer.cc	/^  void start()$/;"	f	class:MultiplexServer
+start	multiplexer/multiplexer_simple.cc	/^  void start()$/;"	f	class:MultiplexServer
+start	netty/discard/server.cc	/^  void start()$/;"	f	class:DiscardServer
+start	netty/echo/server.cc	/^  void start()$/;"	f	class:EchoServer
+start	netty/echo/server2.cc	/^  void start()$/;"	f	class:EchoServer
+start	pingpong/client.cc	/^  void start()$/;"	f	class:Session
+start	procmon/procmon.cc	/^  void start()$/;"	f	class:Procmon
+start	protobuf/codec/server.cc	/^  void start()$/;"	f	class:QueryServer
+start	protobuf/rpcbalancer/balancer.cc	/^  void start()$/;"	f	class:Balancer
+start	protobuf/rpcbalancer/balancer_raw.cc	/^  void start()$/;"	f	class:Balancer
+start	simple/chargen/chargen.cc	/^void ChargenServer::start()$/;"	f	class:ChargenServer
+start	simple/daytime/daytime.cc	/^void DaytimeServer::start()$/;"	f	class:DaytimeServer
+start	simple/discard/discard.cc	/^void DiscardServer::start()$/;"	f	class:DiscardServer
+start	simple/echo/echo.cc	/^void EchoServer::start()$/;"	f	class:EchoServer
+start	simple/time/time.cc	/^void TimeServer::start()$/;"	f	class:TimeServer
+start	sudoku/server_basic.cc	/^  void start()$/;"	f	class:SudokuServer
+start	sudoku/server_hybrid.cc	/^  void start()$/;"	f	class:SudokuServer
+start	sudoku/server_multiloop.cc	/^  void start()$/;"	f	class:SudokuServer
+start	sudoku/server_prod.cc	/^  void start()$/;"	f	class:SudokuServer
+start	sudoku/server_threadpool.cc	/^  void start()$/;"	f	class:SudokuServer
+start	wordcount/receiver.cc	/^  void start(int senders)$/;"	f	class:WordCountReceiver
+start	wordcount/slowsink.py	/^start = time.time()$/;"	v
+startTime	memcached/server/MemcacheServer.h	/^  time_t startTime() const { return startTime_; }$/;"	f	class:MemcacheServer
+startTime_	memcached/server/MemcacheServer.h	/^  const time_t startTime_;$/;"	m	class:MemcacheServer
+startTime_	multiplexer/multiplexer.cc	/^  Timestamp startTime_;$/;"	m	class:MultiplexServer	file:
+startTime_	netty/discard/server.cc	/^  Timestamp startTime_;$/;"	m	class:DiscardServer	file:
+startTime_	netty/echo/server.cc	/^  Timestamp startTime_;$/;"	m	class:EchoServer	file:
+startTime_	netty/echo/server2.cc	/^  Timestamp startTime_;$/;"	m	class:EchoServer	file:
+startTime_	simple/chargen/chargen.h	/^  muduo::Timestamp startTime_;$/;"	m	class:ChargenServer
+startTime_	sudoku/server_basic.cc	/^  Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+startTime_	sudoku/server_hybrid.cc	/^  const Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+startTime_	sudoku/server_multiloop.cc	/^  Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+startTime_	sudoku/server_prod.cc	/^  const Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+startTime_	sudoku/server_threadpool.cc	/^  Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+startWith	curl/download.cc	/^bool startWith(const string& str, const char (&prefix)[N])$/;"	f
+start_	sudoku/batch.cc	/^  Timestamp start_;$/;"	m	class:SudokuClient	file:
+starttime	procmon/procmon.cc	/^  long starttime;$/;"	m	struct:StatData	file:
+stat	sudoku/percentile.h	/^  muduo::LogStream stat;$/;"	m	class:Percentile
+stat_	sudoku/server_hybrid.cc	/^  SudokuStat stat_;$/;"	m	class:SudokuServer	file:
+stat_	sudoku/server_prod.cc	/^  SudokuStat stat_;$/;"	m	class:SudokuServer	file:
+state	procmon/procmon.cc	/^  char state;$/;"	m	struct:StatData	file:
+state_	memcached/server/Session.h	/^  State state_;$/;"	m	class:Session
+statistic	asio/chat/loadtest.cc	/^void statistic(const boost::ptr_vector<ChatClient>& clients)$/;"	f
+stats_	memcached/server/MemcacheServer.h	/^  boost::scoped_ptr<Stats> stats_;$/;"	m	class:MemcacheServer
+stdin_	fastcgi/fastcgi.h	/^  muduo::net::Buffer stdin_;$/;"	m	class:FastCgiCodec
+stime	procmon/procmon.cc	/^  long stime;$/;"	m	struct:StatData	file:
+stop	hub/pubsub.cc	/^void PubSubClient::stop()$/;"	f	class:PubSubClient
+stop	memcached/server/MemcacheServer.cc	/^void MemcacheServer::stop()$/;"	f	class:MemcacheServer
+stop	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public void stop() {$/;"	m	class:MockBackendServer
+stop	pingpong/client.cc	/^  void stop()$/;"	f	class:Session
+storeItem	memcached/server/MemcacheServer.cc	/^bool MemcacheServer::storeItem(const ItemPtr& item, const Item::UpdatePolicy policy, bool* exists)$/;"	f	class:MemcacheServer
+stub_	protobuf/resolver/client.cc	/^  resolver::ResolverService::Stub stub_;$/;"	m	class:RpcClient	file:
+stub_	protobuf/rpc/client.cc	/^  sudoku::SudokuService::Stub stub_;$/;"	m	class:RpcClient	file:
+stub_	protobuf/rpcbench/client.cc	/^  echo::EchoService::Stub stub_;$/;"	m	class:RpcClient	file:
+subscribe	hub/pubsub.cc	/^bool PubSubClient::subscribe(const string& topic, const SubscribeCallback& cb)$/;"	f	class:PubSubClient
+subscribeCallback_	hub/pubsub.h	/^  SubscribeCallback subscribeCallback_;$/;"	m	class:pubsub::PubSubClient
+subscription	hub/sub.cc	/^void subscription(const string& topic, const string& content, Timestamp)$/;"	f
+sudoku	protobuf/rpc/server.cc	/^namespace sudoku$/;"	n	file:
+sysTime_	procmon/procmon.cc	/^    int sysTime_;$/;"	m	struct:Procmon::CpuTime	file:
+t_backends_	protobuf/rpcbalancer/balancer.cc	/^  ThreadLocal<PerThread> t_backends_;$/;"	m	class:Balancer	file:
+t_backends_	protobuf/rpcbalancer/balancer_raw.cc	/^  ThreadLocal<PerThread> t_backends_;$/;"	m	class:Balancer	file:
+t_tunnels	socks4a/balancer.cc	/^ThreadLocal<std::map<string, TunnelPtr> > t_tunnels;$/;"	v
+take	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    public Event take() {$/;"	m	class:EventQueue
+tcpNoDelay_	sudoku/loadtest.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuClient	file:
+tcpNoDelay_	sudoku/pipeline.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuClient	file:
+tcpNoDelay_	sudoku/server_hybrid.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuServer	file:
+tcpNoDelay_	sudoku/server_prod.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuServer	file:
+tcpport	memcached/server/MemcacheServer.h	/^    uint16_t tcpport;$/;"	m	struct:MemcacheServer::Options
+teardown	socks4a/tunnel.h	/^  void teardown()$/;"	f	class:Tunnel
+test	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    public void test() {$/;"	m	class:TestCase
+testAnswer	protobuf/codec/codec_test.cc	/^void testAnswer()$/;"	f
+testBadBuffer	protobuf/codec/codec_test.cc	/^void testBadBuffer()$/;"	f
+testCases	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private ArrayList<TestCase> testCases;$/;"	f	class:MultiplexerTest	file:
+testEmpty	protobuf/codec/codec_test.cc	/^void testEmpty()$/;"	f
+testHash	idleconnection/main.cc	/^void testHash()$/;"	f
+testOnMessage	protobuf/codec/codec_test.cc	/^void testOnMessage()$/;"	f
+testQuery	protobuf/codec/codec_test.cc	/^void testQuery()$/;"	f
+test_down_pointer_cast	protobuf/codec/dispatcher_test.cc	/^void test_down_pointer_cast()$/;"	f
+threadCount_	protobuf/rpcbalancer/balancer.cc	/^  AtomicInt32 threadCount_;$/;"	m	class:Balancer	file:
+threadCount_	protobuf/rpcbalancer/balancer_raw.cc	/^  AtomicInt32 threadCount_;$/;"	m	class:Balancer	file:
+threadFunc	procmon/dummyload.cc	/^void threadFunc()$/;"	f
+threadInit	asio/chat/server_threaded_highperformance.cc	/^  void threadInit(EventLoop* loop)$/;"	f	class:ChatServer	file:
+threadPool_	pingpong/client.cc	/^  EventLoopThreadPool threadPool_;$/;"	m	class:Client	file:
+threadPool_	sudoku/server_hybrid.cc	/^  ThreadPool threadPool_;$/;"	m	class:SudokuServer	file:
+threadPool_	sudoku/server_prod.cc	/^  ThreadPool threadPool_;$/;"	m	class:SudokuServer	file:
+threadPool_	sudoku/server_threadpool.cc	/^  ThreadPool threadPool_;$/;"	m	class:SudokuServer	file:
+threads	memcached/server/MemcacheServer.h	/^    int threads;$/;"	m	struct:MemcacheServer::Options
+throttle	wordcount/hasher.cc	/^  void throttle()$/;"	f	class:SendThrottler	file:
+tick	procmon/procmon.cc	/^  void tick()$/;"	f	class:Procmon	file:
+tick	sudoku/loadtest.cc	/^  void tick(int rps)$/;"	f	class:SudokuLoadtest	file:
+ticks_	procmon/procmon.cc	/^  int ticks_;$/;"	m	class:Procmon	file:
+ticks_	sudoku/loadtest.cc	/^  int64_t ticks_;$/;"	m	class:SudokuLoadtest	file:
+timePublish	hub/hub.cc	/^  void timePublish()$/;"	f	class:pubsub::PubSubServer	file:
+timeout_	pingpong/client.cc	/^  int timeout_;$/;"	m	class:Client	file:
+timer	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final Timer timer;$/;"	f	class:MockClient	file:
+timerActive_	cdns/Resolver.h	/^  bool timerActive_;$/;"	m	class:cdns::Resolver
+timerCallback	curl/Curl.cc	/^int Curl::timerCallback(CURLM* curlm, long ms, void* userp)$/;"	f	class:Curl
+toPng	procmon/plot.cc	/^muduo::string Plot::toPng()$/;"	f	class:Plot
+tock	sudoku/loadtest.cc	/^  void tock()$/;"	f	class:SudokuLoadtest	file:
+topic_	hub/hub.cc	/^  string topic_;$/;"	m	class:pubsub::Topic	file:
+topics_	hub/hub.cc	/^  std::map<string, Topic> topics_;$/;"	m	class:pubsub::PubSubServer	file:
+total	cdns/dns.cc	/^int total = 0;$/;"	v
+totalLatency_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+totalLen	memcached/server/Item.h	/^  int totalLen() const { return keylen_ + valuelen_; }$/;"	f	class:Item
+totalRequests_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+totalResponses_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+totalSeconds_	procmon/plot.h	/^  const int totalSeconds_;$/;"	m	class:Plot
+totalSolved_	sudoku/stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+total_	protobuf/resolver/client.cc	/^  int total_;$/;"	m	class:RpcClient	file:
+total_size	wordcount/slowsink.py	/^total_size = 0$/;"	v
+tpgid	procmon/procmon.cc	/^  int tpgid;$/;"	m	struct:StatData	file:
+trans	ace/ttcp/ttcp.cc	/^namespace trans$/;"	n	file:
+transferredBytes_	netty/echo/server2.cc	/^  AtomicInt64 transferredBytes_;$/;"	m	class:EchoServer	file:
+transferred_	multiplexer/multiplexer.cc	/^  AtomicInt64 transferred_;$/;"	m	class:MultiplexServer	file:
+transferred_	netty/discard/server.cc	/^  AtomicInt64 transferred_;$/;"	m	class:DiscardServer	file:
+transferred_	netty/echo/server.cc	/^  AtomicInt64 transferred_;$/;"	m	class:EchoServer	file:
+transferred_	simple/chargen/chargen.h	/^  int64_t transferred_;$/;"	m	class:ChargenServer
+transmit	ace/ttcp/common.h	/^  bool transmit, receive, nodelay;$/;"	m	struct:Options
+transmit	ace/ttcp/ttcp.cc	/^void transmit(const Options& opt)$/;"	f
+transmit	ace/ttcp/ttcp_blocking.cc	/^void transmit(const Options& opt)$/;"	f
+tty_nr	procmon/procmon.cc	/^  int tty_nr;$/;"	m	struct:StatData	file:
+type	fastcgi/fastcgi.cc	/^  uint8_t type;$/;"	m	struct:FastCgiCodec::RecordHeader	file:
+udpport	memcached/server/MemcacheServer.h	/^    uint16_t udpport;$/;"	m	struct:MemcacheServer::Options
+uncover	sudoku/sudoku.cc	/^    void uncover(Column* c)$/;"	f	class:SudokuSolver	file:
+unsubscribe	hub/pubsub.cc	/^void PubSubClient::unsubscribe(const string& topic)$/;"	f	class:PubSubClient
+unused	fastcgi/fastcgi.cc	/^  uint8_t unused;$/;"	m	struct:FastCgiCodec::RecordHeader	file:
+up	sudoku/sudoku.cc	/^    Node* up;$/;"	m	struct:Node	file:
+updateId	protobuf/rpcbalancer/balancer_raw.cc	/^  void updateId()$/;"	f	struct:RawMessage
+updateLogRecord	ace/logging/client.cc	/^  void updateLogRecord(const StringPiece& message)$/;"	f	class:logging::LogClient	file:
+url_	curl/download.cc	/^  string url_;$/;"	m	class:Downloader	file:
+userTime_	procmon/procmon.cc	/^    int userTime_;$/;"	m	struct:Procmon::CpuTime	file:
+users	twisted/finger/finger06.cc	/^UserMap users;$/;"	v
+users	twisted/finger/finger07.cc	/^UserMap users;$/;"	v
+utime	procmon/procmon.cc	/^  long utime;$/;"	m	struct:StatData	file:
+value	memcached/server/Item.h	/^  const char* value() const$/;"	f	class:Item
+value	procmon/procmon.cc	/^BOOST_STATIC_ASSERT(boost::is_pod<StatData>::value);$/;"	v
+valueLength	memcached/server/Item.h	/^  size_t valueLength() const$/;"	f	class:Item
+value_	memcached/client/bench.cc	/^  string value_;$/;"	m	class:Client	file:
+valuelen_	memcached/client/bench.cc	/^  const int valuelen_;$/;"	m	class:Client	file:
+valuelen_	memcached/server/Item.h	/^  const int      valuelen_;$/;"	m	class:Item
+verify	sudoku/batch.cc	/^bool verify(const string& result)$/;"	f
+verify	sudoku/loadtest.cc	/^  bool verify(const string& response, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+verify	sudoku/pipeline.cc	/^  bool verify(const string& response, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+version	fastcgi/fastcgi.cc	/^  uint8_t version;$/;"	m	struct:FastCgiCodec::RecordHeader	file:
+vsizeKb	procmon/procmon.cc	/^  long vsizeKb;$/;"	m	struct:StatData	file:
+weakConn_	idleconnection/echo.h	/^    WeakTcpConnectionPtr weakConn_; $/;"	m	struct:EchoServer::Entry
+whichClient	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public final int whichClient;$/;"	f	class:DataEvent
+width_	procmon/plot.h	/^  const int width_;$/;"	m	class:Plot
+word	wordcount/gen.py	/^	word = ''.join(arr)$/;"	v
+word_len	wordcount/gen.py	/^word_len = 5$/;"	v
+wordcounts_	wordcount/receiver.cc	/^  WordCountMap wordcounts_;$/;"	m	class:WordCountReceiver	file:
+words	wordcount/gen.py	/^words = 1000000$/;"	v
+worker	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final Executor worker;$/;"	f	class:MockBackendServer	file:
+worker	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final Executor worker;$/;"	f	class:MockClient	file:
+worker	multiplexer/harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private final ExecutorService worker;$/;"	f	class:MultiplexerTest	file:
+write	ace/logging/client.cc	/^  void write(const StringPiece& message)$/;"	f	class:logging::LogClient
+write	asio/chat/client.cc	/^  void write(const StringPiece& message)$/;"	f	class:ChatClient
+writeComplete	sudoku/server_prod.cc	/^  void writeComplete(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+writeData	curl/Curl.cc	/^size_t Request::writeData(char* buffer, size_t size, size_t nmemb, void* userp)$/;"	f	class:Request
+write_n	ace/ttcp/ttcp_blocking.cc	/^static int write_n(int sockfd, const void* buf, int length)$/;"	f	file:
+~Balancer	protobuf/rpcbalancer/balancer.cc	/^  ~Balancer()$/;"	f	class:Balancer
+~Balancer	protobuf/rpcbalancer/balancer_raw.cc	/^  ~Balancer()$/;"	f	class:Balancer
+~Callback	protobuf/codec/dispatcher.h	/^  virtual ~Callback() {};$/;"	f	class:Callback
+~Curl	curl/Curl.cc	/^Curl::~Curl()$/;"	f	class:Curl
+~Entry	idleconnection/echo.h	/^    ~Entry()     \/*析构时候将弱指针提升为强指针,提升成功则关闭写端*\/$/;"	f	struct:EchoServer::Entry
+~Item	memcached/server/Item.h	/^  ~Item()$/;"	f	class:Item
+~MemcacheServer	memcached/server/MemcacheServer.cc	/^MemcacheServer::~MemcacheServer()$/;"	f	class:MemcacheServer
+~Plot	procmon/plot.cc	/^Plot::~Plot()$/;"	f	class:Plot
+~Printer	asio/tutorial/timer4/timer.cc	/^  ~Printer()$/;"	f	class:Printer
+~Printer	asio/tutorial/timer5/timer.cc	/^  ~Printer()$/;"	f	class:Printer
+~Printer	asio/tutorial/timer6/timer.cc	/^  ~Printer()$/;"	f	class:Printer
+~Request	curl/Curl.cc	/^Request::~Request()$/;"	f	class:Request
+~Resolver	cdns/Resolver.cc	/^Resolver::~Resolver()$/;"	f	class:Resolver
+~Session	memcached/server/Session.h	/^  ~Session()$/;"	f	class:Session
+~Tunnel	socks4a/tunnel.h	/^  ~Tunnel()$/;"	f	class:Tunnel

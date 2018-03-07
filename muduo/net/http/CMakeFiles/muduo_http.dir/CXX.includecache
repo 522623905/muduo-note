@@ -1,0 +1,36 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/long/muduo/muduo/muduo/net/http/HttpContext.cc
+muduo/net/Buffer.h
+-
+muduo/net/http/HttpContext.h
+-
+
+/home/long/muduo/muduo/muduo/net/http/HttpResponse.cc
+muduo/net/http/HttpResponse.h
+-
+muduo/net/Buffer.h
+-
+stdio.h
+-
+
+/home/long/muduo/muduo/muduo/net/http/HttpServer.cc
+muduo/net/http/HttpServer.h
+-
+muduo/base/Logging.h
+-
+muduo/net/http/HttpContext.h
+-
+muduo/net/http/HttpRequest.h
+-
+muduo/net/http/HttpResponse.h
+-
+boost/bind.hpp
+-
+

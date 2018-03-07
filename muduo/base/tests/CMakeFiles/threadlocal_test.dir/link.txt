@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/threadlocal_test.dir/ThreadLocal_test.o  -o threadlocal_test -rdynamic -lmuduo_base 

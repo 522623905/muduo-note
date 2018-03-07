@@ -41,27 +41,30 @@ class Inspector : boost::noncopyable
             const string& name);
   ~Inspector();
 
-  /// Add a Callback for handling the special uri : /mudule/command
-  void add(const string& module,
-           const string& command,
-           const Callback& cb,
-           const string& help);
-  void remove(const string& module, const string& command);
+  // Add a Callback for handling the special uri : /mudule/command
+  // 添加监控器对应的回调函数
+  // 如add("proc", "pid", ProcessInspector::pid, "print pid");  
+  // http://192.168.159.188:12345/proc/pid这个http请求就会相应的调用ProcessInspector::pid来处理
+  void add(const string& module,    //模块
+           const string& command,   //命令
+           const Callback& cb,      //回调执行方法
+           const string& help);     //帮助信息
+  void remove(const string& module, const string& command); //移除模块的命令
 
  private:
-  typedef std::map<string, Callback> CommandList;
-  typedef std::map<string, string> HelpList;
+  typedef std::map<string, Callback> CommandList;  //命令列表，对于客端发起的每个命令，有一个回调函数处理
+  typedef std::map<string, string> HelpList;    //针对客端命令的帮助信息列表
 
   void start();
   void onRequest(const HttpRequest& req, HttpResponse* resp);
 
-  HttpServer server_;
-  boost::scoped_ptr<ProcessInspector> processInspector_;
-  boost::scoped_ptr<PerformanceInspector> performanceInspector_;
-  boost::scoped_ptr<SystemInspector> systemInspector_;
+  HttpServer server_; //包含一个HttpServer对象
+  boost::scoped_ptr<ProcessInspector> processInspector_;    //暴露的接口，进程模块
+  boost::scoped_ptr<PerformanceInspector> performanceInspector_;    //性能模块
+  boost::scoped_ptr<SystemInspector> systemInspector_;  //系统模块
   MutexLock mutex_;
-  std::map<string, CommandList> modules_;
-  std::map<string, HelpList> helps_;
+  std::map<string, CommandList> modules_;   //模块,对应module -- command -- callback
+  std::map<string, HelpList> helps_;    //帮助，对应于module -- command -- help
 };
 
 }

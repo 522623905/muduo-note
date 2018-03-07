@@ -27,9 +27,9 @@ class PubSubClient : boost::noncopyable
   void setConnectionCallback(const ConnectionCallback& cb)
   { connectionCallback_ = cb; }
 
-  bool subscribe(const string& topic, const SubscribeCallback& cb);
-  void unsubscribe(const string& topic);
-  bool publish(const string& topic, const string& content);
+  bool subscribe(const string& topic, const SubscribeCallback& cb); //订阅topic
+  void unsubscribe(const string& topic);  //退订topic
+  bool publish(const string& topic, const string& content); //发送消息至topic
 
  private:
   void onConnection(const muduo::net::TcpConnectionPtr& conn);

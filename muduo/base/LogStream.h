@@ -16,9 +16,10 @@ namespace muduo
 namespace detail
 {
 
-const int kSmallBuffer = 4000;
-const int kLargeBuffer = 4000*1000;
+const int kSmallBuffer = 4000;  //4k
+const int kLargeBuffer = 4000*1000; //4M
 
+//一个固定大小SIZE的Buffer类
 template<int SIZE>
 class FixedBuffer : boost::noncopyable
 {
@@ -26,7 +27,7 @@ class FixedBuffer : boost::noncopyable
   FixedBuffer()
     : cur_(data_)
   {
-    setCookie(cookieStart);
+    setCookie(cookieStart);//设置cookie，muduo库这个函数目前还没加入功能，所以可以不用管
   }
 
   ~FixedBuffer()
@@ -34,6 +35,7 @@ class FixedBuffer : boost::noncopyable
     setCookie(cookieEnd);
   }
 
+  //如果可用数据足够，就拷贝buf过去，同时移动当前指针
   void append(const char* /*restrict*/ buf, size_t len)
   {
     // FIXME: append partially
@@ -44,37 +46,40 @@ class FixedBuffer : boost::noncopyable
     }
   }
 
-  const char* data() const { return data_; }
-  int length() const { return static_cast<int>(cur_ - data_); }
+  const char* data() const { return data_; }//返回首地址
+  int length() const { return static_cast<int>(cur_ - data_); }//返回缓冲区已有数据长度
 
   // write to data_ directly
-  char* current() { return cur_; }
-  int avail() const { return static_cast<int>(end() - cur_); }
-  void add(size_t len) { cur_ += len; }
+  char* current() { return cur_; }//返回当前数据末端地址
+  int avail() const { return static_cast<int>(end() - cur_); }//返回剩余可用地址
+  void add(size_t len) { cur_ += len; }//cur前移
 
-  void reset() { cur_ = data_; }
-  void bzero() { ::bzero(data_, sizeof data_); }
+  void reset() { cur_ = data_; }//重置，不清数据，只需要让cur指回首地址即可
+  void bzero() { ::bzero(data_, sizeof data_); }//清零
 
   // for used by GDB
   const char* debugString();
   void setCookie(void (*cookie)()) { cookie_ = cookie; }
   // for used by unit test
-  string toString() const { return string(data_, length()); }
+  string toString() const { return string(data_, length()); }//返回string类型
   StringPiece toStringPiece() const { return StringPiece(data_, length()); }
 
  private:
-  const char* end() const { return data_ + sizeof data_; }
+  const char* end() const { return data_ + sizeof data_; }//返回尾指针
   // Must be outline function for cookies.
   static void cookieStart();
   static void cookieEnd();
 
   void (*cookie_)();
-  char data_[SIZE];
-  char* cur_;
+  char data_[SIZE]; //缓冲区数据，大小为size
+  char* cur_; //当前指针,永远指向已有数据的最右端
 };
 
 }
 
+//重载了各种<<,负责把各个类型的数据转换成字符串，
+//再添加到FixedBuffer中
+//该类主要负责将要记录的日志内容放到这个Buffer里面
 class LogStream : boost::noncopyable
 {
   typedef LogStream self;
@@ -87,6 +92,8 @@ class LogStream : boost::noncopyable
     return *this;
   }
 
+  //把下面各个类型转换为字符串后存储到buffer中
+  //(为何不用stringstream类来转换，这个更方便？)
   self& operator<<(short);
   self& operator<<(unsigned short);
   self& operator<<(int);
@@ -167,24 +174,25 @@ class LogStream : boost::noncopyable
   void staticCheck();
 
   template<typename T>
-  void formatInteger(T);
+  void formatInteger(T);//把int类型的value转换为字符串类型,添加到buffer_中
 
-  Buffer buffer_;
+  Buffer buffer_; //固定大小的FixedBuffer
 
   static const int kMaxNumericSize = 32;
 };
 
+//使用snprintf来格式化（format）成字符串
 class Fmt // : boost::noncopyable
 {
  public:
   template<typename T>
-  Fmt(const char* fmt, T val);
+  Fmt(const char* fmt, T val);//按照fmt的格式来格式val成字符串buf
 
   const char* data() const { return buf_; }
   int length() const { return length_; }
 
  private:
-  char buf_[32];
+  char buf_[32];//存储格式化后组成的字符串
   int length_;
 };
 

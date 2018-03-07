@@ -1,0 +1,209 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+DemuxServer	demux.cc	/^  DemuxServer(EventLoop* loop, const InetAddress& listenAddr, const InetAddress& socksAddr)$/;"	f	class:DemuxServer
+DemuxServer	demux.cc	/^class DemuxServer : boost::noncopyable$/;"	c	file:
+Entry	demux.cc	/^struct Entry$/;"	s	file:
+TcpClientPtr	demux.cc	/^typedef boost::shared_ptr<TcpClient> TcpClientPtr;$/;"	t	file:
+client	demux.cc	/^  TcpClientPtr client;$/;"	m	struct:Entry	file:
+connId	demux.cc	/^  int connId;$/;"	m	struct:Entry	file:
+connection	demux.cc	/^  TcpConnectionPtr connection;$/;"	m	struct:Entry	file:
+doCommand	demux.cc	/^  void doCommand(const string& cmd)$/;"	f	class:DemuxServer
+kHeaderLen	demux.cc	/^const size_t kHeaderLen = 3;$/;"	v
+kListenPort	demux.cc	/^const uint16_t kListenPort = 9999;$/;"	v
+kMaxPacketLen	demux.cc	/^const size_t kMaxPacketLen = 255;$/;"	v
+kSocksPort	demux.cc	/^const uint16_t kSocksPort = 7777;$/;"	v
+loop_	demux.cc	/^  EventLoop* loop_;$/;"	m	class:DemuxServer	file:
+main	demux.cc	/^int main(int argc, char* argv[])$/;"	f
+onServerConnection	demux.cc	/^  void onServerConnection(const TcpConnectionPtr& conn)$/;"	f	class:DemuxServer
+onServerMessage	demux.cc	/^  void onServerMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:DemuxServer
+onSocksConnection	demux.cc	/^  void onSocksConnection(int connId, const TcpConnectionPtr& conn)$/;"	f	class:DemuxServer
+onSocksMessage	demux.cc	/^  void onSocksMessage(int connId, const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:DemuxServer
+pending	demux.cc	/^  Buffer pending;$/;"	m	struct:Entry	file:
+sendServerPacket	demux.cc	/^  void sendServerPacket(int connId, Buffer* buf)$/;"	f	class:DemuxServer
+serverConn_	demux.cc	/^  TcpConnectionPtr serverConn_;$/;"	m	class:DemuxServer	file:
+server_	demux.cc	/^  TcpServer server_;$/;"	m	class:DemuxServer	file:
+socksAddr_	demux.cc	/^  const InetAddress socksAddr_;$/;"	m	class:DemuxServer	file:
+socksConns_	demux.cc	/^  std::map<int, Entry> socksConns_;$/;"	m	class:DemuxServer	file:
+socksIp	demux.cc	/^const char* socksIp = "127.0.0.1";$/;"	v
+start	demux.cc	/^  void start()$/;"	f	class:DemuxServer
+DataEvent	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public DataEvent(EventSource source, int whichClient, ChannelBuffer data) {$/;"	m	class:DataEvent
+DataEvent	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^public class DataEvent extends Event {$/;"	c
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+data	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public final ChannelBuffer data;$/;"	f	class:DataEvent
+getString	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public String getString() {$/;"	m	class:DataEvent
+source	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public final EventSource source;$/;"	f	class:DataEvent
+whichClient	harness/src/com/chenshuo/muduo/example/multiplexer/DataEvent.java	/^    public final int whichClient;$/;"	f	class:DataEvent
+Event	harness/src/com/chenshuo/muduo/example/multiplexer/Event.java	/^public class Event {$/;"	c
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/Event.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+EventQueue	harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^public class EventQueue {$/;"	c
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+isEmpty	harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    public boolean isEmpty() {$/;"	m	class:EventQueue
+put	harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    public void put(Event e) {$/;"	m	class:EventQueue
+queue	harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    private BlockingDeque<Event> queue = new LinkedBlockingDeque<Event>();$/;"	f	class:EventQueue	file:
+take	harness/src/com/chenshuo/muduo/example/multiplexer/EventQueue.java	/^    public Event take() {$/;"	m	class:EventQueue
+EventSource	harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^public enum EventSource {$/;"	g
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+kBackend	harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^    kBackend, kClient$/;"	e	enum:EventSource	file:
+kClient	harness/src/com/chenshuo/muduo/example/multiplexer/EventSource.java	/^    kBackend, kClient$/;"	e	enum:EventSource	file:
+Handler	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private class Handler extends SimpleChannelHandler {$/;"	c	class:MockBackendServer
+MockBackendServer	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public MockBackendServer(EventQueue queue, int listeningPort, Executor boss, Executor worker,$/;"	m	class:MockBackendServer
+MockBackendServer	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^public class MockBackendServer {$/;"	c
+boss	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final Executor boss;$/;"	f	class:MockBackendServer	file:
+channelConnected	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockBackendServer.Handler
+channelDisconnected	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockBackendServer.Handler
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+connection	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private volatile Channel connection;$/;"	f	class:MockBackendServer	file:
+exceptionCaught	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e)$/;"	m	class:MockBackendServer.Handler
+getBootstrap	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private ServerBootstrap getBootstrap() {$/;"	m	class:MockBackendServer	file:
+latch	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final CountDownLatch latch;$/;"	f	class:MockBackendServer	file:
+listener	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private Channel listener;$/;"	f	class:MockBackendServer	file:
+logger	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private static final Logger logger = LoggerFactory.getLogger("MockBackendServer");$/;"	f	class:MockBackendServer	file:
+messageReceived	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^        public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)$/;"	m	class:MockBackendServer.Handler
+port	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final int port;$/;"	f	class:MockBackendServer	file:
+queue	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final EventQueue queue;$/;"	f	class:MockBackendServer	file:
+sendToClient	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public ChannelBuffer sendToClient(int whichClient, String str) {$/;"	m	class:MockBackendServer
+sendToClient	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public void sendToClient(int whichClient, ChannelBuffer data) {$/;"	m	class:MockBackendServer
+start	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public void start() {$/;"	m	class:MockBackendServer
+stop	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    public void stop() {$/;"	m	class:MockBackendServer
+worker	harness/src/com/chenshuo/muduo/example/multiplexer/MockBackendServer.java	/^    private final Executor worker;$/;"	f	class:MockBackendServer	file:
+Handler	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private class Handler extends SimpleChannelHandler {$/;"	c	class:MockClient
+MockClient	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public MockClient(EventQueue queue, InetSocketAddress remoteAddress, Executor boss,$/;"	m	class:MockClient
+MockClient	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^public class MockClient {$/;"	c
+bootstrap	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private ClientBootstrap bootstrap;$/;"	f	class:MockClient	file:
+boss	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final Executor boss;$/;"	f	class:MockClient	file:
+channelConnected	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void channelConnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockClient.Handler
+channelDisconnected	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void channelDisconnected(ChannelHandlerContext ctx, ChannelStateEvent e)$/;"	m	class:MockClient.Handler
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+connId	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private int connId;$/;"	f	class:MockClient	file:
+connect	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public ChannelFuture connect() {$/;"	m	class:MockClient
+connectAndWait	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void connectAndWait() {$/;"	m	class:MockClient
+connection	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private volatile Channel connection;$/;"	f	class:MockClient	file:
+disconnect	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void disconnect() {$/;"	m	class:MockClient
+exceptionCaught	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void exceptionCaught(ChannelHandlerContext ctx, ExceptionEvent e)$/;"	m	class:MockClient.Handler
+latch	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private MyCountDownLatch latch;$/;"	f	class:MockClient	file:
+logger	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private static final Logger logger = LoggerFactory.getLogger("MockClient");$/;"	f	class:MockClient	file:
+messageReceived	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        public void messageReceived(ChannelHandlerContext ctx, MessageEvent e)$/;"	m	class:MockClient.Handler
+queue	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final EventQueue queue;$/;"	f	class:MockClient	file:
+reconnect	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^        private void reconnect() {$/;"	m	class:MockClient.Handler	file:
+remoteAddress	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final InetSocketAddress remoteAddress;$/;"	f	class:MockClient	file:
+send	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public ChannelBuffer send(String str) {$/;"	m	class:MockClient
+send	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void send(ChannelBuffer buf) {$/;"	m	class:MockClient
+setId	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    public void setId(int connId) {$/;"	m	class:MockClient
+timer	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final Timer timer;$/;"	f	class:MockClient	file:
+worker	harness/src/com/chenshuo/muduo/example/multiplexer/MockClient.java	/^    private final Executor worker;$/;"	f	class:MockClient	file:
+MultiplexerTest	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public MultiplexerTest(String multiplexerHost) {$/;"	m	class:MultiplexerTest
+MultiplexerTest	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^public class MultiplexerTest {$/;"	c
+addTestCase	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private void addTestCase(TestCase testCase) {$/;"	m	class:MultiplexerTest	file:
+backend	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private MockBackendServer backend;$/;"	f	class:MultiplexerTest	file:
+boss	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private final ExecutorService boss;$/;"	f	class:MultiplexerTest	file:
+bufferFactory	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public static final ChannelBufferFactory bufferFactory =$/;"	f	class:MultiplexerTest
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+commandChannel	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public final Pattern commandChannel = Pattern.compile("CONN (\\\\d+) FROM [0-9.:]+ IS ([A-Z]+)\\r\\n");$/;"	f	class:MultiplexerTest
+getBackend	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public MockBackendServer getBackend() {$/;"	m	class:MultiplexerTest
+getEventQueue	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public EventQueue getEventQueue() {$/;"	m	class:MultiplexerTest
+kLogicalServerPort	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private static final int kLogicalServerPort = 9999;$/;"	f	class:MultiplexerTest	file:
+kMultiplexerServerPort	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private static final int kMultiplexerServerPort = 3333;$/;"	f	class:MultiplexerTest	file:
+latch	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private MyCountDownLatch latch;$/;"	f	class:MultiplexerTest	file:
+logger	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private static final Logger logger = LoggerFactory.getLogger("MultiplexerTest");$/;"	f	class:MultiplexerTest	file:
+main	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public static void main(String[] args) {$/;"	m	class:MultiplexerTest
+multiplexerAddress	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private final InetSocketAddress multiplexerAddress;$/;"	f	class:MultiplexerTest	file:
+newClient	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public MockClient newClient() {$/;"	m	class:MultiplexerTest
+queue	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private EventQueue queue;$/;"	f	class:MultiplexerTest	file:
+run	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private void run() {$/;"	m	class:MultiplexerTest	file:
+sleep	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    public void sleep(int millis) {$/;"	m	class:MultiplexerTest
+testCases	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private ArrayList<TestCase> testCases;$/;"	f	class:MultiplexerTest	file:
+worker	harness/src/com/chenshuo/muduo/example/multiplexer/MultiplexerTest.java	/^    private final ExecutorService worker;$/;"	f	class:MultiplexerTest	file:
+MyCountDownLatch	harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^    public MyCountDownLatch(int count) {$/;"	m	class:MyCountDownLatch
+MyCountDownLatch	harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^public class MyCountDownLatch extends CountDownLatch {$/;"	c
+awaitUninterruptibly	harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^    public void awaitUninterruptibly() {$/;"	m	class:MyCountDownLatch
+awaitUninterruptibly	harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^    public void awaitUninterruptibly(int millis) {$/;"	m	class:MyCountDownLatch
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/MyCountDownLatch.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+TestCase	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^public abstract class TestCase {$/;"	c
+assertEquals	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected void assertEquals(Object expected, Object actual) {$/;"	m	class:TestCase
+assertTrue	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected void assertTrue(boolean yes) {$/;"	m	class:TestCase
+backend	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected MockBackendServer backend;$/;"	f	class:TestCase
+bufferFactory	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected static final ChannelBufferFactory bufferFactory = MultiplexerTest.bufferFactory;$/;"	f	class:TestCase
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+fail	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected void fail(String message) {$/;"	m	class:TestCase
+god	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected MultiplexerTest god;$/;"	f	class:TestCase
+queue	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    protected EventQueue queue;$/;"	f	class:TestCase
+run	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    public abstract void run();$/;"	m	class:TestCase
+setOwner	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    public void setOwner(MultiplexerTest god) {$/;"	m	class:TestCase
+test	harness/src/com/chenshuo/muduo/example/multiplexer/TestCase.java	/^    public void test() {$/;"	m	class:TestCase
+TestFailedException	harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^    public TestFailedException(String message) {$/;"	m	class:TestFailedException
+TestFailedException	harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^public class TestFailedException extends RuntimeException {$/;"	c
+com.chenshuo.muduo.example.multiplexer	harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^package com.chenshuo.muduo.example.multiplexer;$/;"	p
+serialVersionUID	harness/src/com/chenshuo/muduo/example/multiplexer/TestFailedException.java	/^    private static final long serialVersionUID = 1982L;$/;"	f	class:TestFailedException	file:
+TestOneClientBackendSend	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBackendSend.java	/^public class TestOneClientBackendSend extends TestCase {$/;"	c
+com.chenshuo.muduo.example.multiplexer.testcase	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBackendSend.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+run	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBackendSend.java	/^    public void run() {$/;"	m	class:TestOneClientBackendSend
+TestOneClientBothSend	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBothSend.java	/^public class TestOneClientBothSend extends TestCase {$/;"	c
+com.chenshuo.muduo.example.multiplexer.testcase	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBothSend.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+run	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientBothSend.java	/^    public void run() {$/;"	m	class:TestOneClientBothSend
+TestOneClientNoData	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientNoData.java	/^public class TestOneClientNoData extends TestCase {$/;"	c
+com.chenshuo.muduo.example.multiplexer.testcase	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientNoData.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+run	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientNoData.java	/^    public void run() {$/;"	m	class:TestOneClientNoData
+TestOneClientSend	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientSend.java	/^public class TestOneClientSend extends TestCase {$/;"	c
+com.chenshuo.muduo.example.multiplexer.testcase	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientSend.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+run	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestOneClientSend.java	/^    public void run() {$/;"	m	class:TestOneClientSend
+TestTwoClients	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestTwoClients.java	/^public class TestTwoClients extends TestCase {$/;"	c
+com.chenshuo.muduo.example.multiplexer.testcase	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestTwoClients.java	/^package com.chenshuo.muduo.example.multiplexer.testcase;$/;"	p
+run	harness/src/com/chenshuo/muduo/example/multiplexer/testcase/TestTwoClients.java	/^    public void run() {$/;"	m	class:TestTwoClients
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+MultiplexServer	multiplexer.cc	/^  MultiplexServer(EventLoop* loop,$/;"	f	class:MultiplexServer
+MultiplexServer	multiplexer.cc	/^class MultiplexServer$/;"	c	file:
+availIds_	multiplexer.cc	/^  std::queue<int> availIds_;$/;"	m	class:MultiplexServer	file:
+backendConn_	multiplexer.cc	/^  TcpConnectionPtr backendConn_;$/;"	m	class:MultiplexServer	file:
+backendIp	multiplexer.cc	/^const char* backendIp = "127.0.0.1";$/;"	v
+backend_	multiplexer.cc	/^  TcpClient backend_;$/;"	m	class:MultiplexServer	file:
+clientConns_	multiplexer.cc	/^  std::map<int, TcpConnectionPtr> clientConns_;$/;"	m	class:MultiplexServer	file:
+kBackendPort	multiplexer.cc	/^const uint16_t kBackendPort = 9999;$/;"	v
+kClientPort	multiplexer.cc	/^const uint16_t kClientPort = 3333;$/;"	v
+kHeaderLen	multiplexer.cc	/^const size_t kHeaderLen = 3;$/;"	v
+kMaxConns	multiplexer.cc	/^const int kMaxConns = 10;  \/\/ 65535$/;"	v
+kMaxPacketLen	multiplexer.cc	/^const size_t kMaxPacketLen = 255;$/;"	v
+main	multiplexer.cc	/^int main(int argc, char* argv[])$/;"	f
+mutex_	multiplexer.cc	/^  MutexLock mutex_;$/;"	m	class:MultiplexServer	file:
+numThreads_	multiplexer.cc	/^  int numThreads_;$/;"	m	class:MultiplexServer	file:
+oldCounter_	multiplexer.cc	/^  int64_t oldCounter_;$/;"	m	class:MultiplexServer	file:
+onBackendConnection	multiplexer.cc	/^  void onBackendConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onBackendMessage	multiplexer.cc	/^  void onBackendMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+onClientConnection	multiplexer.cc	/^  void onClientConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onClientMessage	multiplexer.cc	/^  void onClientMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+printStatistics	multiplexer.cc	/^  void printStatistics()$/;"	f	class:MultiplexServer	file:
+receivedMessages_	multiplexer.cc	/^  AtomicInt64 receivedMessages_;$/;"	m	class:MultiplexServer	file:
+sendBackendBuffer	multiplexer.cc	/^  void sendBackendBuffer(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendPacket	multiplexer.cc	/^  void sendBackendPacket(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendString	multiplexer.cc	/^  void sendBackendString(int id, const string& msg)$/;"	f	class:MultiplexServer	file:
+sendToClient	multiplexer.cc	/^  void sendToClient(Buffer* buf)$/;"	f	class:MultiplexServer	file:
+server_	multiplexer.cc	/^  TcpServer server_;$/;"	m	class:MultiplexServer	file:
+start	multiplexer.cc	/^  void start()$/;"	f	class:MultiplexServer
+startTime_	multiplexer.cc	/^  Timestamp startTime_;$/;"	m	class:MultiplexServer	file:
+transferred_	multiplexer.cc	/^  AtomicInt64 transferred_;$/;"	m	class:MultiplexServer	file:
+MultiplexServer	multiplexer_simple.cc	/^  MultiplexServer(EventLoop* loop, const InetAddress& listenAddr, const InetAddress& backendAddr)$/;"	f	class:MultiplexServer
+MultiplexServer	multiplexer_simple.cc	/^class MultiplexServer : boost::noncopyable$/;"	c	file:
+availIds_	multiplexer_simple.cc	/^  std::queue<int> availIds_;  \/\/使用队列来管理client connection分配的ID的free工作，每次从queue头部取ID，用完放回queue尾部$/;"	m	class:MultiplexServer	file:
+backendConn_	multiplexer_simple.cc	/^  TcpConnectionPtr backendConn_;$/;"	m	class:MultiplexServer	file:
+backendIp	multiplexer_simple.cc	/^const char* backendIp = "127.0.0.1";$/;"	v
+backend_	multiplexer_simple.cc	/^  TcpClient backend_;$/;"	m	class:MultiplexServer	file:
+clientConns_	multiplexer_simple.cc	/^  std::map<int, TcpConnectionPtr> clientConns_; \/\/使用map，一个ID对应一个client connection$/;"	m	class:MultiplexServer	file:
+doCommand	multiplexer_simple.cc	/^  void doCommand(const string& cmd)$/;"	f	class:MultiplexServer	file:
+kBackendPort	multiplexer_simple.cc	/^const uint16_t kBackendPort = 9999;$/;"	v
+kClientPort	multiplexer_simple.cc	/^const uint16_t kClientPort = 3333;$/;"	v
+kHeaderLen	multiplexer_simple.cc	/^const size_t kHeaderLen = 3;$/;"	v
+kMaxConns	multiplexer_simple.cc	/^const int kMaxConns = 10;  \/\/ 65535$/;"	v
+kMaxPacketLen	multiplexer_simple.cc	/^const size_t kMaxPacketLen = 255;$/;"	v
+main	multiplexer_simple.cc	/^int main(int argc, char* argv[])$/;"	f
+onBackendConnection	multiplexer_simple.cc	/^  void onBackendConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onBackendMessage	multiplexer_simple.cc	/^  void onBackendMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+onClientConnection	multiplexer_simple.cc	/^  void onClientConnection(const TcpConnectionPtr& conn)$/;"	f	class:MultiplexServer	file:
+onClientMessage	multiplexer_simple.cc	/^  void onClientMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:MultiplexServer	file:
+sendBackendBuffer	multiplexer_simple.cc	/^  void sendBackendBuffer(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendPacket	multiplexer_simple.cc	/^  void sendBackendPacket(int id, Buffer* buf)$/;"	f	class:MultiplexServer	file:
+sendBackendString	multiplexer_simple.cc	/^  void sendBackendString(int id, const string& msg)$/;"	f	class:MultiplexServer	file:
+sendToClient	multiplexer_simple.cc	/^  void sendToClient(Buffer* buf)$/;"	f	class:MultiplexServer	file:
+server_	multiplexer_simple.cc	/^  TcpServer server_;$/;"	m	class:MultiplexServer	file:
+start	multiplexer_simple.cc	/^  void start()$/;"	f	class:MultiplexServer

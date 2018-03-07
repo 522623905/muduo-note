@@ -26,6 +26,10 @@ namespace net
 class Channel;
 class EventLoop;
 
+/*
+***Connector用来主动发起发起连接,带有重连功能.
+***该类不单独使用，而是放于TcpClient中使用
+*/
 class Connector : boost::noncopyable,
                   public boost::enable_shared_from_this<Connector>
 {
@@ -46,11 +50,11 @@ class Connector : boost::noncopyable,
 
  private:
   enum States { kDisconnected, kConnecting, kConnected };
-  static const int kMaxRetryDelayMs = 30*1000;
-  static const int kInitRetryDelayMs = 500;
+  static const int kMaxRetryDelayMs = 30*1000;  //最大重试延迟
+  static const int kInitRetryDelayMs = 500;  //初始化重试延迟
 
   void setState(States s) { state_ = s; }
-  void startInLoop();
+  void startInLoop(); 
   void stopInLoop();
   void connect();
   void connecting(int sockfd);
@@ -60,13 +64,13 @@ class Connector : boost::noncopyable,
   int removeAndResetChannel();
   void resetChannel();
 
-  EventLoop* loop_;
-  InetAddress serverAddr_;
+  EventLoop* loop_;  //所属的EventLoop
+  InetAddress serverAddr_;  //server地址
   bool connect_; // atomic
   States state_;  // FIXME: use atomic variable
-  boost::scoped_ptr<Channel> channel_;
-  NewConnectionCallback newConnectionCallback_;
-  int retryDelayMs_;
+  boost::scoped_ptr<Channel> channel_;  //Connector所对应的Channel
+  NewConnectionCallback newConnectionCallback_; //连接成功回调函数
+  int retryDelayMs_;  //重连延迟时间(单位ms)
 };
 
 }

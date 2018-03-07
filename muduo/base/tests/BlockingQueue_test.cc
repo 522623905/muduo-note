@@ -14,7 +14,7 @@ class Test
  public:
   Test(int numThreads)
     : latch_(numThreads),
-      threads_(numThreads)
+      threads_(numThreads) //初始化线程的容器个数
   {
     for (int i = 0; i < numThreads; ++i)
     {
@@ -26,11 +26,13 @@ class Test
     for_each(threads_.begin(), threads_.end(), boost::bind(&muduo::Thread::start, _1));
   }
 
+  //生产者（主线程函数）生产产品
   void run(int times)
   {
     printf("waiting for count down latch\n");
-    latch_.wait();
+    latch_.wait();//等待latch计数为0,即主线程等待子线程全部创建完毕
     printf("all threads started\n");
+    //开始生产产品
     for (int i = 0; i < times; ++i)
     {
       char buf[32];
@@ -47,11 +49,12 @@ class Test
       queue_.put("stop");
     }
 
-    for_each(threads_.begin(), threads_.end(), boost::bind(&muduo::Thread::join, _1));
+    for_each(threads_.begin(), threads_.end(), boost::bind(&muduo::Thread::join, _1));//等待子线程结束
   }
 
  private:
 
+  //消费者（子线程）消费产品
   void threadFunc()
   {
     printf("tid=%d, %s started\n",
@@ -64,7 +67,7 @@ class Test
     {
       std::string d(queue_.take());
       printf("tid=%d, get data = %s, size = %zd\n", muduo::CurrentThread::tid(), d.c_str(), queue_.size());
-      running = (d != "stop");
+      running = (d != "stop"); //如果获取到的队列数据为“stop”，则停止循环
     }
 
     printf("tid=%d, %s stopped\n",

@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/long/muduo/muduo/muduo/base/tests/ProcessInfo_test.cc
+muduo/base/ProcessInfo.h
+-
+stdio.h
+-
+inttypes.h
+-
+

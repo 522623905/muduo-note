@@ -1,0 +1,42 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/long/muduo/muduo/examples/procmon/plot.cc
+plot.h
+/home/long/muduo/muduo/examples/procmon/plot.h
+algorithm
+-
+math.h
+-
+gd.h
+-
+gdfonts.h
+-
+
+/home/long/muduo/muduo/examples/procmon/plot.h
+muduo/base/Types.h
+-
+vector
+-
+boost/noncopyable.hpp
+-
+stdlib.h
+-
+
+/home/long/muduo/muduo/examples/procmon/plot_test.cc
+plot.h
+/home/long/muduo/muduo/examples/procmon/plot.h
+muduo/base/Timestamp.h
+-
+vector
+-
+math.h
+-
+stdio.h
+-
+

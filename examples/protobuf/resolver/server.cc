@@ -7,8 +7,6 @@
 
 #include <boost/bind.hpp>
 
-#include <unistd.h>
-
 using namespace muduo;
 using namespace muduo::net;
 

@@ -19,6 +19,7 @@ namespace muduo
 namespace net
 {
 
+//性能监控器
 class PerformanceInspector : boost::noncopyable
 {
  public:

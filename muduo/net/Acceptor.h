@@ -28,6 +28,8 @@ class InetAddress;
 ///
 /// Acceptor of incoming TCP connections.
 ///
+//类Acceptor用来listen、accept，并调用回调函数来处理新到的连接。
+//客户不直接使用Acceptor，而是把它封装在TcpServer中用于获取新连接的fd
 class Acceptor : boost::noncopyable
 {
  public:
@@ -37,21 +39,21 @@ class Acceptor : boost::noncopyable
   Acceptor(EventLoop* loop, const InetAddress& listenAddr, bool reuseport);
   ~Acceptor();
 
-  void setNewConnectionCallback(const NewConnectionCallback& cb)
+  void setNewConnectionCallback(const NewConnectionCallback& cb)  //被用于在TcpServer构造函数中设置新连接处理回调
   { newConnectionCallback_ = cb; }
 
-  bool listenning() const { return listenning_; }
-  void listen();
+  bool listenning() const { return listenning_; } 
+  void listen();  //该接口用来启动监听套接字
 
  private:
-  void handleRead();
+  void handleRead();  //处理新连接到来的私有函数
 
-  EventLoop* loop_;
-  Socket acceptSocket_;
-  Channel acceptChannel_;
-  NewConnectionCallback newConnectionCallback_;
-  bool listenning_;
-  int idleFd_;
+  EventLoop* loop_; //监听事件放在该loop循环中
+  Socket acceptSocket_; //对监听套接字的封装
+  Channel acceptChannel_; //对应的事件分发
+  NewConnectionCallback newConnectionCallback_;//用户定义的连接回调函数
+  bool listenning_; //是否正在监听状态
+  int idleFd_;  //解决了服务器中文件描述符达到上限后如何处理的大问题!
 };
 
 }

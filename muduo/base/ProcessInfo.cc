@@ -69,7 +69,7 @@ pid_t ProcessInfo::pid()
   return ::getpid();
 }
 
-string ProcessInfo::pidString()
+string ProcessInfo::pidString()   //获取进程PID
 {
   char buf[32];
   snprintf(buf, sizeof buf, "%d", pid());
@@ -81,7 +81,7 @@ uid_t ProcessInfo::uid()
   return ::getuid();
 }
 
-string ProcessInfo::username()
+string ProcessInfo::username()  //获取本机用户名
 {
   struct passwd pwd;
   struct passwd* result = NULL;
@@ -125,7 +125,7 @@ bool ProcessInfo::isDebugBuild()
 #endif
 }
 
-string ProcessInfo::hostname()
+string ProcessInfo::hostname()  //获取主机名
 {
   // HOST_NAME_MAX 64
   // _POSIX_HOST_NAME_MAX 255
@@ -193,6 +193,7 @@ string ProcessInfo::exePath()
   return result;
 }
 
+//返回当前进程文件描述符个数
 int ProcessInfo::openedFiles()
 {
   t_numOpenedFiles = 0;

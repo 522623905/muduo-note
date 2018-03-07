@@ -27,6 +27,7 @@ namespace net
 class EventLoop;
 class EventLoopThread;
 
+//muduo的TcpServer类通过该类创建多个线程，且每个线程上都运行这一个loop循环 
 class EventLoopThreadPool : boost::noncopyable
 {
  public:
@@ -34,12 +35,12 @@ class EventLoopThreadPool : boost::noncopyable
 
   EventLoopThreadPool(EventLoop* baseLoop, const string& nameArg);
   ~EventLoopThreadPool();
-  void setThreadNum(int numThreads) { numThreads_ = numThreads; }
-  void start(const ThreadInitCallback& cb = ThreadInitCallback());
+  void setThreadNum(int numThreads) { numThreads_ = numThreads; } //设置开启loop循环的线程数量
+  void start(const ThreadInitCallback& cb = ThreadInitCallback());  //启动各个loop线程
 
   // valid after calling start()
   /// round-robin
-  EventLoop* getNextLoop();
+  EventLoop* getNextLoop(); //获得loops_中的下一个EventLoop地址
 
   /// with the same hash code, it will always return the same EventLoop
   EventLoop* getLoopForHash(size_t hashCode);
@@ -54,13 +55,13 @@ class EventLoopThreadPool : boost::noncopyable
 
  private:
 
-  EventLoop* baseLoop_;
+  EventLoop* baseLoop_; // 与Acceptor所属EventLoop相同
   string name_;
   bool started_;
-  int numThreads_;
-  int next_;
-  boost::ptr_vector<EventLoopThread> threads_;
-  std::vector<EventLoop*> loops_;
+  int numThreads_;  //表示创建多少个loop线程
+  int next_;  //新连接到来的loops_的下标
+  boost::ptr_vector<EventLoopThread> threads_;  //IO线程列表
+  std::vector<EventLoop*> loops_; //EventLoop列表
 };
 
 }

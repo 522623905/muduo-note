@@ -1,0 +1,117 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CpuTime	procmon.cc	/^  struct CpuTime$/;"	s	class:Procmon	file:
+MyGdFont	plot.cc	/^struct Plot::MyGdFont : public gdFont {};$/;"	s	class:Plot	file:
+MyGdFontPtr	plot.h	/^  typedef struct MyGdFont* MyGdFontPtr;$/;"	t	class:Plot	typeref:struct:Plot::MyGdFont
+Plot	plot.cc	/^Plot::Plot(int width, int height, int totalSeconds, int samplingPeriod)$/;"	f	class:Plot
+Plot	plot.h	/^class Plot : boost::noncopyable$/;"	c
+Procmon	procmon.cc	/^  Procmon(EventLoop* loop, pid_t pid, uint16_t port, const char* procname)$/;"	f	class:Procmon
+Procmon	procmon.cc	/^class Procmon : boost::noncopyable$/;"	c	file:
+StatData	procmon.cc	/^struct StatData$/;"	s	file:
+appendResponse	procmon.cc	/^int Procmon::appendResponse(const char* fmt, ...)$/;"	f	class:Procmon
+appendTableRow	procmon.cc	/^  void appendTableRow(const char* name, StringArg value)$/;"	f	class:Procmon	file:
+appendTableRow	procmon.cc	/^  void appendTableRow(const char* name, long value)$/;"	f	class:Procmon	file:
+appendTableRowFloat	procmon.cc	/^  void appendTableRowFloat(const char* name, double value)$/;"	f	class:Procmon	file:
+background_	plot.h	/^  const int background_;$/;"	m	class:Plot
+black_	plot.h	/^  const int black_;$/;"	m	class:Plot
+blue_	plot.h	/^  const int blue_;$/;"	m	class:Plot
+busy	dummyload.cc	/^double busy(int cycles)$/;"	f
+cmajflt	procmon.cc	/^  long cmajflt;$/;"	m	struct:StatData	file:
+cmdline_	procmon.cc	/^  const string cmdline_;$/;"	m	class:Procmon	file:
+cminflt	procmon.cc	/^  long cminflt;$/;"	m	struct:StatData	file:
+cosine	dummyload.cc	/^void cosine()$/;"	f
+cpuUsage	procmon.cc	/^    double cpuUsage(double kPeriod, double kClockTicksPerSecond) const$/;"	f	struct:Procmon::CpuTime
+cpu_chart_	procmon.cc	/^  Plot cpu_chart_;$/;"	m	class:Procmon	file:
+cpu_usage_	procmon.cc	/^  boost::circular_buffer<CpuTime> cpu_usage_;$/;"	m	class:Procmon	file:
+cstime	procmon.cc	/^  long cstime;$/;"	m	struct:StatData	file:
+cutime	procmon.cc	/^  long cutime;$/;"	m	struct:StatData	file:
+fillOverview	procmon.cc	/^  void fillOverview(const string& query)$/;"	f	class:Procmon	file:
+fillRefresh	procmon.cc	/^  void fillRefresh(const string& query)$/;"	f	class:Procmon	file:
+fillThreads	procmon.cc	/^  void fillThreads()$/;"	f	class:Procmon	file:
+findCycles	dummyload.cc	/^void findCycles()$/;"	f
+fixed	dummyload.cc	/^void fixed()$/;"	f
+flags	procmon.cc	/^  int flags;$/;"	m	struct:StatData	file:
+fontHeight_	plot.h	/^  const int fontHeight_;$/;"	m	class:Plot
+fontWidth_	plot.h	/^  const int fontWidth_;$/;"	m	class:Plot
+font_	plot.h	/^  const MyGdFontPtr font_;$/;"	m	class:Plot
+g_busy	dummyload.cc	/^bool g_busy = false;$/;"	v
+g_cycles	dummyload.cc	/^int g_cycles = 0;$/;"	v
+g_done	dummyload.cc	/^AtomicInt32 g_done;$/;"	v
+g_mutex	dummyload.cc	/^MutexLock g_mutex;$/;"	v
+g_percent	dummyload.cc	/^int g_percent = 82;$/;"	v
+gdImagePtr	plot.h	/^typedef struct gdImageStruct* gdImagePtr;$/;"	t	typeref:struct:gdImageStruct
+getBootTime	procmon.cc	/^  static long getBootTime()$/;"	f	class:Procmon	file:
+getCmdLine	procmon.cc	/^  string getCmdLine()$/;"	f	class:Procmon	file:
+getEnviron	procmon.cc	/^  string getEnviron()$/;"	f	class:Procmon	file:
+getLong	procmon.cc	/^  static long getLong(const string& status, const char* key)$/;"	f	class:Procmon	file:
+getName	procmon.cc	/^  string getName() const$/;"	f	class:Procmon	file:
+getSeconds	dummyload.cc	/^double getSeconds(int cycles)$/;"	f
+getSeconds	procmon.cc	/^  double getSeconds(long ticks)$/;"	f	class:Procmon	file:
+getStartTime	procmon.cc	/^  Timestamp getStartTime(long starttime)$/;"	f	class:Procmon	file:
+getState	procmon.cc	/^  static const char* getState(char state)$/;"	f	class:Procmon	file:
+getX	plot.cc	/^int Plot::getX(ssize_t i, ssize_t total) const$/;"	f	class:Plot
+getY	plot.cc	/^int Plot::getY(double value) const$/;"	f	class:Plot
+gray_	plot.h	/^  const int gray_;$/;"	m	class:Plot
+height_	plot.h	/^  const int height_;$/;"	m	class:Plot
+hostname_	procmon.cc	/^  const string hostname_;$/;"	m	class:Procmon	file:
+image_	plot.h	/^  const gdImagePtr image_;$/;"	m	class:Plot
+itrealvalue	procmon.cc	/^  long itrealvalue;$/;"	m	struct:StatData	file:
+kBootTime_	procmon.cc	/^  const long kBootTime_;  \/\/ in Unix-time$/;"	m	class:Procmon	file:
+kClockTicksPerSecond_	procmon.cc	/^  const int kClockTicksPerSecond_;$/;"	m	class:Procmon	file:
+kLeftMargin_	plot.h	/^  static const int kLeftMargin_ = 5;$/;"	m	class:Plot
+kMarginY_	plot.h	/^  static const int kMarginY_ = 5;$/;"	m	class:Plot
+kPeriod_	procmon.cc	/^  const static int kPeriod_ = 2.0;$/;"	m	class:Procmon	file:
+kRightMargin_	plot.h	/^  const int kRightMargin_;$/;"	m	class:Plot
+kbPerPage_	procmon.cc	/^  const int kbPerPage_;$/;"	m	class:Procmon	file:
+label	plot.cc	/^void Plot::label(double maxValue)$/;"	f	class:Plot
+lastStatData_	procmon.cc	/^  StatData lastStatData_;$/;"	m	class:Procmon	file:
+load	dummyload.cc	/^void load(int percent)$/;"	f
+main	dummyload.cc	/^int main(int argc, char* argv[])$/;"	f
+main	plot_test.cc	/^int main()$/;"	f
+main	procmon.cc	/^int main(int argc, char* argv[])$/;"	f
+majflt	procmon.cc	/^  long majflt;$/;"	m	struct:StatData	file:
+minflt	procmon.cc	/^  long minflt;$/;"	m	struct:StatData	file:
+nice	procmon.cc	/^  long nice;$/;"	m	struct:StatData	file:
+num_threads	procmon.cc	/^  long num_threads;$/;"	m	struct:StatData	file:
+onRequest	procmon.cc	/^  void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f	class:Procmon	file:
+parse	procmon.cc	/^  void parse(const char* startAtState, int kbPerPage)$/;"	f	struct:StatData
+pgrp	procmon.cc	/^  int pgrp;$/;"	m	struct:StatData	file:
+pid_	procmon.cc	/^  const pid_t pid_;$/;"	m	class:Procmon	file:
+plotCpu	plot.cc	/^muduo::string Plot::plotCpu(const std::vector<double>& data)$/;"	f	class:Plot
+ppid	procmon.cc	/^  int ppid;$/;"	m	struct:StatData	file:
+priority	procmon.cc	/^  long priority;$/;"	m	struct:StatData	file:
+processExists	procmon.cc	/^bool processExists(pid_t pid)$/;"	f
+procname_	procmon.cc	/^  const string procname_;$/;"	m	class:Procmon	file:
+ram_chart_	procmon.cc	/^  Plot ram_chart_;$/;"	m	class:Procmon	file:
+ratioX_	plot.h	/^  const double ratioX_;$/;"	m	class:Plot
+readLink	procmon.cc	/^  string readLink(const char* basename)$/;"	f	class:Procmon	file:
+readProcFile	procmon.cc	/^  string readProcFile(const char* basename)$/;"	f	class:Procmon	file:
+response_	procmon.cc	/^  Buffer response_;$/;"	m	class:Procmon	file:
+rssKb	procmon.cc	/^  long rssKb;$/;"	m	struct:StatData	file:
+rsslim	procmon.cc	/^  long rsslim;$/;"	m	struct:StatData	file:
+samplingPeriod_	plot.h	/^  const int samplingPeriod_;$/;"	m	class:Plot
+sawtooth	dummyload.cc	/^void sawtooth()$/;"	f
+server_	procmon.cc	/^  HttpServer server_;$/;"	m	class:Procmon	file:
+session	procmon.cc	/^  int session;$/;"	m	struct:StatData	file:
+start	procmon.cc	/^  void start()$/;"	f	class:Procmon
+starttime	procmon.cc	/^  long starttime;$/;"	m	struct:StatData	file:
+state	procmon.cc	/^  char state;$/;"	m	struct:StatData	file:
+stime	procmon.cc	/^  long stime;$/;"	m	struct:StatData	file:
+sysTime_	procmon.cc	/^    int sysTime_;$/;"	m	struct:Procmon::CpuTime	file:
+threadFunc	dummyload.cc	/^void threadFunc()$/;"	f
+tick	procmon.cc	/^  void tick()$/;"	f	class:Procmon	file:
+ticks_	procmon.cc	/^  int ticks_;$/;"	m	class:Procmon	file:
+toPng	plot.cc	/^muduo::string Plot::toPng()$/;"	f	class:Plot
+totalSeconds_	plot.h	/^  const int totalSeconds_;$/;"	m	class:Plot
+tpgid	procmon.cc	/^  int tpgid;$/;"	m	struct:StatData	file:
+tty_nr	procmon.cc	/^  int tty_nr;$/;"	m	struct:StatData	file:
+userTime_	procmon.cc	/^    int userTime_;$/;"	m	struct:Procmon::CpuTime	file:
+utime	procmon.cc	/^  long utime;$/;"	m	struct:StatData	file:
+value	procmon.cc	/^BOOST_STATIC_ASSERT(boost::is_pod<StatData>::value);$/;"	v
+vsizeKb	procmon.cc	/^  long vsizeKb;$/;"	m	struct:StatData	file:
+width_	plot.h	/^  const int width_;$/;"	m	class:Plot
+~Plot	plot.cc	/^Plot::~Plot()$/;"	f	class:Plot

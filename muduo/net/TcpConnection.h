@@ -39,6 +39,9 @@ class Socket;
 /// TCP connection, for both client and server usage.
 ///
 /// This is an interface class, so don't expose too much details.
+
+//和新连接相关的所有内容统一封装到该类
+//继承了enable_shared_from_this类，保证返回的对象时shared_ptr类型
 class TcpConnection : boost::noncopyable,
                       public boost::enable_shared_from_this<TcpConnection>
 {
@@ -57,7 +60,7 @@ class TcpConnection : boost::noncopyable,
   const string& name() const { return name_; }
   const InetAddress& localAddress() const { return localAddr_; }
   const InetAddress& peerAddress() const { return peerAddr_; }
-  bool connected() const { return state_ == kConnected; }
+  bool connected() const { return state_ == kConnected; } //判断是连接建立还是断开
   bool disconnected() const { return state_ == kDisconnected; }
   // return true if success.
   bool getTcpInfo(struct tcp_info*) const;
@@ -78,7 +81,7 @@ class TcpConnection : boost::noncopyable,
   void stopRead();
   bool isReading() const { return reading_; }; // NOT thread safe, may race with start/stopReadInLoop
 
-  void setContext(const boost::any& context)
+  void setContext(const boost::any& context)  //boost::any是一个能保存任意类型值的类
   { context_ = context; }
 
   const boost::any& getContext() const
@@ -116,17 +119,18 @@ class TcpConnection : boost::noncopyable,
   void connectDestroyed();  // should be called only once
 
  private:
+  //枚举了每个TcpConnection对应的几种状态  相关函数：connectEstablished()  shutdown()  handleClose()
   enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };
-  void handleRead(Timestamp receiveTime);
-  void handleWrite();
-  void handleClose();
-  void handleError();
+  void handleRead(Timestamp receiveTime); //处理读事件
+  void handleWrite(); //处理写事件
+  void handleClose(); //处理关闭事件       (这些处理函数都是要传给TcpConnection对应的Channel的)
+  void handleError(); //处理错误事件
   // void sendInLoop(string&& message);
   void sendInLoop(const StringPiece& message);
   void sendInLoop(const void* message, size_t len);
   void shutdownInLoop();
   // void shutdownAndForceCloseInLoop(double seconds);
-  void forceCloseInLoop();
+  void forceCloseInLoop();  //用于主动关闭连接
   void setState(StateE s) { state_ = s; }
   const char* stateToString() const;
   void startReadInLoop();
@@ -137,19 +141,19 @@ class TcpConnection : boost::noncopyable,
   StateE state_;  // FIXME: use atomic variable
   bool reading_;
   // we don't expose those classes to client.
-  boost::scoped_ptr<Socket> socket_;
-  boost::scoped_ptr<Channel> channel_;
-  const InetAddress localAddr_;
-  const InetAddress peerAddr_;
-  ConnectionCallback connectionCallback_;
-  MessageCallback messageCallback_;
-  WriteCompleteCallback writeCompleteCallback_;
-  HighWaterMarkCallback highWaterMarkCallback_;
-  CloseCallback closeCallback_;
-  size_t highWaterMark_;
-  Buffer inputBuffer_;
+  boost::scoped_ptr<Socket> socket_;  //套接字类
+  boost::scoped_ptr<Channel> channel_; //套接字上对应的事件以及处理都将由和套接字对应的Channel来处理
+  const InetAddress localAddr_; //本地服务器地址
+  const InetAddress peerAddr_;  //对方客户端地址
+  ConnectionCallback connectionCallback_; //连接回调
+  MessageCallback messageCallback_; //接收消息到达时的回调
+  WriteCompleteCallback writeCompleteCallback_; // 低水位回调函数
+  HighWaterMarkCallback highWaterMarkCallback_; //outbuffer快满了的高水位回调函数 
+  CloseCallback closeCallback_;   // 内部的close回调函数
+  size_t highWaterMark_;  //发送缓冲区数据“上限阀值”，超过这个值
+  Buffer inputBuffer_;  //每一个连接都会对应一对读写input/output buffer
   Buffer outputBuffer_; // FIXME: use list<Buffer> as output buffer.
-  boost::any context_;
+  boost::any context_;  // boost库的any 可以保持任意的类型 绑定一个未知类型的上下文对象
   // FIXME: creationTime_, lastReceiveTime_
   //        bytesReceived_, bytesSent_
 };

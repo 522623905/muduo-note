@@ -36,7 +36,7 @@ ChargenServer::ChargenServer(EventLoop* loop,
 
   for (size_t i = 0; i < 127-33; ++i)
   {
-    message_ += line.substr(i, 72) + '\n';
+    message_ += line.substr(i, 72) + '\n';  //获取第i位开始，长度为72的字符串
   }
 }
 

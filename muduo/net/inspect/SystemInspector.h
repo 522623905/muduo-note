@@ -18,6 +18,7 @@ namespace muduo
 namespace net
 {
 
+//系统监控器
 class SystemInspector : boost::noncopyable
 {
  public:

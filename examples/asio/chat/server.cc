@@ -9,7 +9,6 @@
 
 #include <set>
 #include <stdio.h>
-#include <unistd.h>
 
 using namespace muduo;
 using namespace muduo::net;
@@ -20,13 +19,13 @@ class ChatServer : boost::noncopyable
   ChatServer(EventLoop* loop,
              const InetAddress& listenAddr)
   : server_(loop, listenAddr, "ChatServer"),
-    codec_(boost::bind(&ChatServer::onStringMessage, this, _1, _2, _3))
+    codec_(boost::bind(&ChatServer::onStringMessage, this, _1, _2, _3))   //该处设置了codec_的构造函数设置了回调指向ChatServer::onStringMessage
   {
     server_.setConnectionCallback(
         boost::bind(&ChatServer::onConnection, this, _1));
     server_.setMessageCallback(
-        boost::bind(&LengthHeaderCodec::onMessage, &codec_, _1, _2, _3));
-  }
+        boost::bind(&LengthHeaderCodec::onMessage, &codec_, _1, _2, _3)); //注意这里的接受信息回调是LengthHeaderCodec::onMessage,而不是EchoServer的
+  }                                                                                                                      //而在LengthHeaderCodec::onMessage中再回调到EchoServer::onStringMessage（在构造函数codec_处设置）
 
   void start()
   {
@@ -42,11 +41,11 @@ class ChatServer : boost::noncopyable
 
     if (conn->connected())
     {
-      connections_.insert(conn);
+      connections_.insert(conn);    //有连接，则插入set当中
     }
     else
     {
-      connections_.erase(conn);
+      connections_.erase(conn);   //连接断开则删除conn
     }
   }
 
@@ -58,7 +57,7 @@ class ChatServer : boost::noncopyable
         it != connections_.end();
         ++it)
     {
-      codec_.send(get_pointer(*it), message);
+      codec_.send(get_pointer(*it), message);   //get_pointer是从shared_ptr<TcpConnection>中获取原始指针TcpConnection
     }
   }
 

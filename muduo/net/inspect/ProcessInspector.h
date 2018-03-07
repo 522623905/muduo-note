@@ -19,11 +19,13 @@ namespace muduo
 namespace net
 {
 
+//实际实现的时候通过ProcessInfo类返回进程信息
 class ProcessInspector : boost::noncopyable
 {
  public:
-  void registerCommands(Inspector* ins);
+  void registerCommands(Inspector* ins); // 注册命令接口
 
+  //向外部提供的四个回调函数，返回服务器进程的相关信息
   static string overview(HttpRequest::Method, const Inspector::ArgList&);
   static string pid(HttpRequest::Method, const Inspector::ArgList&);
   static string procStatus(HttpRequest::Method, const Inspector::ArgList&);

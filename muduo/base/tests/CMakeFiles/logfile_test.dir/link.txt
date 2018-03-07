@@ -1,0 +1,1 @@
+/usr/bin/c++      CMakeFiles/logfile_test.dir/LogFile_test.o  -o logfile_test -rdynamic -lmuduo_base 

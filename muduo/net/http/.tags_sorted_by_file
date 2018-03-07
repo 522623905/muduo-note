@@ -1,0 +1,114 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+parseRequest	HttpContext.cc	/^bool HttpContext::parseRequest(Buffer* buf, Timestamp receiveTime)  \/\/处理请求，利用状态机编程$/;"	f	class:HttpContext
+processRequestLine	HttpContext.cc	/^bool HttpContext::processRequestLine(const char* begin, const char* end)  \/\/解析请求行  格式 : GET http:\/\/....  HTTP\/1.1$/;"	f	class:HttpContext
+HttpContext	HttpContext.h	/^  HttpContext()$/;"	f	class:muduo::net::HttpContext
+HttpContext	HttpContext.h	/^class HttpContext : public muduo::copyable    \/\/http协议解析类$/;"	c	namespace:muduo::net
+HttpRequestParseState	HttpContext.h	/^  enum HttpRequestParseState  \/\/解析请求状态的枚举常量$/;"	g	class:muduo::net::HttpContext
+MUDUO_NET_HTTP_HTTPCONTEXT_H	HttpContext.h	12;"	d
+gotAll	HttpContext.h	/^  bool gotAll() const$/;"	f	class:muduo::net::HttpContext
+kExpectBody	HttpContext.h	/^    kExpectBody,  \/\/当前正处于解析请求实体的状态$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kExpectHeaders	HttpContext.h	/^    kExpectHeaders,  \/\/当前正处于解析请求头部的状态$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kExpectRequestLine	HttpContext.h	/^    kExpectRequestLine,  \/\/当前正处于解析请求行的状态$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+kGotAll	HttpContext.h	/^    kGotAll,   \/\/解析完毕$/;"	e	enum:muduo::net::HttpContext::HttpRequestParseState
+muduo	HttpContext.h	/^namespace muduo$/;"	n
+net	HttpContext.h	/^namespace net$/;"	n	namespace:muduo
+request	HttpContext.h	/^  HttpRequest& request()$/;"	f	class:muduo::net::HttpContext
+request	HttpContext.h	/^  const HttpRequest& request() const  \/\/返回request$/;"	f	class:muduo::net::HttpContext
+request_	HttpContext.h	/^  HttpRequest request_;  \/\/ http请求$/;"	m	class:muduo::net::HttpContext
+reset	HttpContext.h	/^  void reset()   \/\/重置HttpContext状态$/;"	f	class:muduo::net::HttpContext
+state_	HttpContext.h	/^  HttpRequestParseState state_;  \/\/ 请求解析状态$/;"	m	class:muduo::net::HttpContext
+HttpRequest	HttpRequest.h	/^  HttpRequest()$/;"	f	class:muduo::net::HttpRequest
+HttpRequest	HttpRequest.h	/^class HttpRequest : public muduo::copyable$/;"	c	namespace:muduo::net
+MUDUO_NET_HTTP_HTTPREQUEST_H	HttpRequest.h	12;"	d
+Method	HttpRequest.h	/^  enum Method   \/\/请求方法$/;"	g	class:muduo::net::HttpRequest
+Version	HttpRequest.h	/^  enum Version   \/\/请求方法$/;"	g	class:muduo::net::HttpRequest
+addHeader	HttpRequest.h	/^  void addHeader(const char* start, const char* colon, const char* end)$/;"	f	class:muduo::net::HttpRequest
+getHeader	HttpRequest.h	/^  string getHeader(const string& field) const  \/\/根据头部字段返回值内容$/;"	f	class:muduo::net::HttpRequest
+getVersion	HttpRequest.h	/^  Version getVersion() const$/;"	f	class:muduo::net::HttpRequest
+headers	HttpRequest.h	/^  const std::map<string, string>& headers() const    \/\/返回头部列表$/;"	f	class:muduo::net::HttpRequest
+headers_	HttpRequest.h	/^  std::map<string, string> headers_;  \/\/头部列表$/;"	m	class:muduo::net::HttpRequest
+kDelete	HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kGet	HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kHead	HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kHttp10	HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kHttp11	HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+kInvalid	HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kPost	HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kPut	HttpRequest.h	/^    kInvalid, kGet, kPost, kHead, kPut, kDelete$/;"	e	enum:muduo::net::HttpRequest::Method
+kUnknown	HttpRequest.h	/^    kUnknown, kHttp10, kHttp11$/;"	e	enum:muduo::net::HttpRequest::Version
+method	HttpRequest.h	/^  Method method() const   \/\/返回请求方法$/;"	f	class:muduo::net::HttpRequest
+methodString	HttpRequest.h	/^  const char* methodString() const  \/\/请求方法转换成字符串$/;"	f	class:muduo::net::HttpRequest
+method_	HttpRequest.h	/^  Method method_; \/\/请求方法$/;"	m	class:muduo::net::HttpRequest
+muduo	HttpRequest.h	/^namespace muduo$/;"	n
+net	HttpRequest.h	/^namespace net$/;"	n	namespace:muduo
+path	HttpRequest.h	/^  const string& path() const$/;"	f	class:muduo::net::HttpRequest
+path_	HttpRequest.h	/^  string path_; \/\/请求路径$/;"	m	class:muduo::net::HttpRequest
+query	HttpRequest.h	/^  const string& query() const$/;"	f	class:muduo::net::HttpRequest
+query_	HttpRequest.h	/^  string query_;  \/\/请求参数$/;"	m	class:muduo::net::HttpRequest
+receiveTime	HttpRequest.h	/^  Timestamp receiveTime() const$/;"	f	class:muduo::net::HttpRequest
+receiveTime_	HttpRequest.h	/^  Timestamp receiveTime_; \/\/请求时间$/;"	m	class:muduo::net::HttpRequest
+setMethod	HttpRequest.h	/^  bool setMethod(const char* start, const char* end)  \/\/设置方法$/;"	f	class:muduo::net::HttpRequest
+setPath	HttpRequest.h	/^  void setPath(const char* start, const char* end)  \/\/设置路径 $/;"	f	class:muduo::net::HttpRequest
+setQuery	HttpRequest.h	/^  void setQuery(const char* start, const char* end)  \/\/设置参数$/;"	f	class:muduo::net::HttpRequest
+setReceiveTime	HttpRequest.h	/^  void setReceiveTime(Timestamp t)  \/\/设置接收时间$/;"	f	class:muduo::net::HttpRequest
+setVersion	HttpRequest.h	/^  void setVersion(Version v)  \/\/设置版本$/;"	f	class:muduo::net::HttpRequest
+swap	HttpRequest.h	/^  void swap(HttpRequest& that)  \/\/交换HttpRequest内容$/;"	f	class:muduo::net::HttpRequest
+version_	HttpRequest.h	/^  Version version_; \/\/协议版本1.0\/1.1$/;"	m	class:muduo::net::HttpRequest
+appendToBuffer	HttpResponse.cc	/^void HttpResponse::appendToBuffer(Buffer* output) const$/;"	f	class:HttpResponse
+HttpResponse	HttpResponse.h	/^  explicit HttpResponse(bool close)$/;"	f	class:muduo::net::HttpResponse
+HttpResponse	HttpResponse.h	/^class HttpResponse : public muduo::copyable$/;"	c	namespace:muduo::net
+HttpStatusCode	HttpResponse.h	/^  enum HttpStatusCode   \/\/HTTP状态码$/;"	g	class:muduo::net::HttpResponse
+MUDUO_NET_HTTP_HTTPRESPONSE_H	HttpResponse.h	12;"	d
+addHeader	HttpResponse.h	/^  void addHeader(const string& key, const string& value)$/;"	f	class:muduo::net::HttpResponse
+body_	HttpResponse.h	/^  string body_; \/\/实体$/;"	m	class:muduo::net::HttpResponse
+closeConnection	HttpResponse.h	/^  bool closeConnection() const$/;"	f	class:muduo::net::HttpResponse
+closeConnection_	HttpResponse.h	/^  bool closeConnection_;  \/\/是否关闭连接$/;"	m	class:muduo::net::HttpResponse
+headers_	HttpResponse.h	/^  std::map<string, string> headers_;  \/\/头列表$/;"	m	class:muduo::net::HttpResponse
+k200Ok	HttpResponse.h	/^    k200Ok = 200,   \/\/请求成功$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k301MovedPermanently	HttpResponse.h	/^    k301MovedPermanently = 301, \/\/资源被转移，请求将被重定向$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k400BadRequest	HttpResponse.h	/^    k400BadRequest = 400, \/\/通用客户请求错误$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+k404NotFound	HttpResponse.h	/^    k404NotFound = 404, \/\/资源未找到$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+kUnknown	HttpResponse.h	/^    kUnknown,$/;"	e	enum:muduo::net::HttpResponse::HttpStatusCode
+muduo	HttpResponse.h	/^namespace muduo$/;"	n
+net	HttpResponse.h	/^namespace net$/;"	n	namespace:muduo
+setBody	HttpResponse.h	/^  void setBody(const string& body)$/;"	f	class:muduo::net::HttpResponse
+setCloseConnection	HttpResponse.h	/^  void setCloseConnection(bool on)  $/;"	f	class:muduo::net::HttpResponse
+setContentType	HttpResponse.h	/^  void setContentType(const string& contentType)$/;"	f	class:muduo::net::HttpResponse
+setStatusCode	HttpResponse.h	/^  void setStatusCode(HttpStatusCode code)   \/\/设置状态码$/;"	f	class:muduo::net::HttpResponse
+setStatusMessage	HttpResponse.h	/^  void setStatusMessage(const string& message)  \/\/设置状态码对应的文本信息$/;"	f	class:muduo::net::HttpResponse
+statusCode_	HttpResponse.h	/^  HttpStatusCode statusCode_; \/\/状态码$/;"	m	class:muduo::net::HttpResponse
+statusMessage_	HttpResponse.h	/^  string statusMessage_;  \/\/状态响应码对应的文本信息$/;"	m	class:muduo::net::HttpResponse
+HttpServer	HttpServer.cc	/^HttpServer::HttpServer(EventLoop* loop,$/;"	f	class:HttpServer
+defaultHttpCallback	HttpServer.cc	/^void defaultHttpCallback(const HttpRequest&, HttpResponse* resp)  \/\/默认HTTP回调，返回错误码$/;"	f	namespace:muduo::net::detail
+detail	HttpServer.cc	/^namespace detail$/;"	n	namespace:muduo::net	file:
+muduo	HttpServer.cc	/^namespace muduo$/;"	n	file:
+net	HttpServer.cc	/^namespace net$/;"	n	namespace:muduo	file:
+onConnection	HttpServer.cc	/^void HttpServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:HttpServer
+onMessage	HttpServer.cc	/^void HttpServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:HttpServer
+onRequest	HttpServer.cc	/^void HttpServer::onRequest(const TcpConnectionPtr& conn, const HttpRequest& req)$/;"	f	class:HttpServer
+start	HttpServer.cc	/^void HttpServer::start()$/;"	f	class:HttpServer
+~HttpServer	HttpServer.cc	/^HttpServer::~HttpServer()$/;"	f	class:HttpServer
+HttpCallback	HttpServer.h	/^                                HttpResponse*)> HttpCallback;  \/\/http回调类型$/;"	t	class:muduo::net::HttpServer
+HttpServer	HttpServer.h	/^class HttpServer : boost::noncopyable$/;"	c	namespace:muduo::net
+MUDUO_NET_HTTP_HTTPSERVER_H	HttpServer.h	12;"	d
+getLoop	HttpServer.h	/^  EventLoop* getLoop() const { return server_.getLoop(); }$/;"	f	class:muduo::net::HttpServer
+httpCallback_	HttpServer.h	/^  HttpCallback httpCallback_;  \/\/在处理http请求时(即调用onRequest)的过程中回调此函数，对请求进行具体的处理。$/;"	m	class:muduo::net::HttpServer
+muduo	HttpServer.h	/^namespace muduo$/;"	n
+net	HttpServer.h	/^namespace net$/;"	n	namespace:muduo
+server_	HttpServer.h	/^  TcpServer server_;  \/\/http服务器也是一个Tcp服务器，所以包含一个TcpServer$/;"	m	class:muduo::net::HttpServer
+setHttpCallback	HttpServer.h	/^  void setHttpCallback(const HttpCallback& cb)$/;"	f	class:muduo::net::HttpServer
+setThreadNum	HttpServer.h	/^  void setThreadNum(int numThreads)$/;"	f	class:muduo::net::HttpServer
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+BOOST_AUTO_TEST_CASE	tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestAllInOne)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestEmptyHeaderValue)$/;"	f
+BOOST_AUTO_TEST_CASE	tests/HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestInTwoPieces)$/;"	f
+BOOST_TEST_DYN_LINK	tests/HttpRequest_unittest.cc	6;"	d	file:
+BOOST_TEST_MAIN	tests/HttpRequest_unittest.cc	5;"	d	file:
+benchmark	tests/HttpServer_test.cc	/^bool benchmark = false;$/;"	v
+favicon	tests/HttpServer_test.cc	/^char favicon[555] = {$/;"	v
+main	tests/HttpServer_test.cc	/^int main(int argc, char* argv[])$/;"	f
+onRequest	tests/HttpServer_test.cc	/^void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f

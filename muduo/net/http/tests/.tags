@@ -1,0 +1,15 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BOOST_AUTO_TEST_CASE	HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestAllInOne)$/;"	f
+BOOST_AUTO_TEST_CASE	HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestEmptyHeaderValue)$/;"	f
+BOOST_AUTO_TEST_CASE	HttpRequest_unittest.cc	/^BOOST_AUTO_TEST_CASE(testParseRequestInTwoPieces)$/;"	f
+BOOST_TEST_DYN_LINK	HttpRequest_unittest.cc	6;"	d	file:
+BOOST_TEST_MAIN	HttpRequest_unittest.cc	5;"	d	file:
+benchmark	HttpServer_test.cc	/^bool benchmark = false;$/;"	v
+favicon	HttpServer_test.cc	/^char favicon[555] = {$/;"	v
+main	HttpServer_test.cc	/^int main(int argc, char* argv[])$/;"	f
+onRequest	HttpServer_test.cc	/^void onRequest(const HttpRequest& req, HttpResponse* resp)$/;"	f

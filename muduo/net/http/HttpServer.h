@@ -30,12 +30,12 @@ class HttpServer : boost::noncopyable
 {
  public:
   typedef boost::function<void (const HttpRequest&,
-                                HttpResponse*)> HttpCallback;
+                                HttpResponse*)> HttpCallback;  //http回调类型
 
   HttpServer(EventLoop* loop,
              const InetAddress& listenAddr,
              const string& name,
-             TcpServer::Option option = TcpServer::kNoReusePort);
+             TcpServer::Option option = TcpServer::kNoReusePort);  //构造函数
 
   ~HttpServer();  // force out-line dtor, for scoped_ptr members.
 
@@ -59,10 +59,10 @@ class HttpServer : boost::noncopyable
   void onMessage(const TcpConnectionPtr& conn,
                  Buffer* buf,
                  Timestamp receiveTime);
-  void onRequest(const TcpConnectionPtr&, const HttpRequest&);
+  void onRequest(const TcpConnectionPtr&, const HttpRequest&);//根据http请求，进行相应处理
 
-  TcpServer server_;
-  HttpCallback httpCallback_;
+  TcpServer server_;  //http服务器也是一个Tcp服务器，所以包含一个TcpServer
+  HttpCallback httpCallback_;  //在处理http请求时(即调用onRequest)的过程中回调此函数，对请求进行具体的处理。
 };
 
 }

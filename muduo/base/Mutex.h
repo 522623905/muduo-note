@@ -48,23 +48,24 @@ namespace muduo
 //   mutable MutexLock mutex_;
 //   std::vector<int> data_; // GUARDED BY mutex_
 // };
+//互斥器(不可拷贝)
 class MutexLock : boost::noncopyable
 {
  public:
   MutexLock()
     : holder_(0)
   {
-    MCHECK(pthread_mutex_init(&mutex_, NULL));
+    MCHECK(pthread_mutex_init(&mutex_, NULL));//构造函数中初始化mutex
   }
 
   ~MutexLock()
   {
-    assert(holder_ == 0);
-    MCHECK(pthread_mutex_destroy(&mutex_));
+    assert(holder_ == 0);//断言锁没有被任何线程使用
+    MCHECK(pthread_mutex_destroy(&mutex_));//析构函数中销毁mutex
   }
 
   // must be called when locked, i.e. for assertion
-  bool isLockedByThisThread() const
+  bool isLockedByThisThread() const     //用来检查当前线程是否给这个MutexLock对象加锁
   {
     return holder_ == CurrentThread::tid();
   }
@@ -75,26 +76,28 @@ class MutexLock : boost::noncopyable
   }
 
   // internal usage
-
+    //上锁
   void lock()
   {
-    MCHECK(pthread_mutex_lock(&mutex_));
-    assignHolder();
+    MCHECK(pthread_mutex_lock(&mutex_));  
+    assignHolder();//记录加锁的线程tid
   }
 
+    //解锁
   void unlock()
   {
-    unassignHolder();
+    unassignHolder();//记住清零holder
     MCHECK(pthread_mutex_unlock(&mutex_));
   }
 
-  pthread_mutex_t* getPthreadMutex() /* non-const */
+//可以返回指向类对象中互斥量的指针，在类外对互斥量操作，这个主要用在条件变量中
+  pthread_mutex_t* getPthreadMutex() /* non-const */ 
   {
     return &mutex_;
   }
 
  private:
-  friend class Condition;
+  friend class Condition; //友元Condition,为的是其能操作MutexLock类
 
   class UnassignGuard : boost::noncopyable
   {
@@ -102,30 +105,30 @@ class MutexLock : boost::noncopyable
     UnassignGuard(MutexLock& owner)
       : owner_(owner)
     {
-      owner_.unassignHolder();
+      owner_.unassignHolder();    //构造函数给holder_置零
     }
 
     ~UnassignGuard()
     {
-      owner_.assignHolder();
+      owner_.assignHolder();  //析构函数给holder_赋值线程tid
     }
 
    private:
     MutexLock& owner_;
   };
 
-  void unassignHolder()
+  void unassignHolder()   //解锁时给holder_置零(在解锁前调用)
   {
     holder_ = 0;
   }
 
-  void assignHolder()
+  void assignHolder()     //上锁时记录线程tid给holder_赋值(在上锁后调用)
   {
-    holder_ = CurrentThread::tid();
+    holder_ = CurrentThread::tid();   //当前线程的tid
   }
 
-  pthread_mutex_t mutex_;
-  pid_t holder_;
+  pthread_mutex_t mutex_;   //互斥量
+  pid_t holder_;  //用来表示给互斥量上锁线程的tid
 };
 
 // Use as a stack variable, eg.
@@ -134,23 +137,24 @@ class MutexLock : boost::noncopyable
 //   MutexLockGuard lock(mutex_);
 //   return data_.size();
 // }
+//在使用mutex时，有时会忘记给mutex解锁，为了防止这种情况发生，常常使用RAII手法
 class MutexLockGuard : boost::noncopyable
 {
  public:
   explicit MutexLockGuard(MutexLock& mutex)
     : mutex_(mutex)
   {
-    mutex_.lock();
+    mutex_.lock();//在构造函数初始化，并上锁
   }
 
   ~MutexLockGuard()
   {
-    mutex_.unlock();
+    mutex_.unlock();//在析构函数解锁
   }
 
  private:
 
-  MutexLock& mutex_;
+  MutexLock& mutex_;    //变量的引用
 };
 
 }

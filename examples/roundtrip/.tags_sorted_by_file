@@ -1,0 +1,24 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+clientConnection	roundtrip.cc	/^TcpConnectionPtr clientConnection;$/;"	v
+clientConnectionCallback	roundtrip.cc	/^void clientConnectionCallback(const TcpConnectionPtr& conn)$/;"	f
+clientMessageCallback	roundtrip.cc	/^void clientMessageCallback(const TcpConnectionPtr&,$/;"	f
+frameLen	roundtrip.cc	/^const size_t frameLen = 2*sizeof(int64_t);$/;"	v
+main	roundtrip.cc	/^int main(int argc, char* argv[])$/;"	f
+runClient	roundtrip.cc	/^void runClient(const char* ip, uint16_t port)$/;"	f
+runServer	roundtrip.cc	/^void runServer(uint16_t port)$/;"	f
+sendMyTime	roundtrip.cc	/^void sendMyTime()$/;"	f
+serverConnectionCallback	roundtrip.cc	/^void serverConnectionCallback(const TcpConnectionPtr& conn)$/;"	f
+serverMessageCallback	roundtrip.cc	/^void serverMessageCallback(const TcpConnectionPtr& conn,$/;"	f
+clientReadCallback	roundtrip_udp.cc	/^void clientReadCallback(int sockfd, muduo::Timestamp receiveTime)$/;"	f
+createNonblockingUDP	roundtrip_udp.cc	/^int createNonblockingUDP()$/;"	f
+frameLen	roundtrip_udp.cc	/^const size_t frameLen = 2*sizeof(int64_t);$/;"	v
+main	roundtrip_udp.cc	/^int main(int argc, char* argv[])$/;"	f
+runClient	roundtrip_udp.cc	/^void runClient(const char* ip, uint16_t port)$/;"	f
+runServer	roundtrip_udp.cc	/^void runServer(uint16_t port)$/;"	f
+sendMyTime	roundtrip_udp.cc	/^void sendMyTime(int sockfd)$/;"	f
+serverReadCallback	roundtrip_udp.cc	/^void serverReadCallback(int sockfd, muduo::Timestamp receiveTime)$/;"	f

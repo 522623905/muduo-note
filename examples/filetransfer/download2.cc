@@ -3,7 +3,6 @@
 #include <muduo/net/TcpServer.h>
 
 #include <stdio.h>
-#include <unistd.h>
 
 using namespace muduo;
 using namespace muduo::net;
@@ -30,10 +29,10 @@ void onConnection(const TcpConnectionPtr& conn)
     FILE* fp = ::fopen(g_file, "rb");
     if (fp)
     {
-      conn->setContext(fp);
+      conn->setContext(fp); //保存fp，为了方便在其他地方再获取fp
       char buf[kBufSize];
-      size_t nread = ::fread(buf, 1, sizeof buf, fp);
-      conn->send(buf, static_cast<int>(nread));
+      size_t nread = ::fread(buf, 1, sizeof buf, fp);   //改良：先读取64k数据
+      conn->send(buf, static_cast<int>(nread)); //发送
     }
     else
     {
@@ -54,16 +53,16 @@ void onConnection(const TcpConnectionPtr& conn)
   }
 }
 
-void onWriteComplete(const TcpConnectionPtr& conn)
+void onWriteComplete(const TcpConnectionPtr& conn)  //写完成回调。读取并发送下次数据.如此往复直到文件内容全部发送完毕
 {
   FILE* fp = boost::any_cast<FILE*>(conn->getContext());
   char buf[kBufSize];
-  size_t nread = ::fread(buf, 1, sizeof buf, fp);
+  size_t nread = ::fread(buf, 1, sizeof buf, fp); //再次读取64kb数据
   if (nread > 0)
   {
-    conn->send(buf, static_cast<int>(nread));
+    conn->send(buf, static_cast<int>(nread)); //发送
   }
-  else
+  else  
   {
     ::fclose(fp);
     fp = NULL;

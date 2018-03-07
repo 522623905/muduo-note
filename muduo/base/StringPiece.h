@@ -74,6 +74,9 @@ class StringArg // copyable
   const char* str_;
 };
 
+//从Google开源代码借用的字符串参数传递类型
+//可以用const char*,std::string,StringPiece类型作为参数传递
+//不涉及内存拷贝
 class StringPiece {
  private:
   const char*   ptr_;
@@ -124,11 +127,13 @@ class StringPiece {
 
   char operator[](int i) const { return ptr_[i]; }
 
+  //去除前n个字符
   void remove_prefix(int n) {
     ptr_ += n;
     length_ -= n;
   }
 
+  //去除后n个字符
   void remove_suffix(int n) {
     length_ -= n;
   }

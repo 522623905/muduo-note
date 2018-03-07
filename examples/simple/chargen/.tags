@@ -1,0 +1,19 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+ChargenServer	chargen.cc	/^ChargenServer::ChargenServer(EventLoop* loop,$/;"	f	class:ChargenServer
+ChargenServer	chargen.h	/^class ChargenServer$/;"	c
+MUDUO_EXAMPLES_SIMPLE_CHARGEN_CHARGEN_H	chargen.h	2;"	d
+main	main.cc	/^int main()$/;"	f
+message_	chargen.h	/^  muduo::string message_;$/;"	m	class:ChargenServer
+onConnection	chargen.cc	/^void ChargenServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ChargenServer
+onMessage	chargen.cc	/^void ChargenServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:ChargenServer
+onWriteComplete	chargen.cc	/^void ChargenServer::onWriteComplete(const TcpConnectionPtr& conn)$/;"	f	class:ChargenServer
+printThroughput	chargen.cc	/^void ChargenServer::printThroughput()$/;"	f	class:ChargenServer
+server_	chargen.h	/^  muduo::net::TcpServer server_;$/;"	m	class:ChargenServer
+start	chargen.cc	/^void ChargenServer::start()$/;"	f	class:ChargenServer
+startTime_	chargen.h	/^  muduo::Timestamp startTime_;$/;"	m	class:ChargenServer
+transferred_	chargen.h	/^  int64_t transferred_;$/;"	m	class:ChargenServer

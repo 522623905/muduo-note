@@ -1,0 +1,45 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+EchoServer	echo.cc	/^EchoServer::EchoServer(EventLoop* loop,$/;"	f	class:EchoServer
+dumpConnectionBuckets	echo.cc	/^void EchoServer::dumpConnectionBuckets() const      \/\/打印circular_buffer的变化情况$/;"	f	class:EchoServer
+onConnection	echo.cc	/^void EchoServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onMessage	echo.cc	/^void EchoServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+onTimer	echo.cc	/^void EchoServer::onTimer()$/;"	f	class:EchoServer
+start	echo.cc	/^void EchoServer::start()$/;"	f	class:EchoServer
+Bucket	echo.h	/^  typedef boost::unordered_set<EntryPtr> Bucket;  \/\/unordered_set是散列容器，基于哈希表实现，通过相应哈希函数处理关键字得到相应关键值$/;"	t	class:EchoServer
+EchoServer	echo.h	/^class EchoServer$/;"	c
+Entry	echo.h	/^    explicit Entry(const WeakTcpConnectionPtr& weakConn)  \/*初始化时候获得muduo::net::TcpConnection类型对象的弱指针*\/$/;"	f	struct:EchoServer::Entry
+Entry	echo.h	/^  struct Entry : public muduo::copyable$/;"	s	class:EchoServer
+EntryPtr	echo.h	/^  typedef boost::shared_ptr<Entry> EntryPtr;$/;"	t	class:EchoServer
+MUDUO_EXAMPLES_IDLECONNECTION_ECHO_H	echo.h	2;"	d
+WeakConnectionList	echo.h	/^  typedef boost::circular_buffer<Bucket> WeakConnectionList;  \/\/circular_buffer实现了循环缓冲的数据结构，但大小固定，当到达容器末尾，将自动循环利用容器的另一端空间$/;"	t	class:EchoServer
+WeakEntryPtr	echo.h	/^  typedef boost::weak_ptr<Entry> WeakEntryPtr;  \/\/弱引用，weak_ptr不会增加shared_ptr对象的引用计数$/;"	t	class:EchoServer
+WeakTcpConnectionPtr	echo.h	/^  typedef boost::weak_ptr<muduo::net::TcpConnection> WeakTcpConnectionPtr;$/;"	t	class:EchoServer
+boost	echo.h	/^namespace boost$/;"	n
+connectionBuckets_	echo.h	/^  WeakConnectionList connectionBuckets_;  \/\/存放连接的强指针$/;"	m	class:EchoServer
+hash_value	echo.h	/^inline size_t hash_value(const boost::shared_ptr<T>& x)$/;"	f	namespace:boost
+server_	echo.h	/^  muduo::net::TcpServer server_;$/;"	m	class:EchoServer
+weakConn_	echo.h	/^    WeakTcpConnectionPtr weakConn_; $/;"	m	struct:EchoServer::Entry
+~Entry	echo.h	/^    ~Entry()     \/*析构时候将弱指针提升为强指针,提升成功则关闭写端*\/$/;"	f	struct:EchoServer::Entry
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+main	main.cc	/^int main(int argc, char* argv[])$/;"	f
+testHash	main.cc	/^void testHash()$/;"	f
+EchoServer	sortedlist.cc	/^EchoServer::EchoServer(EventLoop* loop,$/;"	f	class:EchoServer
+EchoServer	sortedlist.cc	/^class EchoServer$/;"	c	file:
+Node	sortedlist.cc	/^  struct Node : public muduo::copyable$/;"	s	class:EchoServer	file:
+WeakConnectionList	sortedlist.cc	/^  typedef std::list<WeakTcpConnectionPtr> WeakConnectionList;$/;"	t	class:EchoServer	file:
+WeakTcpConnectionPtr	sortedlist.cc	/^  typedef boost::weak_ptr<TcpConnection> WeakTcpConnectionPtr;$/;"	t	class:EchoServer	file:
+connectionList_	sortedlist.cc	/^  WeakConnectionList connectionList_;$/;"	m	class:EchoServer	file:
+dumpConnectionList	sortedlist.cc	/^void EchoServer::dumpConnectionList() const$/;"	f	class:EchoServer
+idleSeconds_	sortedlist.cc	/^  int idleSeconds_;$/;"	m	class:EchoServer	file:
+lastReceiveTime	sortedlist.cc	/^    Timestamp lastReceiveTime;$/;"	m	struct:EchoServer::Node	file:
+main	sortedlist.cc	/^int main(int argc, char* argv[])$/;"	f
+onConnection	sortedlist.cc	/^void EchoServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onMessage	sortedlist.cc	/^void EchoServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+onTimer	sortedlist.cc	/^void EchoServer::onTimer()$/;"	f	class:EchoServer
+position	sortedlist.cc	/^    WeakConnectionList::iterator position;$/;"	m	struct:EchoServer::Node	file:
+server_	sortedlist.cc	/^  TcpServer server_;$/;"	m	class:EchoServer	file:
+start	sortedlist.cc	/^  void start()$/;"	f	class:EchoServer

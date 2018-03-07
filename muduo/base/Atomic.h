@@ -11,7 +11,7 @@
 
 namespace muduo
 {
-
+// 原子操作,是线程安全的，比锁的开销小，里面的CAS没有使用汇编而是使用__sync_val_compare_and_swap这个GCC内置函数
 namespace detail
 {
 template<typename T>
@@ -35,28 +35,33 @@ class AtomicIntegerT : boost::noncopyable
   //   return *this;
   // }
 
+  //获取值，原子操作
   T get()
   {
     // in gcc >= 4.7: __atomic_load_n(&value_, __ATOMIC_SEQ_CST)
-    return __sync_val_compare_and_swap(&value_, 0, 0);
+    return __sync_val_compare_and_swap(&value_, 0, 0);//比较value的值是否为0，如果是0，返回0；如果value不为0，不设置为0，则直接返回value，
   }
 
+  //先获取再进行加x的操作，返回未修改的value值
   T getAndAdd(T x)
   {
     // in gcc >= 4.7: __atomic_fetch_add(&value_, x, __ATOMIC_SEQ_CST)
     return __sync_fetch_and_add(&value_, x);
   }
 
+  //先加后获取，返回修改后的值
   T addAndGet(T x)
   {
     return getAndAdd(x) + x;
   }
 
+  //自增1，返回修改后的值
   T incrementAndGet()
   {
     return addAndGet(1);
   }
 
+  //自减1
   T decrementAndGet()
   {
     return addAndGet(-1);
@@ -77,6 +82,7 @@ class AtomicIntegerT : boost::noncopyable
     decrementAndGet();
   }
 
+  //返回原来值，再设置新值
   T getAndSet(T newValue)
   {
     // in gcc >= 4.7: __atomic_exchange_n(&value, newValue, __ATOMIC_SEQ_CST)

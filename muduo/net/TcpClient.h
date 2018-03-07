@@ -24,6 +24,12 @@ namespace net
 class Connector;
 typedef boost::shared_ptr<Connector> ConnectorPtr;
 
+/*
+  Connector类不单独使用，它封装在类TcpClient中。一个Connector对应一个TcpClient，
+  Connector用来建立连接，建立成功后把控制交给TcpConnection，因此TcpClient中也封装了一个TcpConnection。
+  由于Connector,该客户端具备断开重连功能
+*/
+
 class TcpClient : boost::noncopyable
 {
  public:
@@ -34,21 +40,21 @@ class TcpClient : boost::noncopyable
             const string& nameArg);
   ~TcpClient();  // force out-line dtor, for scoped_ptr members.
 
-  void connect();
-  void disconnect();
-  void stop();
+  void connect();  // 连接
+  void disconnect();  // 断开连接
+  void stop();  // 停止连接
 
-  TcpConnectionPtr connection() const
+  TcpConnectionPtr connection() const   // 返回TcpConnection对象
   {
     MutexLockGuard lock(mutex_);
     return connection_;
   }
 
-  EventLoop* getLoop() const { return loop_; }
-  bool retry() const { return retry_; }
-  void enableRetry() { retry_ = true; }
+  EventLoop* getLoop() const { return loop_; }  // 获取所属的Reactor
+  bool retry() const { return retry_; }   // 重连
+  void enableRetry() { retry_ = true; }   // 允许重连  
 
-  const string& name() const
+  const string& name() const   // 获取名字
   { return name_; }
 
   /// Set connection callback.
@@ -77,22 +83,22 @@ class TcpClient : boost::noncopyable
 
  private:
   /// Not thread safe, but in loop
-  void newConnection(int sockfd);
+  void newConnection(int sockfd);   // 连接建立完毕会调用这个函数
   /// Not thread safe, but in loop
-  void removeConnection(const TcpConnectionPtr& conn);
+  void removeConnection(const TcpConnectionPtr& conn);   // 移除一个链接
 
-  EventLoop* loop_;
-  ConnectorPtr connector_; // avoid revealing Connector
+  EventLoop* loop_;  // 所属的Reactor 
+  ConnectorPtr connector_; // avoid revealing Connector  一个TcpClient有一个Connector对应,Connector用来建立连接
   const string name_;
   ConnectionCallback connectionCallback_;
   MessageCallback messageCallback_;
   WriteCompleteCallback writeCompleteCallback_;
-  bool retry_;   // atomic
-  bool connect_; // atomic
+  bool retry_;   // atomic   //是否重连，是指建立的连接成功后又断开是否重连。而Connector的重连是一直不成功是否重试的意思
+  bool connect_; // atomic   // 是否已经建立连接
   // always in loop thread
-  int nextConnId_;
+  int nextConnId_;          //name_+nextConnid_用于标识一个连接
   mutable MutexLock mutex_;
-  TcpConnectionPtr connection_; // @GuardedBy mutex_
+  TcpConnectionPtr connection_; // @GuardedBy mutex_  Connector建立连接成功后把控制交给TcpConnection
 };
 
 }

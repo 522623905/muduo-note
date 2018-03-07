@@ -20,8 +20,8 @@
 
 // INADDR_ANY use (type)value casting.
 #pragma GCC diagnostic ignored "-Wold-style-cast"
-static const in_addr_t kInaddrAny = INADDR_ANY;
-static const in_addr_t kInaddrLoopback = INADDR_LOOPBACK;
+static const in_addr_t kInaddrAny = INADDR_ANY; //0.0.0.0，表示在本机任意的地址上监听
+static const in_addr_t kInaddrLoopback = INADDR_LOOPBACK;//127.0.0.1
 #pragma GCC diagnostic error "-Wold-style-cast"
 
 //     /* Structure describing an Internet socket address.  */
@@ -69,11 +69,12 @@ InetAddress::InetAddress(uint16_t port, bool loopbackOnly, bool ipv6)
     addr6_.sin6_addr = ip;
     addr6_.sin6_port = sockets::hostToNetwork16(port);
   }
-  else
+  else  //默认ipv6=false
   {
     bzero(&addr_, sizeof addr_);
     addr_.sin_family = AF_INET;
     in_addr_t ip = loopbackOnly ? kInaddrLoopback : kInaddrAny;
+    // 构造sockaddr_in结构
     addr_.sin_addr.s_addr = sockets::hostToNetwork32(ip);
     addr_.sin_port = sockets::hostToNetwork16(port);
   }
@@ -93,6 +94,7 @@ InetAddress::InetAddress(StringArg ip, uint16_t port, bool ipv6)
   }
 }
 
+// 返回ip和端口的字符串
 string InetAddress::toIpPort() const
 {
   char buf[64] = "";
@@ -100,6 +102,7 @@ string InetAddress::toIpPort() const
   return buf;
 }
 
+// 返回地址ip
 string InetAddress::toIp() const
 {
   char buf[64] = "";
@@ -113,13 +116,16 @@ uint32_t InetAddress::ipNetEndian() const
   return addr_.sin_addr.s_addr;
 }
 
+// 返回地址端口
 uint16_t InetAddress::toPort() const
 {
   return sockets::networkToHost16(portNetEndian());
 }
 
+// 线程安全的t_resolveBuffer，每个线程都有自己的一份，互不干涉
 static __thread char t_resolveBuffer[64 * 1024];
 
+// 从主机名解析获取网络地址
 bool InetAddress::resolve(StringArg hostname, InetAddress* out)
 {
   assert(out != NULL);
@@ -128,9 +134,11 @@ bool InetAddress::resolve(StringArg hostname, InetAddress* out)
   int herrno = 0;
   bzero(&hent, sizeof(hent));
 
+  // 获取主机信息
   int ret = gethostbyname_r(hostname.c_str(), &hent, t_resolveBuffer, sizeof t_resolveBuffer, &he, &herrno);
   if (ret == 0 && he != NULL)
   {
+      // 获取地址信息
     assert(he->h_addrtype == AF_INET && he->h_length == sizeof(uint32_t));
     out->addr_.sin_addr = *reinterpret_cast<struct in_addr*>(he->h_addr);
     return true;

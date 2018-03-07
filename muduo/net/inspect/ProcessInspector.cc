@@ -121,8 +121,10 @@ using namespace muduo::inspect;
 
 string ProcessInspector::username_ = ProcessInfo::username();
 
+/*命令注册*/
 void ProcessInspector::registerCommands(Inspector* ins)
 {
+   //将监控器传递进来，监控器添加4个回调函数，muduo库当前仅支持这四种，注册四个命令
   ins->add("proc", "overview", ProcessInspector::overview, "print basic overview");
   ins->add("proc", "pid", ProcessInspector::pid, "print pid");
   ins->add("proc", "status", ProcessInspector::procStatus, "print /proc/self/status");

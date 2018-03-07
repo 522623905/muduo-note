@@ -1,0 +1,230 @@
+DoneCallback	batch.cc	/^typedef boost::function<void(const string&, double, int)> DoneCallback;$/;"	t	file:
+Input	batch.cc	/^typedef std::vector<string> Input;$/;"	t	file:
+InputPtr	batch.cc	/^typedef boost::shared_ptr<Input> InputPtr;$/;"	t	file:
+SudokuClient	batch.cc	/^  SudokuClient(EventLoop* loop,$/;"	f	class:SudokuClient
+SudokuClient	batch.cc	/^class SudokuClient : boost::noncopyable$/;"	c	file:
+cb_	batch.cc	/^  DoneCallback cb_;$/;"	m	class:SudokuClient	file:
+client_	batch.cc	/^  TcpClient client_;$/;"	m	class:SudokuClient	file:
+connect	batch.cc	/^  void connect()$/;"	f	class:SudokuClient
+count_	batch.cc	/^  int count_;$/;"	m	class:SudokuClient	file:
+done	batch.cc	/^void done(const string& name, double elapsed, int count)$/;"	f
+g_connections	batch.cc	/^int g_connections;$/;"	v
+g_finished	batch.cc	/^int g_finished;$/;"	v
+g_loop	batch.cc	/^EventLoop* g_loop;$/;"	v
+g_start	batch.cc	/^Timestamp g_start;$/;"	v
+input_	batch.cc	/^  InputPtr input_;$/;"	m	class:SudokuClient	file:
+main	batch.cc	/^int main(int argc, char* argv[])$/;"	f
+name_	batch.cc	/^  string name_;$/;"	m	class:SudokuClient	file:
+onConnection	batch.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuClient	file:
+onMessage	batch.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuClient	file:
+readInput	batch.cc	/^InputPtr readInput(std::istream& in)$/;"	f
+runClient	batch.cc	/^void runClient(std::istream& in, const InetAddress& serverAddr, int conn)$/;"	f
+runLocal	batch.cc	/^void runLocal(std::istream& in)$/;"	f
+start_	batch.cc	/^  Timestamp start_;$/;"	m	class:SudokuClient	file:
+verify	batch.cc	/^bool verify(const string& result)$/;"	f
+Input	loadtest.cc	/^typedef std::vector<string> Input;$/;"	t	file:
+InputPtr	loadtest.cc	/^typedef boost::shared_ptr<const Input> InputPtr;$/;"	t	file:
+SudokuClient	loadtest.cc	/^  SudokuClient(EventLoop* loop,$/;"	f	class:SudokuClient
+SudokuClient	loadtest.cc	/^class SudokuClient : boost::noncopyable$/;"	c	file:
+SudokuLoadtest	loadtest.cc	/^  SudokuLoadtest()$/;"	f	class:SudokuLoadtest
+SudokuLoadtest	loadtest.cc	/^class SudokuLoadtest : boost::noncopyable$/;"	c	file:
+client_	loadtest.cc	/^  TcpClient client_;$/;"	m	class:SudokuClient	file:
+clients_	loadtest.cc	/^  boost::ptr_vector<SudokuClient> clients_;$/;"	m	class:SudokuLoadtest	file:
+conn_	loadtest.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:SudokuClient	file:
+connect	loadtest.cc	/^  void connect()$/;"	f	class:SudokuClient
+count_	loadtest.cc	/^  int count_;$/;"	m	class:SudokuClient	file:
+count_	loadtest.cc	/^  int count_;$/;"	m	class:SudokuLoadtest	file:
+input_	loadtest.cc	/^  const InputPtr input_;$/;"	m	class:SudokuClient	file:
+kHz	loadtest.cc	/^  static const int kHz = 100;$/;"	m	class:SudokuLoadtest	file:
+latencies_	loadtest.cc	/^  std::vector<int> latencies_;$/;"	m	class:SudokuClient	file:
+main	loadtest.cc	/^int main(int argc, char* argv[])$/;"	f
+name_	loadtest.cc	/^  const string name_;$/;"	m	class:SudokuClient	file:
+onConnection	loadtest.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuClient	file:
+onMessage	loadtest.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+readInput	loadtest.cc	/^InputPtr readInput(std::istream& in)$/;"	f
+report	loadtest.cc	/^  void report(std::vector<int>* latency, int* infly)$/;"	f	class:SudokuClient
+requests_	loadtest.cc	/^  Buffer requests_;$/;"	m	class:SudokuClient	file:
+runClient	loadtest.cc	/^  void runClient(const InputPtr& input, const InetAddress& serverAddr, int rps, int conn, bool nodelay)$/;"	f	class:SudokuLoadtest
+send	loadtest.cc	/^  void send(int n)$/;"	f	class:SudokuClient
+sendTime_	loadtest.cc	/^  boost::unordered_map<int, Timestamp> sendTime_;$/;"	m	class:SudokuClient	file:
+sofar_	loadtest.cc	/^  int64_t sofar_;$/;"	m	class:SudokuLoadtest	file:
+tcpNoDelay_	loadtest.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuClient	file:
+tick	loadtest.cc	/^  void tick(int rps)$/;"	f	class:SudokuLoadtest	file:
+ticks_	loadtest.cc	/^  int64_t ticks_;$/;"	m	class:SudokuLoadtest	file:
+tock	loadtest.cc	/^  void tock()$/;"	f	class:SudokuLoadtest	file:
+verify	loadtest.cc	/^  bool verify(const string& response, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+Percentile	percentile.h	/^  Percentile(std::vector<int>& latencies, int infly)$/;"	f	class:Percentile
+Percentile	percentile.h	/^class Percentile$/;"	c
+getPercentile	percentile.h	/^  static int getPercentile(const std::vector<int>& latencies, int percent)$/;"	f	class:Percentile
+report	percentile.h	/^  const muduo::LogStream::Buffer& report() const$/;"	f	class:Percentile
+save	percentile.h	/^  void save(const std::vector<int>& latencies, muduo::StringArg name) const$/;"	f	class:Percentile
+stat	percentile.h	/^  muduo::LogStream stat;$/;"	m	class:Percentile
+Input	pipeline.cc	/^typedef std::vector<string> Input;$/;"	t	file:
+InputPtr	pipeline.cc	/^typedef boost::shared_ptr<const Input> InputPtr;$/;"	t	file:
+SudokuClient	pipeline.cc	/^  SudokuClient(EventLoop* loop,$/;"	f	class:SudokuClient
+SudokuClient	pipeline.cc	/^class SudokuClient : boost::noncopyable$/;"	c	file:
+client_	pipeline.cc	/^  TcpClient client_;$/;"	m	class:SudokuClient	file:
+conn_	pipeline.cc	/^  TcpConnectionPtr conn_;$/;"	m	class:SudokuClient	file:
+connect	pipeline.cc	/^  void connect()$/;"	f	class:SudokuClient
+count_	pipeline.cc	/^  int count_;$/;"	m	class:SudokuClient	file:
+input_	pipeline.cc	/^  const InputPtr input_;$/;"	m	class:SudokuClient	file:
+latencies_	pipeline.cc	/^  std::vector<int> latencies_;$/;"	m	class:SudokuClient	file:
+main	pipeline.cc	/^int main(int argc, char* argv[])$/;"	f
+name_	pipeline.cc	/^  const string name_;$/;"	m	class:SudokuClient	file:
+onConnection	pipeline.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuClient	file:
+onMessage	pipeline.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+pipelines_	pipeline.cc	/^  const int pipelines_;$/;"	m	class:SudokuClient	file:
+readInput	pipeline.cc	/^InputPtr readInput(std::istream& in)$/;"	f
+report	pipeline.cc	/^  void report(std::vector<int>* latency, int* infly)$/;"	f	class:SudokuClient
+report	pipeline.cc	/^void report(boost::ptr_vector<SudokuClient>* clients)$/;"	f
+runClient	pipeline.cc	/^void runClient(const InputPtr& input,$/;"	f
+send	pipeline.cc	/^  void send(int n)$/;"	f	class:SudokuClient	file:
+sendTime_	pipeline.cc	/^  boost::unordered_map<int, Timestamp> sendTime_;$/;"	m	class:SudokuClient	file:
+tcpNoDelay_	pipeline.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuClient	file:
+verify	pipeline.cc	/^  bool verify(const string& response, Timestamp recvTime)$/;"	f	class:SudokuClient	file:
+SudokuServer	server_basic.cc	/^  SudokuServer(EventLoop* loop, const InetAddress& listenAddr)$/;"	f	class:SudokuServer
+SudokuServer	server_basic.cc	/^class SudokuServer$/;"	c	file:
+main	server_basic.cc	/^int main(int argc, char* argv[])$/;"	f
+onConnection	server_basic.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onMessage	server_basic.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuServer	file:
+processRequest	server_basic.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request)$/;"	f	class:SudokuServer	file:
+server_	server_basic.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+start	server_basic.cc	/^  void start()$/;"	f	class:SudokuServer
+startTime_	server_basic.cc	/^  Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+Request	server_hybrid.cc	/^  struct Request$/;"	s	class:SudokuServer	file:
+SudokuServer	server_hybrid.cc	/^  SudokuServer(EventLoop* loop,$/;"	f	class:SudokuServer
+SudokuServer	server_hybrid.cc	/^class SudokuServer : boost::noncopyable$/;"	c	file:
+id	server_hybrid.cc	/^    string id;$/;"	m	struct:SudokuServer::Request	file:
+inspectThread_	server_hybrid.cc	/^  EventLoopThread inspectThread_;$/;"	m	class:SudokuServer	file:
+inspector_	server_hybrid.cc	/^  Inspector inspector_;$/;"	m	class:SudokuServer	file:
+main	server_hybrid.cc	/^int main(int argc, char* argv[])$/;"	f
+numThreads_	server_hybrid.cc	/^  const int numThreads_;$/;"	m	class:SudokuServer	file:
+onConnection	server_hybrid.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onMessage	server_hybrid.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+processRequest	server_hybrid.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+puzzle	server_hybrid.cc	/^    string puzzle;$/;"	m	struct:SudokuServer::Request	file:
+receiveTime	server_hybrid.cc	/^    Timestamp receiveTime;$/;"	m	struct:SudokuServer::Request	file:
+server_	server_hybrid.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+solve	server_hybrid.cc	/^  void solve(const TcpConnectionPtr& conn, const Request& req)$/;"	f	class:SudokuServer	file:
+start	server_hybrid.cc	/^  void start()$/;"	f	class:SudokuServer
+startTime_	server_hybrid.cc	/^  const Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+stat_	server_hybrid.cc	/^  SudokuStat stat_;$/;"	m	class:SudokuServer	file:
+tcpNoDelay_	server_hybrid.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuServer	file:
+threadPool_	server_hybrid.cc	/^  ThreadPool threadPool_;$/;"	m	class:SudokuServer	file:
+SudokuServer	server_multiloop.cc	/^  SudokuServer(EventLoop* loop, const InetAddress& listenAddr, int numThreads)$/;"	f	class:SudokuServer
+SudokuServer	server_multiloop.cc	/^class SudokuServer$/;"	c	file:
+main	server_multiloop.cc	/^int main(int argc, char* argv[])$/;"	f
+numThreads_	server_multiloop.cc	/^  int numThreads_;$/;"	m	class:SudokuServer	file:
+onConnection	server_multiloop.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onMessage	server_multiloop.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuServer	file:
+processRequest	server_multiloop.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request)$/;"	f	class:SudokuServer	file:
+server_	server_multiloop.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+start	server_multiloop.cc	/^  void start()$/;"	f	class:SudokuServer
+startTime_	server_multiloop.cc	/^  Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+Request	server_prod.cc	/^  struct Request$/;"	s	class:SudokuServer	file:
+SudokuServer	server_prod.cc	/^  SudokuServer(EventLoop* loop,$/;"	f	class:SudokuServer
+SudokuServer	server_prod.cc	/^class SudokuServer : boost::noncopyable$/;"	c	file:
+highWaterMark	server_prod.cc	/^  void highWaterMark(const TcpConnectionPtr& conn, size_t tosend)$/;"	f	class:SudokuServer	file:
+id	server_prod.cc	/^    string id;$/;"	m	struct:SudokuServer::Request	file:
+inspectThread_	server_prod.cc	/^  EventLoopThread inspectThread_;$/;"	m	class:SudokuServer	file:
+inspector_	server_prod.cc	/^  Inspector inspector_;$/;"	m	class:SudokuServer	file:
+main	server_prod.cc	/^int main(int argc, char* argv[])$/;"	f
+numThreads_	server_prod.cc	/^  const int numThreads_;$/;"	m	class:SudokuServer	file:
+onConnection	server_prod.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onMessage	server_prod.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+processRequest	server_prod.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request, Timestamp receiveTime)$/;"	f	class:SudokuServer	file:
+puzzle	server_prod.cc	/^    string puzzle;$/;"	m	struct:SudokuServer::Request	file:
+receiveTime	server_prod.cc	/^    Timestamp receiveTime;$/;"	m	struct:SudokuServer::Request	file:
+server_	server_prod.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+solve	server_prod.cc	/^  void solve(const TcpConnectionPtr& conn, const Request& req)$/;"	f	class:SudokuServer	file:
+start	server_prod.cc	/^  void start()$/;"	f	class:SudokuServer
+startTime_	server_prod.cc	/^  const Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+stat_	server_prod.cc	/^  SudokuStat stat_;$/;"	m	class:SudokuServer	file:
+tcpNoDelay_	server_prod.cc	/^  const bool tcpNoDelay_;$/;"	m	class:SudokuServer	file:
+threadPool_	server_prod.cc	/^  ThreadPool threadPool_;$/;"	m	class:SudokuServer	file:
+writeComplete	server_prod.cc	/^  void writeComplete(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+SudokuServer	server_threadpool.cc	/^  SudokuServer(EventLoop* loop, const InetAddress& listenAddr, int numThreads)$/;"	f	class:SudokuServer
+SudokuServer	server_threadpool.cc	/^class SudokuServer$/;"	c	file:
+main	server_threadpool.cc	/^int main(int argc, char* argv[])$/;"	f
+numThreads_	server_threadpool.cc	/^  int numThreads_;$/;"	m	class:SudokuServer	file:
+onConnection	server_threadpool.cc	/^  void onConnection(const TcpConnectionPtr& conn)$/;"	f	class:SudokuServer	file:
+onMessage	server_threadpool.cc	/^  void onMessage(const TcpConnectionPtr& conn, Buffer* buf, Timestamp)$/;"	f	class:SudokuServer	file:
+processRequest	server_threadpool.cc	/^  bool processRequest(const TcpConnectionPtr& conn, const string& request)$/;"	f	class:SudokuServer	file:
+server_	server_threadpool.cc	/^  TcpServer server_;$/;"	m	class:SudokuServer	file:
+solve	server_threadpool.cc	/^  static void solve(const TcpConnectionPtr& conn,$/;"	f	class:SudokuServer	file:
+start	server_threadpool.cc	/^  void start()$/;"	f	class:SudokuServer
+startTime_	server_threadpool.cc	/^  Timestamp startTime_;$/;"	m	class:SudokuServer	file:
+threadPool_	server_threadpool.cc	/^  ThreadPool threadPool_;$/;"	m	class:SudokuServer	file:
+SudokuStat	stat.h	/^  SudokuStat(const ThreadPool& pool)$/;"	f	class:SudokuStat
+SudokuStat	stat.h	/^class SudokuStat : boost::noncopyable$/;"	c
+badLatency_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+badRequests_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+droppedRequests_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+kSeconds	stat.h	/^  static const int kSeconds = 60;$/;"	m	class:SudokuStat
+lastSecond_	stat.h	/^  time_t lastSecond_;$/;"	m	class:SudokuStat
+latencies_	stat.h	/^  boost::circular_buffer<int64_t> latencies_;$/;"	m	class:SudokuStat
+mutex_	stat.h	/^  mutable MutexLock mutex_;$/;"	m	class:SudokuStat
+pool_	stat.h	/^  const ThreadPool& pool_;  \/\/ only for ThreadPool::queueSize()$/;"	m	class:SudokuStat
+recordBadRequest	stat.h	/^  void recordBadRequest()$/;"	f	class:SudokuStat
+recordDroppedRequest	stat.h	/^  void recordDroppedRequest()$/;"	f	class:SudokuStat
+recordRequest	stat.h	/^  void recordRequest()$/;"	f	class:SudokuStat
+recordResponse	stat.h	/^  void recordResponse(Timestamp now, Timestamp receive, bool solved)$/;"	f	class:SudokuStat
+report	stat.h	/^  string report() const$/;"	f	class:SudokuStat
+requests_	stat.h	/^  boost::circular_buffer<int64_t> requests_;$/;"	m	class:SudokuStat
+reset	stat.h	/^  string reset()$/;"	f	class:SudokuStat
+totalLatency_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+totalRequests_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+totalResponses_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+totalSolved_	stat.h	/^  int64_t totalRequests_, totalResponses_, totalSolved_, badRequests_, droppedRequests_, totalLatency_, badLatency_;$/;"	m	class:SudokuStat
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatFuzz)$/;"	f
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpAhead5)$/;"	f
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpAhead59)$/;"	f
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpAhead60)$/;"	f
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatJumpBack3)$/;"	f
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatNextSecond)$/;"	f
+BOOST_AUTO_TEST_CASE	stat_unittest.cc	/^BOOST_AUTO_TEST_CASE(testSudokuStatSameSecond)$/;"	f
+BOOST_TEST_DYN_LINK	stat_unittest.cc	8;"	d	file:
+BOOST_TEST_MAIN	stat_unittest.cc	7;"	d	file:
+Column	sudoku.cc	/^typedef Node Column;$/;"	t	file:
+Node	sudoku.cc	/^struct Node$/;"	s	file:
+SudokuSolver	sudoku.cc	/^    SudokuSolver(int board[kCells])$/;"	f	class:SudokuSolver
+SudokuSolver	sudoku.cc	/^class SudokuSolver$/;"	c	file:
+append_column	sudoku.cc	/^    void append_column(int n)$/;"	f	class:SudokuSolver	file:
+col	sudoku.cc	/^    Column* col;$/;"	m	struct:Node	file:
+columns_	sudoku.cc	/^    Column* columns_[400];$/;"	m	class:SudokuSolver	file:
+cover	sudoku.cc	/^    void cover(Column* c)$/;"	f	class:SudokuSolver	file:
+cur_node_	sudoku.cc	/^    int     cur_node_;$/;"	m	class:SudokuSolver	file:
+down	sudoku.cc	/^    Node* down;$/;"	m	struct:Node	file:
+get_box_col	sudoku.cc	/^    int get_box_col(int box, int val)$/;"	f	class:SudokuSolver	file:
+get_col_col	sudoku.cc	/^    int get_col_col(int col, int val)$/;"	f	class:SudokuSolver	file:
+get_min_column	sudoku.cc	/^    Column* get_min_column()$/;"	f	class:SudokuSolver	file:
+get_row_col	sudoku.cc	/^    int get_row_col(int row, int val)$/;"	f	class:SudokuSolver	file:
+inout_	sudoku.cc	/^    int*    inout_;$/;"	m	class:SudokuSolver	file:
+kBox	sudoku.cc	/^const int kRow = 100, kCol = 200, kBox = 300;$/;"	v
+kCol	sudoku.cc	/^const int kRow = 100, kCol = 200, kBox = 300;$/;"	v
+kMaxNodes	sudoku.cc	/^const int kMaxNodes = 1 + 81*4 + 9*9*9*4;$/;"	v
+kNoSolution	sudoku.cc	/^extern const char kNoSolution[] = "NoSolution";$/;"	v
+kRow	sudoku.cc	/^const int kRow = 100, kCol = 200, kBox = 300;$/;"	v
+left	sudoku.cc	/^    Node* left;$/;"	m	struct:Node	file:
+name	sudoku.cc	/^    int name;$/;"	m	struct:Node	file:
+new_column	sudoku.cc	/^    Column* new_column(int n = 0)$/;"	f	class:SudokuSolver	file:
+new_row	sudoku.cc	/^    Node* new_row(int col)$/;"	f	class:SudokuSolver	file:
+nodes_	sudoku.cc	/^    Node    nodes_[kMaxNodes];$/;"	m	class:SudokuSolver	file:
+put_left	sudoku.cc	/^    void put_left(Column* old, Column* nnew)$/;"	f	class:SudokuSolver	file:
+put_up	sudoku.cc	/^    void put_up(Column* old, Node* nnew)$/;"	f	class:SudokuSolver	file:
+right	sudoku.cc	/^    Node* right;$/;"	m	struct:Node	file:
+root_	sudoku.cc	/^    Column* root_;$/;"	m	class:SudokuSolver	file:
+size	sudoku.cc	/^    int size;$/;"	m	struct:Node	file:
+solve	sudoku.cc	/^    bool solve()$/;"	f	class:SudokuSolver
+solveSudoku	sudoku.cc	/^string solveSudoku(const StringPiece& puzzle)$/;"	f
+stack_	sudoku.cc	/^    std::vector<Node*> stack_;$/;"	m	class:SudokuSolver	file:
+uncover	sudoku.cc	/^    void uncover(Column* c)$/;"	f	class:SudokuSolver	file:
+up	sudoku.cc	/^    Node* up;$/;"	m	struct:Node	file:
+MUDUO_EXAMPLES_SUDOKU_SUDOKU_H	sudoku.h	2;"	d
+kCells	sudoku.h	/^const int kCells = 81;$/;"	v
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.8	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/

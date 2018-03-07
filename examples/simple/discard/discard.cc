@@ -11,10 +11,10 @@ DiscardServer::DiscardServer(EventLoop* loop,
                              const InetAddress& listenAddr)
   : server_(loop, listenAddr, "DiscardServer")
 {
-  server_.setConnectionCallback(
-      boost::bind(&DiscardServer::onConnection, this, _1));
-  server_.setMessageCallback(
-      boost::bind(&DiscardServer::onMessage, this, _1, _2, _3));
+  server_.setConnectionCallback(  //设置连接回调
+      boost::bind(&DiscardServer::onConnection, this, _1)); //绑定的是成员函数，所以要有一个this
+  server_.setMessageCallback( //设置消息回调
+      boost::bind(&DiscardServer::onMessage, this, _1, _2, _3));  //绑定的是成员函数，所以要有一个this
 }
 
 void DiscardServer::start()

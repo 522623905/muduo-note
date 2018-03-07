@@ -41,7 +41,7 @@ set(EXECUTABLE_OUTPUT_PATH ${PROJECT_BINARY_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_BINARY_DIR}/lib)
 
 find_package(Boost REQUIRED)
-find_package(Protobuf)
+#find_package(Protobuf)
 find_package(CURL)
 find_package(ZLIB)
 find_path(CARES_INCLUDE_DIR ares.h)

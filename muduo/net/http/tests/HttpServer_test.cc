@@ -13,12 +13,21 @@ using namespace muduo::net;
 extern char favicon[555];
 bool benchmark = false;
 
+
+/*
+**测试方法：
+**运行程序后，在浏览器输入：
+**    localhost:8000   localhost:8000/hello  。。。。等  
+*/
+
+//实际的请求处理
 void onRequest(const HttpRequest& req, HttpResponse* resp)
 {
   std::cout << "Headers " << req.methodString() << " " << req.path() << std::endl;
   if (!benchmark)
   {
     const std::map<string, string>& headers = req.headers();
+    //遍历头部信息，并打印显示到终端上
     for (std::map<string, string>::const_iterator it = headers.begin();
          it != headers.end();
          ++it)
@@ -34,6 +43,7 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
     resp->setContentType("text/html");
     resp->addHeader("Server", "Muduo");
     string now = Timestamp::now().toFormattedString();
+    //使用html格式组装起来
     resp->setBody("<html><head><title>This is title</title></head>"
         "<body><h1>Hello</h1>Now is " + now +
         "</body></html>");
@@ -58,6 +68,7 @@ void onRequest(const HttpRequest& req, HttpResponse* resp)
     resp->setStatusCode(HttpResponse::k404NotFound);
     resp->setStatusMessage("Not Found");
     resp->setCloseConnection(true);
+    resp->setBody("Not Found!\n");
   }
 }
 

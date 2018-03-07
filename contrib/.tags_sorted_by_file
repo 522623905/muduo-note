@@ -1,0 +1,115 @@
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+Hiredis	hiredis/Hiredis.cc	/^Hiredis::Hiredis(EventLoop* loop, const InetAddress& serverAddr)$/;"	f	class:Hiredis
+addRead	hiredis/Hiredis.cc	/^void Hiredis::addRead(void* privdata)$/;"	f	class:Hiredis
+addWrite	hiredis/Hiredis.cc	/^void Hiredis::addWrite(void* privdata)$/;"	f	class:Hiredis
+cleanup	hiredis/Hiredis.cc	/^void Hiredis::cleanup(void* privdata)$/;"	f	class:Hiredis
+command	hiredis/Hiredis.cc	/^int Hiredis::command(const CommandCallback& cb, muduo::StringArg cmd, ...)$/;"	f	class:Hiredis
+commandCallback	hiredis/Hiredis.cc	/^\/* static *\/ void Hiredis::commandCallback(redisAsyncContext* ac, void* r, void* privdata)$/;"	f	class:Hiredis
+commandCallback	hiredis/Hiredis.cc	/^void Hiredis::commandCallback(redisReply* reply, CommandCallback* cb)$/;"	f	class:Hiredis
+connect	hiredis/Hiredis.cc	/^void Hiredis::connect()$/;"	f	class:Hiredis
+connectCallback	hiredis/Hiredis.cc	/^\/* static *\/ void Hiredis::connectCallback(const redisAsyncContext* ac, int status)$/;"	f	class:Hiredis
+connectCallback	hiredis/Hiredis.cc	/^void Hiredis::connectCallback(int status)$/;"	f	class:Hiredis
+connected	hiredis/Hiredis.cc	/^bool Hiredis::connected() const$/;"	f	class:Hiredis
+delRead	hiredis/Hiredis.cc	/^void Hiredis::delRead(void* privdata)$/;"	f	class:Hiredis
+delWrite	hiredis/Hiredis.cc	/^void Hiredis::delWrite(void* privdata)$/;"	f	class:Hiredis
+disconnect	hiredis/Hiredis.cc	/^void Hiredis::disconnect()$/;"	f	class:Hiredis
+disconnectCallback	hiredis/Hiredis.cc	/^\/* static *\/ void Hiredis::disconnectCallback(const redisAsyncContext* ac, int status)$/;"	f	class:Hiredis
+disconnectCallback	hiredis/Hiredis.cc	/^void Hiredis::disconnectCallback(int status)$/;"	f	class:Hiredis
+dummy	hiredis/Hiredis.cc	/^static void dummy(const boost::shared_ptr<Channel>&)$/;"	f	file:
+errstr	hiredis/Hiredis.cc	/^const char* Hiredis::errstr() const$/;"	f	class:Hiredis
+fd	hiredis/Hiredis.cc	/^int Hiredis::fd() const$/;"	f	class:Hiredis
+getHiredis	hiredis/Hiredis.cc	/^\/* static *\/ Hiredis* Hiredis::getHiredis(const redisAsyncContext* ac)$/;"	f	class:Hiredis
+handleRead	hiredis/Hiredis.cc	/^void Hiredis::handleRead(muduo::Timestamp receiveTime)$/;"	f	class:Hiredis
+handleWrite	hiredis/Hiredis.cc	/^void Hiredis::handleWrite()$/;"	f	class:Hiredis
+logConnection	hiredis/Hiredis.cc	/^void Hiredis::logConnection(bool up) const$/;"	f	class:Hiredis
+ping	hiredis/Hiredis.cc	/^int Hiredis::ping()$/;"	f	class:Hiredis
+pingCallback	hiredis/Hiredis.cc	/^void Hiredis::pingCallback(Hiredis* me, redisReply* reply)$/;"	f	class:Hiredis
+removeChannel	hiredis/Hiredis.cc	/^void Hiredis::removeChannel()$/;"	f	class:Hiredis
+setChannel	hiredis/Hiredis.cc	/^void Hiredis::setChannel()$/;"	f	class:Hiredis
+~Hiredis	hiredis/Hiredis.cc	/^Hiredis::~Hiredis()$/;"	f	class:Hiredis
+CommandCallback	hiredis/Hiredis.h	/^  typedef boost::function<void(Hiredis*, redisReply*)> CommandCallback;$/;"	t	class:hiredis::Hiredis
+ConnectCallback	hiredis/Hiredis.h	/^  typedef boost::function<void(Hiredis*, int)> ConnectCallback;$/;"	t	class:hiredis::Hiredis
+DisconnectCallback	hiredis/Hiredis.h	/^  typedef boost::function<void(Hiredis*, int)> DisconnectCallback;$/;"	t	class:hiredis::Hiredis
+Hiredis	hiredis/Hiredis.h	/^class Hiredis : public boost::enable_shared_from_this<Hiredis>,$/;"	c	namespace:hiredis
+MUDUO_EXAMPLES_HIREDIS_HIREDIS_H	hiredis/Hiredis.h	2;"	d
+channel_	hiredis/Hiredis.h	/^  boost::shared_ptr<muduo::net::Channel> channel_;$/;"	m	class:hiredis::Hiredis
+connectCb_	hiredis/Hiredis.h	/^  ConnectCallback connectCb_;$/;"	m	class:hiredis::Hiredis
+context_	hiredis/Hiredis.h	/^  redisAsyncContext* context_;$/;"	m	class:hiredis::Hiredis
+disconnectCb_	hiredis/Hiredis.h	/^  DisconnectCallback disconnectCb_;$/;"	m	class:hiredis::Hiredis
+hiredis	hiredis/Hiredis.h	/^namespace hiredis$/;"	n
+loop_	hiredis/Hiredis.h	/^  muduo::net::EventLoop* loop_;$/;"	m	class:hiredis::Hiredis
+muduo	hiredis/Hiredis.h	/^namespace muduo$/;"	n
+net	hiredis/Hiredis.h	/^namespace net$/;"	n	namespace:muduo
+serverAddr_	hiredis/Hiredis.h	/^  const muduo::net::InetAddress serverAddr_;$/;"	m	class:hiredis::Hiredis
+serverAddress	hiredis/Hiredis.h	/^  const muduo::net::InetAddress& serverAddress() const { return serverAddr_; }$/;"	f	class:hiredis::Hiredis
+setConnectCallback	hiredis/Hiredis.h	/^  void setConnectCallback(const ConnectCallback& cb) { connectCb_ = cb; }$/;"	f	class:hiredis::Hiredis
+setDisconnectCallback	hiredis/Hiredis.h	/^  void setDisconnectCallback(const DisconnectCallback& cb) { disconnectCb_ = cb; }$/;"	f	class:hiredis::Hiredis
+authCallback	hiredis/mrediscli.cc	/^void authCallback(hiredis::Hiredis* c, redisReply* reply, string* password)$/;"	f
+connectCallback	hiredis/mrediscli.cc	/^void connectCallback(hiredis::Hiredis* c, int status)$/;"	f
+dbsizeCallback	hiredis/mrediscli.cc	/^void dbsizeCallback(hiredis::Hiredis* c, redisReply* reply)$/;"	f
+disconnectCallback	hiredis/mrediscli.cc	/^void disconnectCallback(hiredis::Hiredis* c, int status)$/;"	f
+echo	hiredis/mrediscli.cc	/^void echo(hiredis::Hiredis* c, string* s)$/;"	f
+echoCallback	hiredis/mrediscli.cc	/^void echoCallback(hiredis::Hiredis* c, redisReply* reply, string* echo)$/;"	f
+main	hiredis/mrediscli.cc	/^int main(int argc, char** argv)$/;"	f
+redisReplyToString	hiredis/mrediscli.cc	/^string redisReplyToString(const redisReply* reply)$/;"	f
+selectCallback	hiredis/mrediscli.cc	/^void selectCallback(hiredis::Hiredis* c, redisReply* reply, uint16_t* index)$/;"	f
+timeCallback	hiredis/mrediscli.cc	/^void timeCallback(hiredis::Hiredis* c, redisReply* reply)$/;"	f
+toString	hiredis/mrediscli.cc	/^string toString(long long value)$/;"	f
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+ThriftConnection	thrift/ThriftConnection.cc	/^ThriftConnection::ThriftConnection(ThriftServer* server,$/;"	f	class:ThriftConnection
+close	thrift/ThriftConnection.cc	/^void ThriftConnection::close()$/;"	f	class:ThriftConnection
+onMessage	thrift/ThriftConnection.cc	/^void ThriftConnection::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:ThriftConnection
+process	thrift/ThriftConnection.cc	/^void ThriftConnection::process()$/;"	f	class:ThriftConnection
+MUDUO_EXAMPLES_THRIFT_THRIFTCONNECTION_H	thrift/ThriftConnection.h	2;"	d
+State	thrift/ThriftConnection.h	/^  enum State$/;"	g	class:ThriftConnection
+ThriftConnection	thrift/ThriftConnection.h	/^class ThriftConnection : boost::noncopyable,$/;"	c
+ThriftConnectionPtr	thrift/ThriftConnection.h	/^typedef boost::shared_ptr<ThriftConnection> ThriftConnectionPtr;$/;"	t
+conn_	thrift/ThriftConnection.h	/^  muduo::net::TcpConnectionPtr conn_;$/;"	m	class:ThriftConnection
+factoryInputTransport_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TTransport> factoryInputTransport_;$/;"	m	class:ThriftConnection
+factoryOutputTransport_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TTransport> factoryOutputTransport_;$/;"	m	class:ThriftConnection
+frameSize_	thrift/ThriftConnection.h	/^  uint32_t frameSize_;$/;"	m	class:ThriftConnection
+inputProtocol_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TProtocol> inputProtocol_;$/;"	m	class:ThriftConnection
+inputTransport_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TMemoryBuffer> inputTransport_;$/;"	m	class:ThriftConnection
+kExpectFrame	thrift/ThriftConnection.h	/^    kExpectFrame$/;"	e	enum:ThriftConnection::State
+kExpectFrameSize	thrift/ThriftConnection.h	/^    kExpectFrameSize,$/;"	e	enum:ThriftConnection::State
+nullTransport_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TNullTransport> nullTransport_;$/;"	m	class:ThriftConnection
+outputProtocol_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TProtocol> outputProtocol_;$/;"	m	class:ThriftConnection
+outputTransport_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TMemoryBuffer> outputTransport_;$/;"	m	class:ThriftConnection
+processor_	thrift/ThriftConnection.h	/^  boost::shared_ptr<TProcessor> processor_;$/;"	m	class:ThriftConnection
+server_	thrift/ThriftConnection.h	/^  ThriftServer* server_;$/;"	m	class:ThriftConnection
+state_	thrift/ThriftConnection.h	/^  enum State state_;$/;"	m	class:ThriftConnection	typeref:enum:ThriftConnection::State
+onConnection	thrift/ThriftServer.cc	/^void ThriftServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:ThriftServer
+serve	thrift/ThriftServer.cc	/^void ThriftServer::serve()$/;"	f	class:ThriftServer
+start	thrift/ThriftServer.cc	/^void ThriftServer::start()$/;"	f	class:ThriftServer
+stop	thrift/ThriftServer.cc	/^void ThriftServer::stop()$/;"	f	class:ThriftServer
+~ThriftServer	thrift/ThriftServer.cc	/^ThriftServer::~ThriftServer()$/;"	f	class:ThriftServer
+MUDUO_EXAMPLES_THRIFT_THRIFTSERVER_H	thrift/ThriftServer.h	2;"	d
+ThriftServer	thrift/ThriftServer.h	/^  ThriftServer(const boost::shared_ptr<Processor>& processor,$/;"	f	class:ThriftServer
+ThriftServer	thrift/ThriftServer.h	/^  ThriftServer(const boost::shared_ptr<ProcessorFactory>& processorFactory,$/;"	f	class:ThriftServer
+ThriftServer	thrift/ThriftServer.h	/^class ThriftServer : boost::noncopyable,$/;"	c
+conns_	thrift/ThriftServer.h	/^  std::map<muduo::string, ThriftConnectionPtr> conns_;$/;"	m	class:ThriftServer
+isWorkerThreadPoolProcessing	thrift/ThriftServer.h	/^  bool isWorkerThreadPoolProcessing() const$/;"	f	class:ThriftServer
+mutex_	thrift/ThriftServer.h	/^  muduo::MutexLock mutex_;$/;"	m	class:ThriftServer
+numWorkerThreads_	thrift/ThriftServer.h	/^  int numWorkerThreads_;$/;"	m	class:ThriftServer
+server_	thrift/ThriftServer.h	/^  muduo::net::TcpServer server_;$/;"	m	class:ThriftServer
+setThreadNum	thrift/ThriftServer.h	/^  void setThreadNum(int numThreads)$/;"	f	class:ThriftServer
+setWorkerThreadNum	thrift/ThriftServer.h	/^  void setWorkerThreadNum(int numWorkerThreads)$/;"	f	class:ThriftServer
+workerThreadPool	thrift/ThriftServer.h	/^  muduo::ThreadPool& workerThreadPool()$/;"	f	class:ThriftServer
+workerThreadPool_	thrift/ThriftServer.h	/^  muduo::ThreadPool workerThreadPool_;$/;"	m	class:ThriftServer
+EchoHandler	thrift/tests/echo/EchoServer.cc	/^  EchoHandler()$/;"	f	class:EchoHandler
+EchoHandler	thrift/tests/echo/EchoServer.cc	/^class EchoHandler : virtual public EchoIf$/;"	c	file:
+NumCPU	thrift/tests/echo/EchoServer.cc	/^int NumCPU()$/;"	f
+echo	thrift/tests/echo/EchoServer.cc	/^  void echo(std::string& str, const std::string& s)$/;"	f	class:EchoHandler
+main	thrift/tests/echo/EchoServer.cc	/^int main(int argc, char **argv)$/;"	f
+echo	thrift/tests/echo/echoclient.py	/^def echo(s):$/;"	f
+main	thrift/tests/echo/echoclient.py	/^def main():$/;"	f
+PingHandler	thrift/tests/ping/PingServer.cc	/^  PingHandler()$/;"	f	class:PingHandler
+PingHandler	thrift/tests/ping/PingServer.cc	/^class PingHandler : virtual public PingIf$/;"	c	file:
+main	thrift/tests/ping/PingServer.cc	/^int main(int argc, char **argv)$/;"	f
+ping	thrift/tests/ping/PingServer.cc	/^  void ping()$/;"	f	class:PingHandler
+main	thrift/tests/ping/pingclient.py	/^def main():$/;"	f
+ping	thrift/tests/ping/pingclient.py	/^def ping():$/;"	f

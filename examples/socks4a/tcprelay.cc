@@ -3,7 +3,6 @@
 #include <malloc.h>
 #include <stdio.h>
 #include <sys/resource.h>
-#include <unistd.h>
 
 using namespace muduo;
 using namespace muduo::net;

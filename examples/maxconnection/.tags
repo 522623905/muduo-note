@@ -1,0 +1,16 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+EchoServer	echo.cc	/^EchoServer::EchoServer(EventLoop* loop,$/;"	f	class:EchoServer
+EchoServer	echo.h	/^class EchoServer$/;"	c
+MUDUO_EXAMPLES_SIMPLE_ECHO_ECHO_H	echo.h	2;"	d
+kMaxConnections_	echo.h	/^  const int kMaxConnections_;$/;"	m	class:EchoServer
+main	main.cc	/^int main(int argc, char* argv[])$/;"	f
+numConnected_	echo.h	/^  int numConnected_; \/\/ should be atomic_int$/;"	m	class:EchoServer
+onConnection	echo.cc	/^void EchoServer::onConnection(const TcpConnectionPtr& conn)$/;"	f	class:EchoServer
+onMessage	echo.cc	/^void EchoServer::onMessage(const TcpConnectionPtr& conn,$/;"	f	class:EchoServer
+server_	echo.h	/^  muduo::net::TcpServer server_;$/;"	m	class:EchoServer
+start	echo.cc	/^void EchoServer::start()$/;"	f	class:EchoServer

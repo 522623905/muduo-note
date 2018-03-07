@@ -15,7 +15,7 @@
 
 namespace muduo
 {
-
+// 异步队列，但是使用循环数组来实现，有大小限制
 template<typename T>
 class BoundedBlockingQueue : boost::noncopyable
 {
@@ -24,7 +24,7 @@ class BoundedBlockingQueue : boost::noncopyable
     : mutex_(),
       notEmpty_(mutex_),
       notFull_(mutex_),
-      queue_(maxSize)
+      queue_(maxSize) //初始化缓冲区大小
   {
   }
 
@@ -80,9 +80,9 @@ class BoundedBlockingQueue : boost::noncopyable
 
  private:
   mutable MutexLock          mutex_;
-  Condition                  notEmpty_;
-  Condition                  notFull_;
-  boost::circular_buffer<T>  queue_;
+  Condition                  notEmpty_;//非空条件变量
+  Condition                  notFull_; //未满条件变量
+  boost::circular_buffer<T>  queue_; //使用唤醒缓冲区结构
 };
 
 }

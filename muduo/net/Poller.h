@@ -29,6 +29,7 @@ class Channel;
 /// Base class for IO Multiplexing
 ///
 /// This class doesn't own the Channel objects.
+/// 抽象类，用于继承的
 class Poller : boost::noncopyable
 {
  public:
@@ -39,15 +40,15 @@ class Poller : boost::noncopyable
 
   /// Polls the I/O events.
   /// Must be called in the loop thread.
-  virtual Timestamp poll(int timeoutMs, ChannelList* activeChannels) = 0;
+  virtual Timestamp poll(int timeoutMs, ChannelList* activeChannels) = 0;  // 进行poll操作，活跃事件放在activeChannels里面
 
   /// Changes the interested I/O events.
   /// Must be called in the loop thread.
-  virtual void updateChannel(Channel* channel) = 0;
+  virtual void updateChannel(Channel* channel) = 0;  // 纯虚函数。更新channel
 
   /// Remove the channel, when it destructs.
   /// Must be called in the loop thread.
-  virtual void removeChannel(Channel* channel) = 0;
+  virtual void removeChannel(Channel* channel) = 0;  // 纯虚函数。删除channel
 
   virtual bool hasChannel(Channel* channel) const;
 

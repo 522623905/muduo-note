@@ -17,9 +17,9 @@
 using namespace muduo;
 using namespace muduo::net;
 
-const int Channel::kNoneEvent = 0;
-const int Channel::kReadEvent = POLLIN | POLLPRI;
-const int Channel::kWriteEvent = POLLOUT;
+const int Channel::kNoneEvent = 0;//无事件
+const int Channel::kReadEvent = POLLIN | POLLPRI; // 读事件。PRI表示紧急数据，如socket的带外数据
+const int Channel::kWriteEvent = POLLOUT;//写事件
 
 Channel::Channel(EventLoop* loop, int fd__)
   : loop_(loop),
@@ -40,7 +40,7 @@ Channel::~Channel()
   assert(!addedToLoop_);
   if (loop_->isInLoopThread())
   {
-    assert(!loop_->hasChannel(this));
+    assert(!loop_->hasChannel(this));//断言loop已经没有该channel了，才正常析构
   }
 }
 
@@ -56,6 +56,7 @@ void Channel::update()
   loop_->updateChannel(this);
 }
 
+//调用这个函数前，确保disableAll
 void Channel::remove()
 {
   assert(isNoneEvent());
@@ -80,11 +81,13 @@ void Channel::handleEvent(Timestamp receiveTime)
   }
 }
 
+//根据revents表示的目前活动事件来回调相应函数
+//实际上下面的回调，调用的是TcpConnection下的handleXXX函数
 void Channel::handleEventWithGuard(Timestamp receiveTime)
 {
-  eventHandling_ = true;
+  eventHandling_ = true;//置位，正在处理事件
   LOG_TRACE << reventsToString();
-  if ((revents_ & POLLHUP) && !(revents_ & POLLIN))
+  if ((revents_ & POLLHUP) && !(revents_ & POLLIN)) //连接断开POLLHUP只可能在output产生(man poll)，读的时候不会产生！所以要判断
   {
     if (logHup_)
     {
@@ -93,7 +96,7 @@ void Channel::handleEventWithGuard(Timestamp receiveTime)
     if (closeCallback_) closeCallback_();
   }
 
-  if (revents_ & POLLNVAL)
+  if (revents_ & POLLNVAL)  //表示fd未打开
   {
     LOG_WARN << "fd = " << fd_ << " Channel::handle_event() POLLNVAL";
   }
@@ -102,15 +105,15 @@ void Channel::handleEventWithGuard(Timestamp receiveTime)
   {
     if (errorCallback_) errorCallback_();
   }
-  if (revents_ & (POLLIN | POLLPRI | POLLRDHUP))
+  if (revents_ & (POLLIN | POLLPRI | POLLRDHUP)) //可读事件或者对方关闭连接
   {
-    if (readCallback_) readCallback_(receiveTime);
-  }
-  if (revents_ & POLLOUT)
+    if (readCallback_) readCallback_(receiveTime);  //readCallback_作用： 1.TImerQueue用来读timerfd  2.EventLoop用来读eventfd  
+  }                                                // 3.TcpServer/Acceptor用来读listening socket  4.TcpConnection用来读普通TCP socket
+  if (revents_ & POLLOUT) //可写事件产生
   {
     if (writeCallback_) writeCallback_();
   }
-  eventHandling_ = false;
+  eventHandling_ = false;//复位，表示事件处理完毕
 }
 
 string Channel::reventsToString() const
