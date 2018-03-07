@@ -9,7 +9,7 @@ int main()
 {
   EventLoop loop;
   EventLoopThread t; // 监控线程 ，这里“线程该没有真正创建，t.startLoop（）函数才是真正创建”
-  Inspector ins(t.startLoop(), InetAddress(12345), "test"); /*Inspector 的loop 和main thread 的loop是不一样的，也就是说，现在已经有两个loop了*/
+  Inspector ins(t.startLoop(), InetAddress(12345), "test"); /*Inspector 的loop是另起的一个Thread创建的， 和main thread 的loop是不一样的，也就是说，现在已经有两个loop了*/
   loop.loop();
 }
 
