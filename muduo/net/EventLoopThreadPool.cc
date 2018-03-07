@@ -33,6 +33,7 @@ EventLoopThreadPool::~EventLoopThreadPool()
   // Don't delete loop, it's stack variable
 }
 
+// 启动线程池
 void EventLoopThreadPool::start(const ThreadInitCallback& cb) 
 {
   assert(!started_);
@@ -40,13 +41,14 @@ void EventLoopThreadPool::start(const ThreadInitCallback& cb)
 
   started_ = true;
 
+  /* 创建numThreads_个EventLoop io线程*/
   for (int i = 0; i < numThreads_; ++i)
   {
     char buf[name_.size() + 32];
     snprintf(buf, sizeof buf, "%s%d", name_.c_str(), i);
     EventLoopThread* t = new EventLoopThread(cb, buf);
-    threads_.push_back(t);
-    loops_.push_back(t->startLoop()); // 启动EventLoopThread线程，在进入事件循环之前，会调用cb
+    threads_.push_back(t);//当ptr_vector<EventLoopThread>对象销毁，其所管理的EventLoopThread也跟着销毁
+    loops_.push_back(t->startLoop()); // startLoop()会创建并返回新的EventLoop,然后push_back到loops_
   }
   if (numThreads_ == 0 && cb)
   {
@@ -54,16 +56,18 @@ void EventLoopThreadPool::start(const ThreadInitCallback& cb)
   }
 }
 
+//获得loops_中的下一个EventLoop地址
+//当一个新的对象到来的时候 选择一个EventLoop来处理
 EventLoop* EventLoopThreadPool::getNextLoop()
 {
   baseLoop_->assertInLoopThread();
   assert(started_);
-  EventLoop* loop = baseLoop_;
+  EventLoop* loop = baseLoop_;/* baseLoop_是Acceptor所属EventLoop，即mainReactor*/
 
+  // 如果loops_为空，则loop指向baseLoop_ 所有任务由mainReactor处理
+  // 如果不为空，按照round-robin（RR，轮叫）的调度方式选择一个EventLoop
   if (!loops_.empty())
   {
-     // 如果loops_为空，则loop指向baseLoop_
-     // 如果不为空，按照round-robin（RR，轮叫）的调度方式选择一个EventLoop
     loop = loops_[next_];
     ++next_;
     if (implicit_cast<size_t>(next_) >= loops_.size())
@@ -74,6 +78,7 @@ EventLoop* EventLoopThreadPool::getNextLoop()
   return loop;
 }
 
+//指定某一个loop，强制获取
 EventLoop* EventLoopThreadPool::getLoopForHash(size_t hashCode)
 {
   baseLoop_->assertInLoopThread();
@@ -87,6 +92,7 @@ EventLoop* EventLoopThreadPool::getLoopForHash(size_t hashCode)
   return loop;
 }
 
+//获取所有的loops列表
 std::vector<EventLoop*> EventLoopThreadPool::getAllLoops()
 {
   baseLoop_->assertInLoopThread();
