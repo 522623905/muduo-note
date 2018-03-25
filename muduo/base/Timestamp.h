@@ -17,7 +17,7 @@ namespace muduo
 ///
 /// UTC时间戳(us)（距离1970-01-01 00:00:00 ）
 class Timestamp : public muduo::copyable,
-                  public boost::less_than_comparable<Timestamp>  //要求实现<，可自动实现>,<=,>=
+                  public boost::less_than_comparable<Timestamp>  //要求实现< ==，可自动实现>,<=,>=
 {
  public:
   ///

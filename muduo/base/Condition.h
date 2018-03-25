@@ -32,7 +32,7 @@ class Condition : boost::noncopyable
   {
     MutexLock::UnassignGuard ug(mutex_);  //这里先给mutex_的holder_置零。在等其析构时会给holder_赋值
     MCHECK(pthread_cond_wait(&pcond_, mutex_.getPthreadMutex())); //阻塞等待条件，直到notify唤醒。原子操作。
-  }                                                                                                                       //在条件成立后，它会给mutex_加锁，然后返回，这两步也是原子操作 
+  }                                                                       //在条件成立后，它会给mutex_加锁，然后返回，这两步也是原子操作
 
   // returns true if time out, false otherwise.
   bool waitForSeconds(double seconds);    //设置等待条件变量超时seconds时间

@@ -82,7 +82,7 @@ class BoundedBlockingQueue : boost::noncopyable
   mutable MutexLock          mutex_;
   Condition                  notEmpty_;//非空条件变量
   Condition                  notFull_; //未满条件变量
-  boost::circular_buffer<T>  queue_; //使用唤醒缓冲区结构
+  boost::circular_buffer<T>  queue_; //使用循环缓冲区结构
 };
 
 }

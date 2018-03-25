@@ -44,7 +44,7 @@ ssize_t Buffer::readFd(int fd, int* savedErrno)
   {
     writerIndex_ += n;
   }
-  else  //读的数据太多，部分存储到了extrabuf
+  else  //读的数据太多，部分先存储到栈extrabuf,再添加到Buffer中
   {
     writerIndex_ = buffer_.size();
     append(extrabuf, n - writable); //把extrabuf写入到Buffer中
