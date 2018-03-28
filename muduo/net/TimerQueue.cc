@@ -195,14 +195,14 @@ void TimerQueue::handleRead()
   }
   callingExpiredTimers_ = false;    //超时回调结束，清空标志位
 
-  reset(expired, now);    //把要重复运行的定时器重新加入到定时器中
+  reset(expired, now);    //把要重复运行的定时器重新加入到定时器集合中
 }
 
 //找到now之前的所有超时的定时器列表
 std::vector<TimerQueue::Entry> TimerQueue::getExpired(Timestamp now)
 {
   assert(timers_.size() == activeTimers_.size());
-  std::vector<Entry> expired;
+  std::vector<Entry> expired;   //用于存放超时的定时器集合
   Entry sentry(now, reinterpret_cast<Timer*>(UINTPTR_MAX));
   TimerList::iterator end = timers_.lower_bound(sentry);  //返回第一个大于等于now的迭代器，小于now的都已经超时
   assert(end == timers_.end() || now < end->first);
@@ -230,7 +230,7 @@ void TimerQueue::reset(const std::vector<Entry>& expired, Timestamp now)
       it != expired.end(); ++it)
   {
     ActiveTimer timer(it->second, it->second->sequence());
-    if (it->second->repeat()    //设置了重复定时且不在cancelingTimers_(未取消的定时器)集合中
+    if (it->second->repeat()    //设置了重复定时且不在cancelingTimers_(要取消的定时器)集合中
         && cancelingTimers_.find(timer) == cancelingTimers_.end())
     {
       it->second->restart(now);   //重启定时器
@@ -255,7 +255,7 @@ void TimerQueue::reset(const std::vector<Entry>& expired, Timestamp now)
   }
 }
 
-//插入一个timer
+//插入一个timer,并返回最早到期时间是否改变
 bool TimerQueue::insert(Timer* timer)
 {
   loop_->assertInLoopThread();
@@ -269,7 +269,7 @@ bool TimerQueue::insert(Timer* timer)
   }
   {
     std::pair<TimerList::iterator, bool> result
-      = timers_.insert(Entry(when, timer));   //插入timers中
+      = timers_.insert(Entry(when, timer));   //插入定时器到timers集合中
     assert(result.second); (void)result;
   }
   {

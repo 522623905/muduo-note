@@ -76,7 +76,7 @@ class Singleton : boost::noncopyable
 
  private:
   static pthread_once_t ponce_; //这个对象保证函数只被执行一次
-  static T*             value_;
+  static T*             value_; //指针静态变量
 };
 
 //静态变量均需要初始化

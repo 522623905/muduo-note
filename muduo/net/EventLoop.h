@@ -162,7 +162,7 @@ class EventLoop : boost::noncopyable
   // unlike in TimerQueue, which is an internal class,
   // we don't expose Channel to client.
   boost::scoped_ptr<Channel> wakeupChannel_;  //wakeupFd_对于的通道。若此事件发生便会一次执行pendingFunctors_中的可调用对象
-  boost::any context_;
+  boost::any context_;  //用来存储用户想要保存的信息，boost::any任何类型的数据都可以
 
   // scratch variables
   ChannelList activeChannels_;  //保存的是poller类中的poll调用返回的所有活跃事件集

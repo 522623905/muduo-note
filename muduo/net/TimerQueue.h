@@ -33,7 +33,7 @@ class TimerId;
 ///
 /// A best efforts timer queue.
 /// No guarantee that the callback will be on time.
-///虽然TimerQueue中有Queue，但是其实现时基于Set的，而不是Queue。
+///虽然TimerQueue中有Queue，但是其实现是基于Set的，而不是Queue。
 ///这样可以高效地插入、删除定时器，且找到当前已经超时的定时器。TimerQueue的public接口只有两个，添加和删除。
 class TimerQueue : boost::noncopyable
 {

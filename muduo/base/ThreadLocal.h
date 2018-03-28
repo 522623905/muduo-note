@@ -44,6 +44,7 @@ class ThreadLocal : boost::noncopyable
  private:
 
   //使用该函数来销毁实际数据
+  //在线程释放该线程存储的时候被调用
   static void destructor(void *x)
   {
     T* obj = static_cast<T*>(x);

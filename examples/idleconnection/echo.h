@@ -15,8 +15,8 @@ template <typename T>
 inline size_t hash_value(const boost::shared_ptr<T>& x)
 {
   return boost::hash_value(x.get());  //它接受唯一的一个参数来指明需要计算 Hash 值的对象的类型.
-}                                                       //每当一个对象需要计算它的 Hash 值时， hash_value() 都会自动被调用          
-                                                         //get函数返回内部对象(指针)
+}                                    //每当一个对象需要计算它的 Hash 值时， hash_value() 都会自动被调用
+                                     //get函数返回内部对象(指针)
 }
 #endif
 
