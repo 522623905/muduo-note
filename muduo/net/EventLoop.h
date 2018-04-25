@@ -56,24 +56,24 @@ class EventLoop : boost::noncopyable
   ///
   /// This is not 100% thread safe, if you call through a raw pointer,
   /// better to call through shared_ptr<EventLoop> for 100% safety.
-  void quit();
+  void quit();//退出主循环
 
   ///
   /// Time when poll returns, usually means data arrival.
   ///
-  Timestamp pollReturnTime() const { return pollReturnTime_; }
+  Timestamp pollReturnTime() const { return pollReturnTime_; }//poll延迟的时间
 
-  int64_t iteration() const { return iteration_; }
+  int64_t iteration() const { return iteration_; }//迭代次数
 
   /// Runs callback immediately in the loop thread.
   /// It wakes up the loop, and run the cb.
   /// If in the same loop thread, cb is run within the function.
   /// Safe to call from other threads.
-  void runInLoop(const Functor& cb);  //用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务
+  void runInLoop(const Functor& cb);  //用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务(在主循环中运行)
   /// Queues callback in the loop thread.
   /// Runs after finish pooling.
   /// Safe to call from other threads.
-  void queueInLoop(const Functor& cb);  //用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务
+  void queueInLoop(const Functor& cb);  //插入主循环任务队列,用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务
 
   size_t queueSize() const;
 
@@ -88,22 +88,22 @@ class EventLoop : boost::noncopyable
   /// Runs callback at 'time'.
   /// Safe to call from other threads.
   ///
-  TimerId runAt(const Timestamp& time, const TimerCallback& cb);  //用来添加定时任务
+  TimerId runAt(const Timestamp& time, const TimerCallback& cb);  //某个时间点执行定时回调
   ///
   /// Runs callback after @c delay seconds.
   /// Safe to call from other threads.
   ///
-  TimerId runAfter(double delay, const TimerCallback& cb);  //用来添加定时任务
+  TimerId runAfter(double delay, const TimerCallback& cb);  //某个时间点之后执行定时回调
   ///
   /// Runs callback every @c interval seconds.
   /// Safe to call from other threads.
   ///
-  TimerId runEvery(double interval, const TimerCallback& cb); //用来添加定时任务
+  TimerId runEvery(double interval, const TimerCallback& cb); //在每个时间间隔处理某个回调事件
   ///
   /// Cancels the timer.
   /// Safe to call from other threads.
   ///
-  void cancel(TimerId timerId);
+  void cancel(TimerId timerId);//删除某个定时器
 
 #ifdef __GXX_EXPERIMENTAL_CXX0X__
   TimerId runAt(const Timestamp& time, TimerCallback&& cb);
@@ -112,7 +112,7 @@ class EventLoop : boost::noncopyable
 #endif
 
   // internal usage
-  void wakeup();//写一个字节给socket，唤醒可读事件。否则EventLoop::loop()的poll会阻塞
+  void wakeup();//写8个字节给eventfd，唤醒事件通知描述符。否则EventLoop::loop()的poll会阻塞
   void updateChannel(Channel* channel); //在poller中注册或者更新通道
   void removeChannel(Channel* channel); //从poller中移除通道
   bool hasChannel(Channel* channel);
@@ -127,7 +127,7 @@ class EventLoop : boost::noncopyable
   }
   bool isInLoopThread() const { return threadId_ == CurrentThread::tid(); }  //判断是是否处于同一线程，而不是跨线程
   // bool callingPendingFunctors() const { return callingPendingFunctors_; }
-  bool eventHandling() const { return eventHandling_; }
+  bool eventHandling() const { return eventHandling_; }//是否正在处理事件
 
   void setContext(const boost::any& context)
   { context_ = context; }
@@ -141,8 +141,8 @@ class EventLoop : boost::noncopyable
   static EventLoop* getEventLoopOfCurrentThread();
 
  private:
-  void abortNotInLoopThread();
-  void handleRead();  // waked up
+  void abortNotInLoopThread();//不在主I/O线程
+  void handleRead();   //将事件通知描述符里的内容读走，以便让其继续检测事件通知
   void doPendingFunctors();
 
   void printActiveChannels() const; // DEBUG
@@ -158,7 +158,7 @@ class EventLoop : boost::noncopyable
   Timestamp pollReturnTime_;  //poll返回的时间戳
   boost::scoped_ptr<Poller> poller_;  //EventLoop首先一定得有个I/O复用才行,它的所有职责都是建立在I/O复用之上的
   boost::scoped_ptr<TimerQueue> timerQueue_;  //应该支持定时事件，关于定时器的所有操作和组织定义都在类TimerQueue中 
-  int wakeupFd_; //用于eventfd的通知机制
+  int wakeupFd_; //用于eventfd的通知机制的文件描述符
   // unlike in TimerQueue, which is an internal class,
   // we don't expose Channel to client.
   boost::scoped_ptr<Channel> wakeupChannel_;  //wakeupFd_对于的通道。若此事件发生便会一次执行pendingFunctors_中的可调用对象

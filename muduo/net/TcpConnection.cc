@@ -353,7 +353,7 @@ void TcpConnection::handleRead(Timestamp receiveTime) //数据到来,调用用�
   {
     messageCallback_(shared_from_this(), &inputBuffer_, receiveTime); //用户定义的消息到来回调函数在此执行!
   }
-  else if (n == 0)  //Buffer已经读完
+  else if (n == 0)  //Buffer已经读完 or 对端关闭了连接
   {
     handleClose();
   }

@@ -121,10 +121,9 @@ typedef union epoll_data {
            }; 
 */  
 
-
 //这个函数被调用是因为channel->enableReading()等被调用，再调用channel->update()，
 //再EventLoop->updateChannel()，再->epoll或poll的updateChannel被调用  
-//函数：更新通道,将channel对应的fd事件注册到epoll内核时间表中     
+//函数：更新通道,将channel对应的fd事件注册或更改到epoll内核事件表中
 void EPollPoller::updateChannel(Channel* channel)  
 {
   Poller::assertInLoopThread();

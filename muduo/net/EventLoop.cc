@@ -112,7 +112,7 @@ void EventLoop::loop()
   while (!quit_)
   {
     activeChannels_.clear(); //活动列表首先清除
-    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_); //使用epoll_wait等待事件到来，并把到来的事件填充至activeChannels
+    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_); //使用epoll_wait等待事件到来，并把到来的事件填充至activeChannels，返回值为计算执行多少次I/O返回
     ++iteration_;
     if (Logger::logLevel() <= Logger::TRACE)
     {
@@ -293,7 +293,7 @@ void EventLoop::abortNotInLoopThread()
             << ", current thread id = " <<  CurrentThread::tid();
 }
 
-//写一个字节给socket，唤醒可读事件。否则EventLoop::loop()的poll会阻塞
+//写8个字节给eventfd，唤醒事件通知描述符。否则EventLoop::loop()的poll会阻塞
 void EventLoop::wakeup()
 {
   uint64_t one = 1;
