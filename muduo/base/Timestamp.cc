@@ -36,14 +36,14 @@ string Timestamp::toFormattedString(bool showMicroseconds) const
   if (showMicroseconds)
   {
     int microseconds = static_cast<int>(microSecondsSinceEpoch_ % kMicroSecondsPerSecond);
-    snprintf(buf, sizeof(buf), "%4d%02d%02d %02d:%02d:%02d.%06d",
+    snprintf(buf, sizeof(buf), "%4d/%02d/%02d %02d:%02d:%02d.%06d",
              tm_time.tm_year + 1900, tm_time.tm_mon + 1, tm_time.tm_mday,//月+1，因为从0开始的
              tm_time.tm_hour, tm_time.tm_min, tm_time.tm_sec,
              microseconds);
   }
   else
   {
-    snprintf(buf, sizeof(buf), "%4d%02d%02d %02d:%02d:%02d",
+    snprintf(buf, sizeof(buf), "%4d/%02d/%02d %02d:%02d:%02d",
              tm_time.tm_year + 1900, tm_time.tm_mon + 1, tm_time.tm_mday,
              tm_time.tm_hour, tm_time.tm_min, tm_time.tm_sec);
   }

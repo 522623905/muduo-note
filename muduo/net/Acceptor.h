@@ -39,7 +39,8 @@ class Acceptor : boost::noncopyable
   Acceptor(EventLoop* loop, const InetAddress& listenAddr, bool reuseport);
   ~Acceptor();
 
-  void setNewConnectionCallback(const NewConnectionCallback& cb)  //被用于在TcpServer构造函数中设置新连接处理回调
+  //被用于在TcpServer构造函数中设置新连接处理回调
+  void setNewConnectionCallback(const NewConnectionCallback& cb)
   { newConnectionCallback_ = cb; }
 
   bool listenning() const { return listenning_; } 

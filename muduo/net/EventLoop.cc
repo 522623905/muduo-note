@@ -112,7 +112,7 @@ void EventLoop::loop()
   while (!quit_)
   {
     activeChannels_.clear(); //活动列表首先清除
-    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_); //使用epoll_wait等待事件到来，并把到来的事件填充至activeChannels，返回值为计算执行多少次I/O返回
+    pollReturnTime_ = poller_->poll(kPollTimeMs, &activeChannels_); //使用epoll_wait等待事件到来，并把到来的事件填充至activeChannels
     ++iteration_;
     if (Logger::logLevel() <= Logger::TRACE)
     {

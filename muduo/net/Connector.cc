@@ -47,7 +47,8 @@ void Connector::start()
   loop_->runInLoop(boost::bind(&Connector::startInLoop, this)); // FIXME: unsafe
 }
 
-void Connector::startInLoop() //在当前IO中建立连接
+//在当前IO线程中建立连接
+void Connector::startInLoop()
 {
   loop_->assertInLoopThread();
   assert(state_ == kDisconnected);
@@ -79,12 +80,17 @@ void Connector::stopInLoop()
   }
 }
 
-void Connector::connect()   //开始建立连接
+//建立连接
+void Connector::connect()
 {
   int sockfd = sockets::createNonblockingOrDie(serverAddr_.family()); //创建非阻塞sockfd
   int ret = sockets::connect(sockfd, serverAddr_.getSockAddr());  //连接服务器
   int savedErrno = (ret == 0) ? 0 : errno;
-  switch (savedErrno)  //检查错误码
+  //以下是非阻塞socket connect的流程
+  //如果不用非阻塞,但是如果对端服务器由于某些问题无法连接，
+  //那么每一个客户端发起的connect都会要等待75才会返回
+  //通过检查错误码来判断的状态和决定如何操作
+  switch (savedErrno)
   {
     case 0:
     case EINPROGRESS: //非阻塞套接字，未连接成功返回码是EINPROGRESS表示正在连接
@@ -120,7 +126,8 @@ void Connector::connect()   //开始建立连接
   }
 }
 
-void Connector::restart()   //重启
+//重启
+void Connector::restart()
 {
   loop_->assertInLoopThread();
   setState(kDisconnected);
@@ -137,7 +144,9 @@ void Connector::connecting(int sockfd)
   setState(kConnecting);
   assert(!channel_);  
   channel_.reset(new Channel(loop_, sockfd)); //Channel与sockfd关联
-  channel_->setWriteCallback(         //设置可写回调函数，这时候如果socket没有错误，sockfd就处于可写状态
+  //设置可写回调函数，这时候如果socket没有错误，
+  //sockfd就处于可写状态;但是非阻塞,错误时也会有可写状态,因为要判断
+  channel_->setWriteCallback(
       boost::bind(&Connector::handleWrite, this)); // FIXME: unsafe
   channel_->setErrorCallback(           //设置错误回调函数
       boost::bind(&Connector::handleError, this)); // FIXME: unsafe
@@ -147,7 +156,8 @@ void Connector::connecting(int sockfd)
   channel_->enableWriting();  //关注写事情。在非阻塞中，当sockfd变得可写时表明连接建立完毕
 }
 
-int Connector::removeAndResetChannel() //移除channel。Connector中的channel只管理建立连接阶段。连接建立后，交给TcoConnection管理
+//移除channel。Connector中的channel只管理建立连接阶段。连接建立后，交给TcoConnection管理
+int Connector::removeAndResetChannel()
 {
   channel_->disableAll();
   channel_->remove();
@@ -162,7 +172,9 @@ void Connector::resetChannel()  //reset后channel_为空
   channel_.reset(); //显式销毁它们所管理的对象
 }
 
-void Connector::handleWrite()  //可写不一定表示已经建立连接
+//非阻塞connect,可写不一定表示已经建立连接
+//因此要获取err来判断
+void Connector::handleWrite()
 {
   LOG_TRACE << "Connector::handleWrite " << state_;
 
@@ -181,12 +193,12 @@ void Connector::handleWrite()  //可写不一定表示已经建立连接
       LOG_WARN << "Connector::handleWrite - Self connect";
       retry(sockfd);
     }
-    else
+    else //表示确实连接成功
     {
       setState(kConnected);  //设置状态为已经连接
       if (connect_)
       {
-        newConnectionCallback_(sockfd);
+        newConnectionCallback_(sockfd);//执行连接回调函数
       }
       else
       {
@@ -213,7 +225,8 @@ void Connector::handleError()
   }
 }
 
-void Connector::retry(int sockfd) //重新尝试连接
+//重新尝试连接
+void Connector::retry(int sockfd)
 {
   sockets::close(sockfd); //关闭原有的sockfd。每次尝试连接，都需要使用新sockfd
   setState(kDisconnected);

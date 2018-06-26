@@ -63,6 +63,7 @@ void Acceptor::handleRead()
   {
     // string hostport = peerAddr.toIpPort();
     // LOG_TRACE << "Accepts of " << hostport;
+   //回调函数在TcpServer构造函数中设置
     if (newConnectionCallback_)
     {
       newConnectionCallback_(connfd, peerAddr); //将新连接信息传送到用户定义的回调函数中

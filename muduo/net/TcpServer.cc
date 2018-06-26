@@ -26,7 +26,7 @@ TcpServer::TcpServer(EventLoop* loop,
                      const string& nameArg,
                      Option option)
   : loop_(CHECK_NOTNULL(loop)), //检查loop非空指针
-    ipPort_(listenAddr.toIpPort()), //端口号
+    ipPort_(listenAddr.toIpPort()), //IP:端口号
     name_(nameArg),  //名称
     acceptor_(new Acceptor(loop, listenAddr, option == kReusePort)), //Accept的封装,用于获取新连接的fd,供TcpServer使用
     threadPool_(new EventLoopThreadPool(loop, name_)),
@@ -65,6 +65,7 @@ void TcpServer::setThreadNum(int numThreads)  //设置线程池大小
   threadPool_->setThreadNum(numThreads);
 }
 
+//启动Server，监听客户连接
 void TcpServer::start() 
 {
   if (started_.getAndSet(1) == 0)
@@ -73,7 +74,7 @@ void TcpServer::start()
 
     assert(!acceptor_->listenning());
     loop_->runInLoop(
-        boost::bind(&Acceptor::listen, get_pointer(acceptor_)));  //执行accept的listen
+        boost::bind(&Acceptor::listen, get_pointer(acceptor_)));  //执行accept的listen监听连接
   }
 }
 

@@ -27,7 +27,7 @@ class Channel;
 class EventLoop;
 
 /*
-***Connector用来主动发起发起连接,带有重连功能.
+***Connector用来非阻塞主动发起发起连接,带有重连功能.
 ***该类不单独使用，而是放于TcpClient中使用
 */
 class Connector : boost::noncopyable,
@@ -49,6 +49,7 @@ class Connector : boost::noncopyable,
   const InetAddress& serverAddress() const { return serverAddr_; }
 
  private:
+  //未连接状态,正在连接(中间状态),已连接,
   enum States { kDisconnected, kConnecting, kConnected };
   static const int kMaxRetryDelayMs = 30*1000;  //最大重试延迟
   static const int kInitRetryDelayMs = 500;  //初始化重试延迟

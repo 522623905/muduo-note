@@ -95,7 +95,7 @@ TimerQueue::TimerQueue(EventLoop* loop)
     timerfd_(createTimerfd()),  //创建非阻塞timerfd
     timerfdChannel_(loop, timerfd_),  //该channel负责timerfd分发事件
     timers_(),  //初始定时器集合空
-    callingExpiredTimers_(false)  //
+    callingExpiredTimers_(false)
 {
   timerfdChannel_.setReadCallback(      //设置定时器超时返回可读事件时要执行的回调函数，读timerfd
       boost::bind(&TimerQueue::handleRead, this));
@@ -176,7 +176,7 @@ void TimerQueue::cancelInLoop(TimerId timerId)
   assert(timers_.size() == activeTimers_.size());
 }
 
-//处理timerfd读事件
+//处理timerfd读事件，执行超时函数
 void TimerQueue::handleRead()
 {
   loop_->assertInLoopThread();

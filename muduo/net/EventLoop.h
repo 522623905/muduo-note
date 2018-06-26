@@ -152,7 +152,7 @@ class EventLoop : boost::noncopyable
   bool looping_; /* atomic */   //是否处于事件循环
   bool quit_; /* atomic and shared between threads, okay on x86, I guess. */ //是否退出loop
   bool eventHandling_; /* atomic */   //当前是否处于事件处理的状态
-  bool callingPendingFunctors_; /* atomic */
+  bool callingPendingFunctors_; /* atomic */ //当前是否正在调用PendingFunctors
   int64_t iteration_;
   const pid_t threadId_;    //EventLoop构造函数会记住本对象所属的线程ID
   Timestamp pollReturnTime_;  //poll返回的时间戳

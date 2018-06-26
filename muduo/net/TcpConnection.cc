@@ -174,7 +174,7 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
   }
 
   assert(remaining <= len);
-  if (!faultError && remaining > 0)  //还有数据可以发送
+  if (!faultError && remaining > 0)  //如果数据没有一次性发送完毕
   {
     size_t oldLen = outputBuffer_.readableBytes();
     if (oldLen + remaining >= highWaterMark_   
