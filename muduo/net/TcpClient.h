@@ -96,7 +96,7 @@ class TcpClient : boost::noncopyable
   bool retry_;   // atomic   //是否重连，是指建立的连接成功后又断开是否重连。而Connector的重连是一直不成功是否重试的意思
   bool connect_; // atomic   // 是否已经建立连接
   // always in loop thread
-  int nextConnId_;          //name_+nextConnid_用于标识一个连接
+  int nextConnId_;          //代表第几个连接,name_+nextConnid_用于标识一个连接
   mutable MutexLock mutex_;
   TcpConnectionPtr connection_; // @GuardedBy mutex_  Connector建立连接成功后把控制交给TcpConnection
 };

@@ -198,7 +198,7 @@ void Connector::handleWrite()
       setState(kConnected);  //设置状态为已经连接
       if (connect_)
       {
-        newConnectionCallback_(sockfd);//执行连接回调函数
+        newConnectionCallback_(sockfd);//执行TcpClient.cc的构造函数指定的连接回调函数
       }
       else
       {

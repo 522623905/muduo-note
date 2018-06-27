@@ -331,17 +331,18 @@ void TcpConnection::connectEstablished()  //连接建立。在TcpServer中建立
   connectionCallback_(shared_from_this());  //在此处执行服务端注册的onConnection连接回调
 }
 
+// 连接关闭，提供给TcpServer使用
 void TcpConnection::connectDestroyed()
 {
   loop_->assertInLoopThread();
   if (state_ == kConnected)
   {
     setState(kDisconnected);
-    channel_->disableAll();
+    channel_->disableAll(); // 停止监听所有事件
 
     connectionCallback_(shared_from_this());  //调用到用户定义的的连接回调的else断开连接语句
   }
-  channel_->remove(); //将channel_移除
+  channel_->remove(); //将channel_移除,即从epoll中移除fd，该conn在loop中彻底移除
 }
 
 void TcpConnection::handleRead(Timestamp receiveTime) //数据到来,调用用户定义的接收信息回调

@@ -80,7 +80,7 @@ TcpClient::~TcpClient()
   bool unique = false;
   {
     MutexLockGuard lock(mutex_);
-    unique = connection_.unique();
+    unique = connection_.unique();//判断引用计数是否为1
     conn = connection_;
   }
   if (conn)
@@ -90,6 +90,7 @@ TcpClient::~TcpClient()
     CloseCallback cb = boost::bind(&detail::removeConnection, loop_, _1);
     loop_->runInLoop(
         boost::bind(&TcpConnection::setCloseCallback, conn, cb));  // 移除TcpConnection对象
+    //如果引用计数为1,则可以关闭了
     if (unique)
     {
       conn->forceClose();  // 强制关闭
@@ -112,7 +113,8 @@ void TcpClient::connect()   //用来向服务端发起连接
   connector_->start();
 }
 
-void TcpClient::disconnect()  //关闭连接
+//关闭连接
+void TcpClient::disconnect()
 {
   connect_ = false;
 
@@ -132,7 +134,8 @@ void TcpClient::stop()
   connector_->stop();  // 停止连接器
 }
 
-//连接器连接到服务器的时候会触发写事件，然后事件处理器处理写事件，调用处理写事件的回调函数newConnection
+//连接器connector连接到服务器的时候会触发写事件，
+//然后事件处理器处理写事件，调用处理写事件的回调函数newConnection
 void TcpClient::newConnection(int sockfd)
 {
   loop_->assertInLoopThread();
@@ -142,7 +145,7 @@ void TcpClient::newConnection(int sockfd)
   ++nextConnId_;
   string connName = name_ + buf;
 
-  InetAddress localAddr(sockets::getLocalAddr(sockfd));
+  InetAddress localAddr(sockets::getLocalAddr(sockfd)); //获取本地地址
   // FIXME poll with zero timeout to double confirm the new connection
   // FIXME use make_shared if necessary
   TcpConnectionPtr conn(new TcpConnection(loop_,
@@ -151,6 +154,7 @@ void TcpClient::newConnection(int sockfd)
                                           localAddr,
                                           peerAddr));   // 创建一个TcpConnection对象
 
+  //设置建立连接,接收消息,写完成,关闭连接回调函数
   conn->setConnectionCallback(connectionCallback_);
   conn->setMessageCallback(messageCallback_);
   conn->setWriteCompleteCallback(writeCompleteCallback_);

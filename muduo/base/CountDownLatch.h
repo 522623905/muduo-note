@@ -31,7 +31,7 @@ class CountDownLatch : boost::noncopyable
 
  private:
   mutable MutexLock mutex_;//mutable可变的，否则getCount() const无法使用上锁改变锁的状态
-  Condition condition_;
+  Condition condition_;//条件变量
   int count_; //计数器，当这个数值为零时，才会通知阻塞在调用wait()的线程
 };
 

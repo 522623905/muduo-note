@@ -15,6 +15,7 @@ CountDownLatch::CountDownLatch(int count)
 }
 
 //实际是条件变量的使用
+//阻塞等待,直到计算器减为0
 void CountDownLatch::wait()
 {
   MutexLockGuard lock(mutex_);
@@ -24,6 +25,7 @@ void CountDownLatch::wait()
   }
 }
 
+//计数器减一
 void CountDownLatch::countDown()
 {
   MutexLockGuard lock(mutex_);
@@ -34,6 +36,7 @@ void CountDownLatch::countDown()
   }
 }
 
+//返回当前计数器值
 int CountDownLatch::getCount() const
 {
   MutexLockGuard lock(mutex_);
