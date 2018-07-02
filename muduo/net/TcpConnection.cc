@@ -140,7 +140,7 @@ void TcpConnection::sendInLoop(const void* data, size_t len)
 {
   loop_->assertInLoopThread();
   ssize_t nwrote = 0; //表示已被发送至sockfd的数据
-  size_t remaining = len;  //未写入的字节数
+  size_t remaining = len;  //未写入的字节数,初始为len
   bool faultError = false;
   if (state_ == kDisconnected)
   {

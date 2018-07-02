@@ -39,10 +39,12 @@ EventLoopThread::~EventLoopThread()
   }
 }
 
-EventLoop* EventLoopThread::startLoop() //另一个线程在调用这个函数
+//由另一个线程在调用这个函数
+//启动IO线程,并返回EventLoop
+EventLoop* EventLoopThread::startLoop()
 {
   assert(!thread_.started());
-  thread_.start();  //线程启动，调用threadFunc()
+  thread_.start();  //IO线程启动，调用threadFunc()
   {
     MutexLockGuard lock(mutex_);
     while (loop_ == NULL)
@@ -65,7 +67,7 @@ void EventLoopThread::threadFunc()
   }
 
 // loop_指针指向了一个栈上的对象，threadFunc函数退出之后，这个指针就失效了  
-// threadFunc函数退出，就意味着线程退出了，EventLoopThread对象也就没有存在的价值了。  
+// 就意味着线程退出了，EventLoopThread对象也就没有存在的价值了
 // 因而不会有什么大的问题  
   {
     MutexLockGuard lock(mutex_);

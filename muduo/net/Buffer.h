@@ -351,7 +351,7 @@ class Buffer : public muduo::copyable
     prepend(&x, sizeof x);
   }
 
-  void prepend(const void* /*restrict*/ data, size_t len) //把从data开始，长度为len的数据加到前缀
+  void prepend(const void* /*restrict*/ data, size_t len) //把长度为len的data加到前缀
   {
     assert(len <= prependableBytes());
     readerIndex_ -= len;

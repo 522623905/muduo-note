@@ -136,7 +136,7 @@ class TcpConnection : boost::noncopyable,
   void startReadInLoop();
   void stopReadInLoop();
 
-  EventLoop* loop_;
+  EventLoop* loop_; //TcpConnection所属的loop
   const string name_;
   StateE state_;  // FIXME: use atomic variable
   bool reading_;
@@ -152,7 +152,7 @@ class TcpConnection : boost::noncopyable,
   CloseCallback closeCallback_;   // 内部的close回调函数
   size_t highWaterMark_;  //发送缓冲区数据“上限阀值”，超过这个值
   Buffer inputBuffer_;  //每一个连接都会对应一对读写input/output buffer
-  Buffer outputBuffer_; // FIXME: use list<Buffer> as output buffer.
+  Buffer outputBuffer_; // FIXME: use list<Buffer> as output buffer. 当send无法一次性发送完数据后,会先暂存到这里,等下次发送
   boost::any context_;  // boost库的any 可以保持任意的类型 绑定一个未知类型的上下文对象
   // FIXME: creationTime_, lastReceiveTime_
   //        bytesReceived_, bytesSent_

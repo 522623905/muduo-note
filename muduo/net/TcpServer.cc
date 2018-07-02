@@ -103,14 +103,18 @@ void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)
                                           sockfd,
                                           localAddr,
                                           peerAddr));
-  connections_[connName] = conn;  //map,name与conn绑定
+  connections_[connName] = conn;  //map,name与conn绑定,conn引用计数变为2
   conn->setConnectionCallback(connectionCallback_); //原样把各个回调函数传给TcpConnectionPtr
   conn->setMessageCallback(messageCallback_);
   conn->setWriteCompleteCallback(writeCompleteCallback_);
   conn->setCloseCallback(
       boost::bind(&TcpServer::removeConnection, this, _1)); // FIXME: unsafe
+
+  //由于ioloop所属的IO线程与当前线程不是同一个线程,不能直接调用
+  //要转到ioLoop所属的线程进行调用,因此用runInLoop
   ioLoop->runInLoop(boost::bind(&TcpConnection::connectEstablished, conn)); //将新到来的连接加入到监听事件中
 }
+//执行完毕后,conn引用计数减为1
 
 void TcpServer::removeConnection(const TcpConnectionPtr& conn)
 {
