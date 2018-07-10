@@ -79,7 +79,7 @@ class TcpConnection : boost::noncopyable,
   // reading or not
   void startRead();
   void stopRead();
-  bool isReading() const { return reading_; }; // NOT thread safe, may race with start/stopReadInLoop
+  bool isReading() const { return reading_; } // NOT thread safe, may race with start/stopReadInLoop
 
   void setContext(const boost::any& context)  //boost::any是一个能保存任意类型值的类
   { context_ = context; }

@@ -53,11 +53,11 @@ class Timer : boost::noncopyable
     callback_();
   }
 
-  Timestamp expiration() const  { return expiration_; }
-  bool repeat() const { return repeat_; }
-  int64_t sequence() const { return sequence_; }
+  Timestamp expiration() const  { return expiration_; }  //返回定时器的闹铃时间
+  bool repeat() const { return repeat_; }   //是否重复设置定时器
+  int64_t sequence() const { return sequence_; }    //定时器序列号
 
-  void restart(Timestamp now);
+  void restart(Timestamp now); //重新设置定时器
 
   static int64_t numCreated() { return s_numCreated_.get(); }
 
@@ -65,8 +65,8 @@ class Timer : boost::noncopyable
   const TimerCallback callback_;    //回调函数
   Timestamp expiration_;    //超时时间（绝对时间）
   const double interval_;   //间隔多久重新闹铃
-  const bool repeat_;   //是否重复
-  const int64_t sequence_;    //Timer序号
+  const bool repeat_;   //是否重复定时
+  const int64_t sequence_;    //Timer序号,从s_numCreated_获取
 
   static AtomicInt64 s_numCreated_;   //Timer计数，当前已经创建的定时器数量
 };  

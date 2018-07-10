@@ -62,8 +62,8 @@ class TimerQueue : boost::noncopyable
  private:
 
   // FIXME: use unique_ptr<Timer> instead of raw pointers.
-  typedef std::pair<Timestamp, Timer*> Entry;  //std::pair支持比较运算,存储超时时间戳和Timer*指针
-  typedef std::set<Entry> TimerList;  //元素为超时时间和指向超时的定时器,会按照时间戳来排序
+  typedef std::pair<Timestamp, Timer*> Entry;  //std::pair支持比较运算,存储超时时间戳和Timer*指针,保证了相同的 Timestamp，但 Timer地址不同，因此可以处理多个相同时间的定时事件
+  typedef std::set<Entry> TimerList;  //元素为超时时间和指向超时的定时器,会按照时间戳来排序(Timestamp重载了<运算符)
   typedef std::pair<Timer*, int64_t> ActiveTimer; //Timer*指针和定时器序列号
   typedef std::set<ActiveTimer> ActiveTimerSet; //元素为定时器和其序列号,按照Timer* 地址大小来排序
 
@@ -72,23 +72,23 @@ class TimerQueue : boost::noncopyable
   void cancelInLoop(TimerId timerId);
 
   // called when timerfd alarms
-  void handleRead();
+  void handleRead();//处理timerfd读事件，执行超时函数
   // move out all expired timers
-  std::vector<Entry> getExpired(Timestamp now); //返回超时的定时器列表
-  void reset(const std::vector<Entry>& expired, Timestamp now);
+  std::vector<Entry> getExpired(Timestamp now); //返回超时的定时器列表,并把超时的定时器从集合中删除
+  void reset(const std::vector<Entry>& expired, Timestamp now);//把要重复运行的定时器重新加入到定时器集合中
 
   bool insert(Timer* timer);// 插入定时器
 
   EventLoop* loop_;// 所属的EventLoop
-  const int timerfd_;
+  const int timerfd_;//timefd加入epoll,超时可读
   Channel timerfdChannel_;  //用于观察timerfd_的readable事件（超时则可读）
   // Timer list sorted by expiration
   TimerList timers_;    //定时器集合，按到期时间排序
 
   // for cancel()
-  ActiveTimerSet activeTimers_;//按照Timer* 地址大小来排序
+  ActiveTimerSet activeTimers_;//定时器集合,按照Timer* 地址大小来排序
   bool callingExpiredTimers_; /* atomic */  //是否正在处理超时定时事件
-  ActiveTimerSet cancelingTimers_;  //保存取消了的定时器的集合
+  ActiveTimerSet cancelingTimers_;  //保存要取消的定时器的集合(如果不在定时器集合中,而是属于在执行超时回调的定时器)
 };
 
 }
