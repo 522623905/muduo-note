@@ -304,6 +304,7 @@ void EventLoop::wakeup()
   }
 }
 
+ //将eventfd里的内容读走，以便让其继续检测事件通知
 void EventLoop::handleRead()
 {
   uint64_t one = 1;
@@ -314,7 +315,8 @@ void EventLoop::handleRead()
   }
 }
 
-void EventLoop::doPendingFunctors() //调用Functor
+//执行pendingFunctors_中的任务
+void EventLoop::doPendingFunctors()
 {
   std::vector<Functor> functors;
   callingPendingFunctors_ = true;

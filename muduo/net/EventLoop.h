@@ -61,7 +61,7 @@ class EventLoop : boost::noncopyable
   ///
   /// Time when poll returns, usually means data arrival.
   ///
-  Timestamp pollReturnTime() const { return pollReturnTime_; }//poll延迟的时间
+  Timestamp pollReturnTime() const { return pollReturnTime_; }//poll返回的时间戳
 
   int64_t iteration() const { return iteration_; }//迭代次数
 
@@ -129,21 +129,23 @@ class EventLoop : boost::noncopyable
   // bool callingPendingFunctors() const { return callingPendingFunctors_; }
   bool eventHandling() const { return eventHandling_; }//是否正在处理事件
 
+  //用户自定义保存上下文,boost::any任何类型的数据都可以
   void setContext(const boost::any& context)
   { context_ = context; }
 
+  //返回用户保存的上下文
   const boost::any& getContext() const
   { return context_; }
 
   boost::any* getMutableContext()
   { return &context_; }
 
-  static EventLoop* getEventLoopOfCurrentThread();
+  static EventLoop* getEventLoopOfCurrentThread();//返回当前线程的EventLoop对象指针(__thread类型)
 
  private:
-  void abortNotInLoopThread();//不在主I/O线程
-  void handleRead();   //将事件通知描述符里的内容读走，以便让其继续检测事件通知
-  void doPendingFunctors();
+  void abortNotInLoopThread();//不在主I/O线程,则退出程序
+  void handleRead();   //将eventfd里的内容读走，以便让其继续检测事件通知
+  void doPendingFunctors();//执行pendingFunctors_中的任务
 
   void printActiveChannels() const; // DEBUG
 
@@ -153,7 +155,7 @@ class EventLoop : boost::noncopyable
   bool quit_; /* atomic and shared between threads, okay on x86, I guess. */ //是否退出loop
   bool eventHandling_; /* atomic */   //当前是否处于事件处理的状态
   bool callingPendingFunctors_; /* atomic */ //当前是否正在调用PendingFunctors
-  int64_t iteration_;
+  int64_t iteration_; //poll返回的次数
   const pid_t threadId_;    //EventLoop构造函数会记住本对象所属的线程ID
   Timestamp pollReturnTime_;  //poll返回的时间戳
   boost::scoped_ptr<Poller> poller_;  //EventLoop首先一定得有个I/O复用才行,它的所有职责都是建立在I/O复用之上的
