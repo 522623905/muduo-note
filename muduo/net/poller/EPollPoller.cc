@@ -66,7 +66,7 @@ Timestamp EPollPoller::poll(int timeoutMs, ChannelList* activeChannels)
   if (numEvents > 0)
   {
     LOG_TRACE << numEvents << " events happended";
-    fillActiveChannels(numEvents, activeChannels); //把发生的numEvents事件个填充给活跃事件通道表activeChannels中
+    fillActiveChannels(numEvents, activeChannels); //把发生的numEvents个事件填充到活跃事件通道表activeChannels
     if (implicit_cast<size_t>(numEvents) == events_.size())  //如果返回的事件数目等于当前事件数组大小，就再分配2倍空间
     {
       events_.resize(events_.size()*2);
@@ -95,7 +95,7 @@ void EPollPoller::fillActiveChannels(int numEvents,
   assert(implicit_cast<size_t>(numEvents) <= events_.size());  //确定它的大小小于events_的大小，因为events_是预留的事件vector
   for (int i = 0; i < numEvents; ++i)   //挨个处理发生的numEvents个事件，epoll模式返回的events_数组中都是已经发生额事件，这有别于select和poll
   {
-    Channel* channel = static_cast<Channel*>(events_[i].data.ptr);
+    Channel* channel = static_cast<Channel*>(events_[i].data.ptr); //转换成Channel*类型
 #ifndef NDEBUG                   //如果是调试状态，则
     int fd = channel->fd();
     ChannelMap::const_iterator it = channels_.find(fd);
@@ -122,7 +122,7 @@ typedef union epoll_data {
 */  
 
 //这个函数被调用是因为channel->enableReading()等被调用，再调用channel->update()，
-//再EventLoop->updateChannel()，再->epoll或poll的updateChannel被调用  
+//(EventLoop->updateChannel()，再epoll或poll的updateChannel被调用)
 //函数：更新通道,将channel对应的fd事件注册或更改到epoll内核事件表中
 void EPollPoller::updateChannel(Channel* channel)  
 {
@@ -163,7 +163,7 @@ void EPollPoller::updateChannel(Channel* channel)
       update(EPOLL_CTL_DEL, channel); //使用EPOLL_CTL_DEL从内核事件表中删除
       channel->set_index(kDeleted);  //删除之后设为deleted，表示已经删除，只是从内核事件表中删除，在channels_这个通道数组中并没有删除
     }
-    else  //如果仍然有关注，那就只是更新。更新成什么样子channel中会决定。
+    else  //如果仍然有关注，那就只是改变状态。更新成什么样子channel中会决定。
     {
       update(EPOLL_CTL_MOD, channel); 
     }
@@ -198,7 +198,7 @@ void EPollPoller::update(int operation, Channel* channel)
   struct epoll_event event;
   bzero(&event, sizeof event);
   event.events = channel->events();
-  event.data.ptr = channel; //把channel传入data.ptr（void *类型）
+  event.data.ptr = channel; //关键!把channel传入data.ptr（void *类型）
   int fd = channel->fd();
   LOG_TRACE << "epoll_ctl op = " << operationToString(operation)
     << " fd = " << fd << " event = { " << channel->eventsToString() << " }";

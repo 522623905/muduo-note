@@ -50,13 +50,14 @@ void Channel::tie(const boost::shared_ptr<void>& obj)
   tied_ = true;
 }
 
+ //更新channel
 void Channel::update()
 {
   addedToLoop_ = true;
   loop_->updateChannel(this);
 }
 
-//调用这个函数前，确保disableAll
+//移除channel(调用这个函数前，确保disableAll)
 void Channel::remove()
 {
   assert(isNoneEvent());
@@ -64,11 +65,13 @@ void Channel::remove()
   loop_->removeChannel(this);
 }
 
+//事件分发
 void Channel::handleEvent(Timestamp receiveTime)
 {
   boost::shared_ptr<void> guard;
   if (tied_)
   {
+    //提升为shared_ptr,保证处理事件时不会析构
     guard = tie_.lock();
     if (guard)
     {

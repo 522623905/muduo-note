@@ -153,7 +153,7 @@ void TimerQueue::addTimerInLoop(Timer* timer)
 
   if (earliestChanged)  //要插入的timer是最早超时的定时器
   {
-    resetTimerfd(timerfd_, timer->expiration());    //重置定时器的超时时刻
+    resetTimerfd(timerfd_, timer->expiration());    //重置timerfd的超时时刻
   }
 }
 
@@ -257,7 +257,7 @@ void TimerQueue::reset(const std::vector<Entry>& expired, Timestamp now)
   }
 }
 
-//插入一个timer,并返回最早到期时间是否改变
+//插入一个timer到集合中,并返回最早到期时间是否改变
 bool TimerQueue::insert(Timer* timer)
 {
   loop_->assertInLoopThread();

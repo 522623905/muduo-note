@@ -69,13 +69,15 @@ class EventLoop : boost::noncopyable
   /// It wakes up the loop, and run the cb.
   /// If in the same loop thread, cb is run within the function.
   /// Safe to call from other threads.
-  void runInLoop(const Functor& cb);  //用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务(在主循环中运行)
+  /// 在它的IO线程内执行某个用户任务回调,避免线程不安全的问题，保证不会被多个线程同时访问
+  /// 用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务(在主循环中运行)
+  void runInLoop(const Functor& cb);
   /// Queues callback in the loop thread.
   /// Runs after finish pooling.
   /// Safe to call from other threads.
-  void queueInLoop(const Functor& cb);  //插入主循环任务队列,用来将非io线程内的任务放到pendingFunctors_中并唤醒wakeupChannel_事件来执行任务
+  void queueInLoop(const Functor& cb);  //将任务放到pendingFunctors_队列中并通过evnetfd唤醒IO线程执行任务
 
-  size_t queueSize() const;
+  size_t queueSize() const;//返回任务队列pendingFunctors_大小
 
 #ifdef __GXX_EXPERIMENTAL_CXX0X__
   void runInLoop(Functor&& cb);
@@ -103,7 +105,7 @@ class EventLoop : boost::noncopyable
   /// Cancels the timer.
   /// Safe to call from other threads.
   ///
-  void cancel(TimerId timerId);//删除某个定时器
+  void cancel(TimerId timerId);//删除timerId对应的定时器
 
 #ifdef __GXX_EXPERIMENTAL_CXX0X__
   TimerId runAt(const Timestamp& time, TimerCallback&& cb);
@@ -143,7 +145,7 @@ class EventLoop : boost::noncopyable
   static EventLoop* getEventLoopOfCurrentThread();//返回当前线程的EventLoop对象指针(__thread类型)
 
  private:
-  void abortNotInLoopThread();//不在主I/O线程,则退出程序
+  void abortNotInLoopThread();//不在IO线程,则退出程序
   void handleRead();   //将eventfd里的内容读走，以便让其继续检测事件通知
   void doPendingFunctors();//执行pendingFunctors_中的任务
 

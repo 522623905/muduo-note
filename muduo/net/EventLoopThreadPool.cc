@@ -49,7 +49,7 @@ void EventLoopThreadPool::start(const ThreadInitCallback& cb)
     snprintf(buf, sizeof buf, "%s%d", name_.c_str(), i);
     EventLoopThread* t = new EventLoopThread(cb, buf); //创建EventLoop IO线程
     threads_.push_back(t);//当ptr_vector<EventLoopThread>对象销毁，其所管理的EventLoopThread也跟着销毁
-    loops_.push_back(t->startLoop()); // startLoop()会创建并返回新的EventLoop,然后push_back到loops_
+    loops_.push_back(t->startLoop()); // startLoop()会创建并返回运行的EventLoop,然后push_back到loops_
   }
   //未指定线程个数,即只有一个EventLoop，则在这个EventLoop进入事件循环之前，调用cb回调
   if (numThreads_ == 0 && cb)

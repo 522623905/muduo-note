@@ -31,7 +31,7 @@ class EPollPoller : public Poller     //注意，这里时继承了Poller类
   EPollPoller(EventLoop* loop);
   virtual ~EPollPoller();
 
-  virtual Timestamp poll(int timeoutMs, ChannelList* activeChannels);  // 进行poll操作，timeoutMs 超时事件，activeChannels活动通道
+  virtual Timestamp poll(int timeoutMs, ChannelList* activeChannels);  // 进行poll操作，timeoutMs 超时时间，activeChannels活动通道
   virtual void updateChannel(Channel* channel);  //更新通道
   virtual void removeChannel(Channel* channel);  //移除通道
 
@@ -40,13 +40,15 @@ class EPollPoller : public Poller     //注意，这里时继承了Poller类
 
   static const char* operationToString(int op);
 
+  //把发生的numEvents个事件填充给活跃事件通道表activeChannels中
   void fillActiveChannels(int numEvents,
                           ChannelList* activeChannels) const;
+  //epoll_ctl函数的封装。在epollfd_中更新channel对应的fd事件
   void update(int operation, Channel* channel);
 
   typedef std::vector<struct epoll_event> EventList;
 
-  int epollfd_;  //文件描述符 = epoll_create1(EPOLL_CLOEXEC)，用来表示要  关注事件的fd的集合的描述符
+  int epollfd_;  //epoll描述符
   EventList events_;  // epoll_wait返回的活动的通道channelList
 };
 

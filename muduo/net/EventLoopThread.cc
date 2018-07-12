@@ -39,12 +39,11 @@ EventLoopThread::~EventLoopThread()
   }
 }
 
-//由另一个线程在调用这个函数
 //启动IO线程,并返回EventLoop
 EventLoop* EventLoopThread::startLoop()
 {
   assert(!thread_.started());
-  thread_.start();  //IO线程启动，调用threadFunc()
+  thread_.start();  //IO线程启动，调用threadFunc()中会执行EventLoop.loop()
   {
     MutexLockGuard lock(mutex_);
     while (loop_ == NULL)
@@ -56,7 +55,7 @@ EventLoop* EventLoopThread::startLoop()
   return loop_;
 }
 
-//Thread线程启动后调用的函数
+//由另一个线程在thread_启动后调用的函数
 void EventLoopThread::threadFunc()
 {
   EventLoop loop; //创建EventLoop对象。注意，在栈上
