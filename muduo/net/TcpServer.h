@@ -104,11 +104,11 @@ class TcpServer : boost::noncopyable
 
   typedef std::map<string, TcpConnectionPtr> ConnectionMap; //通过每一个连接的名字来找到对应的连接来维护管理TcpConnection的
 
-  EventLoop* loop_;  // the acceptor loop I/O复用抽象之后的EventLoop类变量loop_,只用来接受连接，而新连接会用线程池返回的EventLoop来执行IO
+  EventLoop* loop_;  // mainReactor Loop. acceptor来接受连接，而新连接会用线程池返回的subReactor EventLoop来执行IO
   const string ipPort_; //ip:端口号
   const string name_; //主机名,为创建TcpServer时传入
   boost::scoped_ptr<Acceptor> acceptor_; // avoid revealing Acceptor 使用该类来创建、监听连接，并通过处理该套接字来获得新连接sockfd
-  boost::shared_ptr<EventLoopThreadPool> threadPool_; //实现多个”one loop per thread
+  boost::shared_ptr<EventLoopThreadPool> threadPool_; //实现多个one loop per thread
   //相关回调函数设置
   ConnectionCallback connectionCallback_;
   MessageCallback messageCallback_;

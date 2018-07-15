@@ -53,6 +53,7 @@ void Acceptor::listen()
   acceptChannel_.enableReading(); //listen完毕才使能读事件
 }
 
+//sockfd可读,接收连接,执行TcpServer::newConnection
 void Acceptor::handleRead()
 {
   loop_->assertInLoopThread();
@@ -66,7 +67,7 @@ void Acceptor::handleRead()
    //回调函数在TcpServer构造函数中设置
     if (newConnectionCallback_)
     {
-      newConnectionCallback_(connfd, peerAddr); //将新连接信息传送到用户定义的回调函数中
+      newConnectionCallback_(connfd, peerAddr); //TcpServer::newConnection
     }
     else  //没有回调函数则关闭client对应的fd
     {

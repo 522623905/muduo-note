@@ -70,18 +70,18 @@ void TcpServer::start()
 {
   if (started_.getAndSet(1) == 0)
   {
-    threadPool_->start(threadInitCallback_);  //启动线程池
+    threadPool_->start(threadInitCallback_);  //启动线程池,创建多个EventLoopThread
 
     assert(!acceptor_->listenning());
     loop_->runInLoop(
-        boost::bind(&Acceptor::listen, get_pointer(acceptor_)));  //执行accept的listen监听连接
+        boost::bind(&Acceptor::listen, get_pointer(acceptor_)));  //由mainReactor执行acceptor的listen监听连接
   }
 }
 
 /*
-当新建连接到达后，TcpServer创建一个新的TcpConnection对象来保存这个连接，
-设置这个新连接的回调函数，之后在EventLoopThreadPool中取一个EventLoop对象
-来作为这个新连接的reactor
+当新建连接sockfd(由Acceptor连接)到达后，TcpServer创建一个新的TcpConnection对象
+来保存这个连接，设置这个新连接的回调函数，之后在EventLoopThreadPool中取一个
+EventLoop对象来作为这个新连接的reactor
 */
 void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)
 {
@@ -98,7 +98,8 @@ void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)
   InetAddress localAddr(sockets::getLocalAddr(sockfd)); //由sockfd获取sockaddr_in结构
   // FIXME poll with zero timeout to double confirm the new connection
   // FIXME use make_shared if necessary 
-  TcpConnectionPtr conn(new TcpConnection(ioLoop,           //conn用来管理已连接套接字
+  //conn用来管理已连接套接字,由线程池分配的ioLoop负责该conn
+  TcpConnectionPtr conn(new TcpConnection(ioLoop,
                                           connName,
                                           sockfd,
                                           localAddr,
@@ -112,7 +113,8 @@ void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)
 
   //由于ioloop所属的IO线程与当前线程不是同一个线程,不能直接调用
   //要转到ioLoop所属的线程进行调用,因此用runInLoop
-  ioLoop->runInLoop(boost::bind(&TcpConnection::connectEstablished, conn)); //将新到来的连接加入到监听事件中
+  //将新到来的连接conn加入到线程池分配的ioLoop的监听事件中
+  ioLoop->runInLoop(boost::bind(&TcpConnection::connectEstablished, conn));
 }
 //执行完毕后,conn引用计数减为1
 
@@ -127,11 +129,11 @@ void TcpServer::removeConnectionInLoop(const TcpConnectionPtr& conn)
   loop_->assertInLoopThread();
   LOG_INFO << "TcpServer::removeConnectionInLoop [" << name_
            << "] - connection " << conn->name();
-  size_t n = connections_.erase(conn->name());  //根据connection的名字移除connection,则析构，断开连接
+  size_t n = connections_.erase(conn->name());  //根据connection的名字从列表中移除connection
   (void)n;
   assert(n == 1);
-  EventLoop* ioLoop = conn->getLoop();
+  EventLoop* ioLoop = conn->getLoop();//取出conn所属的IO线程
   ioLoop->queueInLoop(
-      boost::bind(&TcpConnection::connectDestroyed, conn));
+      boost::bind(&TcpConnection::connectDestroyed, conn));//在IO线程中销毁连接
 }
 
