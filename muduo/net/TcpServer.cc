@@ -118,6 +118,7 @@ void TcpServer::newConnection(int sockfd, const InetAddress& peerAddr)
 }
 //执行完毕后,conn引用计数减为1
 
+//通知TcpServer移除所持有的TcpConnectionPtr
 void TcpServer::removeConnection(const TcpConnectionPtr& conn)
 {
   // FIXME: unsafe
@@ -129,7 +130,7 @@ void TcpServer::removeConnectionInLoop(const TcpConnectionPtr& conn)
   loop_->assertInLoopThread();
   LOG_INFO << "TcpServer::removeConnectionInLoop [" << name_
            << "] - connection " << conn->name();
-  size_t n = connections_.erase(conn->name());  //根据connection的名字从列表中移除connection
+  size_t n = connections_.erase(conn->name());  //根据connection的名字从列表中移除TcpConnectionPtr
   (void)n;
   assert(n == 1);
   EventLoop* ioLoop = conn->getLoop();//取出conn所属的IO线程

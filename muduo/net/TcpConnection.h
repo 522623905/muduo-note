@@ -42,6 +42,7 @@ class Socket;
 
 //和新连接相关的所有内容统一封装到该类
 //继承了enable_shared_from_this类，保证返回的对象时shared_ptr类型
+//生命期依靠shared_ptr管理（即用户和库共同控制）
 class TcpConnection : boost::noncopyable,
                       public boost::enable_shared_from_this<TcpConnection>
 {
@@ -110,6 +111,8 @@ class TcpConnection : boost::noncopyable,
   { return &outputBuffer_; }
 
   /// Internal use only.
+  /// 这是给TcpServer和TcpClient用的,不是给用户用的
+  /// 普通用户用的是ConnectionCallback
   void setCloseCallback(const CloseCallback& cb)
   { closeCallback_ = cb; }
 
@@ -119,7 +122,8 @@ class TcpConnection : boost::noncopyable,
   void connectDestroyed();  // should be called only once
 
  private:
-  //枚举了每个TcpConnection对应的几种状态  相关函数：connectEstablished()  shutdown()  handleClose()
+  //枚举了每个TcpConnection对应的几种状态(状态转移参考书籍P317)
+  //相关函数：connectEstablished()  shutdown()  handleClose()
   enum StateE { kDisconnected, kConnecting, kConnected, kDisconnecting };
   void handleRead(Timestamp receiveTime); //处理读事件
   void handleWrite(); //处理写事件
@@ -137,21 +141,22 @@ class TcpConnection : boost::noncopyable,
   void stopReadInLoop();
 
   EventLoop* loop_; //TcpConnection所属的loop
-  const string name_;
+  const string name_;//连接名称
   StateE state_;  // FIXME: use atomic variable
   bool reading_;
   // we don't expose those classes to client.
-  boost::scoped_ptr<Socket> socket_;  //套接字类
+  boost::scoped_ptr<Socket> socket_;  //RAII套接字对象
   boost::scoped_ptr<Channel> channel_; //套接字上对应的事件以及处理都将由和套接字对应的Channel来处理
   const InetAddress localAddr_; //本地服务器地址
   const InetAddress peerAddr_;  //对方客户端地址
   ConnectionCallback connectionCallback_; //连接回调
   MessageCallback messageCallback_; //接收消息到达时的回调
-  WriteCompleteCallback writeCompleteCallback_; // 低水位回调函数
+  WriteCompleteCallback writeCompleteCallback_; // 写完成回调
   HighWaterMarkCallback highWaterMarkCallback_; //outbuffer快满了的高水位回调函数 
   CloseCallback closeCallback_;   // 内部的close回调函数
   size_t highWaterMark_;  //发送缓冲区数据“上限阀值”，超过这个值
-  Buffer inputBuffer_;  //每一个连接都会对应一对读写input/output buffer
+   //每一个连接都会对应一对读写input/output buffer
+  Buffer inputBuffer_; //保存读取到的sockfd中的数据
   Buffer outputBuffer_; // FIXME: use list<Buffer> as output buffer. 当send无法一次性发送完数据后,会先暂存到这里,等下次发送
   boost::any context_;  // boost库的any 可以保持任意的类型 绑定一个未知类型的上下文对象
   // FIXME: creationTime_, lastReceiveTime_

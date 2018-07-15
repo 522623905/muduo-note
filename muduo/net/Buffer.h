@@ -377,7 +377,7 @@ class Buffer : public muduo::copyable
   ///
   /// It may implement with readv(2)
   /// @return result of read(2), @c errno is saved
-  ssize_t readFd(int fd, int* savedErrno);
+  ssize_t readFd(int fd, int* savedErrno);//读取sockfd的数据到Buffer,可参见TcpConnection类
 
  private:
 

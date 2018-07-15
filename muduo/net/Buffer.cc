@@ -22,6 +22,7 @@ const char Buffer::kCRLF[] = "\r\n";
 const size_t Buffer::kCheapPrepend;
 const size_t Buffer::kInitialSize;
 
+//读取sockfd的数据到Buffer,可参见TcpConnection类
 ssize_t Buffer::readFd(int fd, int* savedErrno)
 {
   // saved an ioctl()/FIONREAD call to tell how much to read
@@ -34,7 +35,7 @@ ssize_t Buffer::readFd(int fd, int* savedErrno)
   vec[1].iov_len = sizeof extrabuf; //这块内存2长度
   // when there is enough space in this buffer, don't read into extrabuf. 
   // when extrabuf is used, we read 128k-1 bytes at most.   
-  const int iovcnt = (writable < sizeof extrabuf) ? 2 : 1;
+  const int iovcnt = (writable < sizeof extrabuf) ? 2 : 1;//决定要使用几个内存块
   const ssize_t n = sockets::readv(fd, vec, iovcnt);  //从fd中读取内容到vec内存块
   if (n < 0)
   {
@@ -47,7 +48,7 @@ ssize_t Buffer::readFd(int fd, int* savedErrno)
   else  //读的数据太多，部分先存储到栈extrabuf,再添加到Buffer中
   {
     writerIndex_ = buffer_.size();
-    append(extrabuf, n - writable); //把extrabuf写入到Buffer中
+    append(extrabuf, n - writable); //把extrabuf中的数据追加到Buffer中
   }
   // if (n == writable + sizeof extrabuf)
   // {
