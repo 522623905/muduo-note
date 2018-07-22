@@ -71,7 +71,7 @@ class Buffer : public muduo::copyable
   size_t writableBytes() const  //可写入空间有多大
   { return buffer_.size() - writerIndex_; }
 
-  size_t prependableBytes() const //可写入位置
+  size_t prependableBytes() const //可前置的字节
   { return readerIndex_; }
 
   const char* peek() const  //返回指向可读空间的起始位置指针

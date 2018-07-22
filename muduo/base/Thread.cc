@@ -68,6 +68,7 @@ class ThreadNameInitializer
 ThreadNameInitializer init; //全局变量，在命名空间中，引用库的时候初始化，因此在main函数执行前则会初始化了！
 
 //线程数据类，观察者模式，
+//通过回调函数传递给子线程的数据
 struct ThreadData
 {
   typedef muduo::Thread::ThreadFunc ThreadFunc;
@@ -130,7 +131,7 @@ struct ThreadData
 //父线程交给系统的回调，obj是父线程传递的threadData
 void* startThread(void* obj)
 {
-  ThreadData* data = static_cast<ThreadData*>(obj);//派生类指针转化成基类指针，obj是派生类的this指针
+  ThreadData* data = static_cast<ThreadData*>(obj);
   data->runInThread(); //线程启动
   delete data;
   return NULL;
@@ -197,7 +198,7 @@ Thread::~Thread()
 {
   if (started_ && !joined_)
   {
-    pthread_detach(pthreadId_); //析构时，与线程分离
+    pthread_detach(pthreadId_); //析构时，如果没有调用join,则与线程分离
   }
 }
 

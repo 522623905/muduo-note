@@ -156,6 +156,9 @@ class TcpConnection : boost::noncopyable,
   CloseCallback closeCallback_;   // 内部的close回调函数
   size_t highWaterMark_;  //发送缓冲区数据“上限阀值”，超过这个值
    //每一个连接都会对应一对读写input/output buffer
+  //muduo保证了在操作时,Buffer必是线程安全的
+  //对于 input buffer，onMessage() 回调始终发生在该 TcpConnection 所属的那个 IO 线程
+  //TcpConnection::send() 来发送数据，outputBuffer是线程安全的
   Buffer inputBuffer_; //保存读取到的sockfd中的数据
   Buffer outputBuffer_; // FIXME: use list<Buffer> as output buffer. 当send无法一次性发送完数据后,会先暂存到这里,等下次发送
   boost::any context_;  // boost库的any 可以保持任意的类型 绑定一个未知类型的上下文对象

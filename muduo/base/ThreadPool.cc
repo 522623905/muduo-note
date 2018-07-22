@@ -90,7 +90,7 @@ void ThreadPool::run(const Task& task)
 
     //任务队列未满，则添加任务到队列
     queue_.push_back(task);
-    notEmpty_.notify();//告知任务对了已经非空，可以执行了
+    notEmpty_.notify();//告知任务队列已经非空，可以执行了
   }
 }
 
